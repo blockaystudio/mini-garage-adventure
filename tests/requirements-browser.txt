@@ -1,0 +1,2 @@
+# Development only; never bundled with the offline game.
+playwright==1.55.0
