@@ -38,6 +38,9 @@ func run() -> void:
 	check(not session.invite_valid("WRONG",50),"wrong invitation rejected")
 	check(session._private_address("127.0.0.1") and session._private_address("192.168.1.2"),"local/private engineering addresses accepted")
 	check(not session._private_address("8.8.8.8") and not session._private_address("example.com"),"public endpoint connection refused")
+	check(not session._private_address("0.0.0.0"),"wildcard is not a private endpoint")
+	check(session.start_server(24680,4,"user://network-test/unused-wildcard.json",false,"0.0.0.0")==ERR_UNAUTHORIZED,"wildcard server bind is refused before creating a socket")
+	check(session.join("0.0.0.0",24680,"UNUSED-TEST-INVITE")==ERR_UNAVAILABLE,"wildcard join endpoint is refused before creating a socket")
 	check(session._sanitize_controls({"throttle":NAN,"steer":999}).throttle==0 and session._sanitize_controls({"steer":999}).steer==1,"non-finite and excessive controls normalized")
 	session.store = again
 	session.players = {2:{"id":"qa-local"},3:{"id":"qa-other"}}

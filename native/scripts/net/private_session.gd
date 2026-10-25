@@ -79,6 +79,7 @@ func start_server(port: int = 24680, max_players: int = 4, store_path: String = 
 		_set_status("Native ENet TEST sessions are unavailable in browsers. No crossplay transport is configured.")
 		return ERR_UNAVAILABLE
 	if not _private_address(bind_ip):
+		_set_status("Use a specific loopback or private LAN address. Wildcard/public binding is disabled.")
 		return ERR_UNAUTHORIZED
 	peer = ENetMultiplayerPeer.new()
 	peer.set_bind_ip(bind_ip)
@@ -121,7 +122,7 @@ func join(host: String, port: int, room_invite: String, test_profile_id: String 
 		_set_status("Connecting to isolated native TEST room...")
 	return error
 func _private_address(host: String) -> bool:
-	if host in ["127.0.0.1","localhost","::1","0.0.0.0"]:
+	if host in ["127.0.0.1","localhost","::1"]:
 		return true
 	if host.begins_with("10.") or host.begins_with("192.168."):
 		return host.is_valid_ip_address()

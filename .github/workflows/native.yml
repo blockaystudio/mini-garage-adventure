@@ -28,6 +28,11 @@ jobs:
           echo 'GODOT_BIN=/tmp/garage-godot/Godot_v4.6.3-stable_linux.x86_64' >> "$GITHUB_ENV"
       - name: Native deterministic checks and scene boot
         run: python scripts/verify_native.py
+      - name: Independent native server and clients under latency and loss
+        run: |
+          python scripts/test_multiplayer.py --matrix --output "$RUNNER_TEMP/garage-multiplayer-matrix"
+          python scripts/test_multiplayer.py --repeat --output "$RUNNER_TEMP/garage-multiplayer-repeat"
+          python scripts/test_multiplayer.py --auth --output "$RUNNER_TEMP/garage-multiplayer-auth"
       - name: Device-tool safety regression
         run: python tests/test_device_tools.py
       - name: iOS source preflight and inspector fixtures
