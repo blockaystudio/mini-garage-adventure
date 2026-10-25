@@ -31,4 +31,4 @@ full three-game archive remain historical context, not this repository's invento
 
 ## Readiness branch upload gate
 
-Automatic approval review separately rejected uploading newly created `codex/garage-production-readiness`, interpreting the user's approval as limited to the original two branches. Follow-up source/evidence remains local and bundled until explicit approval names this third branch. No workaround upload was attempted. This does not affect existing draftPR1/PR2 or their successful CI.
+Resolved by the next explicit user approval: readiness branch0659db7 was pushed and draftPR3 opened at https://github.com/blockaystudio/mini-garage-adventure/pull/3, stacked on nativePR2 and unmerged. A separate user request authorized the owner-private phone Site documented in WEB_PREVIEW.md; no app-store publication or merge was authorized.

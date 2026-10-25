@@ -53,18 +53,18 @@
   "final_artifacts": [
     {
       "path": "builds/mini-garage-adventure.x86_64",
-      "bytes": 71287440,
-      "sha256": "d4fc09b75965314f78fcc04a77d42dd8e4b2cfecc02f036aa8f7672d8d2bee6e"
+      "bytes": 71287728,
+      "sha256": "10f428e429bbd8ca93a241702ab95b49b9be4c071da7b4fef5aef950f1884830"
     },
     {
       "path": "builds/mini-garage-adventure-linux.zip",
-      "bytes": 27315304,
-      "sha256": "355183645f80cbe23b16a938d2a44120066b94e76967cdcb0365d4104476471b"
+      "bytes": 27315630,
+      "sha256": "937ec66af1531f2ced85fabe35599689557e3352ed5bf72e56be8244adb97ab0"
     },
     {
       "path": "builds/mini-garage-adventure-debug.apk",
-      "bytes": 55966318,
-      "sha256": "6e69f2afc8b2a8b9852498402e98107fed18f9d6b5fd467d20daaf2851132337"
+      "bytes": 55970414,
+      "sha256": "50d713836d46d90e567e9a7df57cd45b21bf25e1b32b07da0b0d89eb986a3678"
     },
     {
       "path": "builds/native-gameplay-desktop.mp4",

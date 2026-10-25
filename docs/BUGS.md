@@ -32,3 +32,5 @@ No unresolved reproduced P0 crash/data-loss defect is known from the executed de
 These gates prevent calling the current build a fully accepted iOS/Android release candidate. They do not justify silently removing any of the six vehicles/twelve courses or offline editor from scope.
 
 Follow-up delivery gate: automatic approval review rejected uploading new `codex/garage-production-readiness` as outside its interpretation of the two-branch approval. Readiness changes are local/bundled; a third PR has not been created. Explicit approval of this named third branch is needed for remote delivery; this is separate from mobile acceptance.
+
+Web phone test found/fixed GUI finger taps not activating menus, emulated-mouse duplication risk, Web touch dispatch tree-mutation errors and HiDPI phones selecting the desktop layout. Evidence: web-phone-preview/ and web-touch-native-verification.txt. Readiness upload block is now resolved by explicit user approval; draftPR3 exists. Physical-device accessibility/touch acceptance remains open.

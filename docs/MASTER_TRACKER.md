@@ -105,3 +105,9 @@ Completed available next tasks:
 - Rebuilt debugAPK/Linux test artifacts after runtime fix; actual debug signature/manifest/permission/ELF checks and exported Linux boot pass. Updated hashes and limited desktop traffic trace. No production signing, SDK agreements or device execution.
 
 Remaining P1gates stay open: actual Android hardware/emulator, iPhone/iPad on owner-provided Mac/Xcode, supported-hardware performance, driving-pad screen-reader action engineering and hardware review, human content/child-parent/accessibility review, final identity/IDs/support/privacyURLs and rights/specialist approval. No owner information has been invented. Source/tooling improvements do not satisfy those external gates.
+
+## Phone Site checkpoint — 2026-10-25
+
+Readiness push is approved and complete: draftPR3 https://github.com/blockaystudio/mini-garage-adventure/pull/3 is stacked on nativePR2, unmerged. The user separately authorized a phone-test Site. Full-game owner-private Web preview is deployed successfully at https://mini-garage-phone-test.wholeclock.chatgpt.site (six vehicles, twelve courses, private editor); its exact Sites-source/deployment metadata is in `evidence/web-site-publication.json`.
+
+Actual WebAssembly/IndexedDB browser playtests verify full desktop play/save/reload, plus phone-emulated touch menus/scrolling/part selection and DPR3compact layout. Testing found/fixed GUI touch emulation, duplicate mouse-copy risk, Web dispatch tree mutation and high-DPI layout selection;10new native touch checks pass (4,196native checks total). Native hardware acceptance remains open: browser emulation does not certify Android/iOS devices. See `WEB_PREVIEW.md`, `web-phone-preview/` and `web-touch-native-verification.txt`.

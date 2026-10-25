@@ -37,7 +37,7 @@ var drive_pads: Dictionary = {}
 var transition_time := 0.0
 
 func _ready() -> void:
-	compact_mode = OS.has_feature("mobile") or DisplayServer.window_get_size().x < 1100
+	compact_mode = OS.has_feature("mobile") or OS.has_feature("web_ios") or OS.has_feature("web_android") or DisplayServer.window_get_size().x < 1100
 	state = store.load_save()
 	add_child(world)
 	add_child(sound)
@@ -148,7 +148,7 @@ func _button(text: String, x: float, y: float, width: float, callback: Callable,
 		button.add_theme_color_override("font_color", NAVY)
 	button.pressed.connect(func():
 		sound.play_cue("click")
-		callback.call())
+		_invoke_ui_action(callback))
 	return button
 
 func _panel(x: float,y: float,width: float,height: float, color: Color = Color("142c40")) -> Panel:
@@ -423,7 +423,7 @@ func _draw_editor() -> void:
 			button.add_theme_color_override("font_color",NAVY)
 		button.pressed.connect(func():
 			selected_slot = i
-			_draw_editor())
+			_invoke_ui_action(_draw_editor))
 		row.add_child(button)
 	_label("SHAPE FOR SECTION " + str(selected_slot+1),46,435,1150,30,17,TEAL)
 	var n := 0
@@ -483,7 +483,7 @@ func show_gate() -> void:
 		else:
 			feedback.text = "Try again with a grown-up."
 	_button("Open settings",370,531,490,submit,true)
-	answer.text_submitted.connect(func(_value): submit.call())
+	answer.text_submitted.connect(func(_value): _invoke_ui_action(submit))
 	_compact()
 
 func show_parents() -> void:
@@ -643,3 +643,11 @@ func _compact_modal() -> void:
 			child.custom_minimum_size = child.size
 			child.add_theme_font_size_override("font_size",30)
 			buttons += 1
+
+func _invoke_ui_action(callback: Callable) -> void:
+	# Web touch dispatch emits a GUI mouse copy and still walks that tree.
+	# Change screens after dispatch completes so active controls remain valid.
+	if OS.has_feature("web"):
+		callback.call_deferred()
+	else:
+		callback.call()

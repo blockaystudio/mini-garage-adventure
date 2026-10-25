@@ -1,3 +1,11 @@
+# Phone test available now
+
+Open https://mini-garage-phone-test.wholeclock.chatgpt.site in current Safari or Chrome, sign in with the same ChatGPT account if prompted, tap Play and rotate to landscape. This owner-private Site runs the full six-vehicle/twelve-course game and private editor. The first load is about10MB. Browser saves are separate from native saves.
+
+Readiness draftPR3 is now pushed and open: https://github.com/blockaystudio/mini-garage-adventure/pull/3 . No PR has been merged. Phone Web checks caught/fixed touch-menu, HiDPI layout and Web input-dispatch issues;4,196native checks pass. Final browser results and remaining physical/touch-only end-to-end limits are explicit in `evidence/web-phone-preview/qa-summary.json`. Deployment is tool-verified in `evidence/web-site-publication.json`. Prior upload-block notes below are historical and resolved.
+
+---
+
 # Follow-up delivery — 2026-10-25
 
 The user approved GitHub uploads. Both branches are pushed; draft [PR1](https://github.com/blockaystudio/mini-garage-adventure/pull/1) and stacked [PR2](https://github.com/blockaystudio/mini-garage-adventure/pull/2) are open and unmerged. Their actual reference/browser/native CI jobs passed (`evidence/github-production-ci.json`). The checkpoint below is retained as history; its previous remote-upload blocker is resolved.

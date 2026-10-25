@@ -1,0 +1,15 @@
+{
+  "scope": "Actual Chromium mobile emulation with touchscreen.tap on rendered Godot canvas; no physical phone",
+  "viewport": {
+    "width": 844,
+    "height": 390
+  },
+  "action": "tap Grown-ups button at665,40 CSSpixels, within visible button bounds",
+  "observed": "Still garage; no parent gate opened. Eight actual CDPtouch drags also left garage scroll at top. Confirmed by screenshot review.",
+  "status": "failed",
+  "likely_cause": "project pointing/emulate_mouse_from_touch=false prevents standard GodotGUI controls from receiving emulated mouse actions; rawdrive router remains separate",
+  "screenshots": [
+    "phone-touch-baseline-before.png",
+    "phone-touch-baseline-tap.png"
+  ]
+}

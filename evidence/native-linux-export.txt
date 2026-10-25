@@ -11,11 +11,6 @@ Could not find version of build tools that matches Target SDK, using 35.0.2
 [  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
 [92m[ DONE ][39m [1mfirst_scan_filesystem[22m
 [0m
-[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (2 steps)[39m[0m
-[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[  33% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
-[92m[ DONE ][39m [1mupdate_scripts_classes[22m
-[0m
 [   0% ] [90m[1msavepack[22m | Started Packing (102 steps)[39m[0m
 [   1% ] [90m[1msavepack[22m | Storing File: res://licenses/GODOT_LICENSE.txt[39m[0m
 [   7% ] [90m[1msavepack[22m | Storing File: res://licenses/GODOT_COPYRIGHT.txt[39m[0m

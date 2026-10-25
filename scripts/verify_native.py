@@ -63,7 +63,7 @@ def main():
         run(["--editor", "--import"])
         for script in sorted((NATIVE / "scripts").glob("*.gd")):
             run(["--check-only", "--script", "res://" + script.relative_to(NATIVE).as_posix()])
-        for name in ("model_test.gd", "save_test.gd", "integration_test.gd", "accessibility_test.gd"):
+        for name in ("model_test.gd", "save_test.gd", "integration_test.gd", "accessibility_test.gd", "touch_test.gd"):
             if not (NATIVE / "tests" / name).is_file():
                 raise RuntimeError(f"Required native test missing: tests/{name}")
             run(["--script", f"res://tests/{name}"])
