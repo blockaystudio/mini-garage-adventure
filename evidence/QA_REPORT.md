@@ -33,3 +33,16 @@ Three 390px portrait viewports were checked for horizontal overflow. Three deskt
 
 ## How to reproduce
 Use the commands in the top-level README. `tests/browser_smoke.py` explains its fixture. Inspect the screenshots and test output, then run additional native/device acceptance tests listed in `docs/MASTER_TRACKER.md` before any release.
+
+## Native production checkpoint — 2026-10-25
+
+The Build01 report above is historical and includes portfolio fixture results. Current Garage-only execution evidence is:
+
+- Exact Node22.16.0/Python3.13.5 isolated reference verifier:63Node+6Python pass (`reference-baseline.txt`, `reference-verification.txt`).
+- Real HTTP-origin desktop Chromium reference harness:14/14 pass, zero unexpected outbound requests/script errors (`reference-browser-results.json`).
+- Godot4.6.3 native:3,989model assertions,45save/editor checks and129scene/integration checks pass; import/script parsing/main boot and offline runtime contract pass (`native-verification.txt`). Separate actual write/quit/read Godot processes recover build/custom/progress/settings (`native-integration.txt`).
+- Actual exported Linux test executable boots; Android debug APK builds and its cryptographic v2/v3 signature verifies. Binary manifest requests zero permissions, disables backup and is explicitly debuggable, minAPI24/target36. `native-artifacts.json`, `native-android-manifest.json` and signature/export logs record final hashes and source fingerprints. Neither an emulator nor a physical Android device was run; no iOS build was possible.
+- Genuine rendered desktop native screens and22-second native trailer are in capture evidence/build artifacts. Software-rendered performance is measured on AMD EPYC9V74/Mesa llvmpipe at three window sizes. The1600x1000 sample is below60fps; no supported mobile performance floor has been established. Use `native-performance.json` for sample durations, frame distributions, loading, engine memory and process RSS; do not equate Godot static memory with total process memory.
+- Linux `strace -f -e trace=network` of a30-frame exported headless launch observed no Internet socket/request; only local kernel uevent sockets (`native-network-desktop.txt`). This is limited desktop boot evidence, not all-platform traffic certification. Native source and APK static inventory contain no runtime network feature, ad/analytics/purchase SDK or production endpoint.
+
+Mobile hardware, actual OS storage/interruption, touch/safe-area/assistive-technology and child/parent comprehension review remain open. Desktop injected events and simulated insets are labeled as such. No retention, educational effect, legal approval, production signing, store acceptance or publication is claimed. See `docs/BUGS.md` and `docs/RELEASE_CHECKLIST.md` for exact blockers and owners.

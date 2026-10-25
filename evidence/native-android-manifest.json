@@ -1,0 +1,80 @@
+{
+  "artifact": "builds/mini-garage-adventure-debug.apk",
+  "bytes": 55966318,
+  "sha256": "fbd9a2147feb94fafcb0deb3146fcf5b4fc16c068bb10a0c9831580846992653",
+  "manifest": {
+    "versionCode": 1,
+    "versionName": "0.1.0-test",
+    "installLocation": 0,
+    "compileSdkVersion": 36,
+    "compileSdkVersionCodename": "16",
+    "package": "org.example.minigarage.test",
+    "platformBuildVersionCode": 36,
+    "platformBuildVersionName": 16
+  },
+  "application": {
+    "label": 2131427332,
+    "icon": 2131361792,
+    "debuggable": true,
+    "allowBackup": false,
+    "isGame": true,
+    "extractNativeLibs": true,
+    "appCategory": 0,
+    "appComponentFactory": "androidx.core.app.CoreComponentFactory",
+    "hasFragileUserData": false,
+    "requestLegacyExternalStorage": false
+  },
+  "sdk": {
+    "minSdkVersion": 24,
+    "targetSdkVersion": 36
+  },
+  "requested_permissions": [],
+  "native_libraries": [
+    "lib/arm64-v8a/libc++_shared.so",
+    "lib/arm64-v8a/libgodot_android.so",
+    "lib/x86_64/libc++_shared.so",
+    "lib/x86_64/libgodot_android.so"
+  ],
+  "native_library_alignment": {
+    "lib/arm64-v8a/libc++_shared.so": {
+      "elf_load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "zip_compressed": true
+    },
+    "lib/arm64-v8a/libgodot_android.so": {
+      "elf_load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "zip_compressed": true
+    },
+    "lib/x86_64/libc++_shared.so": {
+      "elf_load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "zip_compressed": true
+    },
+    "lib/x86_64/libgodot_android.so": {
+      "elf_load_alignments": [
+        16384,
+        16384,
+        16384
+      ],
+      "zip_compressed": true
+    }
+  },
+  "license_files": [
+    "assets/licenses/GODOT_LICENSE.txt",
+    "assets/licenses/GODOT_COPYRIGHT.txt",
+    "assets/licenses/GODOT_AUTHORS.md"
+  ],
+  "forbidden_files": [],
+  "failures": [],
+  "scope": "Static inspection only; debug signature, installation and device runtime are separate checks."
+}

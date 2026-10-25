@@ -1,0 +1,119 @@
+{
+  "captures": [
+    {
+      "description": "Fresh garage: Sunny Buggy, trail tires, soft springs",
+      "device": "Linux desktop virtual X11 display; not a physical mobile device",
+      "file": "01-build-buggy.png",
+      "height": 720,
+      "source": "Actual native Godot viewport; seeded local review state",
+      "width": 1280,
+      "sha256": "d86a428bc8c3e498f5a5d43428d791ee930bb55a2688f8f536483eb2cb3d48f8"
+    },
+    {
+      "description": "Sunny Buggy driving Meadow Hello using the real keyboard input route",
+      "device": "Linux desktop virtual X11 display; not a physical mobile device",
+      "file": "02-meadow-drive.png",
+      "height": 720,
+      "source": "Actual native Godot viewport; seeded local review state",
+      "width": 1280,
+      "sha256": "a1d8e1542287120e9e0b20753282ec1091e4a91945b65a9db717a306bb3d5271"
+    },
+    {
+      "description": "Unlocked Moon Rover: six wheels, giant tires, cyan paint; seeded unlock state",
+      "device": "Linux desktop virtual X11 display; not a physical mobile device",
+      "file": "03-build-rover.png",
+      "height": 720,
+      "source": "Actual native Godot viewport; seeded local review state",
+      "width": 1280,
+      "sha256": "f9f29379c6596e0d94f1605a7fd7ad8a7f4228fc828477abd161e6105fea7584"
+    },
+    {
+      "description": "Moon Rover on Moon Garden; seeded unlock state, real model/input and scenery",
+      "device": "Linux desktop virtual X11 display; not a physical mobile device",
+      "file": "04-moon-drive.png",
+      "height": 720,
+      "source": "Actual native Godot viewport; seeded local review state",
+      "width": 1280,
+      "sha256": "bb83d398953c36540cd4651701f049dbe1bea84a210d4073d72aa1a7d0bd2f5f"
+    },
+    {
+      "description": "Parcel Truck on River Bridges; seeded unlock state, real model/input and scenery",
+      "device": "Linux desktop virtual X11 display; not a physical mobile device",
+      "file": "05-river-drive.png",
+      "height": 720,
+      "source": "Actual native Godot viewport; seeded local review state",
+      "width": 1280,
+      "sha256": "f394062d9fc18e9e2879211edf7ea40185c1095d83546738a6aae30f635852a3"
+    },
+    {
+      "description": "Offline private editor with seven real selectable course sections",
+      "device": "Linux desktop virtual X11 display; not a physical mobile device",
+      "file": "06-private-track-lab.png",
+      "height": 720,
+      "source": "Actual native Godot viewport; seeded local review state",
+      "width": 1280,
+      "sha256": "130c0377770a398ad0652f787cdfeadbf7937377448301c0bbba4031b18cfcf9"
+    },
+    {
+      "description": "All twelve authored courses shown in seeded unlocked review state",
+      "device": "Linux desktop virtual X11 display; not a physical mobile device",
+      "file": "07-course-map.png",
+      "height": 720,
+      "source": "Actual native Godot viewport; seeded local review state",
+      "width": 1280,
+      "sha256": "7b2be70af77b1ece766e1bd738f1028ae5e6e10cb78c34d4123a922fece3968d"
+    },
+    {
+      "description": "Native grown-up settings, input alternatives, local progress and reset",
+      "device": "Linux desktop virtual X11 display; not a physical mobile device",
+      "file": "08-settings.png",
+      "height": 720,
+      "source": "Actual native Godot viewport; seeded local review state",
+      "width": 1280,
+      "sha256": "524a98081fadbbd77bd235a0d8edf6f92641e8b140f31bb59250b48633ca55a2"
+    }
+  ],
+  "display_server": "X11",
+  "engine": "4.6.3-stable (official)",
+  "first_render_ready_ms": 822.309,
+  "godot_static_memory_bytes": 35167219.0,
+  "godot_static_memory_peak_bytes": 47096161.0,
+  "max_frame_ms": 24.634,
+  "mean_frame_ms": 16.6033388888889,
+  "p50_frame_ms": 16.105,
+  "p95_frame_ms": 19.708,
+  "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "rendering_method": "gl_compatibility",
+  "sample_fps": 60.2288495520145,
+  "sample_frames": 180,
+  "scene": "Parcel Truck driving River Bridges, rendered native scene with UI",
+  "scope": "Desktop Linux software renderer under virtual X11; excludes installation/import; not mobile performance certification",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  },
+  "capture_command": "python scripts/capture_native.py --width 1280 --height 720 --label desktop-1280x720",
+  "host_cpu": "AMD EPYC 9V74 80-Core Processor",
+  "host_os": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "logical_cpus": 5,
+  "wall_seconds_full_capture_run": 25.69268103299987,
+  "child_max_rss_kib": 218512,
+  "child_max_rss_note": "Linux child process maximum RSS; display server still running at sample time",
+  "fixture_note": "Fresh isolated user-data directory. Later captures seed all course unlocks and custom layout; real game logic/rendering/input remains active. No production save is modified.",
+  "timing_note": "First-render timing starts in the capture SceneTree script and includes 30 settled frames; excludes engine process startup/import. Frame sample is 180 rendered frames after a 30-frame warmup, without ffmpeg capture running.",
+  "memory_note": "Godot allocator snapshot after captures and scene sampling. Allocator peak and process maximum RSS include screenshot allocations; these are not isolated production steady-state memory measurements.",
+  "mobile_devices": "None; these are desktop virtual-display captures, not Apple/Google device/store screenshots.",
+  "captured_at_utc": "2026-10-25T02:50:59Z",
+  "source_snapshot_sha256": {
+    "native/scripts/main.gd": "9260a0e06d417d3627d7e2776998a70d2fd2353394509c68c3b2cb13548d9bfa",
+    "native/scripts/world_view.gd": "0616603b17c4b1356ccbfafce05507dfc45faf7623a5faddc9ea5b8f8199171d",
+    "native/scripts/compact_layout.gd": "9d16dd7d8e99ac30a387f759a9f13effe51581c815d6d8a4ae7267ec033492b9"
+  },
+  "source_mtime_utc": {
+    "native/scripts/main.gd": "2026-10-25T02:49:42Z",
+    "native/scripts/world_view.gd": "2026-10-25T02:40:54Z",
+    "native/scripts/compact_layout.gd": "2026-10-25T02:46:34Z"
+  },
+  "source_snapshot_method": "Recorded after final capture; observed source modification timestamps predate the final capture startup. This records the stable source files, not an independently logged hash of each script loaded inside that engine process.",
+  "review_snapshot": "Final compact-layout and paint-heading correction review snapshot; exported binaries have separate hashes."
+}

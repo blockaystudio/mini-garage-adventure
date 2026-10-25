@@ -1,7 +1,16 @@
 # Mini Garage Adventure
 
-**Working browser prototype; not a finished iOS/Android game.**
+**Native Godot base-game implementation plus preserved browser reference. Mobile release acceptance remains blocked.**
 Prepared for a private GitHub repository and bounded Codex development tasks.
+
+## Native game
+
+```sh
+godot --path native
+python scripts/verify_native.py
+```
+
+Use Godot 4.6.3 standard/GDScript. The native game includes six distinct vehicles, twelve authored courses, visible part tradeoffs, local progression and a private 4–16-section track editor. See [native run/export instructions](native/README.md), [production evidence](docs/MASTER_TRACKER.md) and [remaining release gates](docs/RELEASE_CHECKLIST.md). Native and browser saves are separate, device-only formats.
 
 ## Start here
 Read `AGENTS.md`, `HANDOFF.md`, `docs/GITHUB_CODEX_STATUS.md` and
@@ -37,8 +46,8 @@ not a live advertisement service. Keep all keys out of source control.
 
 ## Codex and CI
 `docs/CODEX_SETUP.md` gives setup steps. `AGENTS.md` states boundaries and commands.
-The GitHub workflow runs tests only, with read-only repository permissions; it
-publishes nothing. It has not yet been executed on GitHub.
+The verification workflows run tests only, with read-only repository permissions; they
+publish nothing. Local results do not claim a successful remote CI run.
 
 Private commercial work: no open-source license has been selected or granted in
 this handoff. Do not add a license or publish the repository without owner approval.

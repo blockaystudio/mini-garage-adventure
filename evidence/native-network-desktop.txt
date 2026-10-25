@@ -1,0 +1,28 @@
+11351 +++ exited with 127 +++
+11350 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=11351, si_uid=1000, si_status=127, si_utime=0, si_stime=0} ---
+11350 socket(AF_NETLINK, SOCK_RAW|SOCK_CLOEXEC|SOCK_NONBLOCK, NETLINK_KOBJECT_UEVENT) = 4
+11350 setsockopt(4, SOL_SOCKET, SO_PASSCRED, [1], 4) = 0
+11350 bind(4, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 0
+11350 getsockname(4, {sa_family=AF_NETLINK, nl_pid=11350, nl_groups=00000000}, [12]) = 0
+11350 getsockopt(4, SOL_SOCKET, SO_RCVBUF, [212992], [4]) = 0
+11350 setsockopt(4, SOL_SOCKET, SO_RCVBUF, [134217728], 4) = 0
+11350 getsockopt(4, SOL_SOCKET, SO_RCVBUF, [8388608], [4]) = 0
+11350 setsockopt(4, SOL_SOCKET, SO_RCVBUFFORCE, [134217728], 4) = -1 EPERM (Operation not permitted)
+11350 setsockopt(4, SOL_SOCKET, SO_ATTACH_FILTER, {len=14, filter=0x7ffe71682150}, 16) = 0
+11350 socket(AF_NETLINK, SOCK_RAW|SOCK_CLOEXEC|SOCK_NONBLOCK, NETLINK_KOBJECT_UEVENT) = 5
+11350 setsockopt(5, SOL_SOCKET, SO_PASSCRED, [1], 4) = 0
+11350 bind(5, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 0
+11350 getsockname(5, {sa_family=AF_NETLINK, nl_pid=-791102868, nl_groups=00000000}, [12]) = 0
+11350 getsockopt(5, SOL_SOCKET, SO_RCVBUF, [212992], [4]) = 0
+11350 setsockopt(5, SOL_SOCKET, SO_RCVBUF, [134217728], 4) = 0
+11350 getsockopt(5, SOL_SOCKET, SO_RCVBUF, [8388608], [4]) = 0
+11350 setsockopt(5, SOL_SOCKET, SO_RCVBUFFORCE, [134217728], 4) = -1 EPERM (Operation not permitted)
+11359 +++ exited with 0 +++
+11358 +++ exited with 0 +++
+11355 +++ exited with 0 +++
+11357 +++ exited with 0 +++
+11353 +++ exited with 0 +++
+11354 +++ exited with 0 +++
+11356 +++ exited with 0 +++
+11352 +++ exited with 0 +++
+11350 +++ exited with 0 +++

@@ -1,0 +1,378 @@
+{
+  "runs": {
+    "desktop-1280x720": {
+      "captures": [
+        {
+          "description": "Fresh garage: Sunny Buggy, trail tires, soft springs",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "01-build-buggy.png",
+          "height": 720,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 1280,
+          "sha256": "d86a428bc8c3e498f5a5d43428d791ee930bb55a2688f8f536483eb2cb3d48f8"
+        },
+        {
+          "description": "Sunny Buggy driving Meadow Hello using the real keyboard input route",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "02-meadow-drive.png",
+          "height": 720,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 1280,
+          "sha256": "a1d8e1542287120e9e0b20753282ec1091e4a91945b65a9db717a306bb3d5271"
+        },
+        {
+          "description": "Unlocked Moon Rover: six wheels, giant tires, cyan paint; seeded unlock state",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "03-build-rover.png",
+          "height": 720,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 1280,
+          "sha256": "f9f29379c6596e0d94f1605a7fd7ad8a7f4228fc828477abd161e6105fea7584"
+        },
+        {
+          "description": "Moon Rover on Moon Garden; seeded unlock state, real model/input and scenery",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "04-moon-drive.png",
+          "height": 720,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 1280,
+          "sha256": "bb83d398953c36540cd4651701f049dbe1bea84a210d4073d72aa1a7d0bd2f5f"
+        },
+        {
+          "description": "Parcel Truck on River Bridges; seeded unlock state, real model/input and scenery",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "05-river-drive.png",
+          "height": 720,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 1280,
+          "sha256": "f394062d9fc18e9e2879211edf7ea40185c1095d83546738a6aae30f635852a3"
+        },
+        {
+          "description": "Offline private editor with seven real selectable course sections",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "06-private-track-lab.png",
+          "height": 720,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 1280,
+          "sha256": "130c0377770a398ad0652f787cdfeadbf7937377448301c0bbba4031b18cfcf9"
+        },
+        {
+          "description": "All twelve authored courses shown in seeded unlocked review state",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "07-course-map.png",
+          "height": 720,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 1280,
+          "sha256": "7b2be70af77b1ece766e1bd738f1028ae5e6e10cb78c34d4123a922fece3968d"
+        },
+        {
+          "description": "Native grown-up settings, input alternatives, local progress and reset",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "08-settings.png",
+          "height": 720,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 1280,
+          "sha256": "524a98081fadbbd77bd235a0d8edf6f92641e8b140f31bb59250b48633ca55a2"
+        }
+      ],
+      "display_server": "X11",
+      "engine": "4.6.3-stable (official)",
+      "first_render_ready_ms": 822.309,
+      "godot_static_memory_bytes": 35167219.0,
+      "godot_static_memory_peak_bytes": 47096161.0,
+      "max_frame_ms": 24.634,
+      "mean_frame_ms": 16.6033388888889,
+      "p50_frame_ms": 16.105,
+      "p95_frame_ms": 19.708,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "rendering_method": "gl_compatibility",
+      "sample_fps": 60.2288495520145,
+      "sample_frames": 180,
+      "scene": "Parcel Truck driving River Bridges, rendered native scene with UI",
+      "scope": "Desktop Linux software renderer under virtual X11; excludes installation/import; not mobile performance certification",
+      "viewport": {
+        "height": 720,
+        "width": 1280
+      },
+      "capture_command": "python scripts/capture_native.py --width 1280 --height 720 --label desktop-1280x720",
+      "host_cpu": "AMD EPYC 9V74 80-Core Processor",
+      "host_os": "Linux-6.18.55-x86_64-with-glibc2.41",
+      "logical_cpus": 5,
+      "wall_seconds_full_capture_run": 25.69268103299987,
+      "child_max_rss_kib": 218512,
+      "child_max_rss_note": "Linux child process maximum RSS; display server still running at sample time",
+      "fixture_note": "Fresh isolated user-data directory. Later captures seed all course unlocks and custom layout; real game logic/rendering/input remains active. No production save is modified.",
+      "timing_note": "First-render timing starts in the capture SceneTree script and includes 30 settled frames; excludes engine process startup/import. Frame sample is 180 rendered frames after a 30-frame warmup, without ffmpeg capture running.",
+      "memory_note": "Godot allocator snapshot after captures and scene sampling. Allocator peak and process maximum RSS include screenshot allocations; these are not isolated production steady-state memory measurements.",
+      "mobile_devices": "None; these are desktop virtual-display captures, not Apple/Google device/store screenshots.",
+      "captured_at_utc": "2026-10-25T02:50:59Z",
+      "source_snapshot_sha256": {
+        "native/scripts/main.gd": "9260a0e06d417d3627d7e2776998a70d2fd2353394509c68c3b2cb13548d9bfa",
+        "native/scripts/world_view.gd": "0616603b17c4b1356ccbfafce05507dfc45faf7623a5faddc9ea5b8f8199171d",
+        "native/scripts/compact_layout.gd": "9d16dd7d8e99ac30a387f759a9f13effe51581c815d6d8a4ae7267ec033492b9"
+      },
+      "source_mtime_utc": {
+        "native/scripts/main.gd": "2026-10-25T02:49:42Z",
+        "native/scripts/world_view.gd": "2026-10-25T02:40:54Z",
+        "native/scripts/compact_layout.gd": "2026-10-25T02:46:34Z"
+      },
+      "source_snapshot_method": "Recorded after final capture; observed source modification timestamps predate the final capture startup. This records the stable source files, not an independently logged hash of each script loaded inside that engine process.",
+      "review_snapshot": "Final compact-layout and paint-heading correction review snapshot; exported binaries have separate hashes."
+    },
+    "desktop-1600x1000": {
+      "captures": [
+        {
+          "description": "Fresh garage: Sunny Buggy, trail tires, soft springs",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "01-build-buggy.png",
+          "height": 1000,
+          "source": "Actual native Godot X11 window including letterboxing; seeded local review state",
+          "width": 1600,
+          "sha256": "b750431d297c000b0b7dcf31628674cb908f67571d0c00c79f1eb9a4b29f878c"
+        },
+        {
+          "description": "Sunny Buggy driving Meadow Hello using the real keyboard input route",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "02-meadow-drive.png",
+          "height": 1000,
+          "source": "Actual native Godot X11 window including letterboxing; seeded local review state",
+          "width": 1600,
+          "sha256": "74c61157650d50abc6020391b81f65df104dd86f1fd0d1729abf34439c178ca5"
+        },
+        {
+          "description": "Unlocked Moon Rover: six wheels, giant tires, cyan paint; seeded unlock state",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "03-build-rover.png",
+          "height": 1000,
+          "source": "Actual native Godot X11 window including letterboxing; seeded local review state",
+          "width": 1600,
+          "sha256": "9533865b8b4f0117de539f6a756666ad777e94d99235fc102c42a11862c8d2c9"
+        },
+        {
+          "description": "Moon Rover on Moon Garden; seeded unlock state, real model/input and scenery",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "04-moon-drive.png",
+          "height": 1000,
+          "source": "Actual native Godot X11 window including letterboxing; seeded local review state",
+          "width": 1600,
+          "sha256": "af288d8985ed92a23d09059d785206eb76700d029fc487d71fd57093ece8a0c6"
+        },
+        {
+          "description": "Parcel Truck on River Bridges; seeded unlock state, real model/input and scenery",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "05-river-drive.png",
+          "height": 1000,
+          "source": "Actual native Godot X11 window including letterboxing; seeded local review state",
+          "width": 1600,
+          "sha256": "698304f4cba564a9080ee85801b789fc6e1018b33f2b31e2af7596d98718e391"
+        },
+        {
+          "description": "Offline private editor with seven real selectable course sections",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "06-private-track-lab.png",
+          "height": 1000,
+          "source": "Actual native Godot X11 window including letterboxing; seeded local review state",
+          "width": 1600,
+          "sha256": "4af52c8c56785f695a7a1596eaa77b709a6c4c9ae388dc3cd5b90c528dd4ada7"
+        },
+        {
+          "description": "All twelve authored courses shown in seeded unlocked review state",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "07-course-map.png",
+          "height": 1000,
+          "source": "Actual native Godot X11 window including letterboxing; seeded local review state",
+          "width": 1600,
+          "sha256": "26aa1903a7f436297cb38a87a760614b3a18f18aa3208f34a724426f4567f172"
+        },
+        {
+          "description": "Native grown-up settings, input alternatives, local progress and reset",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "08-settings.png",
+          "height": 1000,
+          "source": "Actual native Godot X11 window including letterboxing; seeded local review state",
+          "width": 1600,
+          "sha256": "363c21b62143ba1e3030536ec81d2f9c1e95c7a009653e9a467c3c9dc4dfd891"
+        }
+      ],
+      "display_server": "X11",
+      "engine": "4.6.3-stable (official)",
+      "first_render_ready_ms": 1141.068,
+      "godot_static_memory_bytes": 40086195.0,
+      "godot_static_memory_peak_bytes": 56826154.0,
+      "max_frame_ms": 35.886,
+      "mean_frame_ms": 24.5286,
+      "p50_frame_ms": 24.748,
+      "p95_frame_ms": 28.343,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "rendering_method": "gl_compatibility",
+      "sample_fps": 40.7687352722944,
+      "sample_frames": 180,
+      "scene": "Parcel Truck driving River Bridges, rendered native scene with UI",
+      "scope": "Desktop Linux software renderer under virtual X11; excludes installation/import; not mobile performance certification",
+      "viewport": {
+        "height": 1000,
+        "width": 1600
+      },
+      "capture_command": "python scripts/capture_native.py --width 1600 --height 1000 --label desktop-1600x1000",
+      "host_cpu": "AMD EPYC 9V74 80-Core Processor",
+      "host_os": "Linux-6.18.55-x86_64-with-glibc2.41",
+      "logical_cpus": 5,
+      "wall_seconds_full_capture_run": 29.626456557000097,
+      "child_max_rss_kib": 243624,
+      "child_max_rss_note": "Linux child process maximum RSS; display server still running at sample time",
+      "fixture_note": "Fresh isolated user-data directory. Later captures seed all course unlocks and custom layout; real game logic/rendering/input remains active. No production save is modified.",
+      "mobile_devices": "None; these are desktop virtual-display captures, not Apple/Google device/store screenshots.",
+      "captured_at_utc": "2026-10-25T02:44:22Z",
+      "timing_note": "First-render timing starts in the capture SceneTree script and includes 30 settled frames; excludes engine process startup/import. Frame sample is 180 rendered frames after a 30-frame warmup, without ffmpeg capture running.",
+      "memory_note": "Godot allocator snapshot after captures and scene sampling. Allocator peak and process maximum RSS include screenshot allocations; these are not isolated production steady-state memory measurements.",
+      "source_snapshot_sha256": null,
+      "review_snapshot": "Earlier development review snapshot, before compact phone layout and final paint-heading adjustment. Exact loaded source hashes were not recorded. Not evidence of a byte-identical final shipped build."
+    },
+    "desktop-phone-800x450": {
+      "captures": [
+        {
+          "description": "Fresh garage: Sunny Buggy, trail tires, soft springs",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "01-build-buggy.png",
+          "height": 450,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 800,
+          "sha256": "03f59421aaa7442025a4d9a8a3e08eb4f6e5f030d0ad5e7b683523e2d915c086"
+        },
+        {
+          "description": "Sunny Buggy driving Meadow Hello using the real keyboard input route",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "02-meadow-drive.png",
+          "height": 450,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 800,
+          "sha256": "b46510b681db8593689ae287c42ab21c1cbfa200d0fbde7317e31d57e6613f4f"
+        },
+        {
+          "description": "Unlocked Moon Rover: six wheels, giant tires, cyan paint; seeded unlock state",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "03-build-rover.png",
+          "height": 450,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 800,
+          "sha256": "e03df774f700b67eae1b4ea00139be4583813842ef904fc24d63dfd1c300ac5b"
+        },
+        {
+          "description": "Moon Rover on Moon Garden; seeded unlock state, real model/input and scenery",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "04-moon-drive.png",
+          "height": 450,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 800,
+          "sha256": "5a290267fd8ac928b56d014331b42f460230dc4c00dd35a60637ab096f2f8188"
+        },
+        {
+          "description": "Parcel Truck on River Bridges; seeded unlock state, real model/input and scenery",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "05-river-drive.png",
+          "height": 450,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 800,
+          "sha256": "3c1fbecbdeb11208860daea982c00ec6c2b92446d13a1cdeb52e3fb4152de932"
+        },
+        {
+          "description": "Offline private editor with seven real selectable course sections",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "06-private-track-lab.png",
+          "height": 450,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 800,
+          "sha256": "3a3dec83b8400cd49fd0ce2d016422fbffb9b9eec1ca74d82d8e81987892c60c"
+        },
+        {
+          "description": "All twelve authored courses shown in seeded unlocked review state",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "07-course-map.png",
+          "height": 450,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 800,
+          "sha256": "94cfcf6da487b611beca8d8d9f9c3041ac21ce6cd9f1e825c3c34e5d0f22ecfe"
+        },
+        {
+          "description": "Native grown-up settings, input alternatives, local progress and reset",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "08-settings.png",
+          "height": 450,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 800,
+          "sha256": "3d5beb3e0088f48a6f140b0a3a1e07d1664449ad94d328912620df9aeccc02f4"
+        },
+        {
+          "description": "Compact-layout QA: real scrolled garage parts controls",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "09-compact-parts-scroll.png",
+          "height": 450,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 800,
+          "sha256": "cc238d26dcd554b20ecaa377aaf3a87689dee8bfe6493383bcae55cc82603e41"
+        },
+        {
+          "description": "Compact-layout QA: scroll reaches real course and track-lab buttons",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "10-compact-bottom-navigation.png",
+          "height": 450,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 800,
+          "sha256": "35f31d849f59559a4a7f0fb71535c716a2942036b90375c3a6db671db5740acd"
+        },
+        {
+          "description": "Compact-layout QA: real pause modal and large resume/back controls",
+          "device": "Linux desktop virtual X11 display; not a physical mobile device",
+          "file": "11-compact-pause.png",
+          "height": 450,
+          "source": "Actual native Godot viewport; seeded local review state",
+          "width": 800,
+          "sha256": "51b84ae3e902f0ebe14cd30771dfeb26f3b3d75d91a919147618240ab3947136"
+        }
+      ],
+      "display_server": "X11",
+      "engine": "4.6.3-stable (official)",
+      "first_render_ready_ms": 853.73,
+      "godot_static_memory_bytes": 36082003.0,
+      "godot_static_memory_peak_bytes": 41225634.0,
+      "max_frame_ms": 21.368,
+      "mean_frame_ms": 11.3523888888889,
+      "p50_frame_ms": 10.954,
+      "p95_frame_ms": 16.222,
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "rendering_method": "gl_compatibility",
+      "sample_fps": 88.0871867399422,
+      "sample_frames": 180,
+      "scene": "Parcel Truck driving River Bridges, rendered native scene with UI",
+      "scope": "Desktop Linux software renderer under virtual X11; excludes installation/import; not mobile performance certification",
+      "viewport": {
+        "height": 450,
+        "width": 800
+      },
+      "capture_command": "python scripts/capture_native.py --width 800 --height 450 --label desktop-phone-800x450",
+      "host_cpu": "AMD EPYC 9V74 80-Core Processor",
+      "host_os": "Linux-6.18.55-x86_64-with-glibc2.41",
+      "logical_cpus": 5,
+      "wall_seconds_full_capture_run": 25.134737833000145,
+      "child_max_rss_kib": 205864,
+      "child_max_rss_note": "Linux child process maximum RSS; display server still running at sample time",
+      "fixture_note": "Fresh isolated user-data directory. Later captures seed all course unlocks and custom layout; real game logic/rendering/input remains active. No production save is modified.",
+      "timing_note": "First-render timing starts in the capture SceneTree script and includes 30 settled frames; excludes engine process startup/import. Frame sample is 180 rendered frames after a 30-frame warmup, without ffmpeg capture running.",
+      "memory_note": "Godot allocator snapshot after captures and scene sampling. Allocator peak and process maximum RSS include screenshot allocations; these are not isolated production steady-state memory measurements.",
+      "mobile_devices": "None; these are desktop virtual-display captures, not Apple/Google device/store screenshots.",
+      "captured_at_utc": "2026-10-25T02:50:34Z",
+      "source_snapshot_sha256": {
+        "native/scripts/main.gd": "9260a0e06d417d3627d7e2776998a70d2fd2353394509c68c3b2cb13548d9bfa",
+        "native/scripts/world_view.gd": "0616603b17c4b1356ccbfafce05507dfc45faf7623a5faddc9ea5b8f8199171d",
+        "native/scripts/compact_layout.gd": "9d16dd7d8e99ac30a387f759a9f13effe51581c815d6d8a4ae7267ec033492b9"
+      },
+      "source_mtime_utc": {
+        "native/scripts/main.gd": "2026-10-25T02:49:42Z",
+        "native/scripts/world_view.gd": "2026-10-25T02:40:54Z",
+        "native/scripts/compact_layout.gd": "2026-10-25T02:46:34Z"
+      },
+      "source_snapshot_method": "Recorded after final capture; observed source modification timestamps predate the final capture startup. This records the stable source files, not an independently logged hash of each script loaded inside that engine process.",
+      "review_snapshot": "Final compact-layout and paint-heading correction review snapshot; exported binaries have separate hashes."
+    }
+  }
+}
