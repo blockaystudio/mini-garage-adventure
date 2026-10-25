@@ -13,7 +13,11 @@ const VEHICLES := {
 const TIRES := {
 	"road": {"label": "Road tires", "description": "MORE speed on smooth ground / LESS grip on hills", "radius": 21.0, "speed": 1.12, "grip": 0.74},
 	"trail": {"label": "Trail tires", "description": "BALANCED speed and hill grip / MEDIUM wheels", "radius": 28.0, "speed": 1.0, "grip": 1.1},
-	"giant": {"label": "Giant tires", "description": "MORE grip and softer bumps / LESS top speed", "radius": 36.0, "speed": 0.87, "grip": 1.48}
+	"giant": {"label": "Giant tires", "description": "MORE grip and softer bumps / LESS top speed", "radius": 36.0, "speed": 0.87, "grip": 1.48},
+	"mud": {"label": "Mud tires", "description": "MORE mud traction / LESS pavement speed", "radius": 30.0, "speed": 0.90, "grip": 1.45},
+	"sand": {"label": "Sand paddle tires", "description": "MORE soft-sand drive / LESS pavement corner grip", "radius": 32.0, "speed": 0.94, "grip": 1.35},
+	"rock": {"label": "Rock tires", "description": "MORE rock control / LESS top speed", "radius": 34.0, "speed": 0.84, "grip": 1.65},
+	"snow": {"label": "Snow tires", "description": "MORE snow grip / LESS dry-ground speed", "radius": 29.0, "speed": 0.88, "grip": 1.30}
 }
 
 const SUSPENSIONS := {

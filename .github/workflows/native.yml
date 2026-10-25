@@ -2,7 +2,7 @@ name: Native Godot checks
 on:
   pull_request:
   push:
-    branches: [main, 'codex/garage-production-*']
+    branches: [main, 'codex/garage-*']
   workflow_dispatch:
 permissions:
   contents: read

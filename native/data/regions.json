@@ -1,0 +1,189 @@
+{
+  "spec_version": 1,
+  "status": "runtime_region_gates_v1",
+  "coordinate_system": "conceptual_map_units_not_engine_meters",
+  "start_region": "garage_valley",
+  "regions": [
+    {
+      "id": "garage_valley",
+      "label": "Garage Valley",
+      "map_xy": [
+        190,
+        540
+      ],
+      "minimum_stars": 0,
+      "required_items": [],
+      "required_capabilities": {},
+      "activities": [
+        "tutorial",
+        "delivery",
+        "tire_test"
+      ],
+      "landmark": "workshop",
+      "free_refit": true
+    },
+    {
+      "id": "festival_circuit",
+      "label": "Festival Circuit",
+      "map_xy": [
+        770,
+        570
+      ],
+      "minimum_stars": 0,
+      "required_items": [],
+      "required_capabilities": {},
+      "activities": [
+        "equal_build_race",
+        "practice",
+        "stunt"
+      ],
+      "landmark": "podium",
+      "free_refit": true
+    },
+    {
+      "id": "moss_marsh",
+      "label": "Moss Marsh",
+      "map_xy": [
+        190,
+        330
+      ],
+      "minimum_stars": 2,
+      "required_items": [
+        "mud"
+      ],
+      "required_capabilities": {
+        "mud": 1
+      },
+      "activities": [
+        "trail",
+        "delivery",
+        "discovery"
+      ],
+      "landmark": "bridge_lookout",
+      "free_refit": true
+    },
+    {
+      "id": "sunspoke_dunes",
+      "label": "Sunspoke Dunes",
+      "map_xy": [
+        770,
+        375
+      ],
+      "minimum_stars": 5,
+      "required_items": [
+        "sand"
+      ],
+      "required_capabilities": {
+        "sand": 1
+      },
+      "activities": [
+        "hill_climb",
+        "slalom",
+        "discovery"
+      ],
+      "landmark": "flag_ridge",
+      "free_refit": true
+    },
+    {
+      "id": "redstone_canyon",
+      "label": "Redstone Canyon",
+      "map_xy": [
+        465,
+        235
+      ],
+      "minimum_stars": 9,
+      "required_items": [
+        "rock",
+        "long_travel"
+      ],
+      "required_capabilities": {
+        "rock": 1,
+        "clearance": 1
+      },
+      "activities": [
+        "precision_trail",
+        "delivery",
+        "discovery"
+      ],
+      "landmark": "canyon_overlook",
+      "free_refit": true
+    },
+    {
+      "id": "frostline_summit",
+      "label": "Frostline Summit",
+      "map_xy": [
+        800,
+        155
+      ],
+      "minimum_stars": 15,
+      "required_items": [
+        "snow",
+        "awd"
+      ],
+      "required_capabilities": {
+        "snow": 1,
+        "awd": 1
+      },
+      "activities": [
+        "ice_route",
+        "summit_delivery",
+        "discovery"
+      ],
+      "landmark": "summit_station",
+      "free_refit": true
+    }
+  ],
+  "routes": [
+    {
+      "a": "garage_valley",
+      "b": "festival_circuit",
+      "kind": "starter_service_road"
+    },
+    {
+      "a": "garage_valley",
+      "b": "moss_marsh",
+      "kind": "mud_route"
+    },
+    {
+      "a": "garage_valley",
+      "b": "sunspoke_dunes",
+      "kind": "sand_route"
+    },
+    {
+      "a": "moss_marsh",
+      "b": "redstone_canyon",
+      "kind": "rock_route"
+    },
+    {
+      "a": "sunspoke_dunes",
+      "b": "redstone_canyon",
+      "kind": "rock_route"
+    },
+    {
+      "a": "redstone_canyon",
+      "b": "frostline_summit",
+      "kind": "snow_route"
+    }
+  ],
+  "entry_rules": {
+    "all_requirements_required": true,
+    "items_must_be_owned_and_equipped_on_first_entry": true,
+    "capabilities_are_runtime_gate": true,
+    "required_item_ids_are_initial_catalog_mapping": true,
+    "permanent_after_first_entry": true,
+    "consumes_items": false,
+    "cost_gp": 0,
+    "online_authority": "server_accepted_profile",
+    "party_default": "common_accessible_route",
+    "free_recovery": true
+  },
+  "content_targets": {
+    "destinations": 6,
+    "authored_3d_activities_minimum": 18,
+    "discoveries_minimum": 18,
+    "retained_2d_courses": 12,
+    "retained_vehicles": 6,
+    "initial_shared_room_players": 4,
+    "later_room_players_subject_to_test": 8
+  }
+}

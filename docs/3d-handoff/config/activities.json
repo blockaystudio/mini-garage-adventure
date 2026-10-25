@@ -1,0 +1,12 @@
+{
+  "spec_version": 1,
+  "status": "example_activity_templates_not_18_finished_activities",
+  "templates": [
+    {"id": "valley_first_drive", "region": "garage_valley", "kind": "tutorial", "reward": "tutorial_grant", "objective": "Drive through the test yard and return to the workshop", "mastery_rewards": false},
+    {"id": "marsh_supply_loop", "region": "moss_marsh", "kind": "trail_3d_clear", "target_seconds": [90, 180], "objectives": ["finish", "reach_boardwalk_without_recovery", "take_the_mud_side_route"]},
+    {"id": "valley_parts_delivery", "region": "garage_valley", "kind": "delivery_clear", "target_seconds": [120, 240], "objectives": ["deliver", "park_inside_marked_bay", "use_the_bumpy_route"]},
+    {"id": "festival_equal_buggy", "region": "festival_circuit", "kind": "friends_race_finish", "target_seconds": [120, 240], "equal_build": true, "player_collisions": false, "ordered_checkpoints": true, "authoritative_server": true},
+    {"id": "private_track_preview", "region": null, "kind": "custom_track", "reward_gp": 0, "private": true}
+  ],
+  "validation_rules": ["ordered_checkpoints", "no_teleport_finish", "single_run_id", "unique_objective_claims", "activity_duration_rewards_balanced_from_measured_runs", "no_idle_time_payout"]
+}

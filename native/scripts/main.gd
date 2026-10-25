@@ -9,6 +9,13 @@ const Router = preload("res://scripts/input_router.gd")
 const World = preload("res://scripts/world_view.gd")
 const Sound = preload("res://scripts/sound.gd")
 const Compact = preload("res://scripts/compact_layout.gd")
+const Economy = preload("res://scripts/progression/economy.gd")
+const Progression = preload("res://scripts/progression/profile_progression.gd")
+const Catalog = preload("res://scripts/progression/catalog.gd")
+const UpgradeScreen = preload("res://scripts/ui/upgrade_screen.gd")
+var economy
+var active_run_id := 0
+var selected_upgrade := "mud"
 var compact_mode := false
 const NAVY = Color("142c40")
 const CREAM = Color("fff5dc")
@@ -39,6 +46,7 @@ var transition_time := 0.0
 func _ready() -> void:
 	compact_mode = OS.has_feature("mobile") or OS.has_feature("web_ios") or OS.has_feature("web_android") or DisplayServer.window_get_size().x < 1100
 	state = store.load_save()
+	economy = Economy.new(store)
 	add_child(world)
 	add_child(sound)
 	add_child(router)
@@ -171,7 +179,7 @@ func _background() -> void:
 func _header(section: String, back: Callable = Callable()) -> void:
 	_panel(24,20,1232,100,Color("142c40ed"))
 	_label("MINI GARAGE",48,30,380,42,30,TEAL)
-	_label("ADVENTURE  /  " + section.to_upper(),49,74,700,26,17)
+	_label("%d GP  /  %d stars  /  %s" % [int(state.get("gp",0)),Progression.stars_count(state),section.to_upper()],49,74,850,32,17)
 	if back.is_valid():
 		_button("Back",1100,42,132,back)
 	else:
@@ -194,6 +202,15 @@ func _sync_settings() -> void:
 		ui.modulate.a = 1.0
 
 func _build_choice(key: String, value: String) -> void:
+	if key == "vehicle" and value not in Progression.available_vehicles(state):
+		return
+	if key == "tires" and not Progression.can_equip(state,value):
+		return
+	if key in ["tires","suspension","paint"]:
+		if not economy.equip(value):
+			status = economy.warning
+			return
+		state = store.data.duplicate(true)
 	state.build[key] = value
 	_save("Build saved. Try the same course to feel the change.")
 	sound.play_cue("build")
@@ -205,20 +222,20 @@ func show_garage() -> void:
 	_header("Build your ride")
 	_panel(30,138,600,550, Color("142c40f2"))
 	_label("Little ride. Big possibilities.",52,151,550,40,28)
-	_label("01  VEHICLE · number = medals to unlock",52,202,540,30,17,TEAL)
+	_label("01  VEHICLE · number = mastery stars",52,202,540,30,17,TEAL)
 	var n := 0
 	for id in Content.VEHICLES:
 		var item: Dictionary = Content.VEHICLES[id]
-		var available: bool = state.completed.size() >= int(item.unlock)
-		var title: String = item.label if available else item.label + " · " + str(item.unlock)
+		var available: bool = id in Progression.available_vehicles(state)
+		var title: String = item.label if available else item.label + " · " + str(int(Catalog.VEHICLE_STARS[id]))
 		var button = _button(title,52+(n%3)*184,240+floori(n/3.0)*64,176,func(): _build_choice("vehicle",id),state.build.vehicle == id)
 		button.disabled = not available
 		button.add_theme_font_size_override("font_size",15 if not available else 17)
-		button.tooltip_text = item.description + (" Unlock after " + str(item.unlock) + " course medals." if not available else "")
+		button.tooltip_text = item.description + (" Unlock after " + str(int(Catalog.VEHICLE_STARS[id])) + " mastery stars." if not available else "")
 		n += 1
 	_label("02  TIRES",52,376,170,26,17,TEAL)
 	n = 0
-	for id in Content.TIRES:
+	for id in ["road","trail","giant"]:
 		_button(Content.TIRES[id].label,52+n*184,411,176,func(): _build_choice("tires",id),state.build.tires == id)
 		n += 1
 	_label("03  SUSPENSION",52,480,260,26,17,TEAL)
@@ -243,7 +260,8 @@ func show_garage() -> void:
 	_label(vehicle.description,690,210,510,60,20,TEAL)
 	_panel(667,453,563,121,Color("142c40ef"))
 	_label("FEEL THE DIFFERENCE",688,463,510,25,16,TEAL)
-	_label(Content.TIRES[state.build.tires].description + "\n" + Content.SUSPENSIONS[state.build.suspension].description,688,492,510,72,19)
+	_label(Content.TIRES[state.build.tires].description + "\n" + Content.SUSPENSIONS[state.build.suspension].description,688,492,306,72,17)
+	_button("Upgrades",1010,483,194,show_upgrades,false,72)
 	_button("Choose a course  →",667,597,350,show_courses,true,72)
 	_button("Track lab",1030,597,200,show_editor,false,72)
 	world.queue_redraw()
@@ -254,7 +272,9 @@ func show_courses() -> void:
 	_background()
 	_header("Pick an adventure",show_garage)
 	_label("Your next great little adventure",44,137,900,45,32)
-	_label(str(state.completed.size()) + " / 12 course medals · new rides unlock as you explore",46,182,1100,30,20,TEAL)
+	_label(str(state.completed.size()) + " / 12 courses · finish earns 30 GP, first clear +50, new completion star +25",46,182,830,34,18,TEAL)
+	if not state.claims.get("tutorial:first_drive_v1",false):
+		_button("Intro drive · 150 GP",920,164,310,_start_intro_drive)
 	for i in range(Content.COURSES.size()):
 		var item: Dictionary = Content.COURSES[i]
 		var x := 44+(i%4)*302
@@ -274,6 +294,9 @@ func show_courses() -> void:
 func start_course(item: Dictionary, preview: bool = false) -> void:
 	course = item.duplicate(true)
 	editor_preview = preview
+	var kind := "custom_track" if preview else str(item.get("reward_kind","short_2d_clear"))
+	active_run_id = economy.begin_run(str(course.id),kind)
+	state = store.data.duplicate(true)
 	car = Model.initial(state.build, course.pieces)
 	run_finished = false
 	paused = false
@@ -322,6 +345,8 @@ func _physics_process(delta: float) -> void:
 		return
 	car = Model.step(car,delta,router.strength("throttle") > 0,router.strength("brake") > 0,router.strength("lean_right")-router.strength("lean_left"),state.build,course.pieces)
 	world.car = car
+	if active_run_id > 0:
+		economy.observe_run(active_run_id,clampf((float(car.x)-80.0)/(Tracks.length_for(course.pieces)-160.0),0,1),float(car.elapsed))
 	if is_instance_valid(clock_label):
 		clock_label.text = "%.1f s  ·  %s" % [car.elapsed,Content.VEHICLES[state.build.vehicle].label]
 		if course.has("challenge"):
@@ -373,21 +398,23 @@ func _modal(title: String, body: String) -> void:
 	_label(body,416,290,448,80,21,TEAL)
 
 func _finish() -> void:
+	if run_finished:
+		return
 	run_finished = true
 	router.clear()
 	router.active = false
 	var message := "Your track. Your adventure! Keep building, or try it again."
 	if not editor_preview:
-		var new_medal: bool = course.id not in state.completed
-		if new_medal:
-			state.completed.append(course.id)
-		var previous: float = float(state.best.get(course.id, 1000000))
-		state.best[course.id] = minf(previous,car.elapsed)
-		message = "A course medal! " if new_medal else "Another great ride! "
-		message += "%.1f seconds · %d of 12 explored." % [car.elapsed,state.completed.size()]
-		if car.elapsed <= float(course.get("challenge",0)):
-			message += " Smooth pace!"
-		_save()
+		var reward: Dictionary = economy.finish_run(active_run_id,["completion"])
+		state = store.data.duplicate(true)
+		if not reward.is_empty():
+			var reasons: Array[String] = []
+			for component in reward.get("components",[]):
+				reasons.append(str(component.label)+" +"+str(component.gp))
+			message = "+%d GP · %d GP saved.\n%s" % [int(reward.earned),int(state.gp)," / ".join(reasons)]
+		else:
+			message = economy.warning if not economy.warning.is_empty() else "Reward is already saved, or this run was not eligible."
+
 	sound.play_cue("finish")
 	_modal("Adventure complete!",message)
 	_button("Ride again",410,386,220,_restart,true)
@@ -651,3 +678,38 @@ func _invoke_ui_action(callback: Callable) -> void:
 		callback.call_deferred()
 	else:
 		callback.call()
+
+func show_upgrades() -> void:
+	state = store.data.duplicate(true)
+	UpgradeScreen.render(self)
+
+func _purchase_upgrade(id: String) -> void:
+	if economy.purchase(id,"buy_"+id):
+		state = store.data.duplicate(true)
+		status = "Owned! Equip it for free, then test the difference."
+		sound.play_cue("build")
+	else:
+		status = economy.warning
+	show_upgrades()
+
+func _equip_upgrade(id: String) -> void:
+	if economy.equip(id):
+		state = store.data.duplicate(true)
+		status = "Fitted for free. Ready for a new adventure."
+		sound.play_cue("build")
+	else:
+		status = economy.warning
+	show_upgrades()
+
+func _pin_upgrade(id: String) -> void:
+	if economy.pin_goal(id):
+		state = store.data.duplicate(true)
+		status = "Goal pinned. You keep every point until you choose to spend it."
+	show_upgrades()
+
+func _start_intro_drive() -> void:
+	var intro: Dictionary = Content.COURSES[0].duplicate(true)
+	intro.id = "valley_first_drive"
+	intro.label = "Introductory garage drive"
+	intro.reward_kind = "tutorial"
+	start_course(intro)

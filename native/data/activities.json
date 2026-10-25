@@ -1,0 +1,1338 @@
+{
+  "version": 1,
+  "coordinate_system": "Godot meters, global region centers, Y up and forward -Z",
+  "activities": [
+    {
+      "id": "valley_first_drive",
+      "region": "garage_valley",
+      "label": "First little adventure",
+      "kind": "tutorial",
+      "mode": "tutorial",
+      "checkpoints": [
+        [
+          0,
+          0.12,
+          65
+        ],
+        [
+          0,
+          0.12,
+          34
+        ],
+        [
+          -26,
+          0.12,
+          28
+        ],
+        [
+          -28,
+          0.12,
+          -30
+        ],
+        [
+          0,
+          0.12,
+          -48
+        ],
+        [
+          28,
+          0.12,
+          -15
+        ],
+        [
+          30,
+          0.12,
+          35
+        ],
+        [
+          0,
+          0.12,
+          72
+        ]
+      ],
+      "description": "Follow the teal arches around the workshop yard, then return home.",
+      "skill_description": "Learn the route at your own pace.",
+      "target_seconds": [
+        30,
+        90
+      ],
+      "stop_required": false,
+      "skill_rule": "no_recovery",
+      "route_capability": "trail"
+    },
+    {
+      "id": "valley_parts_delivery",
+      "region": "garage_valley",
+      "label": "Workshop parts delivery",
+      "kind": "delivery_clear",
+      "mode": "delivery",
+      "checkpoints": [
+        [
+          0,
+          0.12,
+          65
+        ],
+        [
+          -46,
+          0.12,
+          60
+        ],
+        [
+          -75,
+          0.12,
+          15
+        ],
+        [
+          -72,
+          0.12,
+          -66
+        ],
+        [
+          25,
+          0.12,
+          -77
+        ],
+        [
+          70,
+          0.12,
+          -40
+        ],
+        [
+          72,
+          0.12,
+          50
+        ],
+        [
+          40,
+          0.12,
+          72
+        ]
+      ],
+      "description": "Collect the marked parts crate and deliver it to the orchard loading bay. Stop gently in the striped bay.",
+      "skill_description": "Deliver without using recovery.",
+      "target_seconds": [
+        120,
+        240
+      ],
+      "stop_required": true,
+      "skill_rule": "no_recovery",
+      "route_capability": "trail"
+    },
+    {
+      "id": "valley_tire_trial",
+      "region": "garage_valley",
+      "label": "The tire test lane",
+      "kind": "trail_3d_clear",
+      "mode": "surface_test",
+      "checkpoints": [
+        [
+          0,
+          0.12,
+          65
+        ],
+        [
+          0,
+          0.12,
+          28
+        ],
+        [
+          0,
+          3.75636,
+          5
+        ],
+        [
+          0,
+          3.12,
+          -24
+        ],
+        [
+          0,
+          0.12,
+          -58
+        ],
+        [
+          65,
+          0.12,
+          -70
+        ],
+        [
+          76,
+          0.12,
+          -10
+        ],
+        [
+          55,
+          0.12,
+          12
+        ],
+        [
+          34,
+          0.12,
+          16
+        ],
+        [
+          26,
+          0.12,
+          40
+        ],
+        [
+          0,
+          0.12,
+          73
+        ]
+      ],
+      "description": "Climb the raised test road, then try the brown mud lane beside it. Compare tires on the same route.",
+      "skill_description": "Follow the test lane without recovery.",
+      "target_seconds": [
+        90,
+        180
+      ],
+      "stop_required": false,
+      "skill_rule": "no_recovery",
+      "route_capability": "mud"
+    },
+    {
+      "id": "festival_clockwork",
+      "region": "festival_circuit",
+      "label": "Festival clockwork loop",
+      "kind": "trail_3d_clear",
+      "mode": "time_trial",
+      "checkpoints": [
+        [
+          240,
+          0.12,
+          66
+        ],
+        [
+          316,
+          0.12,
+          65
+        ],
+        [
+          324,
+          0.12,
+          -42
+        ],
+        [
+          290,
+          0.12,
+          -80
+        ],
+        [
+          179,
+          0.12,
+          -82
+        ],
+        [
+          153,
+          0.12,
+          -20
+        ],
+        [
+          165,
+          0.12,
+          66
+        ],
+        [
+          240,
+          0.12,
+          66
+        ]
+      ],
+      "description": "Drive the wide festival loop through every numbered gate. Time is optional.",
+      "skill_description": "A clean loop with no recovery.",
+      "target_seconds": [
+        90,
+        180
+      ],
+      "stop_required": false,
+      "skill_rule": "no_recovery",
+      "route_capability": "trail"
+    },
+    {
+      "id": "festival_parcel_pit",
+      "region": "festival_circuit",
+      "label": "Pit crew parcel",
+      "kind": "delivery_clear",
+      "mode": "delivery",
+      "checkpoints": [
+        [
+          240,
+          0.12,
+          65
+        ],
+        [
+          200,
+          0.12,
+          50
+        ],
+        [
+          160,
+          0.12,
+          -20
+        ],
+        [
+          200,
+          0.12,
+          -60
+        ],
+        [
+          258,
+          0.12,
+          -18
+        ],
+        [
+          308,
+          0.12,
+          -25
+        ],
+        [
+          313,
+          0.12,
+          55
+        ],
+        [
+          280,
+          0.12,
+          74
+        ]
+      ],
+      "description": "Carry a spare wheel past the podium and into the pit box. Brake before parking.",
+      "skill_description": "Park your parcel without recovery.",
+      "target_seconds": [
+        120,
+        240
+      ],
+      "stop_required": true,
+      "skill_rule": "no_recovery",
+      "route_capability": "trail"
+    },
+    {
+      "id": "festival_slalom",
+      "region": "festival_circuit",
+      "label": "Ribbon slalom",
+      "kind": "trail_3d_clear",
+      "mode": "slalom",
+      "checkpoints": [
+        [
+          240,
+          0.12,
+          65
+        ],
+        [
+          226,
+          0.12,
+          43
+        ],
+        [
+          254,
+          0.12,
+          21
+        ],
+        [
+          226,
+          0.12,
+          -1
+        ],
+        [
+          254,
+          0.12,
+          -23
+        ],
+        [
+          226,
+          0.12,
+          -45
+        ],
+        [
+          254,
+          0.12,
+          -67
+        ],
+        [
+          295,
+          0.12,
+          -80
+        ],
+        [
+          315,
+          0.12,
+          20
+        ],
+        [
+          240,
+          0.12,
+          66
+        ]
+      ],
+      "description": "Weave between alternating ribbon gates, then circle the grandstand.",
+      "skill_description": "Visit the slalom gates in order without recovery.",
+      "target_seconds": [
+        90,
+        180
+      ],
+      "stop_required": false,
+      "skill_rule": "no_recovery",
+      "route_capability": "trail"
+    },
+    {
+      "id": "marsh_supply_loop",
+      "region": "moss_marsh",
+      "label": "Moss Marsh supply trail",
+      "kind": "trail_3d_clear",
+      "mode": "trail",
+      "checkpoints": [
+        [
+          -240,
+          0.12,
+          70
+        ],
+        [
+          -175,
+          0.12,
+          63
+        ],
+        [
+          -163,
+          0.12,
+          10
+        ],
+        [
+          -190,
+          0.12,
+          -45
+        ],
+        [
+          -228,
+          0.12,
+          -76
+        ],
+        [
+          -292,
+          0.12,
+          -70
+        ],
+        [
+          -314,
+          0.12,
+          -15
+        ],
+        [
+          -275,
+          0.21524,
+          20
+        ],
+        [
+          -228,
+          0.12,
+          10
+        ],
+        [
+          -195,
+          0.12,
+          40
+        ],
+        [
+          -240,
+          0.12,
+          74
+        ]
+      ],
+      "description": "Follow the reed-lined trail. The short brown crossing is deep mud; the long boardwalk is a dry alternative.",
+      "skill_description": "Cross without recovery.",
+      "target_seconds": [
+        90,
+        180
+      ],
+      "stop_required": false,
+      "skill_rule": "no_recovery",
+      "route_capability": "mud"
+    },
+    {
+      "id": "marsh_reed_delivery",
+      "region": "moss_marsh",
+      "label": "Reed keeper delivery",
+      "kind": "delivery_clear",
+      "mode": "delivery",
+      "checkpoints": [
+        [
+          -240,
+          0.12,
+          70
+        ],
+        [
+          -295,
+          0.12,
+          58
+        ],
+        [
+          -317,
+          0.12,
+          14
+        ],
+        [
+          -305,
+          0.12,
+          -62
+        ],
+        [
+          -252,
+          0.12,
+          -77
+        ],
+        [
+          -195,
+          0.12,
+          -61
+        ],
+        [
+          -168,
+          0.12,
+          -8
+        ],
+        [
+          -193,
+          0.12,
+          35
+        ]
+      ],
+      "description": "Bring bridge bolts to the reed keeper. The striped platform is your loading bay.",
+      "skill_description": "Deliver bridge bolts without recovery.",
+      "target_seconds": [
+        120,
+        240
+      ],
+      "stop_required": true,
+      "skill_rule": "no_recovery",
+      "route_capability": "mud"
+    },
+    {
+      "id": "marsh_boardwalk",
+      "region": "moss_marsh",
+      "label": "Boardwalk balance",
+      "kind": "trail_3d_clear",
+      "mode": "precision",
+      "checkpoints": [
+        [
+          -240,
+          0.12,
+          65
+        ],
+        [
+          -260,
+          0.12,
+          30
+        ],
+        [
+          -278,
+          2.12,
+          0
+        ],
+        [
+          -278,
+          2.12,
+          -32
+        ],
+        [
+          -250,
+          0.12,
+          -55
+        ],
+        [
+          -218,
+          0.12,
+          -32
+        ],
+        [
+          -205,
+          0.12,
+          0
+        ],
+        [
+          -218,
+          0.12,
+          30
+        ],
+        [
+          -240,
+          0.12,
+          70
+        ]
+      ],
+      "description": "Take the raised timber route slowly. Wide shoulders and free recovery make this a forgiving balance challenge.",
+      "skill_description": "Stay on the route without recovery.",
+      "target_seconds": [
+        90,
+        180
+      ],
+      "stop_required": false,
+      "skill_rule": "no_recovery",
+      "route_capability": "mud"
+    },
+    {
+      "id": "dunes_ridge_climb",
+      "region": "sunspoke_dunes",
+      "label": "Flag ridge climb",
+      "kind": "trail_3d_clear",
+      "mode": "hill_climb",
+      "checkpoints": [
+        [
+          0,
+          0.12,
+          -175
+        ],
+        [
+          0,
+          0.12,
+          -206
+        ],
+        [
+          0,
+          5.8075,
+          -234
+        ],
+        [
+          0,
+          7.12,
+          -262
+        ],
+        [
+          0,
+          0.77625,
+          -295
+        ],
+        [
+          53,
+          0.12,
+          -318
+        ],
+        [
+          78,
+          0.12,
+          -270
+        ],
+        [
+          70,
+          0.12,
+          -185
+        ],
+        [
+          0,
+          0.12,
+          -168
+        ]
+      ],
+      "description": "Climb the long sand ridge and follow the flags around its far side.",
+      "skill_description": "Climb and return without recovery.",
+      "target_seconds": [
+        90,
+        180
+      ],
+      "stop_required": false,
+      "skill_rule": "no_recovery",
+      "route_capability": "sand"
+    },
+    {
+      "id": "dunes_water_delivery",
+      "region": "sunspoke_dunes",
+      "label": "Oasis water delivery",
+      "kind": "delivery_clear",
+      "mode": "delivery",
+      "checkpoints": [
+        [
+          0,
+          0.12,
+          -175
+        ],
+        [
+          -64,
+          0.12,
+          -192
+        ],
+        [
+          -77,
+          0.12,
+          -268
+        ],
+        [
+          -30,
+          0.12,
+          -316
+        ],
+        [
+          40,
+          0.12,
+          -310
+        ],
+        [
+          76,
+          0.12,
+          -250
+        ],
+        [
+          45,
+          0.12,
+          -191
+        ]
+      ],
+      "description": "Take a water crate around the dune bowls to the shaded oasis bay.",
+      "skill_description": "Deliver without recovery.",
+      "target_seconds": [
+        120,
+        240
+      ],
+      "stop_required": true,
+      "skill_rule": "no_recovery",
+      "route_capability": "sand"
+    },
+    {
+      "id": "dunes_arch_slalom",
+      "region": "sunspoke_dunes",
+      "label": "Sun arch slalom",
+      "kind": "trail_3d_clear",
+      "mode": "slalom",
+      "checkpoints": [
+        [
+          0,
+          0.12,
+          -173
+        ],
+        [
+          -23,
+          0.12,
+          -198
+        ],
+        [
+          23,
+          0.12,
+          -223
+        ],
+        [
+          -23,
+          0.12,
+          -248
+        ],
+        [
+          23,
+          0.12,
+          -273
+        ],
+        [
+          -23,
+          0.12,
+          -298
+        ],
+        [
+          36,
+          0.12,
+          -319
+        ],
+        [
+          76,
+          0.12,
+          -260
+        ],
+        [
+          48,
+          0.12,
+          -189
+        ],
+        [
+          0,
+          0.12,
+          -170
+        ]
+      ],
+      "description": "Thread the broad sun arches from left to right before returning along the service trail.",
+      "skill_description": "Pass every arch without recovery.",
+      "target_seconds": [
+        90,
+        180
+      ],
+      "stop_required": false,
+      "skill_rule": "no_recovery",
+      "route_capability": "sand"
+    },
+    {
+      "id": "canyon_precision",
+      "region": "redstone_canyon",
+      "label": "Canyon ledge trail",
+      "kind": "trail_3d_clear",
+      "mode": "precision",
+      "checkpoints": [
+        [
+          -240,
+          0.12,
+          -172
+        ],
+        [
+          -263,
+          0.12,
+          -206
+        ],
+        [
+          -270,
+          0.12,
+          -240
+        ],
+        [
+          -270,
+          0.12,
+          -270
+        ],
+        [
+          -240,
+          0.12,
+          -303
+        ],
+        [
+          -205,
+          0.12,
+          -270
+        ],
+        [
+          -204,
+          0.12,
+          -225
+        ],
+        [
+          -175,
+          0.12,
+          -189
+        ],
+        [
+          -240,
+          0.12,
+          -170
+        ]
+      ],
+      "description": "Follow the wide ledge around the sandstone towers. Slow steering helps on the raised turn.",
+      "skill_description": "Reach the ledge finish without recovery.",
+      "target_seconds": [
+        90,
+        180
+      ],
+      "stop_required": false,
+      "skill_rule": "no_recovery",
+      "route_capability": "rock"
+    },
+    {
+      "id": "canyon_bridge_delivery",
+      "region": "redstone_canyon",
+      "label": "Bridge builder delivery",
+      "kind": "delivery_clear",
+      "mode": "delivery",
+      "checkpoints": [
+        [
+          -240,
+          0.12,
+          -173
+        ],
+        [
+          -175,
+          0.12,
+          -182
+        ],
+        [
+          -161,
+          0.12,
+          -240
+        ],
+        [
+          -192,
+          0.12,
+          -312
+        ],
+        [
+          -268,
+          0.12,
+          -320
+        ],
+        [
+          -315,
+          0.12,
+          -272
+        ],
+        [
+          -295,
+          0.12,
+          -204
+        ]
+      ],
+      "description": "Carry tools around the towers to the bridge-builder platform. Stop inside its painted bay.",
+      "skill_description": "Deliver without recovery.",
+      "target_seconds": [
+        120,
+        240
+      ],
+      "stop_required": true,
+      "skill_rule": "no_recovery",
+      "route_capability": "rock"
+    },
+    {
+      "id": "canyon_rock_route",
+      "region": "redstone_canyon",
+      "label": "Rock step circuit",
+      "kind": "trail_3d_clear",
+      "mode": "hill_climb",
+      "checkpoints": [
+        [
+          -240,
+          0.12,
+          -173
+        ],
+        [
+          -240,
+          0.12,
+          -207
+        ],
+        [
+          -240,
+          6.12,
+          -235
+        ],
+        [
+          -240,
+          5.90571,
+          -263
+        ],
+        [
+          -240,
+          0.12,
+          -296
+        ],
+        [
+          -292,
+          0.12,
+          -318
+        ],
+        [
+          -319,
+          0.12,
+          -255
+        ],
+        [
+          -310,
+          0.12,
+          -189
+        ],
+        [
+          -240,
+          0.12,
+          -170
+        ]
+      ],
+      "description": "Crawl over the broad rock rise, then follow the ochre markers home.",
+      "skill_description": "Use the rock route without recovery.",
+      "target_seconds": [
+        90,
+        180
+      ],
+      "stop_required": false,
+      "skill_rule": "no_recovery",
+      "route_capability": "rock"
+    },
+    {
+      "id": "summit_ice_route",
+      "region": "frostline_summit",
+      "label": "Frozen lake loop",
+      "kind": "trail_3d_clear",
+      "mode": "ice_route",
+      "checkpoints": [
+        [
+          -240,
+          0.12,
+          -412
+        ],
+        [
+          -184,
+          0.12,
+          -430
+        ],
+        [
+          -163,
+          0.12,
+          -475
+        ],
+        [
+          -185,
+          0.12,
+          -536
+        ],
+        [
+          -240,
+          0.12,
+          -560
+        ],
+        [
+          -297,
+          0.12,
+          -536
+        ],
+        [
+          -318,
+          0.12,
+          -480
+        ],
+        [
+          -289,
+          0.12,
+          -430
+        ],
+        [
+          -240,
+          0.12,
+          -410
+        ]
+      ],
+      "description": "A long curve across the frozen lake rewards gentle braking and snow-tire grip.",
+      "skill_description": "Complete the loop without recovery.",
+      "target_seconds": [
+        90,
+        180
+      ],
+      "stop_required": false,
+      "skill_rule": "no_recovery",
+      "route_capability": "snow"
+    },
+    {
+      "id": "summit_supply_delivery",
+      "region": "frostline_summit",
+      "label": "Summit station delivery",
+      "kind": "delivery_clear",
+      "mode": "delivery",
+      "checkpoints": [
+        [
+          -240,
+          0.12,
+          -413
+        ],
+        [
+          -302,
+          0.12,
+          -425
+        ],
+        [
+          -318,
+          0.12,
+          -490
+        ],
+        [
+          -285,
+          0.12,
+          -550
+        ],
+        [
+          -215,
+          0.12,
+          -558
+        ],
+        [
+          -168,
+          0.12,
+          -508
+        ],
+        [
+          -191,
+          0.12,
+          -440
+        ]
+      ],
+      "description": "Take a warm supply crate to the summit station. Brake early on the icy approach.",
+      "skill_description": "Deliver supplies without recovery.",
+      "target_seconds": [
+        120,
+        240
+      ],
+      "stop_required": true,
+      "skill_rule": "no_recovery",
+      "route_capability": "snow"
+    },
+    {
+      "id": "summit_switchback",
+      "region": "frostline_summit",
+      "label": "Snowcap switchback",
+      "kind": "trail_3d_clear",
+      "mode": "switchback",
+      "checkpoints": [
+        [
+          -240,
+          0.12,
+          -412
+        ],
+        [
+          -269,
+          0.12,
+          -437
+        ],
+        [
+          -215,
+          0.12,
+          -460
+        ],
+        [
+          -265,
+          0.12,
+          -484
+        ],
+        [
+          -215,
+          0.12,
+          -509
+        ],
+        [
+          -240,
+          0.12,
+          -540
+        ],
+        [
+          -182,
+          0.12,
+          -558
+        ],
+        [
+          -162,
+          0.12,
+          -505
+        ],
+        [
+          -173,
+          0.12,
+          -430
+        ],
+        [
+          -240,
+          0.12,
+          -410
+        ]
+      ],
+      "description": "Climb the broad zigzag snow road and finish by the orange station flags.",
+      "skill_description": "Reach the station loop without recovery.",
+      "target_seconds": [
+        90,
+        180
+      ],
+      "stop_required": false,
+      "skill_rule": "no_recovery",
+      "route_capability": "snow"
+    }
+  ],
+  "discoveries": [
+    {
+      "id": "valley_workshop_bell",
+      "region": "garage_valley",
+      "label": "Workshop bell",
+      "position": [
+        -55,
+        0.12,
+        64
+      ],
+      "description": "The workshop bell beside the original refit garage.",
+      "mesh_kind": "workshop"
+    },
+    {
+      "id": "valley_waterwheel",
+      "region": "garage_valley",
+      "label": "Copper waterwheel",
+      "position": [
+        -76,
+        0.12,
+        -68
+      ],
+      "description": "A little waterwheel keeps the orchard workshop moving.",
+      "mesh_kind": "waterwheel"
+    },
+    {
+      "id": "valley_antenna",
+      "region": "garage_valley",
+      "label": "Hill antenna",
+      "position": [
+        72,
+        0.12,
+        -68
+      ],
+      "description": "A striped trail antenna marks the far valley turn.",
+      "mesh_kind": "antenna"
+    },
+    {
+      "id": "festival_podium",
+      "region": "festival_circuit",
+      "label": "Festival podium",
+      "position": [
+        187,
+        0.12,
+        64
+      ],
+      "description": "Three broad podium steps beside the practice circuit.",
+      "mesh_kind": "podium"
+    },
+    {
+      "id": "festival_grandstand",
+      "region": "festival_circuit",
+      "label": "Ribbon grandstand",
+      "position": [
+        313,
+        0.12,
+        -64
+      ],
+      "description": "The shaded ribbon stand overlooks the slalom.",
+      "mesh_kind": "grandstand"
+    },
+    {
+      "id": "festival_trophy",
+      "region": "festival_circuit",
+      "label": "Workshop trophy",
+      "position": [
+        165,
+        0.12,
+        -72
+      ],
+      "description": "A giant hand-made gear trophy celebrates friendly finishes.",
+      "mesh_kind": "trophy"
+    },
+    {
+      "id": "marsh_lookout",
+      "region": "moss_marsh",
+      "label": "Bridge lookout",
+      "position": [
+        -293,
+        0.12,
+        -62
+      ],
+      "description": "A timber lookout above the reed beds.",
+      "mesh_kind": "lookout"
+    },
+    {
+      "id": "marsh_pump",
+      "region": "moss_marsh",
+      "label": "Reed keeper pump",
+      "position": [
+        -171,
+        0.12,
+        54
+      ],
+      "description": "A copper pump brings water to the reed keeper.",
+      "mesh_kind": "pump"
+    },
+    {
+      "id": "marsh_firefly",
+      "region": "moss_marsh",
+      "label": "Firefly island",
+      "position": [
+        -168,
+        0.12,
+        -65
+      ],
+      "description": "A dry little island with three glowing lanterns.",
+      "mesh_kind": "lanterns"
+    },
+    {
+      "id": "dunes_flag_ridge",
+      "region": "sunspoke_dunes",
+      "label": "Flag ridge",
+      "position": [
+        0,
+        0.12,
+        -317
+      ],
+      "description": "Bright flags show the crest of the sand ridge.",
+      "mesh_kind": "ridge_flags"
+    },
+    {
+      "id": "dunes_oasis",
+      "region": "sunspoke_dunes",
+      "label": "Oasis shade",
+      "position": [
+        -76,
+        0.12,
+        -300
+      ],
+      "description": "A sheltered oasis with a water tank and palms.",
+      "mesh_kind": "oasis"
+    },
+    {
+      "id": "dunes_sun_arch",
+      "region": "sunspoke_dunes",
+      "label": "Sun arch",
+      "position": [
+        76,
+        0.12,
+        -185
+      ],
+      "description": "A tall original sun arch frames the way home.",
+      "mesh_kind": "sun_arch"
+    },
+    {
+      "id": "canyon_overlook",
+      "region": "redstone_canyon",
+      "label": "Canyon overlook",
+      "position": [
+        -312,
+        0.12,
+        -307
+      ],
+      "description": "A fenced overlook among the redstone towers.",
+      "mesh_kind": "overlook"
+    },
+    {
+      "id": "canyon_crane",
+      "region": "redstone_canyon",
+      "label": "Bridge crane",
+      "position": [
+        -168,
+        0.12,
+        -304
+      ],
+      "description": "A little tool crane helps the bridge builders.",
+      "mesh_kind": "crane"
+    },
+    {
+      "id": "canyon_balanced_rock",
+      "region": "redstone_canyon",
+      "label": "Balanced rock",
+      "position": [
+        -317,
+        0.12,
+        -186
+      ],
+      "description": "Three rounded sandstone blocks balance beside the road.",
+      "mesh_kind": "balanced_rock"
+    },
+    {
+      "id": "summit_station",
+      "region": "frostline_summit",
+      "label": "Summit station",
+      "position": [
+        -301,
+        0.12,
+        -546
+      ],
+      "description": "Warm windows mark the high trail station.",
+      "mesh_kind": "station"
+    },
+    {
+      "id": "summit_ice_arch",
+      "region": "frostline_summit",
+      "label": "Ice arch",
+      "position": [
+        -167,
+        0.12,
+        -542
+      ],
+      "description": "A pale ice arch stands at the edge of the lake.",
+      "mesh_kind": "ice_arch"
+    },
+    {
+      "id": "summit_weather",
+      "region": "frostline_summit",
+      "label": "Weather mast",
+      "position": [
+        -169,
+        0.12,
+        -423
+      ],
+      "description": "A striped weather mast watches the snowy trail.",
+      "mesh_kind": "weather_mast"
+    }
+  ]
+}
