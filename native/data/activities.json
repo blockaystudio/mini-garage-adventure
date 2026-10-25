@@ -612,7 +612,7 @@
           -270
         ],
         [
-          70,
+          76,
           0.12,
           -185
         ],
@@ -704,17 +704,17 @@
         ],
         [
           23,
-          0.12,
+          0.94031,
           -223
         ],
         [
           -23,
-          0.12,
+          1.87,
           -248
         ],
         [
           23,
-          0.12,
+          1.48719,
           -273
         ],
         [
@@ -1125,10 +1125,20 @@
       "position": [
         -55,
         0.12,
-        64
+        55
       ],
       "description": "The workshop bell beside the original refit garage.",
-      "mesh_kind": "workshop"
+      "mesh_kind": "workshop",
+      "trigger_position": [
+        -55,
+        0.12,
+        64
+      ],
+      "prop_position": [
+        -55,
+        0.12,
+        55
+      ]
     },
     {
       "id": "valley_waterwheel",
@@ -1137,10 +1147,20 @@
       "position": [
         -76,
         0.12,
-        -68
+        -77
       ],
       "description": "A little waterwheel keeps the orchard workshop moving.",
-      "mesh_kind": "waterwheel"
+      "mesh_kind": "waterwheel",
+      "trigger_position": [
+        -76,
+        0.12,
+        -68
+      ],
+      "prop_position": [
+        -76,
+        0.12,
+        -77
+      ]
     },
     {
       "id": "valley_antenna",
@@ -1149,10 +1169,20 @@
       "position": [
         72,
         0.12,
-        -68
+        -77
       ],
       "description": "A striped trail antenna marks the far valley turn.",
-      "mesh_kind": "antenna"
+      "mesh_kind": "antenna",
+      "trigger_position": [
+        72,
+        0.12,
+        -68
+      ],
+      "prop_position": [
+        72,
+        0.12,
+        -77
+      ]
     },
     {
       "id": "festival_podium",
@@ -1161,10 +1191,20 @@
       "position": [
         187,
         0.12,
-        64
+        55
       ],
       "description": "Three broad podium steps beside the practice circuit.",
-      "mesh_kind": "podium"
+      "mesh_kind": "podium",
+      "trigger_position": [
+        187,
+        0.12,
+        64
+      ],
+      "prop_position": [
+        187,
+        0.12,
+        55
+      ]
     },
     {
       "id": "festival_grandstand",
@@ -1173,10 +1213,20 @@
       "position": [
         313,
         0.12,
-        -64
+        -73
       ],
       "description": "The shaded ribbon stand overlooks the slalom.",
-      "mesh_kind": "grandstand"
+      "mesh_kind": "grandstand",
+      "trigger_position": [
+        313,
+        0.12,
+        -64
+      ],
+      "prop_position": [
+        313,
+        0.12,
+        -73
+      ]
     },
     {
       "id": "festival_trophy",
@@ -1185,10 +1235,20 @@
       "position": [
         165,
         0.12,
-        -72
+        -81
       ],
       "description": "A giant hand-made gear trophy celebrates friendly finishes.",
-      "mesh_kind": "trophy"
+      "mesh_kind": "trophy",
+      "trigger_position": [
+        165,
+        0.12,
+        -72
+      ],
+      "prop_position": [
+        165,
+        0.12,
+        -81
+      ]
     },
     {
       "id": "marsh_lookout",
@@ -1197,10 +1257,20 @@
       "position": [
         -293,
         0.12,
-        -62
+        -71
       ],
       "description": "A timber lookout above the reed beds.",
-      "mesh_kind": "lookout"
+      "mesh_kind": "lookout",
+      "trigger_position": [
+        -293,
+        0.12,
+        -62
+      ],
+      "prop_position": [
+        -293,
+        0.12,
+        -71
+      ]
     },
     {
       "id": "marsh_pump",
@@ -1209,10 +1279,20 @@
       "position": [
         -171,
         0.12,
-        54
+        45
       ],
       "description": "A copper pump brings water to the reed keeper.",
-      "mesh_kind": "pump"
+      "mesh_kind": "pump",
+      "trigger_position": [
+        -171,
+        0.12,
+        54
+      ],
+      "prop_position": [
+        -171,
+        0.12,
+        45
+      ]
     },
     {
       "id": "marsh_firefly",
@@ -1221,10 +1301,20 @@
       "position": [
         -168,
         0.12,
-        -65
+        -74
       ],
       "description": "A dry little island with three glowing lanterns.",
-      "mesh_kind": "lanterns"
+      "mesh_kind": "lanterns",
+      "trigger_position": [
+        -168,
+        0.12,
+        -65
+      ],
+      "prop_position": [
+        -168,
+        0.12,
+        -74
+      ]
     },
     {
       "id": "dunes_flag_ridge",
@@ -1232,11 +1322,21 @@
       "label": "Flag ridge",
       "position": [
         0,
-        0.12,
-        -317
+        7.12,
+        -263
       ],
       "description": "Bright flags show the crest of the sand ridge.",
-      "mesh_kind": "ridge_flags"
+      "mesh_kind": "ridge_flags",
+      "trigger_position": [
+        0,
+        7.12,
+        -254
+      ],
+      "prop_position": [
+        0,
+        7.12,
+        -263
+      ]
     },
     {
       "id": "dunes_oasis",
@@ -1245,10 +1345,20 @@
       "position": [
         -76,
         0.12,
-        -300
+        -309
       ],
       "description": "A sheltered oasis with a water tank and palms.",
-      "mesh_kind": "oasis"
+      "mesh_kind": "oasis",
+      "trigger_position": [
+        -76,
+        0.12,
+        -300
+      ],
+      "prop_position": [
+        -76,
+        0.12,
+        -309
+      ]
     },
     {
       "id": "dunes_sun_arch",
@@ -1257,10 +1367,20 @@
       "position": [
         76,
         0.12,
-        -185
+        -194
       ],
       "description": "A tall original sun arch frames the way home.",
-      "mesh_kind": "sun_arch"
+      "mesh_kind": "sun_arch",
+      "trigger_position": [
+        76,
+        0.12,
+        -185
+      ],
+      "prop_position": [
+        76,
+        0.12,
+        -194
+      ]
     },
     {
       "id": "canyon_overlook",
@@ -1269,10 +1389,20 @@
       "position": [
         -312,
         0.12,
-        -307
+        -316
       ],
       "description": "A fenced overlook among the redstone towers.",
-      "mesh_kind": "overlook"
+      "mesh_kind": "overlook",
+      "trigger_position": [
+        -312,
+        0.12,
+        -307
+      ],
+      "prop_position": [
+        -312,
+        0.12,
+        -316
+      ]
     },
     {
       "id": "canyon_crane",
@@ -1281,10 +1411,20 @@
       "position": [
         -168,
         0.12,
-        -304
+        -313
       ],
       "description": "A little tool crane helps the bridge builders.",
-      "mesh_kind": "crane"
+      "mesh_kind": "crane",
+      "trigger_position": [
+        -168,
+        0.12,
+        -304
+      ],
+      "prop_position": [
+        -168,
+        0.12,
+        -313
+      ]
     },
     {
       "id": "canyon_balanced_rock",
@@ -1293,10 +1433,20 @@
       "position": [
         -317,
         0.12,
-        -186
+        -195
       ],
       "description": "Three rounded sandstone blocks balance beside the road.",
-      "mesh_kind": "balanced_rock"
+      "mesh_kind": "balanced_rock",
+      "trigger_position": [
+        -317,
+        0.12,
+        -186
+      ],
+      "prop_position": [
+        -317,
+        0.12,
+        -195
+      ]
     },
     {
       "id": "summit_station",
@@ -1305,10 +1455,20 @@
       "position": [
         -301,
         0.12,
-        -546
+        -555
       ],
       "description": "Warm windows mark the high trail station.",
-      "mesh_kind": "station"
+      "mesh_kind": "station",
+      "trigger_position": [
+        -301,
+        0.12,
+        -546
+      ],
+      "prop_position": [
+        -301,
+        0.12,
+        -555
+      ]
     },
     {
       "id": "summit_ice_arch",
@@ -1317,10 +1477,20 @@
       "position": [
         -167,
         0.12,
-        -542
+        -551
       ],
       "description": "A pale ice arch stands at the edge of the lake.",
-      "mesh_kind": "ice_arch"
+      "mesh_kind": "ice_arch",
+      "trigger_position": [
+        -167,
+        0.12,
+        -542
+      ],
+      "prop_position": [
+        -167,
+        0.12,
+        -551
+      ]
     },
     {
       "id": "summit_weather",
@@ -1329,10 +1499,20 @@
       "position": [
         -169,
         0.12,
-        -423
+        -432
       ],
       "description": "A striped weather mast watches the snowy trail.",
-      "mesh_kind": "weather_mast"
+      "mesh_kind": "weather_mast",
+      "trigger_position": [
+        -169,
+        0.12,
+        -423
+      ],
+      "prop_position": [
+        -169,
+        0.12,
+        -432
+      ]
     }
   ]
 }

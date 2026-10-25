@@ -1,0 +1,63 @@
+from pathlib import Path
+import hashlib, json, re, subprocess, zipfile
+root = Path.cwd()
+evidence = root / 'evidence/3d-development'
+final_commit = '5fb2751cc0ae5ed6524d72f7eb6a9ca232f75ce2'
+apk = root / 'builds/mini-garage-adventure-explore-debug.apk'
+checks = []
+with zipfile.ZipFile(apk) as archive:
+    names = set(archive.namelist())
+    for name in ['activities.json', 'economy.json', 'regions.json']:
+        packed = archive.read('assets/data/' + name)
+        checks.append({'asset': 'assets/data/' + name,
+                       'matches_native_source': packed == (root / 'native/data' / name).read_bytes(),
+                       'sha256': hashlib.sha256(packed).hexdigest()})
+    for name in ['assets/scripts/drive3d/explore_mode.gdc',
+                 'assets/scripts/drive3d/vehicle_controller.gdc',
+                 'assets/scripts/drive3d/world_builder.gdc',
+                 'assets/scripts/net/private_session.gdc']:
+        checks.append({'asset': name, 'present': name in names})
+    for scene in ['scenes/main.tscn', 'scenes/drive3d/world.tscn', 'scenes/drive3d/vehicle.tscn']:
+        remap = archive.read('assets/' + scene + '.remap').decode()
+        target = re.search(r'path="res://([^"\n]+)"', remap).group(1)
+        checks.append({'asset': scene, 'actual_binary_scene': 'assets/' + target,
+                       'present': ('assets/' + target) in names})
+    forbidden = sorted(name for name in names if name.startswith(('assets/tests/', 'assets/server/')))
+assert all(row.get('matches_native_source', row.get('present', False)) for row in checks) and not forbidden
+(evidence / 'native-builds-final/android-game-payload.json').write_text(json.dumps({
+    'scope': 'Static actual APK payload audit, not device execution. JSON bytes match native source; scene remaps resolve to actual binary scenes.',
+    'source_commit': final_commit, 'checks': checks,
+    'forbidden_test_or_server_assets': forbidden, 'all_passed': True}, indent=2) + '\n')
+records = [
+    ('native-builds-37d0cf1/artifacts.json', '37d0cf111b8841cddf3bf1298f8e7c8f5ed27a16', False),
+    ('native3d-final-desktop-1280x720/capture-results.json', '37d0cf111b8841cddf3bf1298f8e7c8f5ed27a16', False),
+    ('native3d-final-phone-style-800x450/capture-results.json', '37d0cf111b8841cddf3bf1298f8e7c8f5ed27a16', False),
+    ('native-builds-77655d0/artifacts.json', '77655d005d4cd0a5359938a0288195e309bdfe36', False),
+    ('native3d-delivery-desktop-1280x720/capture-results.json', final_commit, True),
+    ('native3d-delivery-phone-style-800x450/capture-results.json', final_commit, True),
+    ('native-builds-final/artifacts.json', final_commit, True),
+]
+reports = []
+for relative_path, commit, primary in records:
+    path = evidence / relative_path
+    record = json.loads(path.read_text())
+    mismatches = []
+    for name, expected in record['source_files_sha256'].items():
+        actual = hashlib.sha256(subprocess.check_output(['git', 'show', commit + ':' + name], cwd=root)).hexdigest()
+        if actual != expected:
+            mismatches.append(name)
+    reports.append({'report': str(path.relative_to(root)), 'source_commit': commit,
+                    'primary_delivery_report': primary,
+                    'source_file_count': len(record['source_files_sha256']),
+                    'all_files_match_commit': not mismatches, 'mismatches': mismatches})
+artifacts = json.loads((evidence / 'native-builds-final/artifacts.json').read_text())['artifacts']
+for item in artifacts:
+    with (root / item['path']).open('rb') as stream:
+        item['current_file_matches_manifest'] = hashlib.file_digest(stream, 'sha256').hexdigest() == item['sha256']
+assert all(row['all_files_match_commit'] for row in reports)
+assert all(item['current_file_matches_manifest'] for item in artifacts)
+(evidence / 'source-commit-verification.json').write_text(json.dumps({
+    'final_runtime_source': final_commit,
+    'scope': 'Every recorded capture/export source SHA256 compared with exact committed Git blobs; final binary SHA256 independently rechecked. Historical reports keep their original source identity.',
+    'reports': reports, 'final_artifacts': artifacts, 'all_passed': True}, indent=2) + '\n')
+print('PASS: final APK content audit; all seven source reports match exact commits; all three final binaries match recorded SHA256.')

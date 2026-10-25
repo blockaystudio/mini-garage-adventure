@@ -1,0 +1,8 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+RESET_LAYOUT compact=false rect=[P: (416.0, 290.0), S: (448.0, 162.0)] lines=5 visible=5 min=(1.0, 162.0)
+RESET_BUTTON Keep progress rect=[P: (410.0, 404.0), S: (220.0, 56.0)] overlap=true
+RESET_BUTTON Erase local save rect=[P: (645.0, 404.0), S: (225.0, 56.0)] overlap=true
+RESET_LAYOUT compact=true rect=[P: (220.0, 252.0), S: (840.0, 162.0)] lines=3 visible=3 min=(1.0, 123.0)
+RESET_BUTTON Keep progress rect=[P: (220.0, 416.0), S: (410.0, 112.0)] overlap=false
+RESET_BUTTON Erase local save rect=[P: (650.0, 416.0), S: (410.0, 112.0)] overlap=false

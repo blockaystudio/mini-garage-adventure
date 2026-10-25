@@ -1,0 +1,9 @@
+# Capture/build helper review and environment diagnostics
+
+An independent read-only review found that the first capture helper hardcoded reward/region captions without asserting the underlying state. Before final evidence, the helper was changed to require each real course completion, exactly 315 earned GP, successful mud purchase/equip with 15 GP remaining, and actual persisted Moss Marsh admission. The original six development captures remain clearly separate from the final rerun.
+
+The capture helper now enforces the exact pinned engine and fingerprints the non-cache runtime assets/import settings/UIDs plus its runner scripts. The build helper uses the existing apksigner JAR with installed Java because the unmodified relocated Debian executable wrapper could not find its JAR; the configured SDK wrapper already points at the installed JAR. No toolchain download or agreement acceptance occurred.
+
+One direct, unisolated Godot --check-only diagnostic failed with exit 134 after the restricted home prevented Godot from creating its user-data/log directory. Repeating the same parse with temporary XDG_DATA_HOME/XDG_CACHE_HOME/XDG_CONFIG_HOME succeeded, exit 0. All actual verifier/capture/build smoke helpers isolate their data paths and do not use a player's profile. This environment diagnostic is not a gameplay failure or physical-device result.
+
+A default-sandbox editor import later returned zero while reporting socket/TCP listen errors because socket creation was blocked. The same pinned import with the execution tool's explicit network capability passed with no engine errors. Final local native/network/capture/build commands use that capability; engine errors remain fatal in verification. Logs: final-import-preflight.txt and final-import-preflight-network.txt. No remote endpoint or public service was contacted.

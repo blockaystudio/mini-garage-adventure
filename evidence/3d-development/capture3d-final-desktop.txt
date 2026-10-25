@@ -1,0 +1,2 @@
+Fontconfig error: No writable cache directories
+PASS: 6 actual native captures; /workspace/mini-garage-adventure/evidence/3d-development/native3d-final-desktop-1280x720

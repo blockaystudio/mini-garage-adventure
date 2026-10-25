@@ -1,0 +1,21 @@
+{
+  "mode": "source-and-host-preflight",
+  "source_failures": [],
+  "host": {
+    "system": "Linux",
+    "macos": false,
+    "xcodebuild_available": false,
+    "xcrun_available": false,
+    "godot_available": true
+  },
+  "ios_presets": [],
+  "build_ready": false,
+  "blockers": [
+    "macOS host required by the official Godot4.6 iOS exporter",
+    "Xcode/iPhoneOS build tools unavailable",
+    "No owner-configured iOS preset; approved bundle identifier and10-character Team ID are required",
+    "Authorized signing/device access and final publisher/privacy/support/rights review remain external gates",
+    "Godot4.6 documents iOS simulator export as unsupported; use physical iPhone/iPad and optionally Apple Silicon Mac execution"
+  ],
+  "scope": "Read-only source/toolchain inventory. No iOS export, Xcode compile, signature, simulator or device QA was performed."
+}

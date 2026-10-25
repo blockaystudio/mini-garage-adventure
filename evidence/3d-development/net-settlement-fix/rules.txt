@@ -1,0 +1,24 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: failed finish write acknowledges no GP or committed result
+PASS: validated physical finish is retained as pending storage
+PASS: one immutable place is reserved before I/O
+PASS: duplicate pending finish cannot reserve another place
+PASS: snapshot distinguishes saved wallet from pending winner credit
+PASS: remote snapshot explicitly explains pending save without claiming GP
+PASS: later committed finisher cannot steal the pending winner bonus
+PASS: race timeout does not convert validated pending finish to DNF
+PASS: disconnect retains validated settlement independently of player node
+PASS: Ready cannot discard a pending race result
+PASS: restored storage settles disconnected valid winner once
+PASS: final order remains physical crossing order after delayed commit
+PASS: settlement retry cannot double-award
+PASS: banked settlements survive a fresh server-store reopen
+PASS: authenticated/trusted host rejoin receives only committed GP
+PASS: purchase storage failure is distinct from affordability/ownership failure
+PASS: failed purchase retains both old wallet and old inventory
+PASS: purchase retries after storage recovery commit debit and ownership together
+PASS: duplicate purchase acknowledgement charges once
+PASS: remote client sees pending-save explanation with unchanged saved balance
+PASS: leaving a pending room cannot turn a later room snapshot into a false saved-reward notice
+NETWORK SETTLEMENT: 21 checks, 0 failures

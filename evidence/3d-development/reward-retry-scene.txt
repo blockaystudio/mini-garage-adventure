@@ -1,0 +1,43 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: isolated fresh scene starts at0GP without a money fixture
+PASS: failed run reservation does not begin an ineligible drive
+PASS: failed reservation explains local storage problem before driving
+PASS: failed reservation plays no start cue
+PASS: usable reward action: Retry drive
+PASS: reservation retry starts the requested course with a saved runID
+PASS: actual throttle-driven native model reaches finish (438 frames)
+PASS: failed atomic finish pauses with a pending reward
+PASS: pending finish retains the same reserved run
+PASS: failed finish grants no partial GP, stars or completion
+PASS: pending finish exposes retry and withholds reward-discarding restart
+PASS: failed finish has one dialog and no success cue
+PASS: restart cannot replace the pending validated run
+PASS: usable reward action: Retry save
+PASS: repeated blocked retry retains one pending dialog without success cue
+PASS: back, escape and background do not resume or discard pending finish
+PASS: ordinary quit stays open when pending reward still cannot save
+PASS: usable reward action: Retry save
+PASS: unblocked same-run retry awards the real first finish30+50+25GP
+PASS: successful retry settles the original runID exactly once
+PASS: retry commits completion, mastery and actual measured best time together
+PASS: only successful settlement plays finish cue and enables another ride
+PASS: duplicate finish callbacks add no GP, cue or dialog
+PASS: same-run award survives actual SaveStore reload
+PASS: failed in-drive restart reservation pauses and retains the existing run
+PASS: failed restart explains retry without changing the earned wallet
+PASS: usable reward action: Retry drive
+PASS: repaired restart reserves a new run without resetting earned GP
+PASS: independent store commits an actual settings change during the ride
+PASS: actual throttle-driven native model reaches finish (438 frames)
+PASS: stale completion remains pending with an explicit reload warning
+PASS: usable reward action: Retry save
+PASS: stale retry neither merges nor overwrites the newer saved garage
+PASS: usable reward action: Reload saved garage
+PASS: leaving the unpaid run requires an explicit consequence confirmation
+PASS: usable reward action: Keep pending run
+PASS: canceling discard preserves the original pending run
+PASS: usable reward action: Reload saved garage
+PASS: usable reward action: Reload and leave run
+PASS: confirmed reload leaves the unpaid run and preserves the newer saved profile
+REWARD_RETRY_RESULT checks=40 failures=0

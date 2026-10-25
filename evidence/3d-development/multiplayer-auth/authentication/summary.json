@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "server_pid": 8254,
+  "client_pid": 8264,
+  "checks": {
+    "authenticated_rejoin": true,
+    "forged_rejoin_rejected": true,
+    "invalid_invite_rejected": true,
+    "pid": 8264,
+    "scope": "Actual native ENet handshake; runtime credentials intentionally omitted",
+    "valid_join_after_rejection": true
+  },
+  "failures": []
+}

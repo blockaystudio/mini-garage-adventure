@@ -2,6 +2,12 @@
 
 2026-10-25. This is an evidence ledger, not a device certification.
 
+The later rewards/schema-3, native 3D and private-session defects and acceptance
+gates are tracked in [`3D_BUGS.md`](3D_BUGS.md). Current delivery and the supplied
+plan's task-by-task status are in [`3D_DELIVERY.md`](3D_DELIVERY.md) and
+[`3D_TASK_STATUS.md`](3D_TASK_STATUS.md). The base-game records below remain
+historical evidence; they are not a fresh run of the 3D source.
+
 ## Fixed with executed regressions
 
 - Browser: releasing one pointer cancelled another pointer or held keyboard source. Per-source aggregation and lifecycle cleanup; real HTTP Chromium14/14 (`evidence/reference-browser-results.json`).

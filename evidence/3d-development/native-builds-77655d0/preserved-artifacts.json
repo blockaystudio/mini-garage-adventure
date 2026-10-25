@@ -1,0 +1,29 @@
+{
+  "source_commit": "77655d0",
+  "artifacts": [
+    {
+      "original_path": "builds/mini-garage-adventure-explore-debug.apk",
+      "preserved_path": "builds/checkpoints/77655d0/mini-garage-adventure-explore-debug.apk",
+      "bytes": 56137703,
+      "sha256": "908afb1bdf462525117db51781a51892dc0db42dedabb305c9c05e8a6a99a76f"
+    },
+    {
+      "original_path": "builds/mini-garage-adventure-explore-debug.apk.idsig",
+      "preserved_path": "builds/checkpoints/77655d0/mini-garage-adventure-explore-debug.apk.idsig",
+      "bytes": 447969,
+      "sha256": "a7fb7e63bb066c5f109c92337ea31e8d920a1202c37f799c7c62c2097ce36cc3"
+    },
+    {
+      "original_path": "builds/mini-garage-adventure-explore-linux.zip",
+      "preserved_path": "builds/checkpoints/77655d0/mini-garage-adventure-explore-linux.zip",
+      "bytes": 27470616,
+      "sha256": "599795b1911d3bbf5edb8fe51647cb231236881e025bfc96e9708b19c43ca345"
+    },
+    {
+      "original_path": "builds/mini-garage-adventure-explore.x86_64",
+      "preserved_path": "builds/checkpoints/77655d0/mini-garage-adventure-explore.x86_64",
+      "bytes": 71481520,
+      "sha256": "ee9d97fb2fb52fb165ce1ae8bb9a886302750731e76abf9b41b7700750405946"
+    }
+  ]
+}

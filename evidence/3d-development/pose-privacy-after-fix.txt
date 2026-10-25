@@ -1,0 +1,186 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: scene drive reaches finish using router throttle
+PASS: actual introductory drive grants150GP and replaces ordinary event/mastery rewards
+PASS: scene drive reaches finish using router throttle
+PASS: restarting introductory scene cannot repeat its grant
+PASS: isolated tutorial profile can be reset before independent scene cases
+PASS: first launch opens garage with no medals
+PASS: first launch selects available buggy
+PASS: new-profile vehicle threshold is visibly three mastery stars
+PASS: usable UI button: Giant tires
+PASS: usable UI button: Firm springs
+PASS: usable UI button: Purple
+PASS: garage signals update and save build
+PASS: build saved to actual native file
+PASS: usable UI button: Choose a course  →
+PASS: course menu reachable
+PASS: all authored course captions stay inside two-line cards
+PASS: usable UI button: 01  Meadow Hello
+PASS: course starts with active router
+PASS: all driving pads fit simulated phone safe-area insets
+PASS: safe-area scaling preserves touch hit mapping
+PASS: simultaneous throttle and brake touches
+PASS: one touch release preserves other finger
+PASS: canceled final finger releases throttle
+PASS: keyboard aliases release independently
+PASS: all keyboard aliases released
+PASS: pointer release preserves keyboard throttle
+PASS: focus loss pauses and clears controls
+PASS: paused scene does not advance
+PASS: usable UI button: Resume ride
+PASS: resume requires fresh input
+PASS: background notification clears all input
+PASS: usable UI button: Resume ride
+PASS: rapid restart resets car and input twelve times
+PASS: scene drive reaches finish using router throttle
+PASS: finish awards one medal and local best
+PASS: first authored finish awards30base+50first+25completion GP and one star
+PASS: duplicate scene finish does not stack result actions or audio cues
+PASS: duplicate scene finish cannot replay GP or mastery
+PASS: finish clears driving controls
+PASS: finished scene cannot duplicate medal
+PASS: usable UI button: Ride again
+PASS: finish retry starts cleanly
+PASS: one star does not bypass new vehicle mastery gate
+PASS: usable UI button: Upgrades
+PASS: upgrade drawer refuses an unaffordable purchase
+PASS: usable UI button: Goal pinned
+PASS: pinning a mud-tire goal is free and saved
+PASS: usable UI button: ✓ Meadow Hello
+PASS: scene drive reaches finish using router throttle
+PASS: legitimate repeat run awards only30GP and no duplicate star
+PASS: usable UI button: 02  Orchard Roll
+PASS: scene drive reaches finish using router throttle
+PASS: usable UI button: 03  Coast Dash
+PASS: scene drive reaches finish using router throttle
+PASS: three distinct completions and a repeat fund the first upgrade without granting GP directly
+PASS: three completion stars unlock the next distinct vehicle
+PASS: usable UI button: Moon Rover
+PASS: unlocked vehicle selectable and saved
+PASS: usable UI button: Upgrades
+PASS: usable UI button: Buy for 300 GP
+PASS: actual purchase button atomically deducts GP and grants mud tires
+PASS: usable UI button: Equip · FREE
+PASS: actual equipment button fits owned mud tires for free
+PASS: mastery stars are never spent by the upgrade purchase
+PASS: wallet ownership equipment and pinned goal survive actual file reload
+PASS: repeated scene purchase action cannot charge twice
+PASS: usable UI button: Track lab
+PASS: four-section private editor reachable
+PASS: invalid start disables save and play
+PASS: usable UI button: Undo
+PASS: undo restores playable layout
+PASS: usable UI button: Valley
+PASS: usable UI button: + Add flat
+PASS: editor adds a valid section
+PASS: usable UI button: Remove
+PASS: editor removes section above minimum
+PASS: usable UI button: Save + test drive  →
+PASS: private track saves then starts native preview
+PASS: scene drive reaches finish using router throttle
+PASS: private preview preserves authored medals and cannot farm GP
+PASS: usable UI button: Keep exploring
+PASS: preview returns to saved editor
+PASS: usable UI button: Open settings
+PASS: wrong grown-up answer stays at gate
+PASS: usable UI button: Open settings
+PASS: correct grown-up gate opens settings
+PASS: usable UI button: Sound: ON
+PASS: usable UI button: Reduced motion: OFF
+PASS: usable UI button: Tap to drive: OFF
+PASS: accessibility settings applied
+PASS: volume and accessibility persist
+PASS: tap-to-drive latches without holding
+PASS: canceled event clears tap-to-drive latch
+PASS: fresh tap latches again after cancellation
+PASS: pause clears tap-to-drive latch
+PASS: usable UI button: Help & privacy
+PASS: factual help and privacy reachable
+PASS: default help accurately explains offline solo privacy
+PASS: opted-in networking help discloses host data and separate reset scope
+PASS: usable UI button: Reset local progress
+PASS: usable UI button: Keep progress
+PASS: reset cancel preserves local progress and wallet
+PASS: usable UI button: Reset local progress
+PASS: usable UI button: Erase local save
+PASS: confirmed reset restores full defaults
+PASS: reset writes fresh defaults and removes old backup and temporary files
+PASS: phone garage uses focused tabs instead of the old stacked form
+PASS: phone garage exposes the Parts tab
+PASS: phone garage exposes the Paint tab
+PASS: phone garage exposes the Rides tab
+PASS: persistent large phone action: GarageQuickDrive
+PASS: persistent large phone action: GarageExplore
+PASS: persistent large phone action: GarageUpgrades
+PASS: persistent large phone action: GarageTrackLab
+PASS: focused phone garage retains the native vehicle showcase
+PASS: focused phone garage uses at least 112px logical button targets
+PASS: usable UI button: Paint
+PASS: focused paint tab offers a large actual owned paint button
+PASS: focused paint selection saves and preserves its selected tab
+PASS: usable UI button: Quick Drive
+PASS: compact courses has an accessible vertical content scroller
+PASS: compact courses exposes content beyond short-screen height
+PASS: compact courses uses at least 112px logical button targets
+PASS: all compact course descriptions remain adjacent to their course buttons
+PASS: usable UI button: 01  Meadow Hello
+PASS: compact course keeps native drive screen
+PASS: compact drive header uses at least 112px logical button targets
+PASS: compact drive pads are large and contained in phone safe area
+PASS: compact safe-area drive touch maps to original router
+PASS: usable UI button: Pause
+PASS: compact pause dialog uses at least 112px logical button targets
+PASS: usable UI button: Resume ride
+PASS: compact pause and resume signals remain connected
+PASS: compact editor has an accessible vertical content scroller
+PASS: compact editor exposes content beyond short-screen height
+PASS: compact editor uses at least 112px logical button targets
+PASS: usable UI button: Valley
+PASS: compact editor retains shape-selection signals
+PASS: usable UI button: Save track
+PASS: compact editor retains private save action
+PASS: compact grown-up gate has an accessible vertical content scroller
+PASS: compact grown-up gate exposes content beyond short-screen height
+PASS: compact grown-up gate uses at least 112px logical button targets
+PASS: compact gate text input is a large touch target
+PASS: usable UI button: Open settings
+PASS: compact parent settings has an accessible vertical content scroller
+PASS: compact parent settings exposes content beyond short-screen height
+PASS: compact parent settings uses at least 112px logical button targets
+PASS: compact volume input is a large touch target
+PASS: usable UI button: Sound: ON
+PASS: compact settings action stays connected
+PASS: usable UI button: Help & privacy
+PASS: compact help and privacy has an accessible vertical content scroller
+PASS: compact help and privacy exposes content beyond short-screen height
+PASS: compact help and privacy uses at least 112px logical button targets
+PASS: usable UI button: Engine licenses
+PASS: compact engine notices has an accessible vertical content scroller
+PASS: compact engine notices exposes content beyond short-screen height
+PASS: compact engine notices uses at least 112px logical button targets
+PASS: compact license scroll retains complete engine notices
+PASS: usable UI button: Reset local progress
+PASS: compact reset dialog uses at least 112px logical button targets
+PASS: usable UI button: Keep progress
+PASS: orientation fixture commits a nonzero saved3D heading
+PASS: Explore screen creates a genuine3D vehicle and chase camera
+PASS: Explore restores saved3D heading after loading the on-disk profile
+PASS: free recovery retains the restored checkpoint heading
+PASS: usable UI button: World map
+PASS: destination menu pauses3D controls
+PASS: usable UI button: Resume
+PASS: map header Resume returns to drive without resetting the vehicle
+PASS: usable UI button: Missions
+PASS: mission menu pauses3D controls
+PASS: usable UI button: Resume
+PASS: mission header Resume is an active return action
+PASS: synthetic settled-result fixture reaches the real reward panel
+PASS: Escape after settled result clears the finished activity and resumes free explore
+PASS: resumed result cannot retry or duplicate a settled reward on the next frame
+PASS: Escape keeps a failed-save result paused for an explicit retry
+RELAUNCH write: ["Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org\n\n"]
+PASS: separate real process write exits successfully
+RELAUNCH read: ["Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org\n\nRelaunched state: { \"version\": 3, \"build\": { \"vehicle\": \"buggy\", \"tires\": \"mud\", \"suspension\": \"soft\", \"paint\": \"cyan\" }, \"completed\": [\"meadow\", \"orchard\", \"coast\"], \"custom\": [\"flat\", \"dip\", \"rollers\", \"flat\"], \"settings\": { \"muted\": false, \"volume\": 0.65, \"reduced_motion\": true, \"one_touch\": false, \"steering_sensitivity\": 1.0 }, \"best\": { \"meadow\": 7.60000000000017, \"orchard\": 9.34166666666678, \"coast\": 10.4333333333334 }, \"gp\": 15, \"stars\": [\"meadow:completion\", \"orchard:completion\", \"coast:completion\"], \"owned\": [\"road\", \"trail\", \"giant\", \"soft\", \"firm\", \"orange\", \"cyan\", \"purple\", \"lime\", \"mud\"], \"owned_vehicles\": [\"buggy\", \"rover\"], \"equipped\": { \"tires\": \"mud\", \"suspension_upgrade\": \"\", \"gearing\": \"\", \"drivetrain\": \"\", \"engine\": \"\" }, \"claims\": { \"clear:coast\": true, \"clear:meadow\": true, \"clear:orchard\": true, \"purchase:mud\": \"buy_mud\", \"star:coast:completion\": true, \"star:meadow:completion\": true, \"star:orchard:completion\": true }, \"regions\": [\"garage_valley\", \"festival_circuit\"], \"discoveries\": [], \"goal\": \"mud\", \"explore\": { \"region\": \"garage_valley\", \"checkpoint\": [0.0, 0.15, 84.0], \"yaw\": 0.0 }, \"economy\": { \"next_run\": 4, \"active\": {  }, \"last_settled\": 3, \"recent\": [{ \"kind\": \"reward\", \"event\": \"meadow\", \"run\": 1, \"gp\": 105, \"balance\": 105 }, { \"kind\": \"reward\", \"event\": \"orchard\", \"run\": 2, \"gp\": 105, \"balance\": 210 }, { \"kind\": \"reward\", \"event\": \"coast\", \"run\": 3, \"gp\": 105, \"balance\": 315 }, { \"kind\": \"upgrade\", \"event\": \"mud\", \"run\": 0, \"gp\": 0, \"balance\": 15 }] } }\n"]
+PASS: separate real process read exits successfully
+NATIVE INTEGRATION: 181 checks, 0 failures

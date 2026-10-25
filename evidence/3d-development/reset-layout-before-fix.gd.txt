@@ -1,0 +1,15 @@
+extends SceneTree
+const Main = preload("res://scenes/main.tscn")
+const Store = preload("res://scripts/save_store.gd")
+func _initialize():call_deferred("run")
+func run():
+ var game=Main.instantiate();game.store=Store.new("user://isolated-layout");root.add_child(game)
+ await process_frame
+ for compact in [false,true]:
+  game.compact_mode=compact;game.show_parents();game._confirm_reset();await process_frame
+  for child in game.ui.get_children():
+   if child is Label and child.text.begins_with("This erases"):
+    print("RESET_LAYOUT compact=",compact," rect=",child.get_rect()," lines=",child.get_line_count()," visible=",child.get_visible_line_count()," min=",child.get_minimum_size())
+    for button in game.ui.get_children():
+     if button is Button and button.text in ["Keep progress","Erase local save"]:print("RESET_BUTTON ",button.text," rect=",button.get_rect()," overlap=",child.get_rect().intersects(button.get_rect()))
+ game.sound.stop_all();game.queue_free();await process_frame;quit()

@@ -1,0 +1,39 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: missing isolated TEST profile starts empty
+PASS: online test wallet starts zero and separate from solo
+PASS: server starts a fair common-access loaner inventory
+PASS: valid server award commits
+PASS: same race award retry cannot double-credit
+PASS: negative award rejected
+PASS: oversized single award rejected
+PASS: unaffordable purchase changes nothing
+PASS: purchase atomically deducts and grants
+PASS: same purchase acknowledgement retry does not charge twice
+PASS: transaction ID cannot be replayed for another item
+PASS: server-owned test wallet survives process-style reopen
+PASS: invite remains valid through its expiry second
+PASS: expired invitation rejected
+PASS: wrong invitation rejected
+PASS: local/private engineering addresses accepted
+PASS: public endpoint connection refused
+PASS: wildcard is not a private endpoint
+PASS: wildcard server bind is refused before creating a socket
+PASS: wildcard join endpoint is refused before creating a socket
+PASS: non-finite and excessive controls normalized
+PASS: newer friend cannot bypass story gate from another profile
+PASS: leader proposal cannot choose non-common story destination
+PASS: local listen-server host joins its isolated profile
+PASS: trusted listen-server host can reopen its own saved test profile
+PASS: finished racer departure cannot end another entrant's race early
+PASS: late spectator does not prevent actual racers from finishing
+PASS: expired disconnected entrant becomes DNF without a payout
+PASS: normal input traffic cannot suppress a legitimate purchase rate bucket
+PASS: purchase retries are independently rate limited
+PASS: wrong-typed nested profile is rejected without a property crash
+PASS: rejected damaged TEST profile cannot be overwritten
+PASS: newer TEST schema remains protected from overwrite
+PASS: corrupt TEST primary recovers its validated backup
+PASS: authoritative finish discards pending throttle prediction instead of drifting beyond finish
+PASS: reconciliation metric distinguishes delayed-state age from the actual applied correction
+NETWORK RULES: 36 checks, 0 failures

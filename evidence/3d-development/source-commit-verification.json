@@ -1,0 +1,83 @@
+{
+  "final_runtime_source": "5fb2751cc0ae5ed6524d72f7eb6a9ca232f75ce2",
+  "scope": "Every recorded capture/export source SHA256 compared with exact committed Git blobs; final binary SHA256 independently rechecked. Historical reports keep their original source identity.",
+  "reports": [
+    {
+      "report": "evidence/3d-development/native-builds-37d0cf1/artifacts.json",
+      "source_commit": "37d0cf111b8841cddf3bf1298f8e7c8f5ed27a16",
+      "primary_delivery_report": false,
+      "source_file_count": 79,
+      "all_files_match_commit": true,
+      "mismatches": []
+    },
+    {
+      "report": "evidence/3d-development/native3d-final-desktop-1280x720/capture-results.json",
+      "source_commit": "37d0cf111b8841cddf3bf1298f8e7c8f5ed27a16",
+      "primary_delivery_report": false,
+      "source_file_count": 80,
+      "all_files_match_commit": true,
+      "mismatches": []
+    },
+    {
+      "report": "evidence/3d-development/native3d-final-phone-style-800x450/capture-results.json",
+      "source_commit": "37d0cf111b8841cddf3bf1298f8e7c8f5ed27a16",
+      "primary_delivery_report": false,
+      "source_file_count": 80,
+      "all_files_match_commit": true,
+      "mismatches": []
+    },
+    {
+      "report": "evidence/3d-development/native-builds-77655d0/artifacts.json",
+      "source_commit": "77655d005d4cd0a5359938a0288195e309bdfe36",
+      "primary_delivery_report": false,
+      "source_file_count": 79,
+      "all_files_match_commit": true,
+      "mismatches": []
+    },
+    {
+      "report": "evidence/3d-development/native3d-delivery-desktop-1280x720/capture-results.json",
+      "source_commit": "5fb2751cc0ae5ed6524d72f7eb6a9ca232f75ce2",
+      "primary_delivery_report": true,
+      "source_file_count": 80,
+      "all_files_match_commit": true,
+      "mismatches": []
+    },
+    {
+      "report": "evidence/3d-development/native3d-delivery-phone-style-800x450/capture-results.json",
+      "source_commit": "5fb2751cc0ae5ed6524d72f7eb6a9ca232f75ce2",
+      "primary_delivery_report": true,
+      "source_file_count": 80,
+      "all_files_match_commit": true,
+      "mismatches": []
+    },
+    {
+      "report": "evidence/3d-development/native-builds-final/artifacts.json",
+      "source_commit": "5fb2751cc0ae5ed6524d72f7eb6a9ca232f75ce2",
+      "primary_delivery_report": true,
+      "source_file_count": 79,
+      "all_files_match_commit": true,
+      "mismatches": []
+    }
+  ],
+  "final_artifacts": [
+    {
+      "path": "builds/mini-garage-adventure-explore.x86_64",
+      "bytes": 71488464,
+      "sha256": "f4e0ac3b68f7c12b7b73400be7fdbd4e7f8fe913273c60363dc7f91d6bbad793",
+      "current_file_matches_manifest": true
+    },
+    {
+      "path": "builds/mini-garage-adventure-explore-linux.zip",
+      "bytes": 27477569,
+      "sha256": "80f3e6037b666bfaebf6ff9f0ff838869ec0da278bfbeecdfa1df3acbcd94314",
+      "current_file_matches_manifest": true
+    },
+    {
+      "path": "builds/mini-garage-adventure-explore-debug.apk",
+      "bytes": 56145895,
+      "sha256": "71bf94a41c08d44c948e1c11fc999ceb2ea17bb2a1e4fa321c52e793a5079ede",
+      "current_file_matches_manifest": true
+    }
+  ],
+  "all_passed": true
+}

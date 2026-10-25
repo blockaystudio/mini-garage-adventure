@@ -1,0 +1,48 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: mud tires cross the fixed mud lane substantially faster
+PASS: mud tires reduce measured wheel slip on mud
+PASS: mud tire pavement speed tradeoff is measurable
+PASS: sand tires improve their intended surface
+PASS: rock tires improve their intended surface
+PASS: snow tires improve their intended surface
+PASS: fixed-step trajectory stable at30 fps
+PASS: fixed-step trajectory stable at60 fps
+PASS: fixed-step trajectory stable at90 fps
+PASS: fixed-step trajectory stable at120 fps
+PASS: fixed-step trajectory stable at144 fps
+PASS: right steering moves along positiveX from forward-Z
+PASS: reverse drives backward predictably
+PASS: brake takes priority over throttle and stops the buggy
+PASS: interrupted frame does not teleport the car
+PASS: corrupt state/control/surface values normalize safely
+PASS: low range improves a steep low-grip climb
+PASS: low-range climbing advantage trades flat top speed
+PASS: AWD reduces mixed-surface slip
+PASS: engine upgrade increases acceleration/pace
+PASS: six vehicle identities produce six distinct distances
+HANDLING_DISTANCE10S mudtrail=76.0804066111117 mudtires=162.598103333337 pavementtrail=170.28314236111 pavementmud=143.511008
+PASS: independent fingers can steer and accelerate together
+PASS: one finger release preserves another throttle finger
+PASS: sliding a held finger off its pad releases that control
+PASS: touch cancellation clears every held source
+PASS: keyboard aliases have independent lifetimes
+PASS: GUI-emulated mouse never double-toggles tap-to-drive
+PASS: dragging off a tap-to-drive press cancels its latch
+PASS: cancel releases the tap-to-drive latch
+PASS: focus loss clears throttle and keyboard sources
+PASS: background clears controls
+PASS: gamepad deadzone preserves neutral and full steering
+PASS: real3D wheel collisions settle on a static floor
+PASS: real3D wall collision prevents tunnelling through a barrier
+PASS: CharacterBody drives up an actual sloped collision box
+PASS: braking holds the car on a physical slope
+PASS: an inverted car recovers upright without a jitter loop
+PASS: recovery clears every drive control
+PASS: long-travel chassis physically clears a centered low obstacle
+PASS: network snapshot sanitization never injects invalid transforms
+PASS: snapshot restores actual3D position
+PASS: chase camera uses a real3D collision spring arm
+PASS: camera spring arm retracts against actual scenery collision
+PASS: reduced-motion camera remains finite
+DRIVE3D: 44 checks, 0 failures

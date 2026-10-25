@@ -1,0 +1,24 @@
+{
+  "base_commit": "37d0cf1",
+  "fixed_commit": "77655d005d4cd0a5359938a0288195e309bdfe36",
+  "change": "Reject literal0.0.0.0 for both bind and join; preserve default127.0.0.1 and specificprivateLAN addresses.",
+  "network_rules": {
+    "checks": 36,
+    "failures": 0,
+    "log": "rules.txt"
+  },
+  "actual_two_client_smoke": {
+    "status": "pass",
+    "server_pid": 16207,
+    "client_pids": [
+      16217,
+      16218
+    ],
+    "scope": "Linux native headless separate processes on local UDP; no physical devices/browser/production service"
+  },
+  "source_files_sha256": {
+    "native/scripts/net/private_session.gd": "a3aef1a17af9f2d925ae1a45388ffc4c97b0cf0eaf3d749d06203a028c75bc59",
+    "native/tests/net_rules_test.gd": "f83c221fb8e448ed6eb55c03627a979c426fdbcda3d8dd1521d09a8ad0f823e3"
+  },
+  "source_freeze": "No unrelatednative source edits were made by this hardening task; original source37captures/evidence retained."
+}

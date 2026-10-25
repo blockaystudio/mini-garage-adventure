@@ -1,6 +1,11 @@
 # Build 01 — Verification Report
 October 24, 2026
 
+Historical browser Build01 report. For the later schema-3/native 3D work, read
+[`docs/3D_DELIVERY.md`](../docs/3D_DELIVERY.md) and its freshly executed evidence
+under `3d-development/`. These old results are not a new test run and do not
+establish native, physical-device or multiplayer acceptance.
+
 ## Results: 81 passed checks
 | Suite | Passed | Evidence |
 |---|---:|---|

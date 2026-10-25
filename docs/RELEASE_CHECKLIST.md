@@ -4,6 +4,13 @@ This checklist remains open until every relevant row has concrete evidence.
 Source implementation, Linux tests, mobile tests and specialist review are
 different states. Consult `MASTER_TRACKER.md` for the latest executed results.
 
+The expanded rewards/Explore/private-world scope is tracked separately in
+[`3D_TASK_STATUS.md`](3D_TASK_STATUS.md), with current results in
+[`3D_DELIVERY.md`](3D_DELIVERY.md). In addition to the base-game gates below,
+release requires genuine shared-world server collision/surface authority,
+reviewed online identity/parent/privacy/retention/deletion and operating costs.
+The bounded native Festival proof is not a child-facing online release.
+
 | Gate | Required evidence | Owner / current dependency |
 |---|---|---|
 | Reference regression | Pinned verifier plus real HTTP-origin browser save/reload and input tests | Engineering; executed results in evidence |
