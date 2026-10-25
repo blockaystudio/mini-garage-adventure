@@ -46,6 +46,9 @@ var status := ""
 var paused := false
 var editor_preview := false
 var run_finished := false
+var finish_pending := false
+var finish_warning := ""
+var _reward_dialog_nodes: Array[Node] = []
 var clock_label: Label
 var progress_bar: ProgressBar
 var status_label: Label
@@ -131,6 +134,7 @@ func _clear(next_page: String) -> void:
 	router.active = false
 	router.regions.clear()
 	drive_pads.clear()
+	_reward_dialog_nodes.clear()
 	for child in ui.get_children():
 		ui.remove_child(child)
 		child.queue_free()
@@ -325,13 +329,29 @@ func show_courses() -> void:
 	_compact()
 
 func start_course(item: Dictionary, preview: bool = false) -> void:
+	if finish_pending:
+		_show_pending_finish()
+		return
+	var kind := "custom_track" if preview else str(item.get("reward_kind","short_2d_clear"))
+	var reserved: int = economy.begin_run(str(item.id),kind)
+	if reserved <= 0:
+		router.clear()
+		router.active = false
+		if page == "drive":
+			paused = true
+		status = economy.warning
+		_reward_dialog("Drive could not start", "The run was not saved.\n"+status, [
+			["Retry drive",func(): start_course(item,preview),true],
+			["Back to garage",show_garage,false]])
+		return
 	course = item.duplicate(true)
 	editor_preview = preview
-	var kind := "custom_track" if preview else str(item.get("reward_kind","short_2d_clear"))
-	active_run_id = economy.begin_run(str(course.id),kind)
+	active_run_id = reserved
 	state = store.data.duplicate(true)
 	car = Model.initial(state.build, course.pieces)
 	run_finished = false
+	finish_pending = false
+	finish_warning = ""
 	paused = false
 	sound.play_cue("start")
 	_show_drive()
@@ -406,6 +426,9 @@ func _process(delta: float) -> void:
 				drive_pads[action].modulate = Color(0.77,0.85,0.9) if router.strength(action)>0 else Color.WHITE
 
 func _restart() -> void:
+	if finish_pending:
+		_show_pending_finish()
+		return
 	router.clear()
 	start_course(course,editor_preview)
 
@@ -415,8 +438,8 @@ func _pause() -> void:
 	paused = true
 	router.clear()
 	router.active = false
-	_save()
-	_modal("Take a pit stop", "Your ride is safe. Resume when you are ready.")
+	var saved := _save()
+	_modal("Take a pit stop", "Your ride is safe. Resume when you are ready." if saved else "Your current run stays open.\n"+store.warning)
 	_button("Resume ride",440,383,400,func():
 		paused = false
 		_show_drive(),true)
@@ -435,7 +458,7 @@ func _modal(title: String, body: String) -> void:
 func _finish() -> void:
 	if run_finished:
 		return
-	run_finished = true
+	paused = true
 	router.clear()
 	router.active = false
 	var message := "Your track. Your adventure! Keep building, or try it again."
@@ -448,16 +471,56 @@ func _finish() -> void:
 				reasons.append(str(component.label)+" +"+str(component.gp))
 			message = "+%d GP · %d GP saved.\n%s" % [int(reward.earned),int(state.gp)," / ".join(reasons)]
 		else:
-			message = economy.warning if not economy.warning.is_empty() else "Reward is already saved, or this run was not eligible."
-
+			finish_pending = true
+			finish_warning = economy.warning if not economy.warning.is_empty() else "This run could not be settled."
+			status = finish_warning
+			_show_pending_finish()
+			return
+	finish_pending = false
+	finish_warning = ""
+	run_finished = true
 	sound.play_cue("finish")
-	_modal("Adventure complete!",message)
-	_button("Ride again",410,386,220,_restart,true)
-	_button("Keep exploring",644,386,225,show_editor if editor_preview else show_courses)
-	_button("Back to garage",410,457,459,show_garage)
-	if not store.warning.is_empty():
-		_label(store.warning,400,551,490,62,18,ORANGE)
+	_reward_dialog("Adventure complete!",message,[
+		["Ride again",_restart,true],
+		["Keep exploring",show_editor if editor_preview else show_courses,false],
+		["Back to garage",show_garage,false]])
+
+func _reward_dialog(title: String, body: String, actions: Array) -> void:
+	# Retry replaces its own dialog; it never stacks another overlay or reward cue.
+	for child in _reward_dialog_nodes:
+		if is_instance_valid(child) and child.get_parent() == ui:
+			ui.remove_child(child)
+			child.queue_free()
+	_reward_dialog_nodes.clear()
+	var first := ui.get_child_count()
+	var shade := ColorRect.new()
+	shade.color = Color("102638b8")
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	ui.add_child(shade)
+	_panel(300,156,680,466)
+	_label(title,336,182,608,54,32)
+	var explanation := _label(body,336,247,608,148,21,TEAL)
+	for index in range(actions.size()):
+		var action: Array = actions[index]
+		_button(action[0],336+(index%2)*312,410+floori(index/2.0)*75,608 if index==2 else 296,action[1],action[2])
 	_compact_modal()
+	if compact_mode:
+		explanation.size.y = 164
+	for child in ui.get_children().slice(first):
+		_reward_dialog_nodes.append(child)
+
+func _show_pending_finish() -> void:
+	_reward_dialog("Reward not saved yet", "Keep this run open and retry.\n"+finish_warning,[
+		["Retry save",_finish,true],
+		["Reload saved garage",_confirm_leave_pending_finish,false]])
+
+func _confirm_leave_pending_finish() -> void:
+	_reward_dialog("Leave this pending reward?", "Your saved garage will be reloaded. This completed run has not been awarded and will be left behind. You can keep it open and retry instead.",[
+		["Keep pending run",_show_pending_finish,true],
+		["Reload and leave run",func():
+			finish_pending = false
+			finish_warning = ""
+			reload_saved_garage(),false]])
 
 func show_editor() -> void:
 	paused = false
@@ -654,6 +717,8 @@ func show_licenses() -> void:
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_pressed() and not event.is_echo() and event is InputEventKey:
 		if event.physical_keycode in [KEY_ESCAPE,KEY_P] and page == "drive":
+			if finish_pending or run_finished:
+				return
 			if paused:
 				paused = false
 				_show_drive()
@@ -678,6 +743,8 @@ func _notification(what: int) -> void:
 			else:
 				explore.pause_drive()
 		elif page == "drive":
+			if finish_pending or run_finished:
+				return
 			if paused:
 				paused = false
 				_show_drive()
@@ -693,6 +760,10 @@ var closing := false
 func quit_game() -> void:
 	if closing:
 		return
+	if finish_pending:
+		_finish()
+		if finish_pending:
+			return
 	closing = true
 	_close_private_session()
 	if is_instance_valid(explore):
@@ -774,6 +845,8 @@ func _pin_upgrade(id: String) -> void:
 	if economy.pin_goal(id):
 		state = store.data.duplicate(true)
 		status = "Goal pinned. You keep every point until you choose to spend it."
+	else:
+		status = economy.warning
 	show_upgrades()
 
 func _start_intro_drive() -> void:
@@ -864,6 +937,9 @@ func _start_private_room(hosting: bool, address: String, invitation: String) -> 
 	add_child(private_mode)
 
 func reload_saved_garage() -> void:
+	if finish_pending:
+		_confirm_leave_pending_finish()
+		return
 	state = store.load_save()
 	economy = Economy.new(store)
 	active_run_id = 0
