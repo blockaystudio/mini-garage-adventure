@@ -1,0 +1,868 @@
+PASS: static runtime contract (local GP spending; isolated opt-in network modules; no ads/billing/endpoints; solo Android permissions disabled).
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --editor --import
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (2 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/compact_layout.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/content.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/drive3d/chase_camera.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/drive3d/drive_input.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/drive3d/explore_mode.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/drive3d/vehicle_art.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/drive3d/vehicle_controller.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/drive3d/vehicle_sim.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/drive3d/world_builder.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/drive3d/world_content.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/editor_model.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/input_router.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/main.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/net/private_session.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/net/session_view.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/net/test_profile_store.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/progression/catalog.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/progression/economy.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/progression/profile_progression.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/save_store.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/sound.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/track_model.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/ui/garage_screen.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/ui/upgrade_screen.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/vehicle_model.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/world_view.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://server/session_server.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/model_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+COURSE_COMPLETION_SECONDS {"coast":8.175,"dunes":14.108,"firefly":8.233,"lantern":16.275,"meadow":7.292,"moon":15.392,"orchard":9.333,"parcel":12.133,"quarry":12.317,"river":16.75,"summit":21.275,"switchback":12.775}
+VEHICLE_DISTANCE_AFTER_4S {"buggy":901.222995918884,"crawler":801.215414834098,"kart":1034.05968519586,"rally":1053.88851819276,"rover":826.242072015178,"truck":824.360952701983}
+MODEL_TESTS checks=4044 failures=0
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/save_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS missing native save gives playable defaults
+PASS first native save succeeds
+PASS new store recovers saved build and settings
+PASS second atomic save keeps previous generation backup
+PASS corrupt primary recovers previous valid backup
+PASS saving recovered backup does not replace it with corruption
+PASS two corrupt files produce safe defaults and an honest warning
+PASS parent reset creates a fresh committed native save
+PASS reset clears previous and temporary progress
+PASS reset before future-schema case .json
+PASS future schema becomes read-only .json
+PASS future schema cannot be overwritten .json
+PASS reset before future-schema case .bak
+PASS future schema becomes read-only .bak
+PASS future schema cannot be overwritten .bak
+PASS reset before future-schema case .tmp
+PASS future schema becomes read-only .tmp
+PASS future schema cannot be overwritten .tmp
+PASS explicit parent reset may clear unsupported native save
+PASS future schema is preserved even when its payload format changed
+PASS reset clears future-format case
+PASS version 1 native save migrates supported choices
+PASS migrated native save writes current envelope
+PASS invalid parts and unknown or duplicate courses normalize
+PASS malformed tracks settings and time records normalize
+PASS locked vehicles cannot enter a fresh save
+PASS reset before interrupted write checks
+PASS uncommitted temp cannot replace a good committed save
+PASS complete interrupted write is recovered when committed save is absent
+PASS recovered interrupted save can be committed
+PASS backup creation failure leaves committed save untouched
+PASS incomplete interrupted write cannot replace committed save
+PASS checksum rejects valid JSON with changed payload
+PASS unavailable storage reports failure without claiming saved data
+PASS non-object save cannot enter runtime
+PASS oversized save is bounded
+PASS four-piece private track opens valid
+PASS minimum four pieces enforced
+PASS invalid placement and piece IDs rejected
+PASS replace can be undone
+PASS remove restores exact layout on undo
+PASS sixteen-piece editor limit enforced
+PASS malformed saved editor layout recovers a valid starter track
+PASS incomplete start is rejected before playable preview
+PASS undo history has a fixed memory bound
+SAVE_EDITOR_RESULT passed=45 failed=0
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/integration_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: scene drive reaches finish using router throttle
+PASS: actual introductory drive grants150GP and replaces ordinary event/mastery rewards
+PASS: scene drive reaches finish using router throttle
+PASS: restarting introductory scene cannot repeat its grant
+PASS: isolated tutorial profile can be reset before independent scene cases
+PASS: first launch opens garage with no medals
+PASS: first launch selects available buggy
+PASS: new-profile vehicle threshold is visibly three mastery stars
+PASS: usable UI button: Giant tires
+PASS: usable UI button: Firm springs
+PASS: usable UI button: Purple
+PASS: garage signals update and save build
+PASS: build saved to actual native file
+PASS: usable UI button: Choose a course  →
+PASS: course menu reachable
+PASS: all authored course captions stay inside two-line cards
+PASS: usable UI button: 01  Meadow Hello
+PASS: course starts with active router
+PASS: all driving pads fit simulated phone safe-area insets
+PASS: safe-area scaling preserves touch hit mapping
+PASS: simultaneous throttle and brake touches
+PASS: one touch release preserves other finger
+PASS: canceled final finger releases throttle
+PASS: keyboard aliases release independently
+PASS: all keyboard aliases released
+PASS: pointer release preserves keyboard throttle
+PASS: focus loss pauses and clears controls
+PASS: paused scene does not advance
+PASS: usable UI button: Resume ride
+PASS: resume requires fresh input
+PASS: background notification clears all input
+PASS: usable UI button: Resume ride
+PASS: rapid restart resets car and input twelve times
+PASS: scene drive reaches finish using router throttle
+PASS: finish awards one medal and local best
+PASS: first authored finish awards30base+50first+25completion GP and one star
+PASS: duplicate scene finish does not stack result actions or audio cues
+PASS: duplicate scene finish cannot replay GP or mastery
+PASS: finish clears driving controls
+PASS: finished scene cannot duplicate medal
+PASS: usable UI button: Ride again
+PASS: finish retry starts cleanly
+PASS: one star does not bypass new vehicle mastery gate
+PASS: usable UI button: Upgrades
+PASS: upgrade drawer refuses an unaffordable purchase
+PASS: usable UI button: Goal pinned
+PASS: pinning a mud-tire goal is free and saved
+PASS: usable UI button: ✓ Meadow Hello
+PASS: scene drive reaches finish using router throttle
+PASS: legitimate repeat run awards only30GP and no duplicate star
+PASS: usable UI button: 02  Orchard Roll
+PASS: scene drive reaches finish using router throttle
+PASS: usable UI button: 03  Coast Dash
+PASS: scene drive reaches finish using router throttle
+PASS: three distinct completions and a repeat fund the first upgrade without granting GP directly
+PASS: three completion stars unlock the next distinct vehicle
+PASS: usable UI button: Moon Rover
+PASS: unlocked vehicle selectable and saved
+PASS: usable UI button: Upgrades
+PASS: usable UI button: Buy for 300 GP
+PASS: actual purchase button atomically deducts GP and grants mud tires
+PASS: usable UI button: Equip · FREE
+PASS: actual equipment button fits owned mud tires for free
+PASS: mastery stars are never spent by the upgrade purchase
+PASS: wallet ownership equipment and pinned goal survive actual file reload
+PASS: repeated scene purchase action cannot charge twice
+PASS: usable UI button: Track lab
+PASS: four-section private editor reachable
+PASS: invalid start disables save and play
+PASS: usable UI button: Undo
+PASS: undo restores playable layout
+PASS: usable UI button: Valley
+PASS: usable UI button: + Add flat
+PASS: editor adds a valid section
+PASS: usable UI button: Remove
+PASS: editor removes section above minimum
+PASS: usable UI button: Save + test drive  →
+PASS: private track saves then starts native preview
+PASS: scene drive reaches finish using router throttle
+PASS: private preview preserves authored medals and cannot farm GP
+PASS: usable UI button: Keep exploring
+PASS: preview returns to saved editor
+PASS: usable UI button: Open settings
+PASS: wrong grown-up answer stays at gate
+PASS: usable UI button: Open settings
+PASS: correct grown-up gate opens settings
+PASS: usable UI button: Sound: ON
+PASS: usable UI button: Reduced motion: OFF
+PASS: usable UI button: Tap to drive: OFF
+PASS: accessibility settings applied
+PASS: volume and accessibility persist
+PASS: tap-to-drive latches without holding
+PASS: canceled event clears tap-to-drive latch
+PASS: fresh tap latches again after cancellation
+PASS: pause clears tap-to-drive latch
+PASS: usable UI button: Help & privacy
+PASS: factual help and privacy reachable
+PASS: usable UI button: Reset local progress
+PASS: usable UI button: Keep progress
+PASS: reset cancel preserves local progress and wallet
+PASS: usable UI button: Reset local progress
+PASS: usable UI button: Erase local save
+PASS: confirmed reset restores full defaults
+PASS: reset writes fresh defaults and removes old backup and temporary files
+PASS: phone garage uses focused tabs instead of the old stacked form
+PASS: phone garage exposes the Parts tab
+PASS: phone garage exposes the Paint tab
+PASS: phone garage exposes the Rides tab
+PASS: persistent large phone action: GarageQuickDrive
+PASS: persistent large phone action: GarageExplore
+PASS: persistent large phone action: GarageUpgrades
+PASS: persistent large phone action: GarageTrackLab
+PASS: focused phone garage retains the native vehicle showcase
+PASS: focused phone garage uses at least 112px logical button targets
+PASS: usable UI button: Paint
+PASS: focused paint tab offers a large actual owned paint button
+PASS: focused paint selection saves and preserves its selected tab
+PASS: usable UI button: Quick Drive
+PASS: compact courses has an accessible vertical content scroller
+PASS: compact courses exposes content beyond short-screen height
+PASS: compact courses uses at least 112px logical button targets
+PASS: all compact course descriptions remain adjacent to their course buttons
+PASS: usable UI button: 01  Meadow Hello
+PASS: compact course keeps native drive screen
+PASS: compact drive header uses at least 112px logical button targets
+PASS: compact drive pads are large and contained in phone safe area
+PASS: compact safe-area drive touch maps to original router
+PASS: usable UI button: Pause
+PASS: compact pause dialog uses at least 112px logical button targets
+PASS: usable UI button: Resume ride
+PASS: compact pause and resume signals remain connected
+PASS: compact editor has an accessible vertical content scroller
+PASS: compact editor exposes content beyond short-screen height
+PASS: compact editor uses at least 112px logical button targets
+PASS: usable UI button: Valley
+PASS: compact editor retains shape-selection signals
+PASS: usable UI button: Save track
+PASS: compact editor retains private save action
+PASS: compact grown-up gate has an accessible vertical content scroller
+PASS: compact grown-up gate exposes content beyond short-screen height
+PASS: compact grown-up gate uses at least 112px logical button targets
+PASS: compact gate text input is a large touch target
+PASS: usable UI button: Open settings
+PASS: compact parent settings has an accessible vertical content scroller
+PASS: compact parent settings exposes content beyond short-screen height
+PASS: compact parent settings uses at least 112px logical button targets
+PASS: compact volume input is a large touch target
+PASS: usable UI button: Sound: ON
+PASS: compact settings action stays connected
+PASS: usable UI button: Help & privacy
+PASS: compact help and privacy has an accessible vertical content scroller
+PASS: compact help and privacy exposes content beyond short-screen height
+PASS: compact help and privacy uses at least 112px logical button targets
+PASS: usable UI button: Engine licenses
+PASS: compact engine notices has an accessible vertical content scroller
+PASS: compact engine notices exposes content beyond short-screen height
+PASS: compact engine notices uses at least 112px logical button targets
+PASS: compact license scroll retains complete engine notices
+PASS: usable UI button: Reset local progress
+PASS: compact reset dialog uses at least 112px logical button targets
+PASS: usable UI button: Keep progress
+PASS: Explore screen creates a genuine3D vehicle and chase camera
+PASS: usable UI button: World map
+PASS: destination menu pauses3D controls
+PASS: usable UI button: Resume
+PASS: map header Resume returns to drive without resetting the vehicle
+PASS: usable UI button: Missions
+PASS: mission menu pauses3D controls
+PASS: usable UI button: Resume
+PASS: mission header Resume is an active return action
+PASS: synthetic settled-result fixture reaches the real reward panel
+PASS: Escape after settled result clears the finished activity and resumes free explore
+PASS: resumed result cannot retry or duplicate a settled reward on the next frame
+PASS: Escape keeps a failed-save result paused for an explicit retry
+RELAUNCH write: ["Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org\n\n"]
+PASS: separate real process write exits successfully
+RELAUNCH read: ["Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org\n\nRelaunched state: { \"version\": 3, \"build\": { \"vehicle\": \"buggy\", \"tires\": \"mud\", \"suspension\": \"soft\", \"paint\": \"cyan\" }, \"completed\": [\"meadow\", \"orchard\", \"coast\"], \"custom\": [\"flat\", \"dip\", \"rollers\", \"flat\"], \"settings\": { \"muted\": false, \"volume\": 0.65, \"reduced_motion\": true, \"one_touch\": false, \"steering_sensitivity\": 1.0 }, \"best\": { \"meadow\": 7.60000000000017, \"orchard\": 9.34166666666678, \"coast\": 10.4333333333334 }, \"gp\": 15, \"stars\": [\"meadow:completion\", \"orchard:completion\", \"coast:completion\"], \"owned\": [\"road\", \"trail\", \"giant\", \"soft\", \"firm\", \"orange\", \"cyan\", \"purple\", \"lime\", \"mud\"], \"owned_vehicles\": [\"buggy\", \"rover\"], \"equipped\": { \"tires\": \"mud\", \"suspension_upgrade\": \"\", \"gearing\": \"\", \"drivetrain\": \"\", \"engine\": \"\" }, \"claims\": { \"clear:coast\": true, \"clear:meadow\": true, \"clear:orchard\": true, \"purchase:mud\": \"buy_mud\", \"star:coast:completion\": true, \"star:meadow:completion\": true, \"star:orchard:completion\": true }, \"regions\": [\"garage_valley\", \"festival_circuit\"], \"discoveries\": [], \"goal\": \"mud\", \"explore\": { \"region\": \"garage_valley\", \"checkpoint\": [0.0, 0.15, 84.0], \"yaw\": 0.0 }, \"economy\": { \"next_run\": 4, \"active\": {  }, \"last_settled\": 3, \"recent\": [{ \"kind\": \"reward\", \"event\": \"meadow\", \"run\": 1, \"gp\": 105, \"balance\": 105 }, { \"kind\": \"reward\", \"event\": \"orchard\", \"run\": 2, \"gp\": 105, \"balance\": 210 }, { \"kind\": \"reward\", \"event\": \"coast\", \"run\": 3, \"gp\": 105, \"balance\": 315 }, { \"kind\": \"upgrade\", \"event\": \"mud\", \"run\": 0, \"gp\": 0, \"balance\": 15 }] } }\n"]
+PASS: separate real process read exits successfully
+NATIVE INTEGRATION: 176 checks, 0 failures
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/accessibility_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: motion-enabled screen starts a visible transition
+PASS: usable settings action: Reduced motion: OFF
+REDUCED_MOTION_ALPHA: previous=0.6836000084877 current=1.0
+PASS: reduced-motion UI action propagates to saved setting and scene
+PASS: enabling reduced motion during a fade restores full UI opacity
+PASS: reduced-motion screen navigation stays fully opaque
+PASS: usable settings action: Reduced motion: ON
+PASS: disabling reduced motion deliberately restores transition behavior
+PASS: audible setting permits a generated cue
+PASS: usable settings action: Sound: ON
+PASS: muting through UI stops existing cue voices immediately
+PASS: muted setting suppresses new cue voices
+PASS: usable settings action: Sound: OFF
+PASS: volume slider exposes its setting name to accessibility APIs
+PASS: volume UI changes current voices and persisted setting
+PASS: volume survives actual native file reload
+PASS: zero volume prevents new generated cues
+PASS: compact part control keeps keyboard focus and large logical target
+PASS: focused phone part control accepts keyboard focus
+PASS: grown-up answer field exposes its purpose to accessibility APIs
+PASS: course progress exposes a meaningful accessibility name
+PASS: large compact driving targets remain in simulated safe-area bounds
+PASS: keyboard drive alternative remains available with compact controls
+PASS: keyboard alternative releases without a held touch
+ACCESSIBILITY SETTINGS: 23 checks, 0 failures
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/touch_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: GUI mouse-from-touch emulation is enabled
+PASS: one real finger counts once despite emulated mouse copy
+PASS: first finger and mouse-copy release preserve second finger
+PASS: final finger release stops hold-to-drive
+PASS: one tap latches once without double-toggle from emulated mouse
+PASS: normal tap release preserves tap-to-drive
+PASS: second real tap stops tap-to-drive
+PASS: emulated mouse never leaves a phantom pointer
+PASS: physical desktop mouse remains usable
+PASS: physical desktop mouse release remains usable
+TOUCH INPUT: 10 checks, 0 failures
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/economy_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: bundled economy/region catalogs validate
+PASS: eight real performance upgrades and six gates
+PASS: new profile starts without spendable GP or stars
+PASS: foundational parts stay free; new vehicles use mastery
+PASS: authored run begins: valley_first_drive
+PASS: ordered observation 1 run1
+PASS: ordered observation 2 run1
+PASS: ordered observation 3 run1
+PASS: ordered observation 4 run1
+PASS: E01 tutorial replaces all ordinary rewards and mastery
+PASS: authored run begins: valley_first_drive
+PASS: ordered observation 1 run2
+PASS: ordered observation 2 run2
+PASS: ordered observation 3 run2
+PASS: ordered observation 4 run2
+PASS: repeated tutorial grants nothing
+PASS: authored run begins: meadow
+PASS: ordered observation 1 run3
+PASS: ordered observation 2 run3
+PASS: ordered observation 3 run3
+PASS: ordered observation 4 run3
+PASS: E02 first authored2D finish pays30+50+25
+PASS: E04 duplicate callback cannot award twice
+PASS: E04 settled run cannot replay after relaunch
+PASS: authored run begins: orchard
+PASS: ordered observation 1 run4
+PASS: ordered observation 2 run4
+PASS: ordered observation 3 run4
+PASS: ordered observation 4 run4
+PASS: onboarding arithmetic gives360GP and two stars
+PASS: upgrade goal persists
+PASS: W03 stars alone do not admit marsh
+PASS: E07 atomic debit+grant buys mud tires
+PASS: E08 purchase retries/commands never charge again
+PASS: same transaction cannot buy a different item
+PASS: unowned part cannot be equipped
+PASS: free equip updates visible build and capability
+PASS: W04 entry is free and items are not consumed
+PASS: W05 admitted region survives free refitting
+PASS: earn/buy/equip/admit state survives real files/reload
+PASS: authored run begins: meadow
+PASS: ordered observation 1 run5
+PASS: ordered observation 2 run5
+PASS: ordered observation 3 run5
+PASS: ordered observation 4 run5
+PASS: E03 legitimate repeat pays30GP only
+PASS: authored run begins: meadow
+PASS: ordered observation 1 run6
+PASS: ordered observation 2 run6
+PASS: ordered observation 3 run6
+PASS: ordered observation 4 run6
+PASS: E05 a new objective pays once despite duplicated objective input
+PASS: authored run begins: meadow
+PASS: ordered observation 1 run7
+PASS: ordered observation 2 run7
+PASS: ordered observation 3 run7
+PASS: ordered observation 4 run7
+PASS: already-owned mastery is not spent or awarded again
+PASS: authored run begins: custom
+PASS: ordered observation 1 run8
+PASS: ordered observation 2 run8
+PASS: ordered observation 3 run8
+PASS: ordered observation 4 run8
+PASS: E15 custom tracks never farm currency or mastery
+PASS: unknown activity/server-only race kind rejected offline
+PASS: instant finish without measurements rejected
+PASS: teleported/skipped route cannot claim finish
+PASS: reverse checkpoint order rejected
+PASS: rapid restart invalidates superseded run
+PASS: ordered observation 1 run10
+PASS: ordered observation 2 run10
+PASS: ordered observation 3 run10
+PASS: ordered observation 4 run10
+PASS: new legitimate restart still finishes
+PASS: price fixture commits actual file
+PASS: E06 insufficient funds deduct/grant nothing and explain missing1GP
+PASS: E07 exact price reaches zero without negative balance
+PASS: E13 unknown item cannot enter inventory
+PASS: E13 invalid wallet/item/star IDs normalize safely
+PASS: non-finite wallet is rejected
+PASS: E10 schema2 grants75GP plus one completion star per course
+PASS: E10 migration preserves build settings private track and best times
+PASS: W09 all historical six-vehicle unlocks survive higher new thresholds
+PASS: migration commits current schema atomically
+PASS: E10 committed migration never grants twice
+PASS: authored run begins: valley_first_drive
+PASS: ordered observation 1 run1
+PASS: ordered observation 2 run1
+PASS: ordered observation 3 run1
+PASS: ordered observation 4 run1
+PASS: E11 migration compensation replaces introductory grant
+PASS: authored run begins: meadow
+PASS: ordered observation 1 run2
+PASS: ordered observation 2 run2
+PASS: ordered observation 3 run2
+PASS: ordered observation 4 run2
+PASS: historical clear/star claims prevent first-clear compensation being repeated
+PASS: E12 schema1 migrates through same compensation exactly once
+PASS: E09 failed backup cannot split purchase debit/grant
+PASS: E09 relaunch sees old complete transaction state
+PASS: E09 retry after storage repair buys exactly once
+PASS: E14 ledger remains64entries without forgetting permanent claims/high-water mark
+PASS: old settled IDs remain rejected after history compaction/relaunch
+PASS: ordered observation 1 run1
+PASS: ordered observation 2 run1
+PASS: ordered observation 3 run1
+PASS: ordered observation 4 run1
+PASS: failed reward commit leaves in-memory balance and claims unchanged
+PASS: lost primary plus valid interrupted record recovers complete award and deduplication claim
+PASS: recovered interrupted award cannot be claimed again
+PASS: recovered award can be committed after storage repair
+PASS: mismatched supported envelope/payload versions are corruption, not a second migration
+PASS: new steering sensitivity is bounded without discarding old settings
+PASS: missing optional Explore progress defaults safely
+PASS: admitted Explore region/checkpoint/heading persist across reload
+PASS: nonfinite checkpoint returns to safe default
+PASS: out-of-world checkpoint returns to safe default
+PASS: unadmitted destination cannot be restored from a local checkpoint
+PASS: schema1/2 migration receives safe optional Explore defaults
+PASS: concurrent-wallet fixture commits900GP
+PASS: first loaded writer buys mud
+PASS: stale writer rejects purchase and explains required reload
+PASS: stale writer cannot change committed wallet or temporary generation
+PASS: explicit reload then retry keeps both purchases with correct zero balance
+PASS: stale ordinary settings/build save also cannot overwrite newer purchases
+PASS: store that never loaded an existing profile cannot replace it
+PASS: unloaded store cannot hide a recovery-only wallet in .bak
+PASS: load then commit preserves recovered900GP from .bak
+PASS: unloaded store cannot hide a recovery-only wallet in .tmp
+PASS: load then commit preserves recovered900GP from .tmp
+PASS: E12 future schema4 is preserved and economic writes fail closed
+ECONOMY_RESULT checks=131 failures=0
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --fixed-fps 60 --script res://tests/drive3d_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: mud tires cross the fixed mud lane substantially faster
+PASS: mud tires reduce measured wheel slip on mud
+PASS: mud tire pavement speed tradeoff is measurable
+PASS: sand tires improve their intended surface
+PASS: rock tires improve their intended surface
+PASS: snow tires improve their intended surface
+PASS: fixed-step trajectory stable at30 fps
+PASS: fixed-step trajectory stable at60 fps
+PASS: fixed-step trajectory stable at90 fps
+PASS: fixed-step trajectory stable at120 fps
+PASS: fixed-step trajectory stable at144 fps
+PASS: right steering moves along positiveX from forward-Z
+PASS: reverse drives backward predictably
+PASS: brake takes priority over throttle and stops the buggy
+PASS: interrupted frame does not teleport the car
+PASS: corrupt state/control/surface values normalize safely
+PASS: low range improves a steep low-grip climb
+PASS: low-range climbing advantage trades flat top speed
+PASS: AWD reduces mixed-surface slip
+PASS: engine upgrade increases acceleration/pace
+PASS: six vehicle identities produce six distinct distances
+HANDLING_DISTANCE10S mudtrail=76.0804066111117 mudtires=162.598103333337 pavementtrail=170.28314236111 pavementmud=143.511008
+PASS: independent fingers can steer and accelerate together
+PASS: one finger release preserves another throttle finger
+PASS: sliding a held finger off its pad releases that control
+PASS: touch cancellation clears every held source
+PASS: keyboard aliases have independent lifetimes
+PASS: GUI-emulated mouse never double-toggles tap-to-drive
+PASS: dragging off a tap-to-drive press cancels its latch
+PASS: cancel releases the tap-to-drive latch
+PASS: focus loss clears throttle and keyboard sources
+PASS: background clears controls
+PASS: gamepad deadzone preserves neutral and full steering
+PASS: real3D wheel collisions settle on a static floor
+PASS: real3D wall collision prevents tunnelling through a barrier
+PASS: CharacterBody drives up an actual sloped collision box
+PASS: braking holds the car on a physical slope
+PASS: an inverted car recovers upright without a jitter loop
+PASS: recovery clears every drive control
+PASS: long-travel chassis physically clears a centered low obstacle
+PASS: network snapshot sanitization never injects invalid transforms
+PASS: snapshot restores actual3D position
+PASS: chase camera uses a real3D collision spring arm
+PASS: camera spring arm retracts against actual scenery collision
+PASS: reduced-motion camera remains finite
+DRIVE3D: 44 checks, 0 failures
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/world_content_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+COLLISIONS garage_valley: 11
+ROAD HIT garage_valley: (0.0, 4.035, 0.0) expected 4.035 normal (0.0, 1.0, 0.0)
+COLLISIONS festival_circuit: 11
+ROAD HIT festival_circuit: (185.0, 2.643698, 0.0) expected 2.64369565217391 normal (0.0, 0.9916, 0.129339)
+COLLISIONS moss_marsh: 7
+ROAD HIT moss_marsh: (-275.0, 2.035, 0.0) expected 2.035 normal (0.0, 0.995495, 0.094809)
+COLLISIONS sunspoke_dunes: 10
+ROAD HIT sunspoke_dunes: (0.0, 7.035, -240.0) expected 7.035 normal (0.0, 1.0, 0.0)
+COLLISIONS redstone_canyon: 15
+ROAD HIT redstone_canyon: (-240.0, 6.035002, -240.0) expected 6.035 normal (0.0, 1.0, 0.0)
+COLLISIONS frostline_summit: 9
+ROAD HIT frostline_summit: (-240.0, 6.035002, -480.0) expected 6.035 normal (0.0, 1.0, 0.0)
+WORLD CONTENT: 580 checks, 0 failures; built regions: ["garage_valley", "festival_circuit", "moss_marsh", "sunspoke_dunes", "redstone_canyon", "frostline_summit"]
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/world_traversal_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: isolated content-only inventory fixture saves; no production or online profile used
+TRAVERSAL {"checkpoint":8,"checkpoint_count":8,"completed":true,"distance_m":283.475387725979,"elapsed_seconds":53.5833333333316,"end_position":[3.98877811431885,0.0329377055168152,65.0810470581055],"id":"valley_first_drive","kind":"tutorial","mode":"tutorial","recoveries_during_route":0,"region":"garage_valley","reward_gp":150,"tires":"mud","vehicle":"buggy"}
+PASS: actual collision route reachable: valley_first_drive
+PASS: no recovery/warp needed during route: valley_first_drive
+TRAVERSAL {"checkpoint":8,"checkpoint_count":8,"completed":true,"distance_m":466.850073045818,"elapsed_seconds":89.8833333333295,"end_position":[43.4407997131348,0.0323057174682617,68.7201156616211],"id":"valley_parts_delivery","kind":"delivery_clear","mode":"delivery","recoveries_during_route":0,"region":"garage_valley","reward_gp":220,"tires":"mud","vehicle":"buggy"}
+PASS: actual collision route reachable: valley_parts_delivery
+PASS: no recovery/warp needed during route: valley_parts_delivery
+TRAVERSAL {"checkpoint":11,"checkpoint_count":11,"completed":true,"distance_m":370.336790484609,"elapsed_seconds":72.0833333333305,"end_position":[4.26973533630371,0.0328247733414173,66.2377853393555],"id":"valley_tire_trial","kind":"trail_3d_clear","mode":"surface_test","recoveries_during_route":0,"region":"garage_valley","reward_gp":225,"tires":"mud","vehicle":"buggy"}
+PASS: actual collision route reachable: valley_tire_trial
+PASS: no recovery/warp needed during route: valley_tire_trial
+DISCOVERY {"id":"valley_workshop_bell","position":[-55.1890678405762,0.0328081771731377,70.8598022460938],"reached_and_claimed":true,"region":"garage_valley","trigger":[-55.0,0.119999997317791,64.0]}
+PASS: actual driving reaches discovery trigger: valley_workshop_bell
+DISCOVERY {"id":"valley_waterwheel","position":[-76.1012649536133,0.0328016430139542,-61.1344146728516],"reached_and_claimed":true,"region":"garage_valley","trigger":[-76.0,0.119999997317791,-68.0]}
+PASS: actual driving reaches discovery trigger: valley_waterwheel
+DISCOVERY {"id":"valley_antenna","position":[72.1649398803711,0.0327901281416416,-61.1367034912109],"reached_and_claimed":true,"region":"garage_valley","trigger":[72.0,0.119999997317791,-68.0]}
+PASS: actual driving reaches discovery trigger: valley_antenna
+TRAVERSAL {"checkpoint":8,"checkpoint_count":8,"completed":true,"distance_m":560.613510884345,"elapsed_seconds":84.2666666666632,"end_position":[232.010437011719,0.032926831394434,66.1018829345703],"id":"festival_clockwork","kind":"trail_3d_clear","mode":"time_trial","recoveries_during_route":0,"region":"festival_circuit","reward_gp":225,"tires":"trail","vehicle":"kart"}
+PASS: actual collision route reachable: festival_clockwork
+PASS: no recovery/warp needed during route: festival_clockwork
+TRAVERSAL {"checkpoint":8,"checkpoint_count":8,"completed":true,"distance_m":413.552580775693,"elapsed_seconds":69.6833333333307,"end_position":[283.955780029297,0.032322108745575,71.4079971313477],"id":"festival_parcel_pit","kind":"delivery_clear","mode":"delivery","recoveries_during_route":0,"region":"festival_circuit","reward_gp":245,"tires":"trail","vehicle":"kart"}
+PASS: actual collision route reachable: festival_parcel_pit
+PASS: no recovery/warp needed during route: festival_parcel_pit
+TRAVERSAL {"checkpoint":10,"checkpoint_count":10,"completed":true,"distance_m":410.150075386511,"elapsed_seconds":74.7666666666637,"end_position":[246.214172363281,0.032911442220211,61.0574951171875],"id":"festival_slalom","kind":"trail_3d_clear","mode":"slalom","recoveries_during_route":0,"region":"festival_circuit","reward_gp":225,"tires":"trail","vehicle":"kart"}
+PASS: actual collision route reachable: festival_slalom
+PASS: no recovery/warp needed during route: festival_slalom
+DISCOVERY {"id":"festival_podium","position":[240.0,0.0012499988079071,84.0],"reached_and_claimed":true,"region":"festival_circuit","trigger":[187.0,0.119999997317791,64.0]}
+PASS: actual driving reaches discovery trigger: festival_podium
+DISCOVERY {"id":"festival_grandstand","position":[313.524505615234,0.0328202396631241,-57.1828308105469],"reached_and_claimed":true,"region":"festival_circuit","trigger":[313.0,0.119999997317791,-64.0]}
+PASS: actual driving reaches discovery trigger: festival_grandstand
+DISCOVERY {"id":"festival_trophy","position":[164.447906494141,0.0328161530196667,-65.1885375976562],"reached_and_claimed":true,"region":"festival_circuit","trigger":[165.0,0.119999997317791,-72.0]}
+PASS: actual driving reaches discovery trigger: festival_trophy
+TRAVERSAL {"checkpoint":11,"checkpoint_count":11,"completed":true,"distance_m":530.482935924083,"elapsed_seconds":91.7666666666627,"end_position":[-234.177841186523,0.0329262502491474,68.5318908691406],"id":"marsh_supply_loop","kind":"trail_3d_clear","mode":"trail","recoveries_during_route":0,"region":"moss_marsh","reward_gp":225,"tires":"mud","vehicle":"rover"}
+PASS: actual collision route reachable: marsh_supply_loop
+PASS: no recovery/warp needed during route: marsh_supply_loop
+TRAVERSAL {"checkpoint":8,"checkpoint_count":8,"completed":true,"distance_m":404.969051199034,"elapsed_seconds":72.3833333333305,"end_position":[-191.420028686523,0.0323043018579483,30.4739475250244],"id":"marsh_reed_delivery","kind":"delivery_clear","mode":"delivery","recoveries_during_route":0,"region":"moss_marsh","reward_gp":245,"tires":"mud","vehicle":"rover"}
+PASS: actual collision route reachable: marsh_reed_delivery
+PASS: no recovery/warp needed during route: marsh_reed_delivery
+TRAVERSAL {"checkpoint":9,"checkpoint_count":9,"completed":true,"distance_m":305.817336090608,"elapsed_seconds":61.0999999999978,"end_position":[-237.118209838867,0.0328366011381149,62.5914344787598],"id":"marsh_boardwalk","kind":"trail_3d_clear","mode":"precision","recoveries_during_route":0,"region":"moss_marsh","reward_gp":225,"tires":"mud","vehicle":"rover"}
+PASS: actual collision route reachable: marsh_boardwalk
+PASS: no recovery/warp needed during route: marsh_boardwalk
+DISCOVERY {"id":"marsh_lookout","position":[-240.0,0.0012499988079071,84.0],"reached_and_claimed":true,"region":"moss_marsh","trigger":[-293.0,0.119999997317791,-62.0]}
+PASS: actual driving reaches discovery trigger: marsh_lookout
+DISCOVERY {"id":"marsh_pump","position":[-240.0,0.0012499988079071,84.0],"reached_and_claimed":true,"region":"moss_marsh","trigger":[-171.0,0.119999997317791,54.0]}
+PASS: actual driving reaches discovery trigger: marsh_pump
+DISCOVERY {"id":"marsh_firefly","position":[-168.711807250977,0.0328045822679996,-58.1612281799316],"reached_and_claimed":true,"region":"moss_marsh","trigger":[-168.0,0.119999997317791,-65.0]}
+PASS: actual driving reaches discovery trigger: marsh_firefly
+TRAVERSAL {"checkpoint":9,"checkpoint_count":9,"completed":true,"distance_m":391.374153919518,"elapsed_seconds":68.5666666666641,"end_position":[7.40843296051025,0.0329302363097668,-170.868408203125],"id":"dunes_ridge_climb","kind":"trail_3d_clear","mode":"hill_climb","recoveries_during_route":0,"region":"sunspoke_dunes","reward_gp":225,"tires":"sand","vehicle":"rally"}
+PASS: actual collision route reachable: dunes_ridge_climb
+PASS: no recovery/warp needed during route: dunes_ridge_climb
+TRAVERSAL {"checkpoint":7,"checkpoint_count":7,"completed":true,"distance_m":416.431041421136,"elapsed_seconds":71.8499999999972,"end_position":[46.404727935791,0.0323155261576176,-195.610794067383],"id":"dunes_water_delivery","kind":"delivery_clear","mode":"delivery","recoveries_during_route":0,"region":"sunspoke_dunes","reward_gp":245,"tires":"sand","vehicle":"rally"}
+PASS: actual collision route reachable: dunes_water_delivery
+PASS: no recovery/warp needed during route: dunes_water_delivery
+TRAVERSAL {"checkpoint":10,"checkpoint_count":10,"completed":true,"distance_m":489.369959864765,"elapsed_seconds":89.2499999999962,"end_position":[6.80272388458252,0.0328358225524426,-174.146926879883],"id":"dunes_arch_slalom","kind":"trail_3d_clear","mode":"slalom","recoveries_during_route":0,"region":"sunspoke_dunes","reward_gp":225,"tires":"sand","vehicle":"rally"}
+PASS: actual collision route reachable: dunes_arch_slalom
+PASS: no recovery/warp needed during route: dunes_arch_slalom
+DISCOVERY {"id":"dunes_flag_ridge","position":[0.0,0.0012499988079071,-156.0],"reached_and_claimed":true,"region":"sunspoke_dunes","trigger":[0.0,7.11999988555908,-254.0]}
+PASS: actual driving reaches discovery trigger: dunes_flag_ridge
+DISCOVERY {"id":"dunes_oasis","position":[-75.6476364135742,0.0328039042651653,-293.138793945312],"reached_and_claimed":true,"region":"sunspoke_dunes","trigger":[-76.0,0.119999997317791,-300.0]}
+PASS: actual driving reaches discovery trigger: dunes_oasis
+DISCOVERY {"id":"dunes_sun_arch","position":[0.0,0.0012499988079071,-156.0],"reached_and_claimed":true,"region":"sunspoke_dunes","trigger":[76.0,0.119999997317791,-185.0]}
+PASS: actual driving reaches discovery trigger: dunes_sun_arch
+TRAVERSAL {"checkpoint":9,"checkpoint_count":9,"completed":true,"distance_m":349.961487740278,"elapsed_seconds":64.033333333331,"end_position":[-232.626586914062,0.0329324789345264,-173.100967407227],"id":"canyon_precision","kind":"trail_3d_clear","mode":"precision","recoveries_during_route":0,"region":"redstone_canyon","reward_gp":225,"tires":"rock","vehicle":"crawler"}
+PASS: actual collision route reachable: canyon_precision
+PASS: no recovery/warp needed during route: canyon_precision
+TRAVERSAL {"checkpoint":7,"checkpoint_count":7,"completed":true,"distance_m":421.084183063591,"elapsed_seconds":72.8499999999972,"end_position":[-295.490051269531,0.0323004424571991,-208.801086425781],"id":"canyon_bridge_delivery","kind":"delivery_clear","mode":"delivery","recoveries_during_route":0,"region":"redstone_canyon","reward_gp":245,"tires":"rock","vehicle":"crawler"}
+PASS: actual collision route reachable: canyon_bridge_delivery
+PASS: no recovery/warp needed during route: canyon_bridge_delivery
+TRAVERSAL {"checkpoint":9,"checkpoint_count":9,"completed":true,"distance_m":399.079151929822,"elapsed_seconds":72.5666666666638,"end_position":[-247.231430053711,0.0328370220959187,-173.281829833984],"id":"canyon_rock_route","kind":"trail_3d_clear","mode":"hill_climb","recoveries_during_route":0,"region":"redstone_canyon","reward_gp":225,"tires":"rock","vehicle":"crawler"}
+PASS: actual collision route reachable: canyon_rock_route
+PASS: no recovery/warp needed during route: canyon_rock_route
+DISCOVERY {"id":"canyon_overlook","position":[-311.14599609375,0.0328017175197601,-300.194549560547],"reached_and_claimed":true,"region":"redstone_canyon","trigger":[-312.0,0.119999997317791,-307.0]}
+PASS: actual driving reaches discovery trigger: canyon_overlook
+DISCOVERY {"id":"canyon_crane","position":[-170.127685546875,0.0327985882759094,-297.455444335938],"reached_and_claimed":true,"region":"redstone_canyon","trigger":[-168.0,0.119999997317791,-304.0]}
+PASS: actual driving reaches discovery trigger: canyon_crane
+DISCOVERY {"id":"canyon_balanced_rock","position":[-240.0,0.0012499988079071,-156.0],"reached_and_claimed":true,"region":"redstone_canyon","trigger":[-317.0,0.119999997317791,-186.0]}
+PASS: actual driving reaches discovery trigger: canyon_balanced_rock
+TRAVERSAL {"checkpoint":9,"checkpoint_count":9,"completed":true,"distance_m":454.942027110606,"elapsed_seconds":77.2999999999969,"end_position":[-246.783813476562,0.0329322554171085,-414.224853515625],"id":"summit_ice_route","kind":"trail_3d_clear","mode":"ice_route","recoveries_during_route":0,"region":"frostline_summit","reward_gp":225,"tires":"snow","vehicle":"truck"}
+PASS: actual collision route reachable: summit_ice_route
+PASS: no recovery/warp needed during route: summit_ice_route
+TRAVERSAL {"checkpoint":7,"checkpoint_count":7,"completed":true,"distance_m":415.509202271351,"elapsed_seconds":72.9333333333305,"end_position":[-190.319641113281,0.0323177836835384,-444.704315185547],"id":"summit_supply_delivery","kind":"delivery_clear","mode":"delivery","recoveries_during_route":0,"region":"frostline_summit","reward_gp":245,"tires":"snow","vehicle":"truck"}
+PASS: actual collision route reachable: summit_supply_delivery
+PASS: no recovery/warp needed during route: summit_supply_delivery
+TRAVERSAL {"checkpoint":10,"checkpoint_count":10,"completed":true,"distance_m":506.01766602078,"elapsed_seconds":95.4666666666625,"end_position":[-232.807525634766,0.0328346192836761,-413.476593017578],"id":"summit_switchback","kind":"trail_3d_clear","mode":"switchback","recoveries_during_route":0,"region":"frostline_summit","reward_gp":225,"tires":"snow","vehicle":"truck"}
+PASS: actual collision route reachable: summit_switchback
+PASS: no recovery/warp needed during route: summit_switchback
+DISCOVERY {"id":"summit_station","position":[-299.728820800781,0.0330877304077148,-539.251220703125],"reached_and_claimed":true,"region":"frostline_summit","trigger":[-301.0,0.119999997317791,-546.0]}
+PASS: actual driving reaches discovery trigger: summit_station
+DISCOVERY {"id":"summit_ice_arch","position":[-168.852325439453,0.0327992625534534,-535.399719238281],"reached_and_claimed":true,"region":"frostline_summit","trigger":[-167.0,0.119999997317791,-542.0]}
+PASS: actual driving reaches discovery trigger: summit_ice_arch
+DISCOVERY {"id":"summit_weather","position":[-170.283645629883,0.0327976010739803,-416.268646240234],"reached_and_claimed":true,"region":"frostline_summit","trigger":[-169.0,0.119999997317791,-423.0]}
+PASS: actual driving reaches discovery trigger: summit_weather
+PASS: all eighteen authored activities were executed
+PASS: all eighteen authored discoveries were attempted
+WORLD TRAVERSAL: 57 checks, 0 failures
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/explore_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: fresh schema3 profile starts with no seeded GP
+PASS: actual Quick Drive scene completes meadow
+PASS: new authored 2D event awards30+50+25 once
+PASS: actual Quick Drive scene completes orchard
+PASS: new authored 2D event awards30+50+25 once
+PASS: two real authored courses produce210GP and two completion stars
+PASS: mud tires cannot be purchased before affordability
+PASS: Explore creates a real3D vehicle and chase camera
+PASS: new Explore profile starts at the authored safe spawn
+PASS: 3D authored activity starts: valley_first_drive
+ROUTE valley_first_drive checkpoint=0 position=(0.0, 0.263056, 84.0) elapsed=0.0
+ROUTE valley_first_drive checkpoint=1 position=(0.0, 0.032956, 72.88033) elapsed=3.01666666666666
+ROUTE valley_first_drive checkpoint=2 position=(-0.000001, 0.068016, 41.91025) elapsed=8.65000000000001
+ROUTE valley_first_drive checkpoint=3 position=(-18.81241, 0.062956, 31.25947) elapsed=13.8166666666669
+ROUTE valley_first_drive checkpoint=4 position=(-26.82217, 0.032954, -22.21692) elapsed=22.6
+ROUTE valley_first_drive checkpoint=5 position=(-6.438943, 0.070984, -43.40535) elapsed=28.483333333333
+ROUTE valley_first_drive checkpoint=6 position=(23.14442, 0.371244, -21.24212) elapsed=35.5666666666659
+ROUTE valley_first_drive checkpoint=7 position=(28.5843, 0.03301, 27.23207) elapsed=43.6666666666655
+PASS: actual 3D ordered route completed without teleport: valley_first_drive
+PASS: 3D route requires real traveled distance
+PASS: all authored checkpoints were reached in order
+PASS: real3D introductory loop grants150GP and no normal-event components
+PASS: duplicate 3D finish signal cannot award twice
+PASS: 3D authored activity starts: valley_parts_delivery
+ROUTE valley_parts_delivery checkpoint=1 position=(3.901618, 0.03295, 65.12526) elapsed=0.01666666666667
+ROUTE valley_parts_delivery checkpoint=2 position=(-38.12702, 0.032951, 60.96012) elapsed=7.49999999999998
+ROUTE valley_parts_delivery checkpoint=3 position=(-69.24389, 0.032949, 20.39683) elapsed=25.3666666666665
+ROUTE valley_parts_delivery checkpoint=4 position=(-71.70795, 0.032948, -58.13123) elapsed=36.6833333333325
+ROUTE valley_parts_delivery checkpoint=5 position=(17.21888, 0.032945, -75.4837) elapsed=49.8999999999984
+ROUTE valley_parts_delivery checkpoint=6 position=(63.42511, 0.032946, -44.36057) elapsed=58.6999999999979
+ROUTE valley_parts_delivery checkpoint=7 position=(70.7405, 0.032943, 42.21215) elapsed=71.0499999999973
+PASS: actual 3D ordered route completed without teleport: valley_parts_delivery
+PASS: 3D route requires real traveled distance
+PASS: all authored checkpoints were reached in order
+PASS: actual 3D delivery earns its120GP base plus first clear/mastery
+PASS: only real completed activities made the mud upgrade affordable
+PASS: real upgrade drawer exposes affordable mud-tire purchase
+PASS: drawer atomically deducts300GP and grants mud tires
+PASS: owned mud tires expose free equipment action
+PASS: drawer equips owned mud tires and preserves wallet
+PASS: earned stars plus equipped mud tires admit Moss Marsh
+PASS: actual destination changes and first admission persists
+PASS: Moss Marsh loads actual world geometry at its own region coordinates
+PASS: pause clears live 3D controls and freezes collision movement
+PASS: free recovery retains wallet and clears input
+PASS: background notification pauses actual3D mode
+EXPLORE PHASE write: 31 checks, 0 failures
+
+ACTIVITY MEASUREMENT {"checkpoints":8.0,"completed":true,"distance_m":282.920654024929,"event":"valley_first_drive","gp_per_minute":175.097276264597,"recoveries":0.0,"reward_gp":150.0,"scope":"Automated real3D CharacterBody keyboard controls, headless desktop; not a human duration study","seconds":51.3999999999984,"total_checkpoints":8.0}
+ACTIVITY MEASUREMENT {"checkpoints":8.0,"completed":true,"distance_m":449.807263923343,"event":"valley_parts_delivery","gp_per_minute":183.826594414347,"recoveries":0.0,"reward_gp":245.0,"scope":"Automated real3D CharacterBody keyboard controls, headless desktop; not a human duration study","seconds":79.9666666666634,"total_checkpoints":8.0}
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: real app relaunch restores exact earned-and-spent wallet
+PASS: real app relaunch restores ownership and equipped tire
+PASS: relaunch retains mastery and previous2D completions
+PASS: relaunch retains private track
+PASS: relaunch retains admitted destination and checkpoint region
+PASS: replayed finish after a fresh process cannot duplicate an award
+PASS: new process resumes in the actual saved3D world
+PASS: new process never restores held driving input
+PASS: equipped mud tires actually drive through the new destination
+PASS: legacy tire can be refitted for free after region admission
+PASS: previous region admission survives an unsuitable tire refit
+PASS: same actual3D mud lane measurably favors purchased mud tires over legacy trail tires
+ACTUAL_MUD_LANE mud={ "distance": 17.9721527099609, "slip": 0.06, "surface": "mud", "tires": "mud" } trail={ "distance": 10.6180648803711, "slip": 0.62, "surface": "mud", "tires": "trail" }
+PASS: free refitting never consumes GP
+EXPLORE PHASE read: 13 checks, 0 failures
+
+EXPLORE LOOP: 44 checks, 0 failures; actual separate-process quit/relaunch
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/net_rules_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: missing isolated TEST profile starts empty
+PASS: online test wallet starts zero and separate from solo
+PASS: server starts a fair common-access loaner inventory
+PASS: valid server award commits
+PASS: same race award retry cannot double-credit
+PASS: negative award rejected
+PASS: oversized single award rejected
+PASS: unaffordable purchase changes nothing
+PASS: purchase atomically deducts and grants
+PASS: same purchase acknowledgement retry does not charge twice
+PASS: transaction ID cannot be replayed for another item
+PASS: server-owned test wallet survives process-style reopen
+PASS: invite remains valid through its expiry second
+PASS: expired invitation rejected
+PASS: wrong invitation rejected
+PASS: local/private engineering addresses accepted
+PASS: public endpoint connection refused
+PASS: wildcard is not a private endpoint
+PASS: wildcard server bind is refused before creating a socket
+PASS: wildcard join endpoint is refused before creating a socket
+PASS: non-finite and excessive controls normalized
+PASS: newer friend cannot bypass story gate from another profile
+PASS: leader proposal cannot choose non-common story destination
+PASS: local listen-server host joins its isolated profile
+PASS: trusted listen-server host can reopen its own saved test profile
+PASS: finished racer departure cannot end another entrant's race early
+PASS: late spectator does not prevent actual racers from finishing
+PASS: expired disconnected entrant becomes DNF without a payout
+PASS: normal input traffic cannot suppress a legitimate purchase rate bucket
+PASS: purchase retries are independently rate limited
+PASS: wrong-typed nested profile is rejected without a property crash
+PASS: rejected damaged TEST profile cannot be overwritten
+PASS: newer TEST schema remains protected from overwrite
+PASS: corrupt TEST primary recovers its validated backup
+PASS: authoritative finish discards pending throttle prediction instead of drifting beyond finish
+PASS: reconciliation metric distinguishes delayed-state age from the actual applied correction
+NETWORK RULES: 36 checks, 0 failures
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/net_view_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: explicit local native host opens real session view
+PASS: server snapshot creates an actual3D host vehicle
+PASS: camera follows the server-owned local driver
+PASS: network test room never imports or mutates solo wallet
+PASS: route menu clears driving controls
+PASS: server-approved common destination changes actual rendered region
+PASS: region geometry follows server destination
+PASS: server checkpoint visuals move with selected shared region
+PASS: returning to world requires fresh active controls
+PASS: return to solo closes the native peer
+PASS: return to solo removes the server authority node
+PASS: leave-to-solo keeps saved currency isolated
+PRIVATE VIEW: 12 checks, 0 failures
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --quit-after 5
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python /workspace/mini-garage-adventure/scripts/verify_save_concurrency.py
+PASS: isolated native wallet starts with900GP
+PASS: independent native PIDs load the same initial wallet
+PASS: first native process commits mud purchase
+PASS: second native process rejects its stale purchase
+PASS: new native process reloads then buys sand without losing mud
+PASS: race0 seed
+PASS: race0 exactly one concurrent snapshot may commit
+PASS: race0 disk contains one complete transaction
+PASS: race1 seed
+PASS: race1 exactly one concurrent snapshot may commit
+PASS: race1 disk contains one complete transaction
+PASS: race2 seed
+PASS: race2 exactly one concurrent snapshot may commit
+PASS: race2 disk contains one complete transaction
+PASS: race3 seed
+PASS: race3 exactly one concurrent snapshot may commit
+PASS: race3 disk contains one complete transaction
+PASS: race4 seed
+PASS: race4 exactly one concurrent snapshot may commit
+PASS: race4 disk contains one complete transaction
+PASS: race5 seed
+PASS: race5 exactly one concurrent snapshot may commit
+PASS: race5 disk contains one complete transaction
+PASS: race6 seed
+PASS: race6 exactly one concurrent snapshot may commit
+PASS: race6 disk contains one complete transaction
+PASS: race7 seed
+PASS: race7 exactly one concurrent snapshot may commit
+PASS: race7 disk contains one complete transaction
+PASS: crash fixture seed
+PASS: native process acquires nonempty writer lock
+PASS: live native writer lock rejects other purchases
+PASS: reset cannot remove a live writer's files
+PASS: after killed writer is reaped, dead native lock recovers safely
+PASS: successful save releases writer lock
+PASS: normal and contested writers leave no candidate locks
+PASS: reclaim0 seed
+PASS: reclaim0 native writer lock acquired
+PASS: reclaim0 competing dead-owner reclaimers permit one transaction
+PASS: reclaim0 surviving complete wallet is preserved
+PASS: reclaim1 seed
+PASS: reclaim1 native writer lock acquired
+PASS: reclaim1 competing dead-owner reclaimers permit one transaction
+PASS: reclaim1 surviving complete wallet is preserved
+PASS: reclaim2 seed
+PASS: reclaim2 native writer lock acquired
+PASS: reclaim2 competing dead-owner reclaimers permit one transaction
+PASS: reclaim2 surviving complete wallet is preserved
+SAVE_CONCURRENCY_RESULT checks=48 failures=0 (native Linux processes)
+PASS: source unchanged across native import/parsing/model/save/integration/settings/3D checks and main scene boot (Linux headless).
+Mobile installation, real touch/lifecycle, rendered performance and device accessibility remain separate gates.

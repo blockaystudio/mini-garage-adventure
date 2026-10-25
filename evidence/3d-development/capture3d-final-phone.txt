@@ -1,0 +1,1 @@
+PASS: 6 actual native captures; /workspace/mini-garage-adventure/evidence/3d-development/native3d-final-phone-style-800x450

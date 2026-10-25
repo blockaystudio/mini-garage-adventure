@@ -1,0 +1,29 @@
+Actual native local repro; isolated XDG directories under /tmp; not physical-device testing.
+Command: XDG_DATA_HOME=/tmp/garage-review-xdg-data XDG_CONFIG_HOME=/tmp/garage-review-xdg-config XDG_CACHE_HOME=/tmp/garage-review-xdg-cache GODOT_SILENCE_ROOT_WARNING=1 godot --headless --path native --audio-driver Dummy --script /tmp/garage-final-reward-review.gd
+Exit: 0
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+REPRO finished=true gp=0 last_settled=0 run_id=1 observed={ "id": 1, "progress": 1.0, "elapsed": 7.29166666666682, "samples": 438, "quarters": 4, "minimum": 2.0 }
+REPRO visible UI:
+Meadow Hello
+7.3 s  ·  Sunny Buggy  ·  Just for fun: under 14 s
+Restart
+Pause
+Hold DRIVE to go · BRAKE slows · Lean arrows balance
+BRAKE
+↶  LEAN
+LEAN  ↷
+DRIVE  →
+← / A
+→ / D
+Adventure complete!
+Could not save on this device. Your last saved garage is safe. Free some storage and try again.
+Ride again
+Keep exploring
+Back to garage
+Could not save on this device. Your last saved garage is safe. Free some storage and try again.
+
+REPRO after storage unblocked and finish retried gp=0 run_finished=true
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)

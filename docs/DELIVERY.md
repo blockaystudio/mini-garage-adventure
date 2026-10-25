@@ -1,4 +1,14 @@
-# Phone test available now
+# Current rewards and native 3D delivery
+
+Use [`3D_DELIVERY.md`](3D_DELIVERY.md) for the current playable native builds,
+source/PR references, run instructions and actual results, and
+[`3D_TASK_STATUS.md`](3D_TASK_STATUS.md) for the supplied plan's acceptance status.
+The private phone Site below remains the earlier 2D game; it has not been
+redeployed and does not contain the new Explore/reward/network milestone.
+
+---
+
+# Earlier phone test — preserved delivery record
 
 Open https://mini-garage-phone-test.wholeclock.chatgpt.site in current Safari or Chrome, sign in with the same ChatGPT account if prompted, tap Play and rotate to landscape. This owner-private Site runs the full six-vehicle/twelve-course game and private editor. The first load is about10MB. Browser saves are separate from native saves.
 

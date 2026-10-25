@@ -1,0 +1,16 @@
+{
+  "source_commit": "77655d005d4cd0a5359938a0288195e309bdfe36",
+  "wildcard_bind_and_join_refused": true,
+  "matrix_cases": 6,
+  "matrix_all_passed": true,
+  "repeat_all_passed": true,
+  "auth_status": "pass",
+  "network_rules": {
+    "checks": 36,
+    "failures": 0,
+    "log": "../network-wildcard-fix/rules.txt"
+  },
+  "source_fingerprints_match_current": true,
+  "auth_credentials_absent_from_evidence": true,
+  "scope": "Local native real ENet processes; application-level impairment, not physical devices or production readiness."
+}

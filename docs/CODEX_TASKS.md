@@ -1,6 +1,19 @@
-# Mini Garage Adventure — Codex optimization queue
+# Mini Garage Adventure — current development queue
 
-These are prepared work items, not running jobs or existing GitHub issues.
+Use the latest `codex/garage-explore-native` commit, preserving all newer work and open PRs. Read `3D_DELIVERY.md`, `3D_BUGS.md`, `NETWORKING.md`, `3D_NEXT_TASK.txt`, the tracker/work log and supplied specification under `3d-handoff/`. Source `5fb2751` adds reward/checkpoint recovery and pending TEST race settlement after core `37d0cf1` and schema-3 reward checkpoint `74e9e9b`; inspect actual branch/commit references before editing.
+
+| Order | Task | Required evidence |
+|---|---|---|
+| NEXT-01 | Authoritative native shared-world traversal | Reuse real solo controller/collision/surface geometry on the headless authority; two, then four independent native clients traverse commonly admitted destinations with non-colliding vehicles, recovery, consistent checkpoints/results and isolated server-owned TEST rewards. Current Festival-strip proof does not complete this. |
+| NEXT-02 | Physical Android/iOS acceptance | Named device installs, touch cancellation, interruptions, storage/relaunch, safe areas, assistive technologies and measured frame/memory/thermal behavior. Continue independent implementation if hardware/toolchains are unavailable. |
+| NEXT-03 | Human content/balance and production polish | Review actual activity durations, part comprehension, eighteen distinct objectives/discoveries, short skippable install/reward feedback, readable phone layouts and accessibility. Scripted traversal does not prove enjoyment or retention. |
+| NEXT-04 | Online production readiness | Parent/identity/privacy, retention/deletion, authorization/encryption/abuse controls and operating-cost work before any child-facing service. No public lobbies, chat, voice, trading, uploads or global rankings. |
+
+Keep the complete offline Quick Drive/editor/Explore game and compatible native saves. Browser crossplay is a separate transport/test decision. The current request prohibits website deployment, merges, force-pushes, store submission, spending, agreements and tester contact. Use bounded commits and draft PRs with actual evidence.
+
+## Historical Build01 optimization queue
+
+The items below describe the original browser/base-game sequence, not the next task or the current native implementation. They are retained as historical context, not running jobs or existing GitHub issues. Do not restart OPT-01 or the source import in place of the current development milestone.
 
 | Order | Task | Acceptance |
 |---|---|---|

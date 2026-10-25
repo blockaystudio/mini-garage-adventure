@@ -1,0 +1,4 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+AFTER_STORAGE_FAILURE:{"checkpoint":3,"finished":false,"gp":0,"phase":"running","status":"TEST result storage failed; no result acknowledged."}
+AFTER_STORAGE_RECOVERY:{"checkpoint":3,"entrant_status":"dnf","finished":false,"gp":0,"phase":"finished","results":[]}

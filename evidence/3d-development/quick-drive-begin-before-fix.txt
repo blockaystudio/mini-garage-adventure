@@ -1,0 +1,21 @@
+Actual native local begin-run failure repro; isolated XDG directories under /tmp; not physical-device testing.
+Command: XDG_DATA_HOME=/tmp/garage-review-xdg-data XDG_CONFIG_HOME=/tmp/garage-review-xdg-config XDG_CACHE_HOME=/tmp/garage-review-xdg-cache GODOT_SILENCE_ROOT_WARNING=1 godot --headless --path native --audio-driver Dummy --script /tmp/garage-final-begin-review.gd
+Exit: 0
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+REPRO page=drive run_id=0 router_active=true economy_warning=Could not save on this device. Your last saved garage is safe. Free some storage and try again.
+REPRO warning_visible=false
+REPRO visible UI:
+Meadow Hello
+0.0 s  ·  Try a smooth ride
+Restart
+Pause
+Hold DRIVE to go · BRAKE slows · Lean arrows balance
+BRAKE
+↶  LEAN
+LEAN  ↷
+DRIVE  →
+← / A
+→ / D
+

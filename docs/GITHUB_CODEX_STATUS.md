@@ -1,5 +1,11 @@
 # Current repository status — 2026-10-25
 
+Continue on `codex/garage-explore-native`, source `5fb2751` (Explore core `37d0cf1` plus private-bind, saved-heading/privacy and reward-save recovery fixes), following schema-3 economy checkpoint `74e9e9b` on `codex/garage-rewards-schema3`. Inspect actual git status, remote branches and open PRs before selecting a base. Never reset or reimport over subsequent work. The latest `MASTER_TRACKER.md` entry identifies later evidence commits.
+
+Draft [economy PR #4](https://github.com/blockaystudio/mini-garage-adventure/pull/4) adds rewards/schema-3 on the reviewed readiness branch; [Explore PR #5](https://github.com/blockaystudio/mini-garage-adventure/pull/5) is stacked on it. All five PRs remain unmerged. Linux/debug APK artifacts, actual native tests, six-region traversal evidence and two/four-client network proof are described in `3D_DELIVERY.md`, `3D_BUGS.md` and `NETWORKING.md`. Full authoritative shared-world traversal, physical-device acceptance and child-facing online operation remain unfinished. No website is redeployed under the current request.
+
+## Historical repository/upload milestones
+
 The source-import/upload statements below are historical. Existing remote `main` was verified at `3dabbde7bf3f30ad0f7b8db9fb547583de5180dd`; repository source was cloned as-is, not reimported or reset. Native production work is authorized by the supplied production prompt, with local `codex/garage-production-*` milestones and evidence in `MASTER_TRACKER.md` and `WORK_LOG.md`.
 
 The user explicitly approved branch uploads and draft PRs in the next turn. Both branches were pushed without force and read back by GitHub. Draft PR1: https://github.com/blockaystudio/mini-garage-adventure/pull/1 (`codex/garage-production-native` → `main`); draft PR2: https://github.com/blockaystudio/mini-garage-adventure/pull/2 (`codex/garage-production-game` → reference branch). Both remain unmerged; repository visibility and deployment settings were not changed.

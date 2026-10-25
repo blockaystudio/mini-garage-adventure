@@ -14,6 +14,7 @@ python scripts/test_multiplayer.py
 python scripts/test_multiplayer.py --matrix
 python scripts/test_multiplayer.py --repeat
 python scripts/test_multiplayer.py --auth
+python scripts/test_multiplayer.py --storage-fault
 ```
 
 The runner starts one actual headless Godot server process and two, then four,
@@ -142,21 +143,33 @@ UDP/native/browser transport differences. Actual implemented API signatures and
 separate-process behavior were exercised with the pinned engine; documentation
 and synthetic impairment do not establish a production network security review.
 
-## Executed results at this checkpoint
+## Executed results on final source 5fb2751
 
 Pinned Godot4.6.3 on Linux/AMD EPYC9V74: six separate-process matrix cases,
-two-client two-round replay, and actual invalid-invite/forged-token/rejoin tests
-all pass. Across these tests33 native processes were launched (8servers and
-25clients); every room uses its own temporary server-owned TEST profile store.
+two-client two-round replay, actual invalid-invite/forged-token/rejoin tests and
+the two-client server-storage-fault scenario all pass. Across these nine cases,
+36 native processes were launched (9servers and27clients); every room uses its
+own temporary server-owned TEST profile store.
 The dedicated2/4client cases verify independent movement, ordered checkpoints,
 shared finish order, exact125/100GP, rejected forged movement/currency/finish
-input and actual leader disconnect/rejoin without duplicate awards. Thirty-three
+input and actual leader disconnect/rejoin without duplicate awards. Thirty-six
 network-rule checks cover storage, admission, lifecycle, rate-bucket and prediction
-regressions (`evidence/3d-development/network-rules.txt`).
+regressions, with21additional storage-settlement checks. Final fingerprints and
+case results are in `evidence/3d-development/net-settlement-fix/final-summary.json`.
+
+Concise case summaries, matrix results and engine logs remain readable in their
+original evidence directories. Large raw `server.json`/`client-N.json` histories
+are preserved byte-for-byte in
+`evidence/3d-development/native-network-process-reports.zip`, with original paths,
+sizes and verified SHA256 values in `native-network-process-reports-index.json`.
+Extract that ZIP into a separate directory to inspect full movement histories;
+the original development commits also retain the earlier raw reports. Fresh test
+runs continue to produce normal standalone JSON files. This packaging keeps the
+PR's final diff reviewable without discarding process evidence.
 
 Final measured p95 applied reconciliation displacement was0.63m in the local
-baseline and1.03m at250msper-direction/5%loss. The separately recorded delayed
-snapshot-to-current-prediction gap reached10.25m in that slowest case; this is
+baseline and1.06m at250msper-direction/5%loss. The separately recorded delayed
+snapshot-to-current-prediction gap reached10.29m in that slowest case; this is
 state age, not the applied correction. Server p95 tick work was under0.9ms in
 these headless samples. These are protocol/model-local measurements with scripted
 inputs, not perceptual steering, graphics/device performance or production
@@ -167,3 +180,46 @@ Initial failures and corrections are preserved in
 `evidence/3d-development/network-initial-failures.md`; intermediate raw logs are
 retained in its named temporary development archive. Final case source hashes
 match the checked-in networking and shared simulation source.
+
+## Validated finishes while server storage is unavailable
+
+A server-validated final checkpoint reserves its immutable place and winner
+amount before a wallet write. Failed writes enter `pending_save`; the car stops,
+while the displayed wallet stays unchanged. Server snapshots include an explicit
+pending-results list and an explanation that pending GP is not banked. Connected
+clients receive that explanation; the room view shows a saving-results state.
+
+Pending settlement is independent of the connected player object. Client
+leave/rejoin and normal race timeout cannot turn an already validated finish into
+DNF. The live server retries the idempotent award after storage returns, preserves
+the original finish order even if a later finisher committed first, and refuses
+another race until pending validated rewards are saved. Purchase storage failure
+is reported separately from insufficient funds or already-owned equipment; no
+wallet/inventory mutation is acknowledged on failure.
+
+Reproduce the real storage-failure scenario:
+
+```sh
+python scripts/test_multiplayer.py --storage-fault
+```
+
+The CLI-only developer server driver blocks its temporary profile-write target
+from approximately t1 to t8 while the race timeout is five seconds. Two actual
+native clients must cross all checkpoints, observe unbanked pending rewards
+past the timeout, then agree on the committed125/100GP after recovery and rejoin.
+The shipped game exports exclude the developer server/test drivers. Fault hooks
+are not an in-game or production wallet API.
+
+**Important engineering limit:** pending finish/place records are currently in
+server memory until their GP transaction commits. A server process crash, server
+restart or intentional listen-server room shutdown before that commit can lose
+the unacknowledged pending record. Already banked GP remains in the atomic server
+profile file. Client disconnects while a dedicated server remains alive are
+covered; durable pending-result journaling/replay across server shutdown is still
+an M7 gate. Neither a pending display nor these tests claims that uncommitted GP
+has been saved. No production-online or child-facing reliability claim is made.
+
+Evidence: `evidence/3d-development/net-settlement-fix/`, including the genuine
+pre-fix unpaid-DNF reproduction,21server-state/FileAccess regressions, the real
+two-client storage-fault run and final network rechecks. Earlier source37 captures
+and network proofs remain unchanged.

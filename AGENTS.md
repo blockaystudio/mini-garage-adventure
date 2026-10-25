@@ -1,7 +1,9 @@
 # AGENTS.md — Mini Garage Adventure
 
 ## Product and current state
-This repository contains a preserved browser reference and a real native Godot4.6.3 game under `native/`: six vehicles, twelve authored courses, part handling changes, local progression and a private track editor. Native source is desktop-verified; mobile device acceptance and release reviews remain open. Read the latest production checkpoint in `docs/MASTER_TRACKER.md`; do not present desktop tests as mobile approval.
+This repository contains a preserved browser reference and a real native Godot4.6.3 game under `native/`. Quick Drive retains six vehicles, twelve authored 2D courses and the private track editor. Explore implements native 3D driving, six destinations, eighteen activities and eighteen discoveries. The shared solo economy uses Garage Points, non-spendable mastery and schema-3 saves with legacy migration. Native source is desktop-verified; mobile device acceptance and release reviews remain open. Read the latest checkpoint in `docs/MASTER_TRACKER.md` and `docs/3D_DELIVERY.md`; do not present desktop tests as mobile approval.
+
+Private ENet development is explicitly authorized only as isolated native engineering sessions. Real two/four-client tests use server-owned TEST profiles separate from solo saves; current authority is a bounded Festival test strip, not the six-region shared world. Read `docs/NETWORKING.md`, `docs/3D_BUGS.md` and `docs/3D_NEXT_TASK.txt` before continuing. Preserve all subsequent commits and open PRs; never reset to an earlier reviewed checkpoint or reimport an old package over current source.
 
 Read `HANDOFF.md`, `docs/GITHUB_CODEX_STATUS.md`, `docs/CODEX_TASKS.md`,
 `docs/MASTER_TRACKER.md`, and `evidence/QA_REPORT.md` before changing code.
@@ -15,6 +17,8 @@ The original master plan describes intended scope, not delivered features.
 - Local preview: `python server/serve_preview.py` (serves only `play/` on loopback).
 - Browser regression: `python tests/browser_smoke.py` after installing `tests/requirements-browser.txt` and Chromium. Real local HTTP origin, not a storage fixture.
 - Native run: `godot --path native` (Godot4.6.3 standard); checks: `python scripts/verify_native.py`.
+- Separate native network proof: `python scripts/test_multiplayer.py --matrix`, `--repeat` and `--auth`; requires local UDP permission, not a deployed service.
+- Reproducible exports/captures: `python scripts/build_native_test.py` and `python scripts/capture_3d.py`; exact dependencies and platform limits are in `docs/3D_DELIVERY.md`.
 - Device/build/benchmark instructions: `native/README.md`, `docs/ANDROID_QA.md`, `docs/IOS_BUILD.md`, `docs/PERFORMANCE.md`. Do not mislabel desktop/injected tests as device testing.
 
 ## Source map and editing rules
@@ -30,7 +34,7 @@ The original master plan describes intended scope, not delivered features.
 ## Safety and commercial constraints
 Launch remains ad-free. Do not install/enable ad or analytics SDKs, purchases,
 child accounts, chat, camera, microphone, location, uploads, public sharing,
-telemetry or production remote endpoints in an optimization task. Preserve local
+telemetry or production remote endpoints. The current user request authorizes only isolated private native network testing, without importing solo wallets or claiming consent. Preserve local
 saves and offline play. Do not remove safeguards or weaken tests to produce a pass.
 Remote controls do not authorize ads or replace platform/privacy review.
 Do not use guilt, loss of pets, streak penalties, deceptive rewards, or manipulative
@@ -42,7 +46,7 @@ visibility changes, deletion of history or changes to unrelated repositories.
 
 ## Workflow and evidence
 Use a separate `codex/<short-task>` branch and one bounded task per pull request.
-The supplied production prompt explicitly authorizes the native Godot implementation and full base-game scope, superseding older OPT-only/no-native scope. Continue from actual current work; do not reimport/reset or confuse historical portfolio plans with implemented Garage features.
+The supplied production prompts explicitly authorize the native game, rewards/schema-3 progression, real 3D and private multiplayer development, superseding older OPT-only/no-native/no-network task scope. The current request prohibits website deployment and public release. Continue from actual current work; do not reimport/reset or confuse historical portfolio plans with implemented Garage features.
 For this game: Improve driving input, pause/background handling, predictable physics, accessible controls, and local track editing. Preserve measurable handling differences between parts.
 Preserve compatible shared behavior. Document shared changes in
 `docs/SHARED_CHANGES.md`; do not edit the other game repositories without scope.

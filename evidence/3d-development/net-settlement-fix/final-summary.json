@@ -1,0 +1,19 @@
+{
+  "final_source_commit": "5fb2751cc0ae5ed6524d72f7eb6a9ca232f75ce2",
+  "runtime_source_fingerprints_match_current": true,
+  "actual_process_tests": {
+    "two_client_server_storage_fault": "pass",
+    "matrix_2_and_4_clients_plus_50_100_150_250ms_jitter_1_to_5_percent_loss": "6 cases pass",
+    "two_consecutive_races": "pass",
+    "invalid_invite_forged_token_rejoin": "pass"
+  },
+  "native_regressions": {
+    "settlement_checks": 21,
+    "settlement_failures": 0,
+    "existing_network_rules": 36,
+    "existing_network_failures": 0
+  },
+  "credentials_absent_from_evidence": true,
+  "process_cleanup": "All runner-owned client/server processes exited and were reaped.",
+  "durability_boundary": "Validated pending finish records are RAM-only until wallet commit; a server process crash/restart or intentional room shutdown can lose unacknowledged pending credit. Banked GP remains durable. Client disconnect and ordinary race timeout while server stays alive are covered."
+}

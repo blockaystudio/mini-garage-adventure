@@ -1,6 +1,10 @@
-Continue Mini Garage Adventure from the latest reviewed native branch, preserving every subsequent commit and all open PRs. Repository: blockaystudio/mini-garage-adventure. The active development branch is codex/garage-explore-native; M1 economy checkpoint is 74e9e9b. Inspect git status, remote branches and open PRs before selecting a base. Never reset to the older reviewed d40c490 checkpoint or reimport the original handoff over newer code.
+Continue Mini Garage Adventure from the latest native branch, preserving every subsequent commit and all open PRs. Repository: blockaystudio/mini-garage-adventure. Active branch: codex/garage-explore-native. Final verified runtime source: 5fb2751cc0ae5ed6524d72f7eb6a9ca232f75ce2. M1 economy checkpoint: 74e9e9b. Inspect git status, remote branches and open PRs before choosing a base; newer docs/evidence commits may follow this runtime source. Never reset to the old d40c490 readiness checkpoint or reimport the original handoff over newer code.
 
-Read AGENTS.md, HANDOFF.md, README.md, native/README.md, docs/MASTER_TRACKER.md, WORK_LOG.md, decisions, asset ledger, 3D_DELIVERY.md, 3D_BUGS.md, NETWORKING.md, and the supplied specification in docs/3d-handoff/. Use final PR/commit references in the tracker and actual artifact source hashes. Historical and development-run logs are not a fresh verification run.
+Actual review references: draft PR #4 https://github.com/blockaystudio/mini-garage-adventure/pull/4 (codex/garage-rewards-schema3) and stacked draft PR #5 https://github.com/blockaystudio/mini-garage-adventure/pull/5 (codex/garage-explore-native, base economy branch). Neither is merged. Final native verification passed 5,363 checks with source unchanged; reference verification passed 63 Node + 6 Python checks. Nine actual server/client process scenarios passed, including server-storage failure, two/four clients, latency/jitter/loss, consecutive races and authentication/rejoin.
+
+Playable artifacts: builds/mini-garage-adventure-explore.x86_64, builds/mini-garage-adventure-explore-linux.zip and builds/mini-garage-adventure-explore-debug.apk. Final export/signature/manifest/payload evidence is evidence/3d-development/native-builds-final/, with full binary SHA256/source fingerprints in artifacts.json and independently checked Git-blob correspondence in evidence/3d-development/source-commit-verification.json. Primary captures are evidence/3d-development/native3d-delivery-desktop-1280x720/ and evidence/3d-development/native3d-delivery-phone-style-800x450/. All primary exports/captures use 5fb2751. Preserve earlier 37d0cf1/77655d0 export evidence/copies and original 37d0cf1 visual captures as historical checkpoints.
+
+Read AGENTS.md, HANDOFF.md, README.md, native/README.md, docs/MASTER_TRACKER.md, docs/WORK_LOG.md, decisions, asset ledger, docs/3D_DELIVERY.md, docs/3D_BUGS.md, docs/3D_TASK_STATUS.md, docs/NETWORKING.md, and the supplied specification in docs/3d-handoff/. Use final PR/commit references in the tracker and actual artifact source hashes. Historical and development-run logs are not a fresh verification run.
 
 Current implementation includes transactional Garage Points/schema-3 migration, preserved 2D Quick Drive/editor, focused phone garage, genuine native 3D Explore, six destinations/six vehicle identities, 18 activities and 18 discoveries. A fresh-wallet test drives the tutorial and delivery, earns GP, buys/equips mud, enters Marsh and quits/relaunches in independent app processes. The full content reachability sweep seeds inventory/admission explicitly and must not be described as fresh progression. Local native ENet proof uses real independent server/client processes and isolated server-owned TEST wallets, with two/four clients, authoritative race order/checkpoints/rewards, invitation/authentication, disconnect/rejoin and scheduled latency/jitter/loss.
 
@@ -11,13 +15,16 @@ Before changing code, reproduce:
   python scripts/test_multiplayer.py --matrix
   python scripts/test_multiplayer.py --repeat
   python scripts/test_multiplayer.py --auth
+  python scripts/test_multiplayer.py --storage-fault
+
+Pending online finishes now survive ordinary race timeout and client disconnect while the server stays alive, but remain RAM-only until wallet commit. Server process crash/restart or intentional room shutdown can lose unacknowledged pending credit; banked GP is durable. Do not claim durable race recovery until a tested journal/service design exists.
 
 The native verifier includes real process save contention. If native imports need a writable user-data directory, use disposable XDG_DATA_HOME/XDG_CACHE_HOME/XDG_CONFIG_HOME; never use a real player's profile. In a sandbox, explicitly allow local socket creation rather than suppressing engine errors. Do not weaken tests or silently mark a source-changed run final.
 
 Capture/build commands, using the existing pinned Godot 4.6.3 standard toolchain and templates:
-  python scripts/capture_3d.py --label native3d-final-desktop-1280x720
-  python scripts/capture_3d.py --width 800 --height 450 --label native3d-final-phone-style-800x450
-  python scripts/build_native_test.py
+  python scripts/capture_3d.py --label native3d-delivery-desktop-1280x720
+  python scripts/capture_3d.py --width 800 --height 450 --label native3d-delivery-phone-style-800x450
+  python scripts/build_native_test.py --evidence evidence/3d-development/native-builds-final
 
 Preserve existing evidence before new runs. Capture helper asserts actual course rewards, mud ownership/equipment and Moss Marsh admission; never relabel a fallback Valley capture as Marsh. Exported APK is debug-signed, offline and statically inspected; Linux captures/headless tests do not prove Android/iOS input, lifecycle, performance, accessibility or installation. Existing Android presets have no INTERNET permission. Browser crossplay is a separate tested transport decision; static hosting cannot provide a UDP game server.
 

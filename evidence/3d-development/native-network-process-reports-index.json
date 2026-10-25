@@ -1,0 +1,397 @@
+{
+  "purpose": "Lossless archive of large raw per-process reports; concise summaries, logs and matrix results remain plaintext for review.",
+  "archive": "native-network-process-reports.zip",
+  "archive_sha256": "5e0f046edf1f1568033ba1e24e2d341189a6789415d4fe049e5c05e0a20b09fc",
+  "files": [
+    {
+      "path": "multiplayer/four-clients/client-1.json",
+      "bytes": 79032,
+      "sha256": "389819a2591c4378474c81357fdff7ffc7eaa3b1f9dd883af7bfed91db53a49b"
+    },
+    {
+      "path": "multiplayer/four-clients/client-2.json",
+      "bytes": 81757,
+      "sha256": "8739784fa2b6b5147ebb0109b5b622b0fb5b4b1f7693bc5cd63a22933e0d2eed"
+    },
+    {
+      "path": "multiplayer/four-clients/client-3.json",
+      "bytes": 81307,
+      "sha256": "cc6267e7eac0e8517c6234f21e64ec0972702eea993f2c35dc0f9953309d54e2"
+    },
+    {
+      "path": "multiplayer/four-clients/client-4.json",
+      "bytes": 81531,
+      "sha256": "5952b5eb2756946d5cfc2d77bbe85d5a8dca2a54ae92e932fe3b6aea2b1dda8c"
+    },
+    {
+      "path": "multiplayer/network-100ms/client-1.json",
+      "bytes": 74964,
+      "sha256": "9e76d448fcbb88e4454fd8155f4bcb8794a2d44af2b2d950070c385f3884722b"
+    },
+    {
+      "path": "multiplayer/network-100ms/client-2.json",
+      "bytes": 78567,
+      "sha256": "775e869aa06ff300629c90a55b87f946c8264f823e705aee19d80d53e88b79b1"
+    },
+    {
+      "path": "multiplayer/network-100ms/client-3.json",
+      "bytes": 76841,
+      "sha256": "b3c82cf756262778f315e624406f57f8a59da23095d0b14ef1f3d3cc8128cdc3"
+    },
+    {
+      "path": "multiplayer/network-100ms/client-4.json",
+      "bytes": 78864,
+      "sha256": "89078c14eb38dbc404dad940507b84d6e8ea68a20a8d7ce8b1bda9f1ea2cd9ae"
+    },
+    {
+      "path": "multiplayer/network-150ms/client-1.json",
+      "bytes": 76462,
+      "sha256": "2cade443deca63d561381ec00ef769884e9f081a8f288989d60bbc7478f55010"
+    },
+    {
+      "path": "multiplayer/network-150ms/client-2.json",
+      "bytes": 76178,
+      "sha256": "a02b302a0ee4aa58631ddbcb08ca2380c96f50f5b0a0cafb33ea7d7adc62b5c6"
+    },
+    {
+      "path": "multiplayer/network-150ms/client-3.json",
+      "bytes": 76925,
+      "sha256": "f5e35c34776b290e952e6e3b1077ea072e77293f740756e3600ea032a6e28467"
+    },
+    {
+      "path": "multiplayer/network-150ms/client-4.json",
+      "bytes": 80319,
+      "sha256": "5658f6300dfa7fbccd6fdae11af8c1f59e42b12b193b6c66db160a53d96c112e"
+    },
+    {
+      "path": "multiplayer/network-250ms/client-1.json",
+      "bytes": 63842,
+      "sha256": "563f69930997c27c36818acbac7668a93e30ca3ea44ae8972b45a3d693723d2c"
+    },
+    {
+      "path": "multiplayer/network-250ms/client-2.json",
+      "bytes": 67661,
+      "sha256": "1afb4924e00ecf135ffa65b46b15aa2b15670c2b308f09c39941ccaab2db7041"
+    },
+    {
+      "path": "multiplayer/network-250ms/client-3.json",
+      "bytes": 70001,
+      "sha256": "41b30ae9e268a0f6ad82945850df495fdcff83d386c7cfd584a6721c86d48d02"
+    },
+    {
+      "path": "multiplayer/network-250ms/client-4.json",
+      "bytes": 68419,
+      "sha256": "3c39647c7f26bd7ca3074fdd2fc15bb3af7e9011f684f6a595bbed7299994030"
+    },
+    {
+      "path": "multiplayer/network-50ms/client-1.json",
+      "bytes": 76945,
+      "sha256": "5618c7429b0776fb5c01d026519fa538356bbbac48bdc0f6aae0a5a1b9e490b5"
+    },
+    {
+      "path": "multiplayer/network-50ms/client-2.json",
+      "bytes": 79833,
+      "sha256": "6665ed554ae7fa29f08630d2b78692e7817eba1bb12fb135fea23493c7b8d873"
+    },
+    {
+      "path": "multiplayer/network-50ms/client-3.json",
+      "bytes": 78902,
+      "sha256": "5dccf2635ff2f4de86b5a14099e31ca05c9579fb95b0ceff84efe25161a48546"
+    },
+    {
+      "path": "multiplayer/network-50ms/client-4.json",
+      "bytes": 78624,
+      "sha256": "5044f6d42076c9d70cd928c6c88116cb6b4e07d35858819ecd54510ddc9019ed"
+    },
+    {
+      "path": "multiplayer/two-clients/client-1.json",
+      "bytes": 39735,
+      "sha256": "909fe08d0aea32b6c0087d3aec0d984c21da373cdf33cdbb1c55c735e46b8f86"
+    },
+    {
+      "path": "multiplayer/two-clients/client-2.json",
+      "bytes": 40575,
+      "sha256": "43511095c7ca0f4ea1f6c632c0e74d9e3f6a6d94ade3f0c6617097ce456818c8"
+    },
+    {
+      "path": "multiplayer-repeat/two-consecutive-races/client-1.json",
+      "bytes": 58949,
+      "sha256": "a8cdffc7e1ed5ca6a9f4c750902fd288a61aa41c145093580f81391650985c9c"
+    },
+    {
+      "path": "multiplayer-repeat/two-consecutive-races/client-2.json",
+      "bytes": 59639,
+      "sha256": "d292376b78bd4859e884c1ff94b0c6efdf1cf2411e0586b78e90f11c04d3a899"
+    },
+    {
+      "path": "net-settlement-fix/actual-storage-fault/two-clients-storage-fault/client-1.json",
+      "bytes": 47772,
+      "sha256": "323c16520ea2861c08e2221bef009fc10a6e42169ec1700624c899a0d38507e1"
+    },
+    {
+      "path": "net-settlement-fix/actual-storage-fault/two-clients-storage-fault/client-2.json",
+      "bytes": 48668,
+      "sha256": "e53f7575fb01bbaa1f1752897e98e6a9f432a95864c35d2b4e82c424424fe293"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/four-clients/client-1.json",
+      "bytes": 78807,
+      "sha256": "c50403ec27d6c6bfe443ca4217672f5f1fed8562bd6b443c0a823f23b559da49"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/four-clients/client-2.json",
+      "bytes": 81616,
+      "sha256": "b443bdac6014446c3e257ce0af0200d557f1973b61e0f7e587d8bfd13b27d6f5"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/four-clients/client-3.json",
+      "bytes": 81689,
+      "sha256": "b87fde6f9bf0af961c2fa7fd72a11632bb7f261258b1c8bc84861ebe1aca0e7f"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/four-clients/client-4.json",
+      "bytes": 81839,
+      "sha256": "731237c9346edfb6615b5852c60ce813fa94a30e49bc5163111bdc4749c987d6"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-100ms/client-1.json",
+      "bytes": 75289,
+      "sha256": "7bd5366f67f072d062139e4273b18fabcb849718b0ff097eab39a579ababa795"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-100ms/client-2.json",
+      "bytes": 77569,
+      "sha256": "88406b1c6c0a8c2fd34c987c2d2b4b48c186b2b2f15672ee77d54553f904e839"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-100ms/client-3.json",
+      "bytes": 77888,
+      "sha256": "b89581531e2f87777aabda075517a7762eb4465a55c7923909240421dc889d1f"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-100ms/client-4.json",
+      "bytes": 77350,
+      "sha256": "d053e4a6f0c22548786c84148d657680b431f09325a76a642f29af296f260806"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-150ms/client-1.json",
+      "bytes": 73800,
+      "sha256": "21954cdcb20a3a61c16aae7bf8277b48680294e69477ce2129fb25fda79661b6"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-150ms/client-2.json",
+      "bytes": 77719,
+      "sha256": "d42d1c780eb52196dadd5b577e9174f6637b3a4b91d477caf05fd338206db2c4"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-150ms/client-3.json",
+      "bytes": 76907,
+      "sha256": "ea435f0a545e92b225617e2ed39a5881483379c8ed9cc94626961f8dec2fc87d"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-150ms/client-4.json",
+      "bytes": 78360,
+      "sha256": "e37baa31299a0e7cce5349a598113d77b567a06eee5a8cadcab180030ecb8e39"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-250ms/client-1.json",
+      "bytes": 70203,
+      "sha256": "5633336803353b0bb0b23cd5fa76a078551f80e48eaee484a25712a02fc6e5a4"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-250ms/client-2.json",
+      "bytes": 70264,
+      "sha256": "9b33070ef4787f66460cb84d19642601f184d2cf601060c691c3a0fecc8e5f6f"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-250ms/client-3.json",
+      "bytes": 71669,
+      "sha256": "8c4c3c8845ae92d56f9cf2f3868f3448c1465dcc4119fea4f73b945aa0f2d5f2"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-250ms/client-4.json",
+      "bytes": 73359,
+      "sha256": "a51e1da3215b21fadd40d470e04b8fdd08ca7aec987d94b020ee6d76f3c729bc"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-50ms/client-1.json",
+      "bytes": 75836,
+      "sha256": "ce47cf11e5d29cfb764439fa9d591fa868752445347d64733e2fab10688b0bda"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-50ms/client-2.json",
+      "bytes": 79234,
+      "sha256": "10e77d29ed9152e280faa1fe01c0c93444dffcd2847164fa09b8bab5536670b9"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-50ms/client-3.json",
+      "bytes": 78598,
+      "sha256": "aad51b3814999b7b9c42a6f7dc534bd7a4b9000fba28568274efaf306987cf9f"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/network-50ms/client-4.json",
+      "bytes": 78998,
+      "sha256": "fd82e8da4db67cea951f87abf009457147257e0a8cae069608dbbb70d362e820"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/two-clients/client-1.json",
+      "bytes": 39888,
+      "sha256": "5f71ccce12be44ea531b222ff220bec2d046866fd04197743a0bcb48e0923afb"
+    },
+    {
+      "path": "net-settlement-fix/final-network/matrix/two-clients/client-2.json",
+      "bytes": 40727,
+      "sha256": "b9a5b073e4d415fbac2a232ea83dc89d7e7efa639b48e4cb8dfd25bcf6635fef"
+    },
+    {
+      "path": "net-settlement-fix/final-network/repeat/two-consecutive-races/client-1.json",
+      "bytes": 60916,
+      "sha256": "e4b9be917dd50a1b40d22d9003ca9d9818c817f1f142679c5ce1a40836c6eca9"
+    },
+    {
+      "path": "net-settlement-fix/final-network/repeat/two-consecutive-races/client-2.json",
+      "bytes": 61613,
+      "sha256": "733a5fbd3957b4ba4f69934e9e3caacdaf1c95897776087b7c12a562668f2cd4"
+    },
+    {
+      "path": "net-settlement-fix/final-storage-fault/two-clients-storage-fault/client-1.json",
+      "bytes": 48114,
+      "sha256": "cb6bc50e7620cbed8b8be40f09c9052c25a83f0823f06eda40c77317ad4fb8cc"
+    },
+    {
+      "path": "net-settlement-fix/final-storage-fault/two-clients-storage-fault/client-2.json",
+      "bytes": 48745,
+      "sha256": "115d1758a4ecf557721b6595b8f2e8ee2a515727d9c0e4f58ce1d35127bc59e7"
+    },
+    {
+      "path": "network-final/matrix/four-clients/client-1.json",
+      "bytes": 78878,
+      "sha256": "80ab9c7c5c22ecd609e902d6cfb9f51920109ccb0e7a2fe367701d57411b0b2a"
+    },
+    {
+      "path": "network-final/matrix/four-clients/client-2.json",
+      "bytes": 81686,
+      "sha256": "4b96b88f1afbd07c8743983379ea8ee33b115e743f662fa4df1e636e0c14dd0c"
+    },
+    {
+      "path": "network-final/matrix/four-clients/client-3.json",
+      "bytes": 81463,
+      "sha256": "b8b2040d50489d6f3110b4e299e829b1e5782ae2acc78d9012a144e85a029cf4"
+    },
+    {
+      "path": "network-final/matrix/four-clients/client-4.json",
+      "bytes": 81312,
+      "sha256": "aa66ff5e62a57f9d2a8c4f8f74cfa14f55323b91e03f0eb2ed010f8f4a7f470c"
+    },
+    {
+      "path": "network-final/matrix/network-100ms/client-1.json",
+      "bytes": 75345,
+      "sha256": "2c1945b82ad1b7b39d6d58118764075ece4075703d9c052846ae281a03cd5191"
+    },
+    {
+      "path": "network-final/matrix/network-100ms/client-2.json",
+      "bytes": 78044,
+      "sha256": "17313e4b33116f1f0c68f94d94154a2ea98b8e41e5afcff7e29b1554fc7f85f0"
+    },
+    {
+      "path": "network-final/matrix/network-100ms/client-3.json",
+      "bytes": 78657,
+      "sha256": "ccc66a1a9292365015543022a1d36cee50f864462fe31b38f33e75b1067eb78c"
+    },
+    {
+      "path": "network-final/matrix/network-100ms/client-4.json",
+      "bytes": 77281,
+      "sha256": "94450b01ecb9874d867baa4c29d5bb3a69e331f5015e88aecaa8fc78c1a205eb"
+    },
+    {
+      "path": "network-final/matrix/network-150ms/client-1.json",
+      "bytes": 73631,
+      "sha256": "9b52a30d54b464547d583e38d90e270f428145b3d340503b67722cc3cf73e4f0"
+    },
+    {
+      "path": "network-final/matrix/network-150ms/client-2.json",
+      "bytes": 76764,
+      "sha256": "145f462a13368292b72d0e5a1641b7a1eaa237c1d942d6627c631114b3ba86a0"
+    },
+    {
+      "path": "network-final/matrix/network-150ms/client-3.json",
+      "bytes": 77229,
+      "sha256": "0fe3c96fb76af044113d4334040cf086aab0ca13af92d7975ce59a9b90c5c499"
+    },
+    {
+      "path": "network-final/matrix/network-150ms/client-4.json",
+      "bytes": 74345,
+      "sha256": "4c6ccd3f2fc2f623e3ff2a989fe2443360a487137bf993dab9ecbe157bd679fc"
+    },
+    {
+      "path": "network-final/matrix/network-250ms/client-1.json",
+      "bytes": 67418,
+      "sha256": "7020ad96e9bbb10237bad8faad4ea12583da8675b15d41b14babb3fc2546b9d0"
+    },
+    {
+      "path": "network-final/matrix/network-250ms/client-2.json",
+      "bytes": 70819,
+      "sha256": "f653b8318c7d76107ebec03d19c7978e60d44677b56ab3da3787d3276cfe4e62"
+    },
+    {
+      "path": "network-final/matrix/network-250ms/client-3.json",
+      "bytes": 69910,
+      "sha256": "2e64dd474549faf6161c16c577dfe35a0fc6d56c0478c06e0fb856ebb7f76f71"
+    },
+    {
+      "path": "network-final/matrix/network-250ms/client-4.json",
+      "bytes": 69123,
+      "sha256": "0fb30883c9d2a8980af97df2c8e35fc600dc65c8d20c21b0e3449b193fa62ab2"
+    },
+    {
+      "path": "network-final/matrix/network-50ms/client-1.json",
+      "bytes": 77576,
+      "sha256": "ea24d1573debbee0faeb2326ba57cbb9278b424e9cf9f2c7c20d77f7ab55673b"
+    },
+    {
+      "path": "network-final/matrix/network-50ms/client-2.json",
+      "bytes": 80547,
+      "sha256": "a81e02c8754ade69d62306aec9210f4a1bdb447b357a7c6d635ed5b358395ed1"
+    },
+    {
+      "path": "network-final/matrix/network-50ms/client-3.json",
+      "bytes": 79821,
+      "sha256": "b9bfa3585b27be5e4f70cb0bee6e642fec9ca42a809933e20cac1b190d740d5a"
+    },
+    {
+      "path": "network-final/matrix/network-50ms/client-4.json",
+      "bytes": 77855,
+      "sha256": "43145231a6106010230048dc087dcd3335534c6025ad4463b064f894a783e0d6"
+    },
+    {
+      "path": "network-final/matrix/two-clients/client-1.json",
+      "bytes": 39887,
+      "sha256": "7b5ce06ba0522153417804bbd6ca62d787d27c41c996636390cced80b14c0ce1"
+    },
+    {
+      "path": "network-final/matrix/two-clients/client-2.json",
+      "bytes": 40501,
+      "sha256": "ef2daa7316d5d681b10e802ad0a43b9ede8eba4aa1d82445bc0fc66ae2cfacdf"
+    },
+    {
+      "path": "network-final/repeat/two-consecutive-races/client-1.json",
+      "bytes": 59438,
+      "sha256": "45e78f905a9a2da7702ca440771fa2e267a5c0930995ac5c4cd66f56ae06bb3e"
+    },
+    {
+      "path": "network-final/repeat/two-consecutive-races/client-2.json",
+      "bytes": 58654,
+      "sha256": "ad3c6af77b384fb7e2a8597056c5e75824189c6687bd739474d633982c32f7d2"
+    },
+    {
+      "path": "network-wildcard-fix/smoke/two-clients/client-1.json",
+      "bytes": 39812,
+      "sha256": "36987040fcb4a72c03877e44c210960d38ee91209172857b7f3338b8c5aee7ea"
+    },
+    {
+      "path": "network-wildcard-fix/smoke/two-clients/client-2.json",
+      "bytes": 40502,
+      "sha256": "520527e098a964a290c1f08046689009259ad1504b6beeb3a6a8856e5afbd580"
+    }
+  ]
+}

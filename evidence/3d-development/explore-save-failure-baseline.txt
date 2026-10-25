@@ -1,0 +1,6 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+BASELINE save rejection: Could not keep a backup, so the old save was kept. Please try again.
+BASELINE pause labels: MINI GARAGE | 0 GP  /  0 stars  /  PIT STOP | Your adventure is safe. | Resume with fresh controls. No points are lost. | 
+BASELINE falsely claims safe: true
+BASELINE input paused: true
