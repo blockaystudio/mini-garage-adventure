@@ -1,10 +1,10 @@
 # Reviewable pull request drafts
 
-Remote creation is blocked by automatic approval review. These are concrete local drafts, not existing PRs. Confirm GitHub branch upload and PR creation before resolving that environment block. No merge or deployment is requested.
+The user approved uploads and both draft PRs now exist: [reference #1](https://github.com/blockaystudio/mini-garage-adventure/pull/1) and [native #2](https://github.com/blockaystudio/mini-garage-adventure/pull/2). The descriptions below were used for their creation. They remain stacked and unmerged. No deployment is requested.
 
 ## PR1 — Preserve reference input across simultaneous pointers and keys
 
-Head: `codex/garage-production-native` (`eeb7491`)  
+Head: `codex/garage-production-native` (`eeb7491`)
 Base: `main`
 
 Releasing one pointer previously cancelled another held pointer or keyboard throttle. Aggregate each active input source and clear controls consistently on restart, interruptions and screen changes. Preserve compatible browser saves and generated pages.
@@ -13,7 +13,7 @@ Validation: pinned Node22.16.0/Python3.13.5 isolated verifier passes63Node+6Pyth
 
 ## PR2 — Add the offline native Garage base game and production evidence
 
-Head: `codex/garage-production-game` (source `9d26fdd` plus evidence checkpoint)  
+Head: `codex/garage-production-game` (source `9d26fdd` plus evidence checkpoint)
 Base: `codex/garage-production-native` (stacked; do not merge either PR automatically)
 
 Add a real Godot4.6.3/GDScript2D game: six distinct vehicles, twelve authored courses, measured tire/suspension tradeoffs, local progression, private4–16-piece track editor and robust versioned device saves. Add original native scenery/audio/art, compact phone-style scroll forms, safe-area fitting, keyboard/tap input alternatives, parent settings/help/reset and engine notices. Keep browser reference intact and exclude all remote/ad scaffolding, tests and marketing tools from native exports.

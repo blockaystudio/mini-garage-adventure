@@ -6,7 +6,7 @@
     "native/scripts/content.gd": "6a66313533f38e8dacf89cd04a019a398d5b16791e8425cb9c66827ccb5db99b",
     "native/scripts/editor_model.gd": "75b72351f3efe45e63fb8699c2acf271f8617e9416894c2c5b9b4059aeae0d22",
     "native/scripts/input_router.gd": "dd1cadd26858393b8b49fbb9e908aad660e19a3c310e43ed44628d9058c26ee6",
-    "native/scripts/main.gd": "9260a0e06d417d3627d7e2776998a70d2fd2353394509c68c3b2cb13548d9bfa",
+    "native/scripts/main.gd": "864227eac508e34edd5ee65b739ef6bdeace32490301c56f70d601f5c3d3dc94",
     "native/scripts/save_store.gd": "1dab65dcebf9ff11a0ff2166ca39a3567d8a668d1dea478dea03a9f2640b8708",
     "native/scripts/sound.gd": "c701e4d2db1e1d2d85c26a883ba704bdf73cce9e6073498112f08c933e9e632a",
     "native/scripts/track_model.gd": "03c24f16e03226455a1972e7c999cf3b62ff377ea6ddb5350d3994c53283584a",
@@ -23,18 +23,18 @@
   "artifacts": [
     {
       "path": "builds/mini-garage-adventure.x86_64",
-      "bytes": 71287152,
-      "sha256": "fa7cf61f34f29ba8a36d7eacb2b2dcefc8edf7c447fd4fed15d726ddd261e506"
+      "bytes": 71287440,
+      "sha256": "d4fc09b75965314f78fcc04a77d42dd8e4b2cfecc02f036aa8f7672d8d2bee6e"
     },
     {
       "path": "builds/mini-garage-adventure-linux.zip",
-      "bytes": 27421533,
-      "sha256": "09f29213733b96676624b1c751273746e69083a2e55dd22992bc7979e0a9dddc"
+      "bytes": 27315304,
+      "sha256": "355183645f80cbe23b16a938d2a44120066b94e76967cdcb0365d4104476471b"
     },
     {
       "path": "builds/mini-garage-adventure-debug.apk",
       "bytes": 55966318,
-      "sha256": "fbd9a2147feb94fafcb0deb3146fcf5b4fc16c068bb10a0c9831580846992653"
+      "sha256": "6e69f2afc8b2a8b9852498402e98107fed18f9d6b5fd467d20daaf2851132337"
     },
     {
       "path": "builds/native-gameplay-desktop.mp4",
@@ -46,5 +46,7 @@
   "android_scope": "debug-signed APK, v2/v3 signature independently verified, static binary-manifest/inventory audit; NOT installed or run on device/emulator",
   "ios": "not exported/built; macOS/Xcode/signing unavailable",
   "release_candidate": "not all acceptance gates met; see docs/RELEASE_CHECKLIST.md",
-  "main_source_unchanged_during_both_final_exports": true
+  "main_source_unchanged_during_both_final_exports": true,
+  "rebuilt_for": "Reduced-motion opacity regression fix and parent gate/slider accessibility names; original native-artifacts manifest preserved in Git history at e95e567",
+  "runtime_source_unchanged_during_exports": true
 }

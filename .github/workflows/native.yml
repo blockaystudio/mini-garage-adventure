@@ -28,3 +28,9 @@ jobs:
           echo 'GODOT_BIN=/tmp/garage-godot/Godot_v4.6.3-stable_linux.x86_64' >> "$GITHUB_ENV"
       - name: Native deterministic checks and scene boot
         run: python scripts/verify_native.py
+      - name: Device-tool safety regression
+        run: python tests/test_device_tools.py
+      - name: iOS source preflight and inspector fixtures
+        run: |
+          python scripts/ios_preflight.py
+          python scripts/ios_preflight.py --self-test

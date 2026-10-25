@@ -1,3 +1,13 @@
+# Follow-up delivery — 2026-10-25
+
+The user approved GitHub uploads. Both branches are pushed; draft [PR1](https://github.com/blockaystudio/mini-garage-adventure/pull/1) and stacked [PR2](https://github.com/blockaystudio/mini-garage-adventure/pull/2) are open and unmerged. Their actual reference/browser/native CI jobs passed (`evidence/github-production-ci.json`). The checkpoint below is retained as history; its previous remote-upload blocker is resolved.
+
+Current readiness work fixes reduced-motion opacity, adds three named inputs and23native setting regressions, real-device Android collection tooling, an iOS source/generated-bundle preflight and measured rendered performance diagnostics. `evidence/native-readiness-verification.txt` records4,186passing native checks plus imports/parsing/offline contract. Tool safety and12synthetic iOS inspector fixtures are separately labeled. APK/Linux artifacts were rebuilt with new hashes in `evidence/native-artifacts.json`; the same local download paths apply.
+
+Android device/emulator execution, Mac/Xcode/iOS build, physical performance/accessibility and owner/privacy/rights/identity approvals remain blocked. See `ANDROID_QA.md`, `IOS_BUILD.md`, `DEVICE_ACCEPTANCE.md`, `PERFORMANCE.md` and the latest tracker/work-log entries. The game is still not an accepted mobile release candidate.
+
+---
+
 # Native production delivery — 2026-10-25
 
 The offline native base game is implemented and desktop-verified. **The iOS/Android release candidate does not yet meet every acceptance gate.**
@@ -34,3 +44,7 @@ Representative ParcelTruck/RiverBridges software-render samples run on AMD EPYC9
 No reproduced P0 code issue remains in the executed desktop suites. **P1release gates**: Android emulator/physical phone/tablet input/lifecycle/storage/network/performance; actual iOS build/device QA on owner-provided Mac/Xcode/signing; device target-size/safe-area/assistive-technology and child/parent readability/content review. Owner and specialists must confirm publisher/finalIDs/support+privacyURLs, working-name/trademark/art/audio rights and privacy/store declarations. Production AAB signing, iOS export/build, real-device screenshot sets and final trailer/creative approval remain open.
 
 Exact next work: `NEXT_TASK_PROMPT.txt`. Full gate matrix: `RELEASE_CHECKLIST.md`; bugs and owner dependencies: `BUGS.md`; source/evidence history: `WORK_LOG.md`. No ongoing background work, store submission, public publishing, spending, agreement acceptance or tester contact is implied.
+
+## Readiness upload status
+
+Follow-up changes on `codex/garage-production-readiness` are locally committed and included in the refreshed bundle/source ZIP. Automatic approval review blocked uploading this third branch as outside its interpretation of approval for the original two. No third PR exists yet; no alternate upload was attempted. Explicit approval naming the readiness branch and its draftPR resolves that delivery gate. ExistingPR1/PR2 remain open and unmerged.

@@ -114,7 +114,11 @@ Mac with the matching engine/templates, add an iOS preset, supply owner-approved
 bundle ID and Apple Team ID, select supported iPhone/iPad orientations and icons,
 and export to an Xcode project directory. Open the generated project in Xcode,
 choose the authorized signing profile/device and build locally. Run the complete
-device checklist. No Xcode export, compilation, signing, simulator or physical
+device checklist. Godot4.6 currently documents iOS simulator export as unsupported;
+Apple Silicon Macs may run an exported iOS app natively, but physical iPhone/iPad
+QA remains required. See `docs/IOS_BUILD.md`, `docs/DEVICE_ACCEPTANCE.md` and the
+read-only `python scripts/ios_preflight.py` source/toolchain/bundle inspector.
+No Xcode export, compilation, signing, simulator or physical
 iOS result is claimed from Linux. No Apple agreement, account or TestFlight
 operation is authorized by these instructions.
 

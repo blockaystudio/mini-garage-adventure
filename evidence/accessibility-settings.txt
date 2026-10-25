@@ -1,0 +1,70 @@
+Native accessibility-setting scene regression evidence — 2026-10-25
+
+Scope: Godot4.6.3 Linux headless scene tests with actual settings signals and local files. No VoiceOver, TalkBack, device-density or human-accessibility verification is claimed. Raw driving Panels remain a separate screen-reader action review gate.
+
+BASELINE BEFORE FIX:20checks,2opacity failures.
+Command: XDG_DATA_HOME=/tmp/garage-a11y-data XDG_CONFIG_HOME=/tmp/garage-a11y-config XDG_CACHE_HOME=/tmp/garage-a11y-cache godot --headless --path native --script tests/accessibility_test.gd
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: motion-enabled screen starts a visible transition
+PASS: usable settings action: Reduced motion: OFF
+REDUCED_MOTION_ALPHA: previous=0.6836000084877 current=0.6836000084877
+PASS: reduced-motion UI action propagates to saved setting and scene
+ERROR: FAIL: enabling reduced motion during a fade restores full UI opacity
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/accessibility_test.gd:20)
+       [1] run (res://tests/accessibility_test.gd:50)
+ERROR: FAIL: reduced-motion screen navigation stays fully opaque
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/accessibility_test.gd:20)
+       [1] run (res://tests/accessibility_test.gd:53)
+PASS: usable settings action: Reduced motion: ON
+PASS: disabling reduced motion deliberately restores transition behavior
+PASS: audible setting permits a generated cue
+PASS: usable settings action: Sound: ON
+PASS: muting through UI stops existing cue voices immediately
+PASS: muted setting suppresses new cue voices
+PASS: usable settings action: Sound: OFF
+PASS: volume UI changes current voices and persisted setting
+PASS: volume survives actual native file reload
+PASS: zero volume prevents new generated cues
+PASS: compact part control keeps keyboard focus and large logical target
+PASS: compact scroll form accepts focus on an offscreen part control
+PASS: large compact driving targets remain in simulated safe-area bounds
+PASS: keyboard drive alternative remains available with compact controls
+PASS: keyboard alternative releases without a held touch
+ACCESSIBILITY SETTINGS: 20 checks, 2 failures
+
+FINAL AFTER FIX: reduced-motion opacity restored immediately and on navigation; three meaningful control names added and checked.
+Command: XDG_DATA_HOME=/tmp/garage-a11y-final-data XDG_CONFIG_HOME=/tmp/garage-a11y-final-config XDG_CACHE_HOME=/tmp/garage-a11y-final-cache godot --headless --path native --script tests/accessibility_test.gd
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: motion-enabled screen starts a visible transition
+PASS: usable settings action: Reduced motion: OFF
+REDUCED_MOTION_ALPHA: previous=0.6836000084877 current=1.0
+PASS: reduced-motion UI action propagates to saved setting and scene
+PASS: enabling reduced motion during a fade restores full UI opacity
+PASS: reduced-motion screen navigation stays fully opaque
+PASS: usable settings action: Reduced motion: ON
+PASS: disabling reduced motion deliberately restores transition behavior
+PASS: audible setting permits a generated cue
+PASS: usable settings action: Sound: ON
+PASS: muting through UI stops existing cue voices immediately
+PASS: muted setting suppresses new cue voices
+PASS: usable settings action: Sound: OFF
+PASS: volume slider exposes its setting name to accessibility APIs
+PASS: volume UI changes current voices and persisted setting
+PASS: volume survives actual native file reload
+PASS: zero volume prevents new generated cues
+PASS: compact part control keeps keyboard focus and large logical target
+PASS: compact scroll form accepts focus on an offscreen part control
+PASS: grown-up answer field exposes its purpose to accessibility APIs
+PASS: course progress exposes a meaningful accessibility name
+PASS: large compact driving targets remain in simulated safe-area bounds
+PASS: keyboard drive alternative remains available with compact controls
+PASS: keyboard alternative releases without a held touch
+ACCESSIBILITY SETTINGS: 23 checks, 0 failures

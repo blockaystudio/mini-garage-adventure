@@ -1,7 +1,7 @@
 {
   "command": "strace -f -e trace=network -o evidence/native-network-desktop.txt builds/mini-garage-adventure.x86_64 --headless --quit-after 30",
-  "executable_sha256": "fa7cf61f34f29ba8a36d7eacb2b2dcefc8edf7c447fd4fed15d726ddd261e506",
+  "executable_sha256": "d4fc09b75965314f78fcc04a77d42dd8e4b2cfecc02f036aa8f7672d8d2bee6e",
   "internet_socket_calls_observed": 0,
   "observed_sockets": "AF_NETLINK kernel device notifications only",
-  "scope": "Final exported Linux binary headless garage boot,30frames; not full play/device traffic certification"
+  "scope": "Readiness export Linux binary after reduced-motion fix, headless garage boot30frames; not full play/device traffic certification"
 }

@@ -115,6 +115,8 @@ func _clear(next_page: String) -> void:
 	world.reduced_motion = state.settings.reduced_motion
 	_safe_area()
 	transition_time = 0.0
+	if state.settings.reduced_motion:
+		ui.modulate.a = 1.0
 
 func _place(control: Control, x: float, y: float, width: float, height: float) -> Control:
 	control.position = Vector2(x,y)
@@ -188,6 +190,8 @@ func _sync_settings() -> void:
 	sound.volume = state.settings.volume
 	router.toggle_drive = state.settings.one_touch
 	world.reduced_motion = state.settings.reduced_motion
+	if is_instance_valid(ui) and state.settings.reduced_motion:
+		ui.modulate.a = 1.0
 
 func _build_choice(key: String, value: String) -> void:
 	state.build[key] = value
@@ -287,6 +291,7 @@ func _show_drive() -> void:
 	_button("Restart",874,42,164,_restart)
 	_button("Pause",1052,42,180,_pause)
 	progress_bar = ProgressBar.new()
+	progress_bar.accessibility_name = "Course progress"
 	progress_bar.show_percentage = false
 	progress_bar.max_value = 1.0
 	_place(progress_bar,52,135,1176,12)
@@ -329,9 +334,12 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	if is_instance_valid(world) and world.visible:
 		world.queue_redraw()
-	if is_instance_valid(ui) and not state.settings.reduced_motion:
-		transition_time = minf(transition_time + delta*6.0,1.0)
-		ui.modulate.a = 0.65 + transition_time*0.35
+	if is_instance_valid(ui):
+		if state.settings.reduced_motion:
+			ui.modulate.a = 1.0
+		else:
+			transition_time = minf(transition_time + delta*6.0,1.0)
+			ui.modulate.a = 0.65 + transition_time*0.35
 	if page == "drive":
 		for action in drive_pads:
 			if is_instance_valid(drive_pads[action]):
@@ -465,6 +473,7 @@ func show_gate() -> void:
 	_label("%d + %d =" % [a,b],370,380,240,62,34)
 	var answer := LineEdit.new()
 	answer.placeholder_text = "Answer"
+	answer.accessibility_name = "Grown-up check answer"
 	answer.virtual_keyboard_type = LineEdit.KEYBOARD_TYPE_NUMBER
 	_place(answer,640,382,220,64)
 	var feedback := _label("",370,466,510,32,19,ORANGE)
@@ -488,6 +497,7 @@ func show_parents() -> void:
 		_settings_changed(),state.settings.muted)
 	_label("Volume",414,260,180,32,22)
 	var volume := HSlider.new()
+	volume.accessibility_name = "Sound volume"
 	volume.min_value = 0.0
 	volume.max_value = 1.0
 	volume.step = 0.05

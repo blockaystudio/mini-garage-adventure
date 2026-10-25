@@ -1,0 +1,257 @@
+{
+  "engine": "4.6.3-stable (official)",
+  "frames_per_scenario": 180,
+  "notes": [
+    "Desktop software-renderer benchmark; not physical mobile evidence.",
+    "World submission timer measures synchronousGDScript drawing command generation, not total raster/GPU cost.",
+    "Main simulation advances once per render sample at fixed1/60, so every dynamic scenario reaches the same course position.",
+    "Static_scene retains the last warmup picture with redraw+simulation disabled; it diagnoses redraw overhead but is not a moving-game FPS result.",
+    "TIME_PROCESS includes engine idle processing; TIME_PHYSICS_PROCESS excludes manually invoked model updates in this benchmark."
+  ],
+  "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "rendering_method": "gl_compatibility",
+  "scenarios": [
+    {
+      "draw_calls": {
+        "count": 180,
+        "maximum": 121.0,
+        "mean": 117.555555555556,
+        "p50": 117.0,
+        "p95": 121.0
+      },
+      "engine_physics_ms": {
+        "count": 180,
+        "maximum": 0.386,
+        "mean": 0.257583333333333,
+        "p50": 0.273,
+        "p95": 0.386
+      },
+      "engine_process_ms": {
+        "count": 180,
+        "maximum": 33.834,
+        "mean": 25.3503055555555,
+        "p50": 24.639,
+        "p95": 33.834
+      },
+      "final_car_x": 709.35903980454,
+      "final_car_y": 410.0,
+      "frame_ms": {
+        "count": 180,
+        "maximum": 34.209,
+        "mean": 22.00565,
+        "p50": 21.66,
+        "p95": 24.795
+      },
+      "godot_static_memory_bytes": 36413629.0,
+      "godot_static_memory_peak_bytes": 37449226.0,
+      "name": "full_scene",
+      "render_objects": {
+        "count": 180,
+        "maximum": 1419.0,
+        "mean": 1389.73333333333,
+        "p50": 1381.0,
+        "p95": 1419.0
+      },
+      "render_primitives": {
+        "count": 180,
+        "maximum": 8851.0,
+        "mean": 8695.73333333333,
+        "p50": 8641.0,
+        "p95": 8851.0
+      },
+      "world_draw_submission_cpu_ms": {
+        "count": 180,
+        "maximum": 1.119,
+        "mean": 0.764572222222222,
+        "p50": 0.752,
+        "p95": 0.864
+      }
+    },
+    {
+      "draw_calls": {
+        "count": 180,
+        "maximum": 95.0,
+        "mean": 91.5555555555556,
+        "p50": 91.0,
+        "p95": 95.0
+      },
+      "engine_physics_ms": {
+        "count": 180,
+        "maximum": 0.078,
+        "mean": 0.0500444444444444,
+        "p50": 0.043,
+        "p95": 0.078
+      },
+      "engine_process_ms": {
+        "count": 180,
+        "maximum": 40.755,
+        "mean": 28.1824944444445,
+        "p50": 24.05,
+        "p95": 40.755
+      },
+      "final_car_x": 709.35903980454,
+      "final_car_y": 410.0,
+      "frame_ms": {
+        "count": 180,
+        "maximum": 40.935,
+        "mean": 20.1035055555556,
+        "p50": 19.531,
+        "p95": 23.058
+      },
+      "godot_static_memory_bytes": 36364781.0,
+      "godot_static_memory_peak_bytes": 37449226.0,
+      "name": "world_only",
+      "render_objects": {
+        "count": 180,
+        "maximum": 1267.0,
+        "mean": 1237.73333333333,
+        "p50": 1229.0,
+        "p95": 1267.0
+      },
+      "render_primitives": {
+        "count": 180,
+        "maximum": 7555.0,
+        "mean": 7399.73333333333,
+        "p50": 7345.0,
+        "p95": 7555.0
+      },
+      "world_draw_submission_cpu_ms": {
+        "count": 180,
+        "maximum": 1.2,
+        "mean": 0.781633333333333,
+        "p50": 0.76,
+        "p95": 0.981
+      }
+    },
+    {
+      "draw_calls": {
+        "count": 180,
+        "maximum": 26.0,
+        "mean": 26.0,
+        "p50": 26.0,
+        "p95": 26.0
+      },
+      "engine_physics_ms": {
+        "count": 180,
+        "maximum": 0.428,
+        "mean": 0.264249999999999,
+        "p50": 0.203,
+        "p95": 0.428
+      },
+      "engine_process_ms": {
+        "count": 180,
+        "maximum": 33.604,
+        "mean": 18.1510944444444,
+        "p50": 12.371,
+        "p95": 33.604
+      },
+      "final_car_x": 709.35903980454,
+      "final_car_y": 410.0,
+      "frame_ms": {
+        "count": 180,
+        "maximum": 9.497,
+        "mean": 7.16636666666667,
+        "p50": 7.356,
+        "p95": 8.333
+      },
+      "godot_static_memory_bytes": 36414597.0,
+      "godot_static_memory_peak_bytes": 37449226.0,
+      "name": "ui_only",
+      "render_objects": {
+        "count": 180,
+        "maximum": 152.0,
+        "mean": 152.0,
+        "p50": 152.0,
+        "p95": 152.0
+      },
+      "render_primitives": {
+        "count": 180,
+        "maximum": 1296.0,
+        "mean": 1296.0,
+        "p50": 1296.0,
+        "p95": 1296.0
+      },
+      "world_draw_submission_cpu_ms": {
+        "count": 0
+      }
+    },
+    {
+      "draw_calls": {
+        "count": 180,
+        "maximum": 117.0,
+        "mean": 117.0,
+        "p50": 117.0,
+        "p95": 117.0
+      },
+      "engine_physics_ms": {
+        "count": 180,
+        "maximum": 0.225,
+        "mean": 0.11855,
+        "p50": 0.098,
+        "p95": 0.225
+      },
+      "engine_process_ms": {
+        "count": 180,
+        "maximum": 41.681,
+        "mean": 30.4006944444443,
+        "p50": 27.957,
+        "p95": 41.681
+      },
+      "final_car_x": 245.271880587757,
+      "final_car_y": 410.0,
+      "frame_ms": {
+        "count": 180,
+        "maximum": 41.825,
+        "mean": 19.98105,
+        "p50": 19.669,
+        "p95": 24.144
+      },
+      "godot_static_memory_bytes": 36428361.0,
+      "godot_static_memory_peak_bytes": 37449226.0,
+      "name": "static_scene",
+      "render_objects": {
+        "count": 180,
+        "maximum": 1380.0,
+        "mean": 1380.0,
+        "p50": 1380.0,
+        "p95": 1380.0
+      },
+      "render_primitives": {
+        "count": 180,
+        "maximum": 8623.0,
+        "mean": 8623.0,
+        "p50": 8623.0,
+        "p95": 8623.0
+      },
+      "world_draw_submission_cpu_ms": {
+        "count": 0
+      }
+    }
+  ],
+  "scene": "ParcelTruck/RiverBridges, deterministic1/60step per rendered frame",
+  "warmup_frames_per_scenario": 90,
+  "window": {
+    "height": 1000,
+    "width": 1600
+  },
+  "command": "python scripts/benchmark_native.py --width 1600 --height 1000 --frames 180 --label baseline-1600x1000",
+  "host_cpu": "AMD EPYC 9V74 80-Core Processor",
+  "host_os": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "logical_cpus": 5,
+  "wall_seconds": 28.861986551999962,
+  "child_max_rss_kib": 232388,
+  "source_sha256": {
+    "native/scripts/compact_layout.gd": "9d16dd7d8e99ac30a387f759a9f13effe51581c815d6d8a4ae7267ec033492b9",
+    "native/scripts/content.gd": "6a66313533f38e8dacf89cd04a019a398d5b16791e8425cb9c66827ccb5db99b",
+    "native/scripts/editor_model.gd": "75b72351f3efe45e63fb8699c2acf271f8617e9416894c2c5b9b4059aeae0d22",
+    "native/scripts/input_router.gd": "dd1cadd26858393b8b49fbb9e908aad660e19a3c310e43ed44628d9058c26ee6",
+    "native/scripts/main.gd": "9260a0e06d417d3627d7e2776998a70d2fd2353394509c68c3b2cb13548d9bfa",
+    "native/scripts/save_store.gd": "1dab65dcebf9ff11a0ff2166ca39a3567d8a668d1dea478dea03a9f2640b8708",
+    "native/scripts/sound.gd": "c701e4d2db1e1d2d85c26a883ba704bdf73cce9e6073498112f08c933e9e632a",
+    "native/scripts/track_model.gd": "03c24f16e03226455a1972e7c999cf3b62ff377ea6ddb5350d3994c53283584a",
+    "native/scripts/vehicle_model.gd": "e5759e62daecb55f5bcfa8bbcc1c69b9888746bae5ffe133da26fa51d3ea72b9",
+    "native/scripts/world_view.gd": "0616603b17c4b1356ccbfafce05507dfc45faf7623a5faddc9ea5b8f8199171d"
+  },
+  "source_changed_during_run": false,
+  "captured_at_utc": "2026-10-25T03:01:21Z"
+}
