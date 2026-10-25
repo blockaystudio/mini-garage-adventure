@@ -48,3 +48,15 @@ Browser prototypes were used to make the three core loops immediately inspectabl
 
 ## Completion convention
 “Done” means a tangible artifact exists with the stated verification. “Tested” only means the evidence described in the report. A prototype screenshot, HTML page, signing utility or green unit test is never evidence of store acceptance, legal compliance, product-market fit or revenue.
+
+## Garage production override — 2026-10-25
+
+The supplied Mini Garage production prompt supersedes older OPT-only/native-scope limits. Original portfolio rows above are historical, including references to files from other games. This repository contains only the Garage playable app; no other app has been changed.
+
+| Milestone | Status | Current evidence |
+|---|---|---|
+| M0: pinned reference baseline | Verified desktop | Node22.16.0/Python3.13.5; `evidence/reference-baseline.txt`: 63 Node +6 Python pass |
+| M0: real-origin browser regression | Verified desktop Chromium | 14/14; `tests/browser_smoke.py`, `evidence/reference-browser-results.json`; fixed 2 multi-source input failures |
+| M1+: native production loop/content/export | In progress | Separate native source under `native/`; results reconciled at production checkpoint below |
+
+No mobile or store acceptance is inferred from M0. Optional purchases/ads/live service remain outside this authorized offline base game.
