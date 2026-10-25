@@ -4,6 +4,7 @@ extends SceneTree
 const MainScene = preload("res://scenes/main.tscn")
 const Store = preload("res://scripts/save_store.gd")
 const Content = preload("res://scripts/content.gd")
+const Progression = preload("res://scripts/progression/profile_progression.gd")
 var checks := 0
 var failures := 0
 var game: Node
@@ -23,6 +24,12 @@ func check(condition: bool, label: String) -> void:
 func button(text: String) -> Button:
 	for item in game.ui.find_children("*", "Button", true, false):
 		if item.text == text:
+			return item
+	return null
+
+func vehicle_button(label: String) -> Button:
+	for item in game.ui.find_children("*", "Button", true, false):
+		if str(item.text).begins_with(label):
 			return item
 	return null
 
@@ -93,7 +100,7 @@ func compact_flow() -> void:
 	var list: VBoxContainer = game.ui.get_node("CompactScroll/CompactContent")
 	var ordered := 0
 	for child in list.get_children():
-		if child is Button:
+		if child is Button and Content.COURSES.any(func(item): return str(child.text).ends_with(item.label)):
 			var following := child.get_index()+1
 			if following < list.get_child_count() and list.get_child(following) is Label:
 				ordered += 1
@@ -168,7 +175,7 @@ func run() -> void:
 	await process_frame
 	check(game.page == "garage" and game.state.completed.is_empty(), "first launch opens garage with no medals")
 	check(game.state.build.vehicle == "buggy", "first launch selects available buggy")
-	check(button("Moon Rover · 1").disabled, "unearned vehicles visibly locked")
+	check(vehicle_button("Moon Rover") != null and vehicle_button("Moon Rover").disabled, "new-profile vehicle threshold is visibly three mastery stars")
 	click("Giant tires")
 	click("Firm springs")
 	click("Purple")
@@ -242,15 +249,47 @@ func run() -> void:
 	check(game.car.x == 80.0 and game.router.strength("throttle") == 0.0, "rapid restart resets car and input twelve times")
 	drive_to_finish()
 	check(game.state.completed == ["meadow"] and game.state.best.has("meadow"), "finish awards one medal and local best")
+	check(game.state.gp == 105 and Progression.stars_count(game.state) == 1, "first authored finish awards30base+50first+25completion GP and one star")
+	var result_buttons: int = game.ui.find_children("*","Button",true,false).size()
+	var result_voices: int = game.sound.voices.size()
+	game._finish()
+	check(game.ui.find_children("*","Button",true,false).size() == result_buttons and game.sound.voices.size() == result_voices, "duplicate scene finish does not stack result actions or audio cues")
+	check(game.state.gp == 105 and Progression.stars_count(game.state) == 1, "duplicate scene finish cannot replay GP or mastery")
 	check(not game.router.active and game.router.strength("throttle") == 0.0, "finish clears driving controls")
 	game._physics_process(10.0)
 	check(game.state.completed.size() == 1, "finished scene cannot duplicate medal")
 	click("Ride again")
 	check(game.car.x == 80.0 and not game.run_finished, "finish retry starts cleanly")
 	game.show_garage()
-	check(not button("Moon Rover").disabled, "first medal unlocks next distinct vehicle")
+	check(vehicle_button("Moon Rover") != null and vehicle_button("Moon Rover").disabled, "one star does not bypass new vehicle mastery gate")
+	click("Upgrades")
+	check(button("Buy for 300 GP").disabled, "upgrade drawer refuses an unaffordable purchase")
+	click("Pin upgrade goal" if button("Pin upgrade goal") != null else "Goal pinned")
+	check(game.state.goal == "mud" and game.state.gp == 105, "pinning a mud-tire goal is free and saved")
+	game.show_courses()
+	click("✓ Meadow Hello")
+	drive_to_finish()
+	check(game.state.gp == 135 and Progression.stars_count(game.state) == 1, "legitimate repeat run awards only30GP and no duplicate star")
+	for index in [1,2]:
+		game.show_courses()
+		click("%02d  %s" % [index+1,Content.COURSES[index].label])
+		drive_to_finish()
+	check(game.state.gp == 345 and Progression.stars_count(game.state) == 3, "three distinct completions and a repeat fund the first upgrade without granting GP directly")
+	game.show_garage()
+	check(not button("Moon Rover").disabled, "three completion stars unlock the next distinct vehicle")
 	click("Moon Rover")
 	check(game.state.build.vehicle == "rover", "unlocked vehicle selectable and saved")
+	click("Upgrades")
+	click("Buy for 300 GP")
+	check(game.state.gp == 45 and "mud" in game.state.owned, "actual purchase button atomically deducts GP and grants mud tires")
+	click("Equip · FREE")
+	check(game.state.gp == 45 and game.state.build.tires == "mud" and game.state.equipped.tires == "mud", "actual equipment button fits owned mud tires for free")
+	check(Progression.stars_count(game.state) == 3, "mastery stars are never spent by the upgrade purchase")
+	var purchased = Store.new(test_path).load_save()
+	check(purchased.gp == 45 and "mud" in purchased.owned and purchased.equipped.tires == "mud" and purchased.goal == "mud", "wallet ownership equipment and pinned goal survive actual file reload")
+	game._purchase_upgrade("mud")
+	check(game.state.gp == 45 and game.state.owned.count("mud") == 1, "repeated scene purchase action cannot charge twice")
+	game.show_garage()
 	click("Track lab")
 	await process_frame
 	check(game.page == "editor" and game.editor.pieces.size() == 4, "four-section private editor reachable")
@@ -270,7 +309,7 @@ func run() -> void:
 	await process_frame
 	check(game.page == "drive" and game.editor_preview and game.state.custom[1] == "dip", "private track saves then starts native preview")
 	drive_to_finish()
-	check(game.state.completed.size() == 1, "private preview preserves authored course medals")
+	check(game.state.completed.size() == 3 and game.state.gp == 45, "private preview preserves authored medals and cannot farm GP")
 	click("Keep exploring")
 	check(game.page == "editor" and game.editor.pieces == game.state.custom, "preview returns to saved editor")
 	game.show_gate()
@@ -308,7 +347,7 @@ func run() -> void:
 	game.show_parents()
 	click("Reset local progress")
 	click("Keep progress")
-	check(game.state.completed.size() == 1, "reset cancel preserves local progress")
+	check(game.state.completed.size() == 3 and game.state.gp == 45, "reset cancel preserves local progress and wallet")
 	click("Reset local progress")
 	click("Erase local save")
 	check(game.state.completed.is_empty() and game.state.build.vehicle == "buggy" and not game.state.settings.one_touch, "confirmed reset restores full defaults")

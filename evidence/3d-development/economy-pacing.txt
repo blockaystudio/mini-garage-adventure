@@ -1,0 +1,3 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+ECONOMY PACING: 12 intended-vehicle courses measured; allfinish=true; /workspace/mini-garage-adventure/evidence/3d-development/economy-pacing.json

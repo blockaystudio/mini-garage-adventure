@@ -1,0 +1,38 @@
+{
+  "spec_version": 1,
+  "status": "proposal_not_runtime",
+  "currency": {"id": "garage_points", "label": "Garage Points", "short_label": "GP", "spendable": true, "real_money_purchase": false},
+  "mastery": {"id": "mastery_stars", "spendable": false, "max_per_authored_event": 3, "objectives": ["completion", "event_skill", "suitable_build_route"]},
+  "save_schema": {"reviewed_current": 2, "proposed": 3},
+  "new_profile": {"tutorial_grant_gp": 150, "tutorial_grant_claim": "first_drive_v1", "tutorial_excludes_normal_rewards": true, "initial_gp": 0},
+  "legacy_migration": {"gp_per_completed_course": 75, "stars_per_completed_course": 1, "claim": "schema_2_to_3_compensation_v1", "preserve_all_legacy_unlocks": true, "eligible_for_tutorial_grant": false},
+  "foundational_items": ["road", "trail", "giant", "soft", "firm", "orange", "cyan", "purple", "lime"],
+  "rewards": {
+    "short_2d_clear": {"gp": 30, "repeatable": true, "claim_scope": "validated_run"},
+    "trail_3d_clear": {"gp": 100, "repeatable": true, "claim_scope": "validated_run", "target_duration_seconds": [90, 180]},
+    "first_authored_clear": {"gp": 50, "repeatable": false, "claim_scope": "profile_event"},
+    "new_star": {"gp": 25, "repeatable": false, "claim_scope": "profile_event_objective"},
+    "landmark": {"gp": 75, "repeatable": false, "claim_scope": "profile_landmark"},
+    "delivery_clear": {"gp": 120, "repeatable": true, "claim_scope": "validated_job", "target_duration_seconds": [120, 240]},
+    "friends_race_finish": {"gp": 100, "repeatable": true, "claim_scope": "server_race_player"},
+    "friends_race_win_bonus": {"gp": 25, "repeatable": true, "claim_scope": "server_race_winner"},
+    "custom_track": {"gp": 0, "repeatable": true, "claim_scope": "none"}
+  },
+  "items": [
+    {"id": "mud", "category": "tires", "label": "Mud tires", "gp": 300, "capabilities": {"mud": 1}, "tradeoff": "slower_on_pavement"},
+    {"id": "sand", "category": "tires", "label": "Sand paddle tires", "gp": 600, "capabilities": {"sand": 1}, "tradeoff": "poorer_pavement_cornering"},
+    {"id": "rock", "category": "tires", "label": "Rock tires", "gp": 900, "capabilities": {"rock": 1}, "tradeoff": "lower_top_speed"},
+    {"id": "snow", "category": "tires", "label": "Snow tires", "gp": 1400, "capabilities": {"snow": 1}, "tradeoff": "less_efficient_on_dry_terrain"},
+    {"id": "long_travel", "category": "suspension_upgrade", "label": "Long-travel suspension", "gp": 450, "capabilities": {"clearance": 1}, "tradeoff": "more_body_roll"},
+    {"id": "low_range", "category": "gearing", "label": "Low-range gearing", "gp": 350, "capabilities": {"crawl": 1}, "tradeoff": "lower_max_speed"},
+    {"id": "awd", "category": "drivetrain", "label": "AWD conversion", "gp": 1200, "capabilities": {"awd": 1}, "tradeoff": "extra_mass"},
+    {"id": "engine_tier_1", "category": "engine", "label": "Engine tier 1", "gp": 700, "capabilities": {"power": 1}, "tradeoff": "more_wheelspin_with_unsuitable_tires"},
+    {"id": "cosmetic_small", "category": "cosmetic_price_tier", "label": "Small cosmetic target", "gp": 50, "capabilities": {}, "tradeoff": "none"},
+    {"id": "cosmetic_medium", "category": "cosmetic_price_tier", "label": "Medium cosmetic target", "gp": 150, "capabilities": {}, "tradeoff": "none"},
+    {"id": "cosmetic_large", "category": "cosmetic_price_tier", "label": "Large cosmetic target", "gp": 300, "capabilities": {}, "tradeoff": "none"}
+  ],
+  "cosmetic_price_tier_note": "Templates for future cosmetic SKU prices; not three finished catalog assets.",
+  "vehicle_mastery_thresholds_for_new_profiles": {"buggy": 0, "rover": 3, "rally": 7, "truck": 12, "kart": 18, "crawler": 25},
+  "rules": {"refund_on_normal_recovery_required": false, "recovery_cost_gp": 0, "equip_cost_gp": 0, "region_entry_cost_gp": 0, "first_entry_unlock_permanent": true, "purchases_atomic": true, "claims_idempotent": true, "offline_gp_auto_import_to_verified_online": false},
+  "onboarding_example": {"tutorial": 150, "event_1": 105, "event_2": 105, "total_gp": 360, "mud_price": 300, "remaining_gp": 60, "completion_stars": 2}
+}

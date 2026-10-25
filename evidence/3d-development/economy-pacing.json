@@ -1,0 +1,186 @@
+{
+  "balance_review": "Compare short2D GP/min with actually measured3D routes; these numbers alone do not establish enjoyment, learning, retention or final balance.",
+  "courses": [
+    {
+      "build": {
+        "paint": "orange",
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "buggy"
+      },
+      "course": "meadow",
+      "finished": true,
+      "first_clear_gp_with_completion_star": 105,
+      "repeat_gp": 30,
+      "repeat_gp_per_simulation_minute": 246.857142857138,
+      "simulation_seconds": 7.29166666666682,
+      "vehicle": "buggy"
+    },
+    {
+      "build": {
+        "paint": "orange",
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "rover"
+      },
+      "course": "orchard",
+      "finished": true,
+      "first_clear_gp_with_completion_star": 105,
+      "repeat_gp": 30,
+      "repeat_gp_per_simulation_minute": 192.857142857141,
+      "simulation_seconds": 9.33333333333344,
+      "vehicle": "rover"
+    },
+    {
+      "build": {
+        "paint": "orange",
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "rally"
+      },
+      "course": "coast",
+      "finished": true,
+      "first_clear_gp_with_completion_star": 105,
+      "repeat_gp": 30,
+      "repeat_gp_per_simulation_minute": 220.183486238527,
+      "simulation_seconds": 8.17500000000018,
+      "vehicle": "rally"
+    },
+    {
+      "build": {
+        "paint": "orange",
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "truck"
+      },
+      "course": "parcel",
+      "finished": true,
+      "first_clear_gp_with_completion_star": 105,
+      "repeat_gp": 30,
+      "repeat_gp_per_simulation_minute": 148.351648351649,
+      "simulation_seconds": 12.1333333333333,
+      "vehicle": "truck"
+    },
+    {
+      "build": {
+        "paint": "orange",
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "kart"
+      },
+      "course": "firefly",
+      "finished": true,
+      "first_clear_gp_with_completion_star": 105,
+      "repeat_gp": 30,
+      "repeat_gp_per_simulation_minute": 218.623481781372,
+      "simulation_seconds": 8.23333333333351,
+      "vehicle": "kart"
+    },
+    {
+      "build": {
+        "paint": "orange",
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "crawler"
+      },
+      "course": "quarry",
+      "finished": true,
+      "first_clear_gp_with_completion_star": 105,
+      "repeat_gp": 30,
+      "repeat_gp_per_simulation_minute": 146.143437077132,
+      "simulation_seconds": 12.3166666666666,
+      "vehicle": "crawler"
+    },
+    {
+      "build": {
+        "paint": "orange",
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "buggy"
+      },
+      "course": "dunes",
+      "finished": true,
+      "first_clear_gp_with_completion_star": 105,
+      "repeat_gp": 30,
+      "repeat_gp_per_simulation_minute": 127.584170112228,
+      "simulation_seconds": 14.1083333333332,
+      "vehicle": "buggy"
+    },
+    {
+      "build": {
+        "paint": "orange",
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "rover"
+      },
+      "course": "moon",
+      "finished": true,
+      "first_clear_gp_with_completion_star": 105,
+      "repeat_gp": 30,
+      "repeat_gp_per_simulation_minute": 116.946399566867,
+      "simulation_seconds": 15.3916666666664,
+      "vehicle": "rover"
+    },
+    {
+      "build": {
+        "paint": "orange",
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "truck"
+      },
+      "course": "river",
+      "finished": true,
+      "first_clear_gp_with_completion_star": 105,
+      "repeat_gp": 30,
+      "repeat_gp_per_simulation_minute": 107.462686567166,
+      "simulation_seconds": 16.7499999999997,
+      "vehicle": "truck"
+    },
+    {
+      "build": {
+        "paint": "orange",
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "rally"
+      },
+      "course": "switchback",
+      "finished": true,
+      "first_clear_gp_with_completion_star": 105,
+      "repeat_gp": 30,
+      "repeat_gp_per_simulation_minute": 140.900195694717,
+      "simulation_seconds": 12.7749999999999,
+      "vehicle": "rally"
+    },
+    {
+      "build": {
+        "paint": "orange",
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "kart"
+      },
+      "course": "lantern",
+      "finished": true,
+      "first_clear_gp_with_completion_star": 105,
+      "repeat_gp": 30,
+      "repeat_gp_per_simulation_minute": 110.599078341016,
+      "simulation_seconds": 16.2749999999997,
+      "vehicle": "kart"
+    },
+    {
+      "build": {
+        "paint": "orange",
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "crawler"
+      },
+      "course": "summit",
+      "finished": true,
+      "first_clear_gp_with_completion_star": 105,
+      "repeat_gp": 30,
+      "repeat_gp_per_simulation_minute": 84.6063454759129,
+      "simulation_seconds": 21.2749999999994,
+      "vehicle": "crawler"
+    }
+  ],
+  "scope": "Deterministic native2D model driving at held full throttle; not a human/device/session-time measurement. Initial rewards/prices unchanged."
+}

@@ -20,7 +20,7 @@ func write_raw(path: String, value: String) -> void:
 	file.close()
 
 func record(value: Dictionary) -> String:
-	return JSON.stringify({"schema": 2, "payload": value, "checksum": SaveStore._canonical(value).sha256_text()}, "", true)
+	return JSON.stringify({"schema": SaveStore.SCHEMA, "payload": value, "checksum": SaveStore._canonical(value).sha256_text()}, "", true)
 
 func clear_test_files() -> void:
 	var directory := DirAccess.open(test_root)
@@ -72,8 +72,8 @@ func _init() -> void:
 	var legacy := {"version": 1, "tires": "road", "suspension": "firm", "paint": "lime", "custom": ["flat", "ramp", "bumps", "flat"], "reducedMotion": true}
 	write_raw(base + ".json", JSON.stringify(legacy))
 	store.load_save()
-	check(store.data.version == 2 and store.data.build.tires == "road" and store.data.settings.reduced_motion, "version 1 native save migrates supported choices")
-	check(store.save_data(store.data), "migrated native save writes version 2 envelope")
+	check(store.data.version == SaveStore.SCHEMA and store.data.build.tires == "road" and store.data.settings.reduced_motion, "version 1 native save migrates supported choices")
+	check(store.save_data(store.data), "migrated native save writes current envelope")
 	var invalid := {"build": {"vehicle": "unknown", "tires": "mystery", "suspension": "fake", "paint": "black"}, "completed": ["fake", Content.COURSES[0].id, Content.COURSES[0].id], "custom": ["void"], "settings": {"volume": 999, "muted": "yes"}, "best": {Content.COURSES[0].id: -2}}
 	var sanitized := SaveStore.normalize(invalid)
 	check(sanitized.build == SaveStore.defaults().build and sanitized.completed.size() == 1, "invalid parts and unknown or duplicate courses normalize")

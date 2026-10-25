@@ -24,7 +24,9 @@ func run() -> void:
 	var build := {"vehicle": "buggy", "tires": "trail", "suspension": "soft", "paint": "orange"}
 	check(Content.VEHICLES.size() == 6, "six vehicles")
 	check(Content.COURSES.size() == 12, "twelve courses")
-	check(Content.TIRES.size() == 3 and Content.SUSPENSIONS.size() == 2, "parts inventory")
+	check(Content.TIRES.size() == 7 and Content.SUSPENSIONS.size() == 2, "seven tire identities and two retained suspension settings")
+	for id in ["road", "trail", "giant", "mud", "sand", "rock", "snow"]:
+		check(Content.TIRES.has(id), "retained or terrain tire exists: " + id)
 	var ids: Dictionary = {}
 	var signatures: Dictionary = {}
 	var unlocking_count := 0
@@ -38,7 +40,7 @@ func run() -> void:
 		check(Track.validate(course.pieces) == "", "valid course " + course.id)
 		check(int(course.unlock) <= unlocking_count, "course reachable in progression " + course.id)
 		check(Content.VEHICLES.has(course.vehicle), "intended vehicle exists " + course.id)
-		check(int(Content.VEHICLES[course.vehicle].unlock) <= unlocking_count, "intended vehicle unlocked " + course.id)
+		check(int(Content.VEHICLES[course.vehicle].unlock) <= unlocking_count, "legacy intended-vehicle threshold retained " + course.id)
 		var intended := build.duplicate()
 		intended.vehicle = course.vehicle
 		var car := drive(intended, course.pieces, 90.0)

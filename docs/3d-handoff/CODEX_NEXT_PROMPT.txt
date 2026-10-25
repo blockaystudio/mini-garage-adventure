@@ -1,0 +1,29 @@
+PROJECT: Mini Garage Adventure
+REPOSITORY: https://github.com/blockaystudio/mini-garage-adventure
+REVIEWED BASE: codex/garage-production-readiness
+REVIEWED SHA: d40c4902ee752b3f7c7d0e8bcf546e89da54fdf8
+
+Implement the next development milestone using the attached Mini Garage review package. Do not restart market research or reimport the older source ZIP. Inspect current local/remote branches and open PRs first. Preserve all existing native work, hidden files, saves, tests and branch history. The reviewed main branch is older than the native production/readiness branches. Use the latest reconciled descendant, not an assumed stale checkpoint.
+
+Read repository AGENTS.md, HANDOFF.md, README.md, docs/MASTER_TRACKER.md, docs/WORK_LOG.md, docs/BUGS.md, docs/DECISIONS.md, docs/DELIVERY.md and evidence/QA_REPORT.md. Then read this package's DEVELOPMENT_PLAN.md, ACCEPTANCE_TESTS.md, ASSET_PLAN.md, TASK_CHECKLIST.md and config/*.json. The user now requests earn-and-spend progression, a real 3D mode and a shared driving world. This new scope supersedes the old 2D-only/no-engine-expansion restriction for these specific features. Preserve the existing offline game and unrelated safeguards. This is not permission to add ads, purchases, public chat, public child profiles, analytics, trading or public track sharing.
+
+Treat the package as a specification, not completed code. Do not mark the new features done because JSON or a menu button exists. Keep production Godot 4.6.3 unless a verified issue requires a documented deliberate change. Do not replace the native project with a browser-only framework or a WebView.
+
+BEGIN WITH M0 AND M1:
+1. Create a dedicated codex/garage-rewards-* branch from the latest reconciled native checkpoint. Record baseline commands and failures, including scripts/verify.py and scripts/verify_native.py when toolchains permit. Existing test reports are not a new test run.
+2. Implement a reusable economy/progression service and validated data definitions. One spendable currency: Garage Points. Non-spendable mastery stars provide achievement gates. Preserve the existing three tires, two springs, four paints, six vehicles, twelve courses and local track editor.
+3. Upgrade native save schema 2 to 3 using atomic writes, recovery and future-version protection. Preserve build/settings/track/completions/bests and all historically available content. Grant one completion star and 75 GP per historically completed course exactly once; preserve legacy vehicle ownership. Legacy migration compensation replaces the first-drive grant. New players receive 150 GP once through the tutorial. Browser/native storage is not automatically interchangeable.
+4. Implement legitimate run rewards, first-clear and per-objective unique claims, an item catalog, affordability/ownership validation, atomic buy-and-grant, free equipment changes and a clear GP balance. No duplicate awards after restart/relaunch or duplicate finish signals. A local checksum does not prevent tampering and must not be presented as online anti-cheat.
+5. Create a clear garage upgrade drawer and results panel showing what can be bought and the pinned next goal. Prove the whole loop: complete a course, earn GP once, buy mud tires when affordable, equip, quit/relaunch and retain everything.
+6. Run meaningful economy/migration/input/recovery regressions. Update tracker, work log, decisions, bugs and verification evidence. Commit the bounded milestone. Provide exact results and remaining limitations.
+
+NEXT MILESTONE AFTER THE WALLET IS VERIFIED:
+Build a real Godot 3D vertical slice under native/: Sunny Buggy, chase camera, touch/gamepad steering, collision/slopes/recovery, a compact Garage Valley plus Moss Marsh route, one mission, three discoveries and surface-dependent tire behavior. The player must drive, earn, purchase mud tires, see them install, cross an unsuitable surface more effectively and unlock a destination. Preserve Quick Drive and the 2D editor. Do not call a static illustration, isometric render or camera trick a 3D mode. Use original assets with editable sources and ledger entries.
+
+Bring a two-native-client, local dedicated-server synchronization spike forward while the 3D controller is being designed. Later implement four-player private sessions, shared destinations, authoritative checkpoints/results, equal-build races, rejoin behavior and isolated test-profile GP. Do not claim multiplayer with local bots or ghost cars. ENet native networking does not work directly in browsers. Keep browser crossplay a documented transport/performance gate. A separate room/simulation service is required; static Sites hosting is not a UDP game server.
+
+Use local isolated test profiles for networking. Do not upload children's real saves or attach new child identity/data collection to the shipped app without the specified parent/data/privacy work. No automatic import of offline GP into a verified online wallet. Server-owned progression and privacy/support language are required before child-facing online release.
+
+Work in bounded, reviewable milestones. Continue routine authorized implementation without repeated permission questions. Do not merge existing PRs, force-push, change repository visibility, publish/redeploy websites, submit stores, create paid accounts, buy services, accept agreements or contact customers/testers. Prepare code and evidence for review. If the environment ends, leave a committed resumable checkpoint and an exact next task, without claiming background continuation.
+
+DELIVER: branch/commit and PR if creation is authorized in that session; real run/build instructions; actual tests and platform labels; playable local artifacts when possible; implemented content counts; migration behavior; unresolved defects; exact next milestone. Never label design targets, repository test history or desktop captures as new device/retention results.
