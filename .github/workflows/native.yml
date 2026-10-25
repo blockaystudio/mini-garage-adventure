@@ -33,6 +33,7 @@ jobs:
           python scripts/test_multiplayer.py --matrix --output "$RUNNER_TEMP/garage-multiplayer-matrix"
           python scripts/test_multiplayer.py --repeat --output "$RUNNER_TEMP/garage-multiplayer-repeat"
           python scripts/test_multiplayer.py --auth --output "$RUNNER_TEMP/garage-multiplayer-auth"
+          python scripts/test_multiplayer.py --storage-fault --output "$RUNNER_TEMP/garage-multiplayer-storage"
       - name: Device-tool safety regression
         run: python tests/test_device_tools.py
       - name: iOS source preflight and inspector fixtures

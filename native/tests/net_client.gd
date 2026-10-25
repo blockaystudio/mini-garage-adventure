@@ -14,6 +14,9 @@ var did_rejoin := false
 var rejoin_pending := false
 var result_seen_at := 0
 var checkpoints_seen: Dictionary = {}
+var saw_pending_reward := false
+var pending_balance_honest := true
+var pending_messages: Array = []
 func _initialize() -> void:
 	call_deferred("run")
 func run() -> void:
@@ -33,7 +36,7 @@ func run() -> void:
 		return
 	started = Time.get_ticks_msec()
 	await create_timer(float(config.duration)).timeout
-	var report := {"pid":OS.get_process_id(),"profile":config.profile,"saw_profiles":seen.keys(),"position_samples":seen_positions,"snapshot_samples":samples,"latest_snapshot":session.latest_snapshot,"checkpoint_values_seen":checkpoints_seen,"diagnostics":session.diagnostics(),"did_attack":did_attack,"did_rejoin":did_rejoin,"completed_races":session.completed_races,"status":session.status,"scope":"independent actual native ENet client process; generated test inputs"}
+	var report := {"pid":OS.get_process_id(),"profile":config.profile,"saw_profiles":seen.keys(),"position_samples":seen_positions,"snapshot_samples":samples,"latest_snapshot":session.latest_snapshot,"checkpoint_values_seen":checkpoints_seen,"diagnostics":session.diagnostics(),"did_attack":did_attack,"did_rejoin":did_rejoin,"completed_races":session.completed_races,"saw_pending_reward":saw_pending_reward,"pending_balance_honest":pending_balance_honest,"pending_messages":pending_messages,"status":session.status,"scope":"independent actual native ENet client process; generated test inputs"}
 	var file := FileAccess.open(config.output,FileAccess.WRITE)
 	file.store_string(JSON.stringify(report,"  ",true))
 	file.close()
@@ -63,6 +66,17 @@ func _rejoin_after_finish() -> void:
 	rejoin_pending = false
 func on_snapshot(snapshot: Dictionary) -> void:
 	samples += 1
+	var pending: Array = snapshot.get("race",{}).get("pending_results",[])
+	if not pending.is_empty():
+		saw_pending_reward = true
+		var message: String = snapshot.get("settlement_status","")
+		if not message.is_empty() and message not in pending_messages: pending_messages.append(message)
+		# This fault scenario uses fresh TEST profiles, so a pending result cannot
+		# appear as banked GP. It is a real received snapshot, not an injected UI.
+		if bool(config.get("storage_fault",false)):
+			for row in pending:
+				for player in snapshot.get("players",{}).values():
+					if player.id==row.profile and int(player.gp)!=0: pending_balance_honest = false
 	for p in snapshot.get("players",{}).values():
 		seen[p.id] = true
 		var positions: Array = seen_positions.get(p.id,[])

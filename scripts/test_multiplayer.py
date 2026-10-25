@@ -22,7 +22,7 @@ NATIVE = ROOT / 'native'
 
 
 def run_case(engine: str, label: str, clients: int, latency: int, jitter: int,
-             loss: float, duration: float, destination: Path, rejoin=True, rounds=1):
+             loss: float, duration: float, destination: Path, rejoin=True, rounds=1, storage_fault=False):
     source_before={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((NATIVE/'scripts/net').glob('*.gd'))+[NATIVE/'scripts/drive3d/vehicle_sim.gd']}
     case = destination / label
     case.mkdir(parents=True, exist_ok=True)
@@ -37,7 +37,9 @@ def run_case(engine: str, label: str, clients: int, latency: int, jitter: int,
         config = dict(port=port, ready=str(ready), store=str(tmp/'online-test-profiles.json'),
                       output=str(case/'server.json'), players=clients,
                       duration=duration+2, countdown=0.7, latency_ms=latency,
-                      jitter_ms=jitter, loss=loss)
+                      jitter_ms=jitter, loss=loss, storage_fault=storage_fault,
+                      fault_after_seconds=1.0,fault_duration_seconds=7.0,
+                      race_timeout_seconds=5.0 if storage_fault else 120.0)
         server_config = tmp/'server-config.json'
         server_config.write_text(json.dumps(config))
         processes, handles = [], []
@@ -61,7 +63,7 @@ def run_case(engine: str, label: str, clients: int, latency: int, jitter: int,
                 cfg = dict(port=port,invite=invitation,profile=f'qa-driver-{index+1}',
                     throttle=1.0-index*.10,output=str(case/f'client-{index+1}.json'),
                     duration=duration,latency_ms=latency,jitter_ms=jitter,loss=loss,
-                    attack=index==0,rejoin=rejoin and index==0,rounds=rounds)
+                    attack=index==0,rejoin=rejoin and index==0,rounds=rounds,storage_fault=storage_fault)
                 path = tmp/f'client-{index+1}-config.json'
                 path.write_text(json.dumps(cfg))
                 launch('tests/net_client.gd',path,f'client-{index+1}.log')
@@ -99,6 +101,13 @@ def run_case(engine: str, label: str, clients: int, latency: int, jitter: int,
             if rounds>1:
                 for report in reports:
                     require(report['completed_races']==authority['completed_races'],f"{report['profile']} agrees on both immutable round records")
+            if storage_fault:
+                before=next((row for row in authority.get('storage_fault_events',[]) if row['event']=='before_storage_recovery'),{})
+                require(before.get('pending_validated_finishes')==clients,'Every validated finish remains pending beyond failed storage')
+                require(before.get('race_elapsed',0)>5 and before.get('phase')=='saving_results','Pending finishes survive the ordinary race timeout')
+                require(all(v==0 for v in before.get('banked_gp',{}).values()),'No reward is banked before storage recovery')
+                for report in reports:
+                    require(report.get('saw_pending_reward') and report.get('pending_balance_honest') and report.get('pending_messages'),f"{report['profile']} receives explicit unbanked pending-save state")
             if rejoin:
                 require(reports[0]['did_rejoin'],'First/leader client actually disconnects and rejoins')
                 require('Connected as' in reports[0]['status'],'Rejoin authenticated successfully')
@@ -171,6 +180,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,default=ROOT/'evidence/3d-development/multiplayer')
     parser.add_argument('--matrix',action='store_true')
+    parser.add_argument('--storage-fault',action='store_true',help='real server storage failure across validated finishes and timeout, then recovery')
     parser.add_argument('--auth',action='store_true',help='actual invalid-invite and forged-rejoin handshake tests')
     parser.add_argument('--repeat',action='store_true',help='two real clients finish two consecutive races in the same room')
     parser.add_argument('--duration',type=float,default=10)
@@ -183,7 +193,10 @@ def main():
     cases=[('two-clients',2,0,0,0.0),('four-clients',4,0,0,0.0)]
     if args.matrix:
         cases += [(f'network-{ms}ms',4,ms,ms//5,loss) for ms,loss in [(50,.01),(100,.02),(150,.03),(250,.05)]]
-    summaries=[run_case(args.godot,*case,args.duration,args.output) for case in cases] if not args.repeat else [run_case(args.godot,'two-consecutive-races',2,0,0,0.0,max(args.duration,15),args.output,rounds=2)]
+    if args.storage_fault:
+        summaries=[run_case(args.godot,'two-clients-storage-fault',2,0,0,0.0,max(args.duration,12),args.output,storage_fault=True)]
+    else:
+        summaries=[run_case(args.godot,*case,args.duration,args.output) for case in cases] if not args.repeat else [run_case(args.godot,'two-consecutive-races',2,0,0,0.0,max(args.duration,15),args.output,rounds=2)]
     cpu='unknown'
     if Path('/proc/cpuinfo').exists():
         cpu=next((line.split(':',1)[1].strip() for line in Path('/proc/cpuinfo').read_text().splitlines() if line.startswith('model name')),'unknown')

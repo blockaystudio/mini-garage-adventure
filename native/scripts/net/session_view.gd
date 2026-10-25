@@ -148,6 +148,8 @@ func _process(delta: float) -> void:
 		race_label.text = "SERVER: "+phase.to_upper()+" · 3 ordered gates · equal-build Sunny Buggy · solo GP is separate"
 		if phase == "countdown":
 			race_label.text = "SERVER COUNTDOWN: %d" % ceili(float(race.get("countdown",0)))
+		elif phase == "saving_results":
+			race_label.text = "Finish validated. Saving test rewards… pending GP is not banked yet."
 		elif phase == "finished":
 			var places: Array[String] = []
 			for row in race.get("results",[]):

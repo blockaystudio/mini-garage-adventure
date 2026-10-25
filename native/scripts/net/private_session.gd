@@ -11,6 +11,9 @@ signal race_changed(race: Dictionary)
 signal session_status(message: String)
 var latest_snapshot: Dictionary = {}
 var completed_races: Dictionary = {}
+var pending_settlements: Dictionary = {}
+var _settlement_message := ""
+var _showing_pending_notice := false
 var player_id := 0
 var invite := ""
 var rejoin_token := ""
@@ -111,6 +114,7 @@ func join(host: String, port: int, room_invite: String, test_profile_id: String 
 		_set_status("Only native local/private-address TEST sessions are supported.")
 		return ERR_UNAVAILABLE
 	_last_notice = ""
+	_showing_pending_notice = false
 	_join_id = test_profile_id if _valid_profile_id(test_profile_id) else "qa-"+Crypto.new().generate_random_bytes(5).hex_encode()
 	_join_invite = room_invite.to_upper()
 	_joining_token = token
@@ -136,6 +140,7 @@ func _valid_profile_id(value: String) -> bool:
 			return false
 	return true
 func leave() -> void:
+	_showing_pending_notice = false
 	_controls = {"throttle":0.0,"brake":1.0,"steer":0.0,"reverse":0.0}
 	if peer:
 		peer.close()
@@ -298,6 +303,10 @@ func _mark_ready(id: int) -> void:
 		_reset_race()
 	if race.phase=="waiting": players[id].ready = true
 func _reset_race() -> void:
+	# A validated finish cannot be discarded by requesting another race.
+	if not pending_settlements.is_empty():
+		_set_status("Validated TEST finishes are waiting for storage. No new race until they are saved.")
+		return
 	# Starting another race never removes an old committed result/award.
 	race = {"id":"","phase":"waiting","countdown":0.0,"results":[],"checkpoints":CHECKPOINTS,"equal_build":EQUAL_BUILD,"entrants":[],"statuses":{},"elapsed":0.0}
 	for id in players:
@@ -312,16 +321,21 @@ func _reset_race() -> void:
 	_queue.clear()
 	_broadcast_snapshot()
 func _update_race_terminal(delta: float) -> void:
-	if race.phase!="running": return
+	if race.phase not in ["running","saving_results"]: return
 	race.elapsed = float(race.get("elapsed",0))+delta
 	for profile in race.get("entrants",[]):
-		if race.statuses.get(profile)=="finished" or race.statuses.get(profile)=="dnf": continue
+		if race.statuses.get(profile) in ["finished","dnf","pending_save"]: continue
 		var timed_out: bool = float(race.elapsed)>=race_timeout_seconds
 		if departed.has(profile): timed_out = timed_out or Time.get_ticks_msec()-int(departed[profile].departed_at)>int(rejoin_seconds*1000)
 		if timed_out: race.statuses[profile] = "dnf"
 	var all_terminal := true
 	for profile in race.get("entrants",[]):
 		if race.statuses.get(profile) not in ["finished","dnf"]: all_terminal = false
+	if not all_terminal:
+		var driving_remains := false
+		for profile in race.get("entrants",[]):
+			if race.statuses.get(profile)=="racing": driving_remains = true
+		race.phase = "running" if driving_remains else "saving_results"
 	if all_terminal and not race.get("entrants",[]).is_empty():
 		race.phase = "finished"
 		var finalized := race.duplicate(true)
@@ -352,9 +366,18 @@ func _request_purchase(item: String, transaction: String) -> void:
 	if not is_authority: return
 	var sender := multiplayer.get_remote_sender_id()
 	if players.has(sender) and _allowed(sender,8,"purchase"):
-		var ok: bool = store.buy(players[sender].id,item,transaction)
-		_notice.rpc_id(sender,"TEST purchase saved." if ok else "TEST purchase not affordable or already owned.")
+		_notice.rpc_id(sender,_purchase_message(sender,item,transaction))
 		_broadcast_snapshot()
+func _purchase_message(id: int, item: String, transaction: String) -> String:
+	if not players.has(id): return "TEST profile is not connected."
+	var profile: Dictionary = store.profiles[players[id].id]
+	if store.buy(players[id].id,item,transaction): return "TEST purchase saved."
+	if not Profiles.ITEMS.has(item): return "Unknown TEST part. No points were charged."
+	if transaction.is_empty() or transaction.length()>64: return "Invalid TEST transaction. No points were charged."
+	if profile.claims.has("buy:"+transaction): return "That TEST transaction was already used. No points were charged."
+	if item in profile.owned: return "That TEST part is already owned. No points were charged."
+	if int(profile.gp)<int(Profiles.ITEMS[item]): return "Not enough TEST GP. No points were charged."
+	return "Could not save the TEST purchase. No points were charged; please retry when storage is available."
 func _refresh_common_regions() -> void:
 	_common_regions = ["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon","frostline_summit"]
 	for p in players.values():
@@ -439,6 +462,7 @@ func _physics_process(delta: float) -> void:
 				if cp<CHECKPOINTS.size() and float(previous.z)>CHECKPOINTS[cp] and float(p.state.z)<=CHECKPOINTS[cp] and absf(float(p.state.x))<=12.0 and float(p.state.speed)>0:
 					p.checkpoint = cp+1
 					if int(p.checkpoint)==CHECKPOINTS.size(): _finish_player(id)
+		_settle_pending_finishes()
 		_update_race_terminal(delta)
 		_snapshot_clock += delta
 		if _snapshot_clock>=0.05:
@@ -458,24 +482,56 @@ func _physics_process(delta: float) -> void:
 		simulation_times_us.append(Time.get_ticks_usec()-began)
 		if simulation_times_us.size()>1200: simulation_times_us.pop_front()
 func _finish_player(id: int) -> void:
+	if not players.has(id): return
 	var p: Dictionary = players[id]
-	if race.get("statuses",{}).get(p.id)!="racing": return
+	if race.get("statuses",{}).get(p.id) not in ["racing","pending_save"] or int(p.checkpoint)!=CHECKPOINTS.size(): return
 	if not race.has("finish_order"): race.finish_order = []
 	if p.id not in race.finish_order: race.finish_order.append(p.id)
-	if Time.get_ticks_msec()-int(p.get("last_award_attempt",-1000))<500: return
-	p.last_award_attempt = Time.get_ticks_msec()
 	var place: int = race.finish_order.find(p.id)+1
-	var winner: bool = place==1
 	var claim: String = str(race.id)+":"+str(p.id)
-	if not store.award(p.id,claim,125 if winner else 100):
-		_set_status("TEST result storage failed; no result acknowledged.")
-		return
+	if not pending_settlements.has(claim):
+		# Reserve physical finish/place before I/O; a later successful write must
+		# never steal a pending first finisher's winner bonus.
+		pending_settlements[claim] = {"profile":p.id,"name":p.name,"race_id":race.id,"place":place,"amount":125 if place==1 else 100,"claim":claim,"checkpoint":p.checkpoint,"last_attempt":-1000}
 	p.finished = true
-	race.statuses[p.id] = "finished"
 	p.input = {"brake":1.0}
-	race.results.append({"profile":p.id,"name":p.name,"place":place,"gp":125 if winner else 100,"claim":claim,"checkpoint":p.checkpoint})
-	race.results.sort_custom(func(a,b): return int(a.place)<int(b.place))
+	race.statuses[p.id] = "pending_save"
+	_try_settle_finish(claim)
+	_refresh_settlement_message()
 	_broadcast_snapshot()
+func _try_settle_finish(claim: String) -> void:
+	if not pending_settlements.has(claim): return
+	var pending: Dictionary = pending_settlements[claim]
+	if Time.get_ticks_msec()-int(pending.last_attempt)<500: return
+	pending.last_attempt = Time.get_ticks_msec()
+	if not store.award(pending.profile,claim,int(pending.amount)): return
+	if str(race.id)==str(pending.race_id):
+		race.statuses[pending.profile] = "finished"
+		var recorded := false
+		for result in race.results:
+			if result.claim==claim: recorded = true
+		if not recorded:
+			race.results.append({"profile":pending.profile,"name":pending.name,"place":pending.place,"gp":pending.amount,"claim":claim,"checkpoint":pending.checkpoint})
+			race.results.sort_custom(func(a,b): return int(a.place)<int(b.place))
+	pending_settlements.erase(claim)
+func _settle_pending_finishes() -> void:
+	# Operates independently of connected player nodes: disconnects and elapsed
+	# race time do not discard an already validated finish.
+	for claim in pending_settlements.keys(): _try_settle_finish(claim)
+	_refresh_settlement_message()
+func _refresh_settlement_message() -> void:
+	if not pending_settlements.is_empty():
+		_settlement_message = "Validated TEST finish rewards are waiting for server storage. Displayed GP is saved only; pending GP is not banked yet."
+		if status!=_settlement_message: _set_status(_settlement_message)
+	elif not _settlement_message.is_empty():
+		_settlement_message = ""
+		_set_status("Validated TEST finish rewards saved. Displayed GP is banked.")
+func _visible_pending_results() -> Array:
+	var visible: Array = []
+	for pending in pending_settlements.values():
+		if str(pending.race_id)==str(race.id):
+			visible.append({"profile":pending.profile,"name":pending.name,"place":pending.place,"pending_gp":pending.amount,"checkpoint":pending.checkpoint})
+	return visible
 func _snapshot() -> Dictionary:
 	var visible := {}
 	for id in players:
@@ -483,7 +539,9 @@ func _snapshot() -> Dictionary:
 		var value: Dictionary = p.state.duplicate()
 		value.merge({"id":p.id,"name":p.name,"checkpoint":p.checkpoint,"finished":p.finished,"preset":p.preset,"gp":store.profiles[p.id].gp,"ack_seq":p.last_seq,"build":EQUAL_BUILD,"spectator":p.spectator})
 		visible[str(id)] = value
-	return {"tick":tick,"players":visible,"race":race.duplicate(true),"leader":leader,"common_regions":_common_regions,"destination":destination,"proposed_destination":pending_destination,"test_scope":true}
+	var visible_race := race.duplicate(true)
+	visible_race.pending_results = _visible_pending_results()
+	return {"tick":tick,"players":visible,"race":visible_race,"settlement_status":_settlement_message,"leader":leader,"common_regions":_common_regions,"destination":destination,"proposed_destination":pending_destination,"test_scope":true}
 func _broadcast_snapshot() -> void:
 	var snapshot := _snapshot()
 	latest_snapshot = snapshot
@@ -524,6 +582,13 @@ func _deliver_wire(wire: PackedByteArray) -> void:
 func _deliver_snapshot(data: Dictionary) -> void:
 	if int(data.get("tick",-1))<int(latest_snapshot.get("tick",-1)): return
 	latest_snapshot = data
+	var settlement_status: String = data.get("settlement_status","")
+	if not settlement_status.is_empty():
+		_showing_pending_notice = true
+		if status!=settlement_status: _set_status(settlement_status)
+	elif _showing_pending_notice:
+		_showing_pending_notice = false
+		_set_status("Validated TEST finish rewards saved. Displayed GP is banked.")
 	var own: Variant = data.get("players",{}).get(str(player_id))
 	if own is Dictionary:
 		var before_prediction := _prediction.duplicate()
