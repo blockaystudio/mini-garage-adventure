@@ -180,6 +180,8 @@ func compact_flow() -> void:
 	check(license_text.contains("MIT") and license_text.length() > 10000, "compact license scroll retains complete engine notices")
 	game.show_parents()
 	click("Reset local progress")
+	await process_frame
+	check_reset_disclosure()
 	compact_targets("compact reset dialog")
 	click("Keep progress")
 	game.store.reset()
@@ -237,6 +239,18 @@ func explore_menu_flow() -> void:
 	game.store.reset()
 	game.state = game.store.data.duplicate(true)
 	game._sync_settings()
+
+func check_reset_disclosure() -> void:
+	var disclosure: Label
+	for item in game.ui.find_children("*","Label",true,false):
+		if item.text.begins_with("This erases your solo build"):
+			disclosure = item
+	var keep := button("Keep progress")
+	var erase := button("Erase local save")
+	check(disclosure != null and keep != null and erase != null, "reset disclosure and both actions are present")
+	if disclosure != null and keep != null and erase != null:
+		var end := disclosure.position.y+maxf(disclosure.size.y,disclosure.get_minimum_size().y)
+		check(end <= minf(keep.position.y,erase.position.y), "complete reset disclosure fits above both actions without text overlap")
 
 func ui_labels() -> String:
 	var text := ""
@@ -607,6 +621,8 @@ func run() -> void:
 	game.network_test_enabled = false
 	game.show_parents()
 	click("Reset local progress")
+	await process_frame
+	check_reset_disclosure()
 	click("Keep progress")
 	check(game.state.completed.size() == 3 and game.state.gp == 45, "reset cancel preserves local progress and wallet")
 	click("Reset local progress")

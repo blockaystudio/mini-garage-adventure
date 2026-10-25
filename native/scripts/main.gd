@@ -669,17 +669,16 @@ func _confirm_reset() -> void:
 	var explanation := "This erases your solo build, owned upgrades, Garage Points, mastery stars, discoveries, destinations, best times, settings and private track. This cannot be undone."
 	if network_test_enabled:
 		explanation += " Solo reset does not erase a host's separate TEST profiles."
-	_modal("Start fresh on this device?", explanation)
-	_button("Keep progress",410,404,220,show_parents,true)
-	_button("Erase local save",645,404,225,func():
-		if store.reset():
-			state = store.data.duplicate(true)
-			_sync_settings()
-			status = "Local progress reset. A fresh adventure is ready."
-		else:
-			status = store.warning
-		show_parents())
-	_compact_modal()
+	_reward_dialog("Start fresh on this device?", explanation, [
+		["Keep progress",show_parents,true],
+		["Erase local save",func():
+			if store.reset():
+				state = store.data.duplicate(true)
+				_sync_settings()
+				status = "Local progress reset. A fresh adventure is ready."
+			else:
+				status = store.warning
+			show_parents(),false]])
 
 func show_help() -> void:
 	_clear("help")
