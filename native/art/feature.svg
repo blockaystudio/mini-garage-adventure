@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="500" viewBox="0 0 1024 500">
+ <rect width="1024" height="500" fill="#fff4dc"/>
+ <path d="M566 0H1024V500H636Q485 310 566 0Z" fill="#264b50"/>
+ <circle cx="896" cy="109" r="77" fill="#f2cc7b"/>
+ <path d="M561 357Q674 252 795 341T1024 298V500H610Z" fill="#7caa96"/>
+ <path d="M582 421Q712 300 859 381T1024 345V500H618Z" fill="#ded7b4"/>
+ <g transform="translate(541 94) scale(.49)">
+  <path d="M196 514h572q57 0 65 50l12 86H173l10-91q3-45 13-45Z" fill="#f1a451"/>
+  <path d="m282 521 74-198h222l133 198Z" fill="#f6b56b"/>
+  <path d="m345 488 48-123h152l87 123Z" fill="#c4e5d9"/>
+  <path d="m477 363 32 127" fill="none" stroke="#29434e" stroke-width="25"/>
+  <path d="M170 654h680" fill="none" stroke="#29434e" stroke-width="39" stroke-linecap="round"/>
+  <g fill="#29434e" stroke="#425f67" stroke-width="15"><circle cx="289" cy="686" r="122"/><circle cx="714" cy="686" r="122"/></g>
+  <g fill="#c7d797"><circle cx="289" cy="686" r="63"/><circle cx="714" cy="686" r="63"/></g>
+  <g fill="#6b8e80"><circle cx="289" cy="686" r="27"/><circle cx="714" cy="686" r="27"/></g>
+  <rect x="763" y="552" width="68" height="39" rx="14" fill="#fff1c2"/>
+  <rect x="400" y="556" width="131" height="18" rx="9" fill="#fff0ce" opacity=".65"/>
+ </g>
+ <g font-family="DejaVu Sans,sans-serif" fill="#26434d">
+  <text x="54" y="137" font-size="18" font-weight="700" letter-spacing="2.5">BUILD. DRIVE. MAKE IT YOURS.</text>
+  <text x="49" y="218" font-size="63" font-weight="700">Mini Garage</text>
+  <text x="49" y="289" font-size="63" font-weight="700">Adventure</text>
+  <text x="54" y="350" font-size="24">Little rides. Big possibilities.</text>
+ </g>
+ <rect x="54" y="384" width="300" height="43" rx="21" fill="#dce6cc"/>
+ <text x="76" y="413" font-family="DejaVu Sans,sans-serif" font-size="21" fill="#26434d" font-weight="700">Your tracks stay yours</text>
+</svg>

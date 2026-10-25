@@ -21,3 +21,6 @@ secrets/
 coverage/
 test-results/
 playwright-report/
+
+# Local native exports (deliver separately; never signing keys)
+builds/

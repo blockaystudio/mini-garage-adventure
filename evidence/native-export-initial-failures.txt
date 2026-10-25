@@ -1,0 +1,33 @@
+2026-10-25 — actual initial export failures and fixes
+
+1. Official template archive HTTP Range request failed with HTTP501 after redirect.
+   A normal full download succeeded. SHA256 verified:
+   3fbe2c0e2dec9d537ab9ec97bcf8da91dcf23357fc51f67092dd068d839290a8
+
+2. First Android debug preset attempted SDK overrides without Gradle:
+   ERROR: Cannot export project with preset "Android debug test" due to configuration errors:
+   "Min SDK" can only be overridden when "Use Gradle Build" is enabled.
+   "Target SDK" can only be overridden when "Use Gradle Build" is enabled.
+   Fix: debug preset inherits actual template SDK values (24 minimum,36 target).
+   Draft Gradle AAB explicitly targets36; no AAB was built.
+
+3. Next Android export failed with an empty configuration error. Inspection of
+   official platform/android/export/export_plugin.cpp for4.6.3 identified:
+   if (!ResourceImporterTextureSettings::should_import_etc2_astc()) valid=false;
+   Fix: native project enables mobile ETC2/ASTC and desktop S3TC/BPTC imports.
+   Subsequent template export, debug signing and APK verification succeeded.
+
+4. Godot editor import/export under the network-restricted shell emitted local
+   editor TCP-listener errors (_inet_open / ERR_CANT_CREATE). Running the build
+   command with the environment's supported network permission resolved those
+   editor errors. Runtime observation is separate: exported Linux garage boot
+   strace is in native-network-desktop.txt; Android runtime remains untested.
+
+5. Export logs report "Could not find version of build tools that matches Target
+   SDK, using35.0.2" because the official template targets36 while local Debian
+   APKSigner tools are35.0.2. APKSigner executed and independently verified v2/v3
+   signatures. The output's binary manifest was inspected, not inferred from
+   the tool version. This does not certify a complete Gradle SDK environment.
+
+No SDK agreement, production signing identity, publication or device-test result
+was created by these recovery steps. Final logs/results are separate files.

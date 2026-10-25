@@ -60,3 +60,33 @@ The supplied Mini Garage production prompt supersedes older OPT-only/native-scop
 | M1+: native production loop/content/export | In progress | Separate native source under `native/`; results reconciled at production checkpoint below |
 
 No mobile or store acceptance is inferred from M0. Optional purchases/ads/live service remain outside this authorized offline base game.
+
+## Authoritative Garage production checkpoint — 2026-10-25
+
+**Implemented and desktop-verified base game; NOT an accepted iOS/Android release candidate.** This section supersedes the historical status rows above for this repository only.
+
+| Deliverable | Status | Actual paths / evidence |
+|---|---|---|
+| Reference baseline + input regression | Verified desktop Chromium | `eeb7491`, `games/garage.js`, `tests/browser_smoke.py`;63Node+6Python verifier,14browser checks |
+| Real native project and complete loop | Implemented; tested Linux headless/rendered | `9d26fdd`, `native/project.godot`, scenes/main.tscn; modular main/input/world/audio/model/save/editor scripts |
+| Launch content | Implemented; all intended completion paths desktop-tested | `native/scripts/content.gd`:6distinct vehicles,12unique authored course compositions,3tires,2suspensions,4paints,6editor pieces |
+| Driving/parts/progression | Verified desktop models/scenes |3,989model assertions: all intended courses, all36vehicle/tire/spring combinations on16-piece steep custom track, pairwise handling differences,30–144fps equivalence, interruptions/recovery |
+| Local editor | Implemented and desktop-tested |4–16sections, flat start/finish validation, bounded smooth pieces, selection, remove/undo, save/load and real playable preview; no public track path |
+| Native persistence | Verified desktop failure/relaunch tests | Schema2 atomic tmp/rename, backup/recovery, v1migration, future-schema protection, failure/reset;45save/editor +129scene/integration checks |
+| Lifecycle/input | Verified injected events and desktop processes | Multitouch/key aliases, release/cancel, tap-drive cancellation, pause/focus/background/resume,12rapid restarts, separate real-process quit/relaunch; no mobile OS claim |
+| Visual/audio/accessibility settings | Implemented; rendered desktop review | Six original silhouettes/biomes, wheels/springs/dust/cues/transitions, mute/volume/reduced motion/tap-to-drive, keyboard controls; mobile/small-window112px logical scroll-form targets and safe-area fit tested |
+| Native captures/trailer | Actual desktop artifacts; mobile sets pending | `evidence/native-captures/`, `builds/native-gameplay-desktop.mp4`; source/hash/time provenance distinguishes pre-final review frames |
+| Performance | Measured Linux software renderer only | `evidence/native-performance.json`: AMD EPYC9V74/llvmpipe,180-frame samples;1600x1000 below60fps; supported-mobile floor unmeasured |
+| Android artifact | Built + signed with DEBUG test key; statically inspected | `builds/mini-garage-adventure-debug.apk`; signaturev2/v3, zero requested permissions,backupfalse,minAPI24/target36,ARM64+x86_64,16KiBELF alignment; final hashes in `evidence/native-artifacts.json` |
+| Android runtime/AAB | Blocked dependent verification | No emulator/physical-device runtime; production Gradle SDK/signing setup required; AAB workflow in `native/README.md` |
+| iOS | Source/export instructions prepared; build blocked | Linux host lacks macOS/Xcode and authorized signing/device access; no Xcode export or iOS test result |
+| Offline/SDK/privacy | Static native source + debug-APK audit; limited Linux traffic observation | `docs/NATIVE_PRIVACY.md`; no game network/payment/ads/account APIs; actual release manifests/device traffic still required |
+| CI | Reproducible read-only checks authored | Native engine checksum pin + verifier and real-origin browser job; no remote CI execution claimed |
+| Store/privacy/rights | Drafts; review blocked | Original icon/feature sources+exports, store copy and current official guidance citations; owner identity/finalIDs/support+policyURLs/rights/privacy/accessibility review unconfirmed |
+| Repository delivery | Local commits/branches; remote blocked | Reference branch `codex/garage-production-native` at`eeb7491`; native branch `codex/garage-production-game` includes`9d26fdd` and checkpoint docs; remote push rejected by automatic approval review; no PR/merge/deploy |
+
+### Remaining acceptance gates and owners
+
+No reproduced P0 code defect remains in the executed desktop tests. P1 release gates: Android emulator/phone/tablet QA and actualOS interruption/storage; iOS build/phone/tablet QA on owner-provided Mac/Xcode; supported-device performance and assistive-technology/readability review; owner/specialist confirmation of publisher, finalIDs, support/privacyURLs, trademark/asset rights and child-privacy materials. Device capture sets, human course/comprehension review and final trailer/store creative approval remain open. See `BUGS.md` and `RELEASE_CHECKLIST.md`.
+
+The Android APK is a private debug test artifact, not a signed production release. No native runtime includes browser ad/remote scaffolding. No accounts, SDK agreements, public publishing, store submission, paid service or user/tester contact occurred. Synthetic completion does not establish retention or real-world education. Exact resumption task: `NEXT_TASK_PROMPT.txt`.

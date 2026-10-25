@@ -1,0 +1,244 @@
+Fontconfig error: No writable cache directories
+PASS: static native runtime contract (no external/network/payment API, add-on, or enabled sensitive permission).
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --editor --import
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/compact_layout.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/content.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/editor_model.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/input_router.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/main.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/save_store.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/sound.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/track_model.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/vehicle_model.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --check-only --script res://scripts/world_view.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/model_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+COURSE_COMPLETION_SECONDS {"coast":8.175,"dunes":14.108,"firefly":8.233,"lantern":16.275,"meadow":7.292,"moon":15.392,"orchard":9.333,"parcel":12.133,"quarry":12.317,"river":16.75,"summit":21.275,"switchback":12.775}
+VEHICLE_DISTANCE_AFTER_4S {"buggy":901.222995918884,"crawler":801.215414834098,"kart":1034.05968519586,"rally":1053.88851819276,"rover":826.242072015178,"truck":824.360952701983}
+MODEL_TESTS checks=3989 failures=0
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/save_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS missing native save gives playable defaults
+PASS first native save succeeds
+PASS new store recovers saved build and settings
+PASS second atomic save keeps previous generation backup
+PASS corrupt primary recovers previous valid backup
+PASS saving recovered backup does not replace it with corruption
+PASS two corrupt files produce safe defaults and an honest warning
+PASS parent reset creates a fresh committed native save
+PASS reset clears previous and temporary progress
+PASS reset before future-schema case .json
+PASS future schema becomes read-only .json
+PASS future schema cannot be overwritten .json
+PASS reset before future-schema case .bak
+PASS future schema becomes read-only .bak
+PASS future schema cannot be overwritten .bak
+PASS reset before future-schema case .tmp
+PASS future schema becomes read-only .tmp
+PASS future schema cannot be overwritten .tmp
+PASS explicit parent reset may clear unsupported native save
+PASS future schema is preserved even when its payload format changed
+PASS reset clears future-format case
+PASS version 1 native save migrates supported choices
+PASS migrated native save writes version 2 envelope
+PASS invalid parts and unknown or duplicate courses normalize
+PASS malformed tracks settings and time records normalize
+PASS locked vehicles cannot enter a fresh save
+PASS reset before interrupted write checks
+PASS uncommitted temp cannot replace a good committed save
+PASS complete interrupted write is recovered when committed save is absent
+PASS recovered interrupted save can be committed
+PASS backup creation failure leaves committed save untouched
+PASS incomplete interrupted write cannot replace committed save
+PASS checksum rejects valid JSON with changed payload
+PASS unavailable storage reports failure without claiming saved data
+PASS non-object save cannot enter runtime
+PASS oversized save is bounded
+PASS four-piece private track opens valid
+PASS minimum four pieces enforced
+PASS invalid placement and piece IDs rejected
+PASS replace can be undone
+PASS remove restores exact layout on undo
+PASS sixteen-piece editor limit enforced
+PASS malformed saved editor layout recovers a valid starter track
+PASS incomplete start is rejected before playable preview
+PASS undo history has a fixed memory bound
+SAVE_EDITOR_RESULT passed=45 failed=0
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --script res://tests/integration_test.gd
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: first launch opens garage with no medals
+PASS: first launch selects available buggy
+PASS: unearned vehicles visibly locked
+PASS: usable UI button: Giant tires
+PASS: usable UI button: Firm springs
+PASS: usable UI button: Purple
+PASS: garage signals update and save build
+PASS: build saved to actual native file
+PASS: usable UI button: Choose a course  →
+PASS: course menu reachable
+PASS: all authored course captions stay inside two-line cards
+PASS: usable UI button: 01  Meadow Hello
+PASS: course starts with active router
+PASS: all driving pads fit simulated phone safe-area insets
+PASS: safe-area scaling preserves touch hit mapping
+PASS: simultaneous throttle and brake touches
+PASS: one touch release preserves other finger
+PASS: canceled final finger releases throttle
+PASS: keyboard aliases release independently
+PASS: all keyboard aliases released
+PASS: pointer release preserves keyboard throttle
+PASS: focus loss pauses and clears controls
+PASS: paused scene does not advance
+PASS: usable UI button: Resume ride
+PASS: resume requires fresh input
+PASS: background notification clears all input
+PASS: usable UI button: Resume ride
+PASS: rapid restart resets car and input twelve times
+PASS: scene drive reaches finish using router throttle
+PASS: finish awards one medal and local best
+PASS: finish clears driving controls
+PASS: finished scene cannot duplicate medal
+PASS: usable UI button: Ride again
+PASS: finish retry starts cleanly
+PASS: first medal unlocks next distinct vehicle
+PASS: usable UI button: Moon Rover
+PASS: unlocked vehicle selectable and saved
+PASS: usable UI button: Track lab
+PASS: four-section private editor reachable
+PASS: invalid start disables save and play
+PASS: usable UI button: Undo
+PASS: undo restores playable layout
+PASS: usable UI button: Valley
+PASS: usable UI button: + Add flat
+PASS: editor adds a valid section
+PASS: usable UI button: Remove
+PASS: editor removes section above minimum
+PASS: usable UI button: Save + test drive  →
+PASS: private track saves then starts native preview
+PASS: scene drive reaches finish using router throttle
+PASS: private preview preserves authored course medals
+PASS: usable UI button: Keep exploring
+PASS: preview returns to saved editor
+PASS: usable UI button: Open settings
+PASS: wrong grown-up answer stays at gate
+PASS: usable UI button: Open settings
+PASS: correct grown-up gate opens settings
+PASS: usable UI button: Sound: ON
+PASS: usable UI button: Reduced motion: OFF
+PASS: usable UI button: Tap to drive: OFF
+PASS: accessibility settings applied
+PASS: volume and accessibility persist
+PASS: tap-to-drive latches without holding
+PASS: canceled event clears tap-to-drive latch
+PASS: fresh tap latches again after cancellation
+PASS: pause clears tap-to-drive latch
+PASS: usable UI button: Help & privacy
+PASS: factual help and privacy reachable
+PASS: usable UI button: Reset local progress
+PASS: usable UI button: Keep progress
+PASS: reset cancel preserves local progress
+PASS: usable UI button: Reset local progress
+PASS: usable UI button: Erase local save
+PASS: confirmed reset restores full defaults
+PASS: reset writes fresh defaults and removes old backup and temporary files
+PASS: compact garage has an accessible vertical content scroller
+PASS: compact garage exposes content beyond short-screen height
+PASS: compact garage uses at least 112px logical button targets
+PASS: compact garage retains real native vehicle preview
+PASS: scrolled garage paint action remains reachable
+PASS: usable UI button: Purple
+PASS: compact garage retains connected build signals
+PASS: compact choice rebuild preserves scrolling position
+PASS: usable UI button: Choose a course  →
+PASS: compact courses has an accessible vertical content scroller
+PASS: compact courses exposes content beyond short-screen height
+PASS: compact courses uses at least 112px logical button targets
+PASS: all compact course descriptions remain adjacent to their course buttons
+PASS: usable UI button: 01  Meadow Hello
+PASS: compact course keeps native drive screen
+PASS: compact drive header uses at least 112px logical button targets
+PASS: compact drive pads are large and contained in phone safe area
+PASS: compact safe-area drive touch maps to original router
+PASS: usable UI button: Pause
+PASS: compact pause dialog uses at least 112px logical button targets
+PASS: usable UI button: Resume ride
+PASS: compact pause and resume signals remain connected
+PASS: compact editor has an accessible vertical content scroller
+PASS: compact editor exposes content beyond short-screen height
+PASS: compact editor uses at least 112px logical button targets
+PASS: usable UI button: Valley
+PASS: compact editor retains shape-selection signals
+PASS: usable UI button: Save track
+PASS: compact editor retains private save action
+PASS: compact grown-up gate has an accessible vertical content scroller
+PASS: compact grown-up gate exposes content beyond short-screen height
+PASS: compact grown-up gate uses at least 112px logical button targets
+PASS: compact gate text input is a large touch target
+PASS: usable UI button: Open settings
+PASS: compact parent settings has an accessible vertical content scroller
+PASS: compact parent settings exposes content beyond short-screen height
+PASS: compact parent settings uses at least 112px logical button targets
+PASS: compact volume input is a large touch target
+PASS: usable UI button: Sound: ON
+PASS: compact settings action stays connected
+PASS: usable UI button: Help & privacy
+PASS: compact help and privacy has an accessible vertical content scroller
+PASS: compact help and privacy exposes content beyond short-screen height
+PASS: compact help and privacy uses at least 112px logical button targets
+PASS: usable UI button: Engine licenses
+PASS: compact engine notices has an accessible vertical content scroller
+PASS: compact engine notices exposes content beyond short-screen height
+PASS: compact engine notices uses at least 112px logical button targets
+PASS: compact license scroll retains complete engine notices
+PASS: usable UI button: Reset local progress
+PASS: compact reset dialog uses at least 112px logical button targets
+PASS: usable UI button: Keep progress
+RELAUNCH write: ["Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org\n\n"]
+PASS: separate real process write exits successfully
+RELAUNCH read: ["Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org\n\nRelaunched state: { \"version\": 2, \"build\": { \"vehicle\": \"buggy\", \"tires\": \"giant\", \"suspension\": \"soft\", \"paint\": \"cyan\" }, \"completed\": [\"meadow\"], \"custom\": [\"flat\", \"dip\", \"rollers\", \"flat\"], \"settings\": { \"muted\": false, \"volume\": 0.65, \"reduced_motion\": true, \"one_touch\": false }, \"best\": { \"meadow\": 7.60000000000017 } }\n"]
+PASS: separate real process read exits successfully
+NATIVE INTEGRATION: 129 checks, 0 failures
++ /usr/local/bin/godot --headless --path /workspace/mini-garage-adventure/native --quit-after 5
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: native import, script parsing, model, save, integration, scene boot (Linux headless).
+Mobile installation, real touch/lifecycle, rendered performance and device accessibility remain separate gates.

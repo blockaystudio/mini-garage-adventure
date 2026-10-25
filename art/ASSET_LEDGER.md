@@ -14,3 +14,34 @@ Screenshots in `evidence/` are genuine rendered browser-prototype captures. They
 Final character sheets/expressions, cohesive animation states, full environment/object catalog, original audio, touch-first low-reading UX, final native captures, icon alternatives, app-preview video, localized copy and actual store-specific acceptance checks remain pending.
 
 No font files are distributed. Browser rendering uses locally available system fonts.
+
+## Native production source — 2026-10-25
+
+- `native/scripts/world_view.gd`: original procedural vector workshop, twelve
+  palette treatments, parallax hills, trees/rocks/lanterns, terrain, flags and
+  six vehicle silhouettes (buggy, six-wheel rover, rally coupe, parcel truck,
+  open kart, rock crawler). Wheel rotation, suspension geometry and optional
+  dust are generated in the native renderer. No external artwork was copied.
+- `native/art/icon.svg`: original 1024×1024 vehicle-and-hills icon source,
+  opaque background; platform rounding is left to the platform. This source
+  is intended for the native build, subject to owner/art-rights review.
+- `native/scripts/sound.gd`: original brief synthesized menu/build/start/finish
+  melodies, generated as PCM in memory with no audio samples, music downloads,
+  external fonts or SDK. Mute and volume are controlled by native settings.
+- Godot's bundled fallback font is used by the native renderer/UI; Godot's
+  third-party license notices accompany Godot distributions and must be
+  retained with final exports. No separate font binary is added here.
+
+These are project-created AI-assisted source assets, not an independent legal
+clearance. Final ownership/trademark review and device visual/audio QA remain
+release gates. Native screenshots must be captured from the native runtime;
+existing browser captures do not establish native visual verification.
+
+Native store-art exports: `native/art/icon-1024.png`, `icon-512.png` and
+`feature-1024x500.png` are opaque RGB PNG exports from their editable SVG
+sources. The feature graphic is explicitly promotional illustration, not a
+native gameplay screenshot. `native/art/export_art.py` reproduces these with
+CairoSVG 2.8.2 and Pillow 13.0.0 in an isolated development environment; DejaVu
+Sans is rasterized from the installed system font and is not redistributed.
+All three dimensions and opaque RGB mode were checked with ImageMagick
+`identify` on 2026-10-25. Store acceptance and title/rights clearance are pending.

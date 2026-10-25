@@ -1,3 +1,11 @@
+# Current repository status — 2026-10-25
+
+The source-import/upload statements below are historical. Existing remote `main` was verified at `3dabbde7bf3f30ad0f7b8db9fb547583de5180dd`; repository source was cloned as-is, not reimported or reset. Native production work is authorized by the supplied production prompt, with local `codex/garage-production-*` milestones and evidence in `MASTER_TRACKER.md` and `WORK_LOG.md`.
+
+A remote branch push was rejected by automatic approval review, which interpreted the prompt's prohibition on publishing as including GitHub code upload. No remote branch, PR, merge or deployment has been created by this production session. Local commits and a Git bundle remain reviewable; owner confirmation of remote upload is required to resolve this environment approval block. This is an access/approval outcome, not a source-test failure.
+
+---
+
 # Authoritative import status — Mini Garage Adventure
 
 Prepared 2026-10-24 for `blockaystudio/mini-garage-adventure`.
