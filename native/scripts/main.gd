@@ -603,7 +603,10 @@ func _settings_changed() -> void:
 	show_parents()
 
 func _confirm_reset() -> void:
-	_modal("Start fresh on this device?", "This erases your build, course medals, best times, settings and private track. This cannot be undone.")
+	var explanation := "This erases your solo build, owned upgrades, Garage Points, mastery stars, discoveries, destinations, best times, settings and private track. This cannot be undone."
+	if network_test_enabled:
+		explanation += " Solo reset does not erase a host's separate TEST profiles."
+	_modal("Start fresh on this device?", explanation)
 	_button("Keep progress",410,404,220,show_parents,true)
 	_button("Erase local save",645,404,225,func():
 		if store.reset():
@@ -622,7 +625,10 @@ func show_help() -> void:
 	_label("Build. Explore. Make it yours.",44,144,1170,48,34)
 	_label("DRIVING\nHold Drive to go, Brake to slow. Lean helps your ride settle on a slope. Restart as often as you like. A finish earns a local medal. Try a tire or suspension change on the same course to feel its tradeoff.",46,220,1160,124,23,TEAL)
 	_label("PRIVATE TRACKS\nChoose 4–16 pieces with flat start and finish sections. Save, then test drive your design. Tracks, builds, settings and course progress stay in the app’s local storage. Uninstalling or losing the device can lose them.",46,366,1160,115,22)
-	_label("PRIVACY\nThis game has no ads, real-money purchases, accounts, chat, analytics, camera, microphone, location or public sharing. It makes no runtime network requests. No personal details are needed. Reset local progress in Settings to erase the game’s save files.",46,500,1160,115,22,TEAL)
+	var privacy := "SOLO PRIVACY\nSolo play stays on this device and makes no network requests. No ads, real-money purchases, personal accounts, free text or voice chat, analytics or public uploads. No personal details are needed. Settings reset erases solo progress and recovery files."
+	if network_test_enabled:
+		privacy = "TEST SESSION PRIVACY\nSolo play stays local. Opt-in private sessions send generated driver names, controls and preset actions to the host. The host stores separate TEST wallet and profile data. Solo reset does not delete host TEST data. No free text or voice chat, public directory, ads or analytics."
+	_label(privacy,46,500,1160,115,22,TEAL)
 	_label("Arcade play, not real-world driving instruction. Support contact and publisher identity await owner confirmation before release. The grown-up check is an interaction gate, not legal consent.",46,632,1160,65,18,ORANGE)
 	_compact()
 

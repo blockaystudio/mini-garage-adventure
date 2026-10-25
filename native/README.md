@@ -1,9 +1,24 @@
 # Mini Garage Adventure native project
 
 Godot **4.6.3 stable, standard/GDScript**, engine commit `7d41c59c4`.
-This is a real Godot 2D project; the browser reference remains in `games/` and
-`play/`. Native saves and browser localStorage are separate. No browser-to-native
+This project contains 2D Quick Drive and genuine native 3D Explore. The browser
+reference remains in `games/` and `play/`. Native saves and browser localStorage are separate. No browser-to-native
 save transfer or cloud synchronization is implemented.
+
+Explore includes six destinations, six vehicle identities, eighteen activities
+and eighteen discoveries. Both solo modes use transactional Garage Points,
+non-spendable mastery stars and schema-3 local saves. The old twelve courses,
+track editor, settings and compatible saves are retained. See
+[`docs/3D_DELIVERY.md`](../docs/3D_DELIVERY.md) for current test artifacts and
+[`docs/3D_TASK_STATUS.md`](../docs/3D_TASK_STATUS.md) for incomplete acceptance.
+
+Default play is offline. Desktop engineering sessions require the explicit
+`--private-network-test` user argument; use
+`godot --path native -- --private-network-test`. They use separate server-owned
+TEST profiles and a bounded Festival authority route. Six-region authoritative
+shared-world collision/traversal is not yet implemented. Android presets still
+disable Internet permission; there is no browser ENet crossplay. See
+[`docs/NETWORKING.md`](../docs/NETWORKING.md).
 
 ## Run and verify
 
@@ -38,6 +53,14 @@ chmod +x builds/mini-garage-adventure.x86_64
 This desktop release-mode export is a private test artifact, not a mobile release.
 The executable embeds its resource pack. Preserve engine and third-party license
 notices when distributing any test package.
+
+For the current named Explore artifacts, `python scripts/build_native_test.py`
+exports `builds/mini-garage-adventure-explore.x86_64`,
+`builds/mini-garage-adventure-explore-linux.zip` and a debug-signed
+`builds/mini-garage-adventure-explore-debug.apk`. It requires installed matching
+templates and the configured Android toolchain; `--linux-only` skips Android.
+The manifest records the actual source commit and artifact hashes. These are
+test builds, not physical-device or store acceptance.
 
 ## Android debug APK
 

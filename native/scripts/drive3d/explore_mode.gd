@@ -59,13 +59,15 @@ func _ready() -> void:
 	camera.reduced_motion = game.state.settings.reduced_motion
 	add_child(camera)
 	var spawn: Vector3 = world.spawn_point(region)
+	var spawn_yaw := 0.0
 	if game.state.get("explore",{}).get("region","") == region:
 		var point: Array = game.state.explore.checkpoint
 		var candidate := Vector3(float(point[0]),float(point[1]),float(point[2]))
 		if Data.region_of(candidate) == region and absf(candidate.y-world.height_at(candidate)) < 8.0:
 			spawn = candidate
+			spawn_yaw = float(game.state.explore.get("yaw",0.0))
+	vehicle.set_checkpoint(spawn,spawn_yaw)
 	vehicle.recover(spawn)
-	vehicle.set_checkpoint(spawn,0.0)
 	input.clear()
 	_hud()
 

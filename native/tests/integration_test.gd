@@ -171,11 +171,19 @@ func compact_flow() -> void:
 	game.compact_mode = false
 
 func explore_menu_flow() -> void:
+	# Explicit pose fixture, separate from the fresh-wallet physical route proof.
+	var saved_pose: Dictionary = game.store.data.duplicate(true)
+	saved_pose.explore.yaw = 0.65
+	check(game.store.save_data(saved_pose), "orientation fixture commits a nonzero saved3D heading")
+	game.state = Store.new(test_path).load_save()
 	game.show_explore("garage_valley")
 	await process_frame
 	await process_frame
 	var mode = game.explore
 	check(mode != null and mode.vehicle is CharacterBody3D and mode.camera != null, "Explore screen creates a genuine3D vehicle and chase camera")
+	check(is_equal_approx(mode.vehicle.rotation.y, 0.65), "Explore restores saved3D heading after loading the on-disk profile")
+	mode.recover_vehicle()
+	check(is_equal_approx(mode.vehicle.rotation.y, 0.65), "free recovery retains the restored checkpoint heading")
 	click("World map")
 	check(mode.paused and not mode.input.active, "destination menu pauses3D controls")
 	click("Resume")
@@ -406,6 +414,17 @@ func run() -> void:
 	game.show_parents()
 	click("Help & privacy")
 	check(game.page == "help", "factual help and privacy reachable")
+	var help_text := ""
+	for item in game.ui.find_children("*", "Label", true, false):
+		help_text += item.text
+	check(help_text.contains("Solo play") and help_text.contains("no network requests"), "default help accurately explains offline solo privacy")
+	game.network_test_enabled = true
+	game.show_help()
+	help_text = ""
+	for item in game.ui.find_children("*", "Label", true, false):
+		help_text += item.text
+	check(help_text.contains("TEST SESSION PRIVACY") and help_text.contains("host stores separate TEST") and help_text.contains("Solo reset does not delete"), "opted-in networking help discloses host data and separate reset scope")
+	game.network_test_enabled = false
 	game.show_parents()
 	click("Reset local progress")
 	click("Keep progress")
