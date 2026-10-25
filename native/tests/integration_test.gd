@@ -6,6 +6,21 @@ const Store = preload("res://scripts/save_store.gd")
 const Content = preload("res://scripts/content.gd")
 const Progression = preload("res://scripts/progression/profile_progression.gd")
 const WorldData = preload("res://scripts/drive3d/world_content.gd")
+const Economy = preload("res://scripts/progression/economy.gd")
+
+class CheckpointFailureStore:
+	extends Store
+	# Isolates the second write after a reward has really committed. Other
+	# integration cases below reject real filesystem writes and stale snapshots.
+	var reject_checkpoint := false
+	var save_attempts := 0
+	func save_data(proposed: Dictionary) -> bool:
+		save_attempts += 1
+		if reject_checkpoint and proposed.get("explore",{}) != data.get("explore",{}):
+			warning = "Synthetic checkpoint write rejected after committed reward."
+			return false
+		return super.save_data(proposed)
+
 var checks := 0
 var failures := 0
 var game: Node
@@ -223,6 +238,171 @@ func explore_menu_flow() -> void:
 	game.state = game.store.data.duplicate(true)
 	game._sync_settings()
 
+func ui_labels() -> String:
+	var text := ""
+	for item in game.ui.find_children("*","Label",true,false):
+		text += item.text+"\n"
+	return text
+
+func same_checkpoint(actual: Array, expected: Vector3) -> bool:
+	return actual.size()==3 and Vector3(float(actual[0]),float(actual[1]),float(actual[2])).is_equal_approx(expected)
+
+func explore_storage_failure_flow() -> void:
+	# Explicit synthetic pose/reward fixtures isolate failure-state behavior.
+	# They do not count as route-driving or fresh-wallet progression evidence.
+	game.show_garage()
+	var original_store = game.store
+	var original_economy = game.economy
+	var fixture = CheckpointFailureStore.new(test_path+"-explore-failures")
+	check(fixture.reset(),"Explore storage fixture starts in an isolated profile")
+	game.store = fixture
+	game.economy = Economy.new(fixture)
+	game.state = fixture.data.duplicate(true)
+	game.show_explore("garage_valley")
+	await process_frame
+	var mode = game.explore
+	var primary := ProjectSettings.globalize_path(fixture.base_path+".json")
+	var backup := ProjectSettings.globalize_path(fixture.base_path+".bak")
+	var old_primary := FileAccess.get_file_as_string(primary)
+	var pending_point := Vector3(3,0.15,84)
+	mode.vehicle.set_checkpoint(pending_point,0.25)
+	DirAccess.remove_absolute(backup)
+	check(DirAccess.make_dir_recursive_absolute(backup)==OK,"real directory collision blocks checkpoint backup")
+	mode.input.keys[KEY_W] = "throttle"
+	mode.pause_drive()
+	check(mode.paused and not mode.input.active and not mode.vehicle.enabled and mode.input.keys.is_empty(),"rejected pause save still freezes vehicle and clears controls")
+	check(not mode._save_checkpoint(),"checkpoint save explicitly returns false on rejected storage write")
+	check(ui_labels().contains(fixture.warning) and not ui_labels().contains("saved on this device") and button("Retry save")!=null,"pause save rejection shows actual storage warning and a safe retry without a saved claim")
+	check(FileAccess.get_file_as_string(primary)==old_primary and fixture.data.explore.checkpoint!=[pending_point.x,pending_point.y,pending_point.z],"failed checkpoint keeps the committed on-disk and in-memory profile unchanged")
+	click("Retry save")
+	check(mode.paused and ui_labels().contains(fixture.warning) and FileAccess.get_file_as_string(primary)==old_primary,"retry while storage remains blocked preserves the old checkpoint and warning")
+	DirAccess.remove_absolute(backup)
+	click("Retry save")
+	check(mode.paused and ui_labels().contains("Checkpoint saved on this device.") and fixture.warning.is_empty(),"repair then retry confirms a saved checkpoint while controls stay paused")
+	check(same_checkpoint(Store.new(fixture.base_path).load_save().explore.checkpoint,pending_point),"successful pause retry persists the requested checkpoint across reload")
+	mode.resume_drive()
+	var other_writer = Store.new(fixture.base_path)
+	var newer: Dictionary = other_writer.load_save().duplicate(true)
+	newer.build.paint = "lime"
+	check(other_writer.save_data(newer),"independent writer commits a newer garage while Explore remains open")
+	var newer_primary := FileAccess.get_file_as_string(primary)
+	mode.vehicle.set_checkpoint(Vector3(5,0.15,84),0.5)
+	mode.pause_drive()
+	check(mode.paused and ui_labels().contains("Reload your garage") and not ui_labels().contains("saved on this device"),"stale Explore pause visibly requires reload instead of claiming the save succeeded")
+	click("Retry save")
+	check(FileAccess.get_file_as_string(primary)==newer_primary and mode.paused and not mode.input.active,"stale checkpoint retry cannot overwrite the newer garage or reactivate controls")
+	fixture.load_save()
+	game.state = fixture.data.duplicate(true)
+	click("Retry save")
+	var after_reload: Dictionary = Store.new(fixture.base_path).load_save()
+	check(after_reload.build.paint=="lime" and same_checkpoint(after_reload.explore.checkpoint,Vector3(5,0.15,84)),"explicit reload then retry preserves the newer build and saves the pending checkpoint")
+	mode.resume_drive()
+	var item: Dictionary = WorldData.activity_by_id("valley_first_drive")
+	mode.start_activity(item)
+	for index in range(5):
+		game.economy.observe_run(mode.active_run,index*0.25,index*2.0)
+	mode.checkpoint_index = item.checkpoints.size()
+	mode.elapsed = 8.0
+	mode.vehicle.set_checkpoint(Vector3(7,0.15,84),0.6)
+	fixture.reject_checkpoint = true
+	mode._finish_activity()
+	var awarded: int = fixture.data.gp
+	check(awarded==150 and not mode.results.is_empty() and mode.paused,"synthetic checkpoint-only rejection occurs after the introductory reward actually commits")
+	check(ui_labels().contains(fixture.warning) and ui_labels().contains("Rewards saved · checkpoint pending.") and button("Retry save")!=null,"result panel distinguishes saved rewards from the rejected recovery checkpoint")
+	var escape := InputEventKey.new()
+	escape.physical_keycode = KEY_ESCAPE
+	escape.pressed = true
+	mode._unhandled_key_input(escape)
+	check(mode.paused and not mode.input.active and button("Retry save")!=null,"Escape cannot bypass a pending result checkpoint retry")
+	click("Retry save")
+	check(fixture.data.gp==awarded and not mode.results.is_empty() and ui_labels().contains(fixture.warning),"checkpoint-only retry preserves the saved receipt and never settles its reward twice")
+	fixture.reject_checkpoint = false
+	click("Retry save")
+	check(fixture.data.gp==awarded and button("Keep exploring")!=null and ui_labels().contains("ADVENTURE COMPLETE"),"checkpoint repair retries only the pending write and restores the successful reward panel")
+	check(same_checkpoint(Store.new(fixture.base_path).load_save().explore.checkpoint,Vector3(7,0.15,84)),"repaired result checkpoint persists together with its already-settled reward")
+	var saved_attempts: int = fixture.save_attempts
+	var settled_primary := FileAccess.get_file_as_string(primary)
+	var settled_backup := FileAccess.get_file_as_string(backup)
+	var settled_button := button("Keep exploring")
+	var settled_voices: Array = game.sound.voices.map(func(player): return player.get_instance_id())
+	for repeat in range(3):
+		mode._finish_activity()
+	check(fixture.save_attempts==saved_attempts and FileAccess.get_file_as_string(primary)==settled_primary and FileAccess.get_file_as_string(backup)==settled_backup,"duplicate successful Explore finish does not attempt a new save or rotate its generations")
+	check(button("Keep exploring")==settled_button and game.sound.voices.map(func(player): return player.get_instance_id())==settled_voices,"duplicate successful Explore finish preserves its exact result UI and never replays the finish cue")
+	mode.resume_drive()
+	mode._finish_activity()
+	check(mode.activity.is_empty() and not mode.paused and fixture.save_attempts==saved_attempts and fixture.data.gp==awarded,"late finish callback after leaving its result is harmless and cannot save or award")
+	mode.activity = item.duplicate(true)
+	var settled_run: int = mode.active_run
+	mode.active_run = 0
+	mode._finish_activity()
+	check(fixture.save_attempts==saved_attempts and fixture.data.gp==awarded,"finish callback without an active run is ignored")
+	mode.active_run = settled_run
+	mode.activity = {}
+	# A failed checkpoint during an active route must not hide under its HUD.
+	var delivery: Dictionary = WorldData.activity_by_id("valley_parts_delivery")
+	mode.start_activity(delivery)
+	mode.elapsed = 2.0
+	mode.vehicle.global_position = delivery.checkpoints[0]
+	fixture.reject_checkpoint = true
+	mode._update_activity()
+	check(mode.checkpoint_index==1 and mode.paused and not mode.input.active and ui_labels().contains(fixture.warning),"active-route checkpoint rejection pauses visibly and keeps ordered in-memory progress")
+	fixture.reject_checkpoint = false
+	click("Retry save")
+	mode.resume_drive()
+	check(mode.checkpoint_index==1 and not mode.paused and mode.active_run>0 and fixture.data.gp==awarded,"checkpoint retry resumes the same route without awarding or skipping a checkpoint")
+	mode.activity = {}
+	mode.world.show_activity({},0)
+	mode._hud()
+	# Exercise the actual landmark scan with an explicit synthetic pose. A
+	# failed reward write must pause rather than retry silently every frame.
+	var landmark: Dictionary = WorldData.discoveries_for("garage_valley")[0]
+	mode.vehicle.global_position = landmark.get("trigger_position",landmark.position)
+	DirAccess.remove_absolute(backup)
+	DirAccess.make_dir_recursive_absolute(backup)
+	mode._physics_process(1.0/60.0)
+	check(mode.paused and fixture.data.gp==awarded and not fixture.data.claims.has("landmark:"+str(landmark.id)) and ui_labels().contains(fixture.warning),"landmark save failure pauses with the actual warning and grants nothing")
+	DirAccess.remove_absolute(backup)
+	click("Retry save")
+	check(fixture.data.gp==awarded+75 and fixture.data.claims.has("landmark:"+str(landmark.id)) and mode.paused,"explicit repaired landmark retry commits its75GP exactly once with controls paused")
+	mode.resume_drive()
+	# Destination admission is itself an atomic save; its failure must retain
+	# the actual storage warning, even when the equipment gate has no reason.
+	var unadmitted: Dictionary = fixture.data.duplicate(true)
+	unadmitted.owned.append("mud")
+	unadmitted.build.tires = "mud"
+	unadmitted.equipped.tires = "mud"
+	unadmitted.stars = ["meadow:completion","orchard:completion"]
+	check(fixture.save_data(unadmitted),"isolated admission fixture owns and equips Mud tires with two mastery stars")
+	game.state = fixture.data.duplicate(true)
+	DirAccess.remove_absolute(backup)
+	DirAccess.make_dir_recursive_absolute(backup)
+	mode.enter_region("moss_marsh")
+	check(mode.region=="garage_valley" and mode.paused and not fixture.warning.is_empty() and ui_labels().contains(fixture.warning),"failed destination admission keeps the old region and shows the real save warning")
+	DirAccess.remove_absolute(backup)
+	click("Retry save")
+	check(mode.region=="moss_marsh" and "moss_marsh" in fixture.data.regions and fixture.data.explore.region=="moss_marsh","repaired admission retry enters and persists the intended destination")
+	# Region admission may commit before its spawn checkpoint write fails.
+	fixture.reject_checkpoint = true
+	mode.enter_region("garage_valley")
+	check(mode.region=="garage_valley" and fixture.data.explore.region=="moss_marsh" and mode.paused and ui_labels().contains(fixture.warning),"failed region checkpoint shows a paused warning and preserves the last committed destination")
+	fixture.reject_checkpoint = false
+	click("Retry save")
+	check(fixture.data.explore.region=="garage_valley" and mode.paused,"repair retries the new region checkpoint without re-admitting or charging")
+	mode.resume_drive()
+	mode.vehicle.set_checkpoint(Vector3(8,0.15,84),0.7)
+	DirAccess.remove_absolute(backup)
+	DirAccess.make_dir_recursive_absolute(backup)
+	var committed_before_exit := FileAccess.get_file_as_string(primary)
+	game.show_garage()
+	check(FileAccess.get_file_as_string(primary)==committed_before_exit and not fixture.warning.is_empty() and game.status==fixture.warning,"leaving after a rejected checkpoint retains committed progress and propagates the real warning to the garage")
+	DirAccess.remove_absolute(backup)
+	game.show_garage()
+	game.store = original_store
+	game.economy = original_economy
+	game.state = original_store.data.duplicate(true)
+	game.show_garage()
+
 func run() -> void:
 	game = MainScene.instantiate()
 	game.store = Store.new(test_path)
@@ -435,6 +615,7 @@ func run() -> void:
 	check(Store.new(test_path).load_save() == Store.defaults() and not FileAccess.file_exists(ProjectSettings.globalize_path(test_path + ".bak")) and not FileAccess.file_exists(ProjectSettings.globalize_path(test_path + ".tmp")), "reset writes fresh defaults and removes old backup and temporary files")
 	await compact_flow()
 	await explore_menu_flow()
+	await explore_storage_failure_flow()
 	game.queue_free()
 	await process_frame
 	await create_timer(0.3).timeout

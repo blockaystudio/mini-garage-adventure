@@ -28,6 +28,7 @@ var wallet_label: Label
 var message := "Choose a mission, or explore at your own pace."
 var results: Dictionary = {}
 var _closing := false
+var _checkpoint_save_failed := false
 
 func _ready() -> void:
 	process_physics_priority = -20
@@ -127,16 +128,16 @@ func _physics_process(delta: float) -> void:
 		surface_label.text = "%s · %s · %d GP · %d mastery%s" % [vehicle.current_surface.capitalize(),str(vehicle.build.tires).capitalize()+" tires",int(game.state.gp),Progression.stars_count(game.state),direction]
 	if not activity.is_empty():
 		_update_activity()
+	if paused:
+		return
 	for landmark in Data.discoveries_for(region):
 		var claim := "landmark:"+str(landmark.id)
 		if game.state.claims.has(claim):
 			continue
 		if vehicle.global_position.distance_to(landmark.get("trigger_position",landmark.position)) < 7.0:
-			var receipt: Dictionary = game.economy.discover(landmark.id,region)
-			game.state = game.store.data.duplicate(true)
-			if not receipt.is_empty():
-				message = landmark.label+" discovered · +75 GP. "+landmark.description
-				game.sound.play_cue("finish")
+			if not _discover_landmark(landmark):
+				_pause_panel(false,func(): _retry_discovery(landmark))
+				return
 
 func start_activity(item: Dictionary) -> void:
 	if str(item.get("region","")) != region:
@@ -176,12 +177,19 @@ func _update_activity() -> void:
 				vehicle.set_checkpoint(target,vehicle.rotation.y)
 				game.sound.play_cue("click")
 				world.show_activity(activity,checkpoint_index)
-				_save_checkpoint()
+				if not _save_checkpoint():
+					game.economy.observe_run(active_run,float(checkpoint_index)/maxi(total,1),elapsed)
+					_pause_panel(false)
+					return
 	game.economy.observe_run(active_run,float(checkpoint_index)/maxi(total,1),elapsed)
 	if checkpoint_index == total:
 		_finish_activity()
 
 func _finish_activity() -> void:
+	if activity.is_empty() or active_run <= 0:
+		return
+	if int(results.get("run_id",0)) == active_run and not _checkpoint_save_failed:
+		return
 	var objectives: Array = ["completion"]
 	var timed := str(activity.get("mode","")) == "time_trial"
 	var targets: Array = activity.get("target_seconds",[60,180])
@@ -191,7 +199,10 @@ func _finish_activity() -> void:
 	var capability: String = activity.get("route_capability","")
 	if capability in ["road","trail","giant","mud","sand","rock","snow"] and str(vehicle.build.tires) == capability and activity.kind != "tutorial":
 		objectives.append("suitable_build_route")
-	results = game.economy.finish_run(active_run,objectives)
+	# A reward and its recovery checkpoint are separate atomic writes. If only
+	# the latter failed, retry that checkpoint without settling the reward again.
+	if int(results.get("run_id",0)) != active_run:
+		results = game.economy.finish_run(active_run,objectives)
 	game.state = game.store.data.duplicate(true)
 	if results.is_empty():
 		message = game.economy.warning
@@ -199,10 +210,11 @@ func _finish_activity() -> void:
 		paused = true
 		_result_panel(false)
 		return
-	_save_checkpoint()
-	game.sound.play_cue("finish")
+	var saved := _save_checkpoint()
+	if saved:
+		game.sound.play_cue("finish")
 	paused = true
-	_result_panel(true)
+	_result_panel(saved)
 
 func _result_panel(saved: bool) -> void:
 	_stop()
@@ -213,7 +225,10 @@ func _result_panel(saved: bool) -> void:
 	for row in results.get("components",[]):
 		lines.append("%s  +%d GP" % [row.label,int(row.gp)])
 	game._label("\n".join(lines) if saved else message,242,270,792,160,25,game.TEAL)
-	game._label("%d GP saved · %d mastery stars · recovery is always free" % [int(game.state.gp),Progression.stars_count(game.state)],242,444,792,45,23)
+	var balance_note := "%d GP saved · %d mastery stars · recovery is always free" % [int(game.state.gp),Progression.stars_count(game.state)]
+	if not saved:
+		balance_note = "Rewards saved · checkpoint pending." if not results.is_empty() else "Reward not saved. Your last saved balance is %d GP." % int(game.state.gp)
+	game._label(balance_note,242,444,792,45,23)
 	game._button("Keep exploring" if saved else "Retry save",242,526,374,func():
 		if saved:
 			activity = {}
@@ -235,13 +250,31 @@ func pause_drive() -> void:
 		return
 	paused = true
 	_stop()
-	_save_checkpoint()
-	_top("Pit stop")
-	game._panel(270,208,740,414)
-	game._label("Your adventure is safe.",308,236,664,58,32)
-	game._label("Resume with fresh controls. No points are lost.",308,316,664,72,25,game.TEAL)
-	game._button("Resume",308,436,318,_hud,true,112)
-	game._button("Garage",646,436,324,func(): game.show_garage(),false,112)
+	_pause_panel(_save_checkpoint())
+
+func _pause_panel(saved: bool, retry: Callable = Callable()) -> void:
+	paused = true
+	_stop()
+	_top("Pit stop" if saved else "Save needs attention")
+	game._panel(270,190,740,470)
+	game._label("Checkpoint saved on this device." if saved else "Progress not saved.",308,218,664,74,32)
+	game._label("Resume with fresh controls. Recovery remains free." if saved else message,308,306,664,132,25,game.TEAL)
+	if saved:
+		game._button("Resume",308,470,318,resume_drive,true,112)
+		game._button("Garage",646,470,324,func(): game.show_garage(),false,112)
+	else:
+		var retry_action := retry if retry.is_valid() else Callable(self,"_retry_checkpoint_pause")
+		game._button("Retry save",308,500,210,retry_action,true,112)
+		game._button("Resume",534,500,210,resume_drive,false,112)
+		game._button("Garage",760,500,210,func(): game.show_garage(),false,112)
+
+func _retry_checkpoint_pause() -> void:
+	if not _save_checkpoint():
+		_pause_panel(false)
+	elif not activity.is_empty() and checkpoint_index >= activity.checkpoints.size() and results.is_empty():
+		_finish_activity()
+	else:
+		_pause_panel(true)
 
 func recover_vehicle() -> void:
 	input.clear()
@@ -249,14 +282,38 @@ func recover_vehicle() -> void:
 	camera.reset_view()
 	message = "Recovered for free. Your parts and GP are safe."
 
-func _save_checkpoint() -> void:
+func _save_checkpoint() -> bool:
 	var proposed: Dictionary = game.store.data.duplicate(true)
 	var point: Vector3 = vehicle.checkpoint
 	proposed.explore = {"region":region,"checkpoint":[point.x,point.y,point.z],"yaw":vehicle.checkpoint_yaw}
 	if game.store.save_data(proposed):
 		game.state = game.store.data.duplicate(true)
+		if _checkpoint_save_failed:
+			message = "Checkpoint saved on this device."
+			game.status = message
+		_checkpoint_save_failed = false
+		return true
+	_checkpoint_save_failed = true
+	message = game.store.warning
+	game.status = message
+	return false
+
+func _discover_landmark(landmark: Dictionary) -> bool:
+	var receipt: Dictionary = game.economy.discover(landmark.id,region)
+	game.state = game.store.data.duplicate(true)
+	if receipt.is_empty():
+		message = game.economy.warning
+		game.status = message
+		return false
+	message = landmark.label+" discovered · +75 GP. "+landmark.description
+	game.sound.play_cue("finish")
+	return true
+
+func _retry_discovery(landmark: Dictionary) -> void:
+	if not _discover_landmark(landmark):
+		_pause_panel(false,func(): _retry_discovery(landmark))
 	else:
-		message = game.store.warning
+		_pause_panel(_save_checkpoint())
 
 func show_missions() -> void:
 	paused = true
@@ -292,7 +349,10 @@ func show_map() -> void:
 
 func enter_region(id: String) -> void:
 	if not Progression.admit_region(game.store,id):
-		message = Progression.gate_reason(game.store.data,id)
+		var reason := Progression.gate_reason(game.store.data,id)
+		message = reason if not reason.is_empty() else game.store.warning
+		game.status = message
+		_pause_panel(false,func(): enter_region(id))
 		return
 	game.state = game.store.data.duplicate(true)
 	region = id
@@ -302,8 +362,12 @@ func enter_region(id: String) -> void:
 	camera.reset_view()
 	activity = {}
 	results = {}
-	_save_checkpoint()
-	_hud()
+	if _save_checkpoint():
+		message = "Arrived at "+str(Data.REGIONS[region].label)+". Checkpoint saved on this device."
+		game.status = message
+		_hud()
+	else:
+		_pause_panel(false)
 
 func close_mode() -> void:
 	if _closing:
@@ -331,7 +395,7 @@ func resume_drive() -> void:
 	# Successful result screens resume free exploration, never settle twice.
 	# An unsaved completed route remains on its explicit Retry save screen.
 	if not activity.is_empty() and checkpoint_index >= activity.checkpoints.size():
-		if results.is_empty():
+		if results.is_empty() or _checkpoint_save_failed:
 			_result_panel(false)
 			return
 		activity = {}
