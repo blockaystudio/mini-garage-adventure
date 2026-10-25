@@ -1,0 +1,72 @@
+{
+  "banked_profiles": {
+    "qa-auth": {
+      "claims": {
+
+      },
+      "gp": 0,
+      "owned": [
+        "trail"
+      ],
+      "regions": [
+        "garage_valley",
+        "festival_circuit"
+      ]
+    }
+  },
+  "completed_races": {
+
+  },
+  "diagnostics": {
+    "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+    "correction_samples": 0,
+    "dropped_packets": 0,
+    "engine_static_memory_bytes": 22381139.0,
+    "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+    "mean_correction_m": 0.0,
+    "p95_correction_m": 0.0,
+    "p95_delayed_authority_gap_m": 0.0,
+    "received_payload_bytes": 2480,
+    "rejected_packets": 2,
+    "sent_payload_bytes": 10862,
+    "server_mean_tick_us": 47.4046822742475,
+    "server_p95_tick_us": 197
+  },
+  "duration_seconds": 4.962,
+  "pid": 8254,
+  "scope": "actual dedicated native Godot ENet process; isolated TEST profiles only",
+  "snapshot": {
+    "common_regions": [
+      "garage_valley",
+      "festival_circuit",
+      "moss_marsh",
+      "sunspoke_dunes",
+      "redstone_canyon",
+      "frostline_summit"
+    ],
+    "destination": "festival_circuit",
+    "leader": 0,
+    "players": {
+
+    },
+    "proposed_destination": "",
+    "race": {
+      "checkpoints": [
+        -12.0,
+        -24.0,
+        -36.0
+      ],
+      "countdown": 0.0,
+      "equal_build": {
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "buggy"
+      },
+      "id": "",
+      "phase": "waiting",
+      "results": []
+    },
+    "test_scope": true,
+    "tick": 297
+  }
+}

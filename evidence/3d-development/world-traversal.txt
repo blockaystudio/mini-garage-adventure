@@ -1,0 +1,99 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: isolated content-only inventory fixture saves; no production or online profile used
+TRAVERSAL {"checkpoint":8,"checkpoint_count":8,"completed":true,"distance_m":283.475387725979,"elapsed_seconds":53.5833333333316,"end_position":[3.98877811431885,0.0329377055168152,65.0810470581055],"id":"valley_first_drive","kind":"tutorial","mode":"tutorial","recoveries_during_route":0,"region":"garage_valley","reward_gp":150,"tires":"mud","vehicle":"buggy"}
+PASS: actual collision route reachable: valley_first_drive
+PASS: no recovery/warp needed during route: valley_first_drive
+TRAVERSAL {"checkpoint":8,"checkpoint_count":8,"completed":true,"distance_m":466.850073045818,"elapsed_seconds":89.8833333333295,"end_position":[43.4407997131348,0.0323057174682617,68.7201156616211],"id":"valley_parts_delivery","kind":"delivery_clear","mode":"delivery","recoveries_during_route":0,"region":"garage_valley","reward_gp":220,"tires":"mud","vehicle":"buggy"}
+PASS: actual collision route reachable: valley_parts_delivery
+PASS: no recovery/warp needed during route: valley_parts_delivery
+TRAVERSAL {"checkpoint":11,"checkpoint_count":11,"completed":true,"distance_m":370.336790484609,"elapsed_seconds":72.0833333333305,"end_position":[4.26973533630371,0.0328247733414173,66.2377853393555],"id":"valley_tire_trial","kind":"trail_3d_clear","mode":"surface_test","recoveries_during_route":0,"region":"garage_valley","reward_gp":225,"tires":"mud","vehicle":"buggy"}
+PASS: actual collision route reachable: valley_tire_trial
+PASS: no recovery/warp needed during route: valley_tire_trial
+DISCOVERY {"id":"valley_workshop_bell","position":[-55.1890678405762,0.0328081771731377,70.8598022460938],"reached_and_claimed":true,"region":"garage_valley","trigger":[-55.0,0.119999997317791,64.0]}
+PASS: actual driving reaches discovery trigger: valley_workshop_bell
+DISCOVERY {"id":"valley_waterwheel","position":[-76.1012649536133,0.0328016430139542,-61.1344146728516],"reached_and_claimed":true,"region":"garage_valley","trigger":[-76.0,0.119999997317791,-68.0]}
+PASS: actual driving reaches discovery trigger: valley_waterwheel
+DISCOVERY {"id":"valley_antenna","position":[72.1649398803711,0.0327901281416416,-61.1367034912109],"reached_and_claimed":true,"region":"garage_valley","trigger":[72.0,0.119999997317791,-68.0]}
+PASS: actual driving reaches discovery trigger: valley_antenna
+TRAVERSAL {"checkpoint":8,"checkpoint_count":8,"completed":true,"distance_m":560.613510884345,"elapsed_seconds":84.2666666666632,"end_position":[232.010437011719,0.032926831394434,66.1018829345703],"id":"festival_clockwork","kind":"trail_3d_clear","mode":"time_trial","recoveries_during_route":0,"region":"festival_circuit","reward_gp":225,"tires":"trail","vehicle":"kart"}
+PASS: actual collision route reachable: festival_clockwork
+PASS: no recovery/warp needed during route: festival_clockwork
+TRAVERSAL {"checkpoint":8,"checkpoint_count":8,"completed":true,"distance_m":413.552580775693,"elapsed_seconds":69.6833333333307,"end_position":[283.955780029297,0.032322108745575,71.4079971313477],"id":"festival_parcel_pit","kind":"delivery_clear","mode":"delivery","recoveries_during_route":0,"region":"festival_circuit","reward_gp":245,"tires":"trail","vehicle":"kart"}
+PASS: actual collision route reachable: festival_parcel_pit
+PASS: no recovery/warp needed during route: festival_parcel_pit
+TRAVERSAL {"checkpoint":10,"checkpoint_count":10,"completed":true,"distance_m":410.150075386511,"elapsed_seconds":74.7666666666637,"end_position":[246.214172363281,0.032911442220211,61.0574951171875],"id":"festival_slalom","kind":"trail_3d_clear","mode":"slalom","recoveries_during_route":0,"region":"festival_circuit","reward_gp":225,"tires":"trail","vehicle":"kart"}
+PASS: actual collision route reachable: festival_slalom
+PASS: no recovery/warp needed during route: festival_slalom
+DISCOVERY {"id":"festival_podium","position":[240.0,0.0012499988079071,84.0],"reached_and_claimed":true,"region":"festival_circuit","trigger":[187.0,0.119999997317791,64.0]}
+PASS: actual driving reaches discovery trigger: festival_podium
+DISCOVERY {"id":"festival_grandstand","position":[313.524505615234,0.0328202396631241,-57.1828308105469],"reached_and_claimed":true,"region":"festival_circuit","trigger":[313.0,0.119999997317791,-64.0]}
+PASS: actual driving reaches discovery trigger: festival_grandstand
+DISCOVERY {"id":"festival_trophy","position":[164.447906494141,0.0328161530196667,-65.1885375976562],"reached_and_claimed":true,"region":"festival_circuit","trigger":[165.0,0.119999997317791,-72.0]}
+PASS: actual driving reaches discovery trigger: festival_trophy
+TRAVERSAL {"checkpoint":11,"checkpoint_count":11,"completed":true,"distance_m":530.482935924083,"elapsed_seconds":91.7666666666627,"end_position":[-234.177841186523,0.0329262502491474,68.5318908691406],"id":"marsh_supply_loop","kind":"trail_3d_clear","mode":"trail","recoveries_during_route":0,"region":"moss_marsh","reward_gp":225,"tires":"mud","vehicle":"rover"}
+PASS: actual collision route reachable: marsh_supply_loop
+PASS: no recovery/warp needed during route: marsh_supply_loop
+TRAVERSAL {"checkpoint":8,"checkpoint_count":8,"completed":true,"distance_m":404.969051199034,"elapsed_seconds":72.3833333333305,"end_position":[-191.420028686523,0.0323043018579483,30.4739475250244],"id":"marsh_reed_delivery","kind":"delivery_clear","mode":"delivery","recoveries_during_route":0,"region":"moss_marsh","reward_gp":245,"tires":"mud","vehicle":"rover"}
+PASS: actual collision route reachable: marsh_reed_delivery
+PASS: no recovery/warp needed during route: marsh_reed_delivery
+TRAVERSAL {"checkpoint":9,"checkpoint_count":9,"completed":true,"distance_m":305.817336090608,"elapsed_seconds":61.0999999999978,"end_position":[-237.118209838867,0.0328366011381149,62.5914344787598],"id":"marsh_boardwalk","kind":"trail_3d_clear","mode":"precision","recoveries_during_route":0,"region":"moss_marsh","reward_gp":225,"tires":"mud","vehicle":"rover"}
+PASS: actual collision route reachable: marsh_boardwalk
+PASS: no recovery/warp needed during route: marsh_boardwalk
+DISCOVERY {"id":"marsh_lookout","position":[-240.0,0.0012499988079071,84.0],"reached_and_claimed":true,"region":"moss_marsh","trigger":[-293.0,0.119999997317791,-62.0]}
+PASS: actual driving reaches discovery trigger: marsh_lookout
+DISCOVERY {"id":"marsh_pump","position":[-240.0,0.0012499988079071,84.0],"reached_and_claimed":true,"region":"moss_marsh","trigger":[-171.0,0.119999997317791,54.0]}
+PASS: actual driving reaches discovery trigger: marsh_pump
+DISCOVERY {"id":"marsh_firefly","position":[-168.711807250977,0.0328045822679996,-58.1612281799316],"reached_and_claimed":true,"region":"moss_marsh","trigger":[-168.0,0.119999997317791,-65.0]}
+PASS: actual driving reaches discovery trigger: marsh_firefly
+TRAVERSAL {"checkpoint":9,"checkpoint_count":9,"completed":true,"distance_m":391.374153919518,"elapsed_seconds":68.5666666666641,"end_position":[7.40843296051025,0.0329302363097668,-170.868408203125],"id":"dunes_ridge_climb","kind":"trail_3d_clear","mode":"hill_climb","recoveries_during_route":0,"region":"sunspoke_dunes","reward_gp":225,"tires":"sand","vehicle":"rally"}
+PASS: actual collision route reachable: dunes_ridge_climb
+PASS: no recovery/warp needed during route: dunes_ridge_climb
+TRAVERSAL {"checkpoint":7,"checkpoint_count":7,"completed":true,"distance_m":416.431041421136,"elapsed_seconds":71.8499999999972,"end_position":[46.404727935791,0.0323155261576176,-195.610794067383],"id":"dunes_water_delivery","kind":"delivery_clear","mode":"delivery","recoveries_during_route":0,"region":"sunspoke_dunes","reward_gp":245,"tires":"sand","vehicle":"rally"}
+PASS: actual collision route reachable: dunes_water_delivery
+PASS: no recovery/warp needed during route: dunes_water_delivery
+TRAVERSAL {"checkpoint":10,"checkpoint_count":10,"completed":true,"distance_m":489.369959864765,"elapsed_seconds":89.2499999999962,"end_position":[6.80272388458252,0.0328358225524426,-174.146926879883],"id":"dunes_arch_slalom","kind":"trail_3d_clear","mode":"slalom","recoveries_during_route":0,"region":"sunspoke_dunes","reward_gp":225,"tires":"sand","vehicle":"rally"}
+PASS: actual collision route reachable: dunes_arch_slalom
+PASS: no recovery/warp needed during route: dunes_arch_slalom
+DISCOVERY {"id":"dunes_flag_ridge","position":[0.0,0.0012499988079071,-156.0],"reached_and_claimed":true,"region":"sunspoke_dunes","trigger":[0.0,7.11999988555908,-254.0]}
+PASS: actual driving reaches discovery trigger: dunes_flag_ridge
+DISCOVERY {"id":"dunes_oasis","position":[-75.6476364135742,0.0328039042651653,-293.138793945312],"reached_and_claimed":true,"region":"sunspoke_dunes","trigger":[-76.0,0.119999997317791,-300.0]}
+PASS: actual driving reaches discovery trigger: dunes_oasis
+DISCOVERY {"id":"dunes_sun_arch","position":[0.0,0.0012499988079071,-156.0],"reached_and_claimed":true,"region":"sunspoke_dunes","trigger":[76.0,0.119999997317791,-185.0]}
+PASS: actual driving reaches discovery trigger: dunes_sun_arch
+TRAVERSAL {"checkpoint":9,"checkpoint_count":9,"completed":true,"distance_m":349.961487740278,"elapsed_seconds":64.033333333331,"end_position":[-232.626586914062,0.0329324789345264,-173.100967407227],"id":"canyon_precision","kind":"trail_3d_clear","mode":"precision","recoveries_during_route":0,"region":"redstone_canyon","reward_gp":225,"tires":"rock","vehicle":"crawler"}
+PASS: actual collision route reachable: canyon_precision
+PASS: no recovery/warp needed during route: canyon_precision
+TRAVERSAL {"checkpoint":7,"checkpoint_count":7,"completed":true,"distance_m":421.084183063591,"elapsed_seconds":72.8499999999972,"end_position":[-295.490051269531,0.0323004424571991,-208.801086425781],"id":"canyon_bridge_delivery","kind":"delivery_clear","mode":"delivery","recoveries_during_route":0,"region":"redstone_canyon","reward_gp":245,"tires":"rock","vehicle":"crawler"}
+PASS: actual collision route reachable: canyon_bridge_delivery
+PASS: no recovery/warp needed during route: canyon_bridge_delivery
+TRAVERSAL {"checkpoint":9,"checkpoint_count":9,"completed":true,"distance_m":399.079151929822,"elapsed_seconds":72.5666666666638,"end_position":[-247.231430053711,0.0328370220959187,-173.281829833984],"id":"canyon_rock_route","kind":"trail_3d_clear","mode":"hill_climb","recoveries_during_route":0,"region":"redstone_canyon","reward_gp":225,"tires":"rock","vehicle":"crawler"}
+PASS: actual collision route reachable: canyon_rock_route
+PASS: no recovery/warp needed during route: canyon_rock_route
+DISCOVERY {"id":"canyon_overlook","position":[-311.14599609375,0.0328017175197601,-300.194549560547],"reached_and_claimed":true,"region":"redstone_canyon","trigger":[-312.0,0.119999997317791,-307.0]}
+PASS: actual driving reaches discovery trigger: canyon_overlook
+DISCOVERY {"id":"canyon_crane","position":[-170.127685546875,0.0327985882759094,-297.455444335938],"reached_and_claimed":true,"region":"redstone_canyon","trigger":[-168.0,0.119999997317791,-304.0]}
+PASS: actual driving reaches discovery trigger: canyon_crane
+DISCOVERY {"id":"canyon_balanced_rock","position":[-240.0,0.0012499988079071,-156.0],"reached_and_claimed":true,"region":"redstone_canyon","trigger":[-317.0,0.119999997317791,-186.0]}
+PASS: actual driving reaches discovery trigger: canyon_balanced_rock
+TRAVERSAL {"checkpoint":9,"checkpoint_count":9,"completed":true,"distance_m":454.942027110606,"elapsed_seconds":77.2999999999969,"end_position":[-246.783813476562,0.0329322554171085,-414.224853515625],"id":"summit_ice_route","kind":"trail_3d_clear","mode":"ice_route","recoveries_during_route":0,"region":"frostline_summit","reward_gp":225,"tires":"snow","vehicle":"truck"}
+PASS: actual collision route reachable: summit_ice_route
+PASS: no recovery/warp needed during route: summit_ice_route
+TRAVERSAL {"checkpoint":7,"checkpoint_count":7,"completed":true,"distance_m":415.509202271351,"elapsed_seconds":72.9333333333305,"end_position":[-190.319641113281,0.0323177836835384,-444.704315185547],"id":"summit_supply_delivery","kind":"delivery_clear","mode":"delivery","recoveries_during_route":0,"region":"frostline_summit","reward_gp":245,"tires":"snow","vehicle":"truck"}
+PASS: actual collision route reachable: summit_supply_delivery
+PASS: no recovery/warp needed during route: summit_supply_delivery
+TRAVERSAL {"checkpoint":10,"checkpoint_count":10,"completed":true,"distance_m":506.01766602078,"elapsed_seconds":95.4666666666625,"end_position":[-232.807525634766,0.0328346192836761,-413.476593017578],"id":"summit_switchback","kind":"trail_3d_clear","mode":"switchback","recoveries_during_route":0,"region":"frostline_summit","reward_gp":225,"tires":"snow","vehicle":"truck"}
+PASS: actual collision route reachable: summit_switchback
+PASS: no recovery/warp needed during route: summit_switchback
+DISCOVERY {"id":"summit_station","position":[-299.728820800781,0.0330877304077148,-539.251220703125],"reached_and_claimed":true,"region":"frostline_summit","trigger":[-301.0,0.119999997317791,-546.0]}
+PASS: actual driving reaches discovery trigger: summit_station
+DISCOVERY {"id":"summit_ice_arch","position":[-168.852325439453,0.0327992625534534,-535.399719238281],"reached_and_claimed":true,"region":"frostline_summit","trigger":[-167.0,0.119999997317791,-542.0]}
+PASS: actual driving reaches discovery trigger: summit_ice_arch
+DISCOVERY {"id":"summit_weather","position":[-170.283645629883,0.0327976010739803,-416.268646240234],"reached_and_claimed":true,"region":"frostline_summit","trigger":[-169.0,0.119999997317791,-423.0]}
+PASS: actual driving reaches discovery trigger: summit_weather
+PASS: all eighteen authored activities were executed
+PASS: all eighteen authored discoveries were attempted
+WORLD TRAVERSAL: 57 checks, 0 failures
+

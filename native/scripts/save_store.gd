@@ -13,12 +13,15 @@ var base_path: String
 var data: Dictionary = defaults()
 var warning := ""
 var read_only := false
+var _loaded_primary := "missing"
+var _has_snapshot := false
+static var _writer_sequence := 0
 
 func _init(path: String = "user://garage-save") -> void:
 	base_path = path
 
 static func defaults() -> Dictionary:
-	return {"version": SCHEMA, "build": {"vehicle": "buggy", "tires": "trail", "suspension": "soft", "paint": "orange"}, "completed": [], "custom": ["flat", "ramp", "bumps", "flat"], "settings": {"muted": false, "volume": 0.65, "reduced_motion": false, "one_touch": false, "steering_sensitivity": 1.0}, "best": {}, "gp": 0, "stars": [], "owned": Catalog.FOUNDATIONAL.duplicate(), "owned_vehicles": ["buggy"], "equipped": {"tires": "trail", "suspension_upgrade": "", "gearing": "", "drivetrain": "", "engine": ""}, "claims": {}, "regions": ["garage_valley", "festival_circuit"], "discoveries": [], "goal": "mud", "economy": {"next_run": 1, "active": {}, "last_settled": 0, "recent": []}}
+	return {"version": SCHEMA, "build": {"vehicle": "buggy", "tires": "trail", "suspension": "soft", "paint": "orange"}, "completed": [], "custom": ["flat", "ramp", "bumps", "flat"], "settings": {"muted": false, "volume": 0.65, "reduced_motion": false, "one_touch": false, "steering_sensitivity": 1.0}, "best": {}, "gp": 0, "stars": [], "owned": Catalog.FOUNDATIONAL.duplicate(), "owned_vehicles": ["buggy"], "equipped": {"tires": "trail", "suspension_upgrade": "", "gearing": "", "drivetrain": "", "engine": ""}, "claims": {}, "regions": ["garage_valley", "festival_circuit"], "discoveries": [], "goal": "mud", "explore": {"region":"garage_valley", "checkpoint":[0.0,0.15,84.0], "yaw":0.0}, "economy": {"next_run": 1, "active": {}, "last_settled": 0, "recent": []}}
 
 static func _integer(value: Variant, fallback: int = 0, limit: int = MAX_GP) -> int:
 	if not (value is float or value is int) or not is_finite(float(value)) or float(value) != floorf(float(value)) or float(value) < 0 or float(value) > limit:
@@ -133,6 +136,19 @@ static func normalize(source: Variant) -> Dictionary:
 		for id in regions:
 			if id is String and Catalog.REGIONS.has(id) and id not in result.regions:
 				result.regions.append(id)
+	var explore: Variant = source.get("explore", {})
+	if explore is Dictionary and explore.get("region", "") in result.regions:
+		var position: Variant = explore.get("checkpoint", [])
+		var valid_position: bool = position is Array and position.size() == 3
+		if valid_position:
+			for coordinate in position:
+				if not (coordinate is int or coordinate is float) or not is_finite(float(coordinate)):
+					valid_position = false
+		if valid_position:
+			valid_position = absf(float(position[0])) <= 3000.0 and absf(float(position[2])) <= 3000.0 and float(position[1]) >= -20.0 and float(position[1]) <= 100.0
+		if valid_position:
+			var yaw: Variant = explore.get("yaw",0.0)
+			result.explore = {"region": explore.region, "checkpoint":[float(position[0]),float(position[1]),float(position[2])], "yaw":wrapf(float(yaw),-PI,PI) if (yaw is int or yaw is float) and is_finite(float(yaw)) else 0.0}
 	var discoveries: Variant = source.get("discoveries", [])
 	if discoveries is Array:
 		for id in discoveries:
@@ -236,6 +252,10 @@ func _read_record(path: String) -> Dictionary:
 func load_save() -> Dictionary:
 	warning = ""
 	read_only = false
+	# Capture before reading: a concurrent rename can only cause a conservative
+	# stale rejection, never associate old data with a newer writer's fingerprint.
+	_loaded_primary = _primary_fingerprint()
+	_has_snapshot = true
 	var records: Array = []
 	for extension in [".json", ".bak", ".tmp"]:
 		records.append(_read_record(_path(extension)))
@@ -260,14 +280,118 @@ func load_save() -> Dictionary:
 		warning = "The local save could not be read. A fresh garage is ready; damaged files stay on this device until you save or reset."
 	return data
 
+func _primary_fingerprint() -> String:
+	var primary := _path(".json")
+	if not FileAccess.file_exists(primary):
+		return "directory" if DirAccess.dir_exists_absolute(primary) else "missing"
+	var file := FileAccess.open(primary, FileAccess.READ)
+	if file == null:
+		return "unreadable"
+	var length := file.get_length()
+	if length > MAX_BYTES:
+		return "oversized:%d:%d" % [length, FileAccess.get_modified_time(primary)]
+	return "%d:%s" % [length, file.get_as_text().sha256_text()]
+
+static func _owner_is_dead(pid: int) -> bool:
+	if pid == OS.get_process_id():
+		return false
+	# Godot's Unix is_process_running uses waitpid and can report ECHILD for
+	# another game's PID. Linux/Android expose same-UID native processes in proc.
+	if OS.get_name() in ["Linux", "Android"] and DirAccess.dir_exists_absolute("/proc/self"):
+		return not DirAccess.dir_exists_absolute("/proc/%d" % pid)
+	if OS.get_name() == "macOS":
+		var output: Array = []
+		var status := OS.execute("/bin/ps", PackedStringArray(["-p", str(pid), "-o", "pid="]), output, true)
+		return status == 1 and "".join(output).strip_edges().is_empty()
+	if OS.get_name() == "Windows":
+		return not OS.is_process_running(pid)
+	return false
+
+func _remove_dead_writer(lock_path: String) -> void:
+	# An acquired directory always contains its immutable owner file: it is
+	# prepared before the atomic rename. Removing that exact dead owner's file
+	# cannot remove a replacement owner's unique file. rmdir only removes empty
+	# directories, so concurrent reclaimers cannot steal a new live lock.
+	var directory := DirAccess.open(lock_path)
+	if directory == null or not directory.get_directories().is_empty():
+		return
+	var files := directory.get_files()
+	if files.size() != 1 or not files[0].begins_with("owner_"):
+		return
+	var owner_path := lock_path.path_join(files[0])
+	var owner: Variant = JSON.parse_string(FileAccess.get_file_as_string(owner_path))
+	if not owner is Dictionary:
+		return
+	var pid := _integer(owner.get("pid", 0), 0, 2147483647)
+	if pid <= 0 or not files[0].begins_with("owner_%d_" % pid) or not _owner_is_dead(pid):
+		return
+	if DirAccess.remove_absolute(owner_path) == OK:
+		DirAccess.remove_absolute(lock_path)
+
+func _acquire_writer() -> String:
+	# Web tabs have independent virtual filesystems; these locks cannot arbitrate
+	# asynchronous browser storage. iOS runs one app process per sandbox. Both
+	# retain stale-snapshot rejection for stores in the current game process.
+	if OS.has_feature("web") or OS.get_name() == "iOS":
+		return "single_process"
+	_writer_sequence += 1
+	var owner_name := "owner_%d_%d_%d" % [OS.get_process_id(), Time.get_ticks_usec(), _writer_sequence]
+	var lock_path := _path(".lock")
+	var candidate := lock_path + "." + owner_name
+	if DirAccess.make_dir_absolute(candidate) != OK:
+		warning = "Could not save on this device. Your last saved garage is safe. Free some storage and try again."
+		return ""
+	var owner_file := FileAccess.open(candidate.path_join(owner_name), FileAccess.WRITE)
+	if owner_file == null:
+		DirAccess.remove_absolute(candidate)
+		warning = "Could not reserve local saving. Your last saved garage is safe. Please try again."
+		return ""
+	owner_file.store_string(JSON.stringify({"pid": OS.get_process_id()}))
+	owner_file.flush()
+	var write_error := owner_file.get_error()
+	owner_file.close()
+	if write_error == OK:
+		_remove_dead_writer(lock_path)
+		# Native rename cannot replace a nonempty directory. Unlike mkdir then
+		# write-owner, this leaves no ownerless crash window for an acquired lock.
+		if DirAccess.rename_absolute(candidate, lock_path) == OK:
+			return owner_name
+	DirAccess.remove_absolute(candidate.path_join(owner_name))
+	DirAccess.remove_absolute(candidate)
+	warning = "Another game instance is saving this garage. Close it or wait, then reload your garage before trying again."
+	return ""
+
+func _release_writer(owner_name: String) -> void:
+	if owner_name == "single_process":
+		return
+	var lock_path := _path(".lock")
+	if DirAccess.remove_absolute(lock_path.path_join(owner_name)) == OK:
+		DirAccess.remove_absolute(lock_path)
+
 func save_data(proposed: Dictionary) -> bool:
 	warning = ""
+	var owner_name := _acquire_writer()
+	if owner_name.is_empty():
+		return false
+	var saved := _save_locked(proposed)
+	_release_writer(owner_name)
+	return saved
+
+func _save_locked(proposed: Dictionary) -> bool:
 	# Recheck files at every write, including backups created by a newer build.
 	for extension in [".json", ".bak", ".tmp"]:
 		if _read_record(_path(extension)).status == "future":
 			read_only = true
 	if read_only:
 		warning = "Saving is paused: a newer native save is kept safe. Update the game or reset in the parent area."
+		return false
+	var unloaded_existing := false
+	if not _has_snapshot:
+		for extension in [".json", ".bak", ".tmp"]:
+			if FileAccess.file_exists(_path(extension)) or DirAccess.dir_exists_absolute(_path(extension)):
+				unloaded_existing = true
+	if unloaded_existing or _primary_fingerprint() != _loaded_primary:
+		warning = "This garage changed in another game instance. Reload your garage before saving or buying again; your last saved progress is safe."
 		return false
 	var normalized := normalize(proposed)
 	var payload := _canonical(normalized)
@@ -293,10 +417,16 @@ func save_data(proposed: Dictionary) -> bool:
 		warning = "Could not finish saving. Your last saved garage or backup is safe. Please try again."
 		return false
 	data = normalized
+	_loaded_primary = _primary_fingerprint()
+	_has_snapshot = true
 	return true
 
 func reset() -> bool:
 	# The caller must obtain explicit parent-area reset confirmation first.
+	warning = ""
+	var owner_name := _acquire_writer()
+	if owner_name.is_empty():
+		return false
 	var failed := false
 	for extension in [".json", ".bak", ".tmp"]:
 		var path := _path(extension)
@@ -304,10 +434,15 @@ func reset() -> bool:
 			failed = true
 	if failed:
 		warning = "Some local files could not be removed. Reset did not finish. Please try again."
+		_release_writer(owner_name)
 		return false
 	read_only = false
 	data = defaults()
-	if not save_data(data):
+	_loaded_primary = "missing"
+	_has_snapshot = true
+	if not _save_locked(data):
 		warning = "Local progress was cleared, but a fresh save could not be written. Please free storage and try again."
+		_release_writer(owner_name)
 		return false
+	_release_writer(owner_name)
 	return true

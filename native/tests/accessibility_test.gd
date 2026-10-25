@@ -82,10 +82,14 @@ func run() -> void:
 	game.show_garage()
 	await process_frame
 	await process_frame
-	var road := find_button("Road tires")
+	var road: Button
+	for control in game.ui.find_children("*","Button",true,false):
+		if str(control.text).begins_with("Road tires"):
+			road = control
+			break
 	check(road.focus_mode != Control.FOCUS_NONE and road.size.y >= 112.0, "compact part control keeps keyboard focus and large logical target")
 	road.grab_focus()
-	check(road.has_focus(), "compact scroll form accepts focus on an offscreen part control")
+	check(road.has_focus(), "focused phone part control accepts keyboard focus")
 	game.show_gate()
 	var answer: LineEdit = game.ui.find_children("*", "LineEdit",true,false)[0]
 	check(answer.accessibility_name == "Grown-up check answer", "grown-up answer field exposes its purpose to accessibility APIs")

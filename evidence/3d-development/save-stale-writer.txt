@@ -1,0 +1,48 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS missing native save gives playable defaults
+PASS first native save succeeds
+PASS new store recovers saved build and settings
+PASS second atomic save keeps previous generation backup
+PASS corrupt primary recovers previous valid backup
+PASS saving recovered backup does not replace it with corruption
+PASS two corrupt files produce safe defaults and an honest warning
+PASS parent reset creates a fresh committed native save
+PASS reset clears previous and temporary progress
+PASS reset before future-schema case .json
+PASS future schema becomes read-only .json
+PASS future schema cannot be overwritten .json
+PASS reset before future-schema case .bak
+PASS future schema becomes read-only .bak
+PASS future schema cannot be overwritten .bak
+PASS reset before future-schema case .tmp
+PASS future schema becomes read-only .tmp
+PASS future schema cannot be overwritten .tmp
+PASS explicit parent reset may clear unsupported native save
+PASS future schema is preserved even when its payload format changed
+PASS reset clears future-format case
+PASS version 1 native save migrates supported choices
+PASS migrated native save writes current envelope
+PASS invalid parts and unknown or duplicate courses normalize
+PASS malformed tracks settings and time records normalize
+PASS locked vehicles cannot enter a fresh save
+PASS reset before interrupted write checks
+PASS uncommitted temp cannot replace a good committed save
+PASS complete interrupted write is recovered when committed save is absent
+PASS recovered interrupted save can be committed
+PASS backup creation failure leaves committed save untouched
+PASS incomplete interrupted write cannot replace committed save
+PASS checksum rejects valid JSON with changed payload
+PASS unavailable storage reports failure without claiming saved data
+PASS non-object save cannot enter runtime
+PASS oversized save is bounded
+PASS four-piece private track opens valid
+PASS minimum four pieces enforced
+PASS invalid placement and piece IDs rejected
+PASS replace can be undone
+PASS remove restores exact layout on undo
+PASS sixteen-piece editor limit enforced
+PASS malformed saved editor layout recovers a valid starter track
+PASS incomplete start is rejected before playable preview
+PASS undo history has a fixed memory bound
+SAVE_EDITOR_RESULT passed=45 failed=0

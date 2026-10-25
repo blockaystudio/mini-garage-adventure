@@ -159,6 +159,47 @@ func run() -> void:
 	var sensitivity := Store.defaults()
 	sensitivity.settings.steering_sensitivity=99.0
 	check(Store.normalize(sensitivity).settings.steering_sensitivity==1.5,"new steering sensitivity is bounded without discarding old settings")
+	# Additive schema3 Explore data preserves old schema3 profiles and safe recovery.
+	var explore_store = fresh("explore")
+	check(explore_store.data.explore==Store.defaults().explore,"missing optional Explore progress defaults safely")
+	var explore_profile: Dictionary = explore_store.data.duplicate(true)
+	explore_profile.regions.append("moss_marsh")
+	explore_profile.explore={"region":"moss_marsh","checkpoint":[210.0,1.5,80.0],"yaw":1.2}
+	check(explore_store.save_data(explore_profile) and fresh("explore").data.explore==explore_profile.explore,"admitted Explore region/checkpoint/heading persist across reload")
+	explore_profile.explore.checkpoint=[INF,0,0]
+	check(Store.normalize(explore_profile).explore==Store.defaults().explore,"nonfinite checkpoint returns to safe default")
+	explore_profile.explore.checkpoint=[0,5000,0]
+	check(Store.normalize(explore_profile).explore==Store.defaults().explore,"out-of-world checkpoint returns to safe default")
+	explore_profile.explore.checkpoint=[0,1,0]
+	explore_profile.explore.region="frostline_summit"
+	check(Store.normalize(explore_profile).explore==Store.defaults().explore,"unadmitted destination cannot be restored from a local checkpoint")
+	check(migrated.data.explore==Store.defaults().explore,"schema1/2 migration receives safe optional Explore defaults")
+	# Two open game instances must not replace a newer wallet/inventory snapshot.
+	var shared_seed = fresh("shared_wallet")
+	var shared_profile: Dictionary = shared_seed.data.duplicate(true)
+	shared_profile.gp=900
+	check(shared_seed.save_data(shared_profile),"concurrent-wallet fixture commits900GP")
+	var writer_a = fresh("shared_wallet")
+	var writer_b = fresh("shared_wallet")
+	check(Economy.new(writer_a).purchase("mud","writer_a_mud") and writer_a.data.gp==600,"first loaded writer buys mud")
+	var committed_wallet := FileAccess.get_file_as_string(writer_a.base_path+".json")
+	var stale_shop = Economy.new(writer_b)
+	check(not stale_shop.purchase("sand","writer_b_sand") and "Reload" in stale_shop.warning and writer_b.data.gp==900,"stale writer rejects purchase and explains required reload")
+	check(FileAccess.get_file_as_string(writer_a.base_path+".json")==committed_wallet and not FileAccess.file_exists(writer_a.base_path+".tmp"),"stale writer cannot change committed wallet or temporary generation")
+	writer_b.load_save()
+	check(stale_shop.purchase("sand","writer_b_sand") and writer_b.data.gp==0 and "mud" in writer_b.data.owned and "sand" in writer_b.data.owned,"explicit reload then retry keeps both purchases with correct zero balance")
+	check(not writer_a.save_data(writer_a.data) and "Reload" in writer_a.warning,"stale ordinary settings/build save also cannot overwrite newer purchases")
+	var unloaded = Store.new(writer_a.base_path)
+	check(not unloaded.save_data(Store.defaults()),"store that never loaded an existing profile cannot replace it")
+	for recovery_slot in [".bak", ".tmp"]:
+		var recovery_path: String=directory+"/unloaded_recovery_"+recovery_slot.substr(1)
+		var recovery_profile := Store.defaults()
+		recovery_profile.gp=900
+		raw(recovery_path+recovery_slot,record(recovery_profile,3))
+		var recovery_only = Store.new(recovery_path)
+		check(not recovery_only.save_data(Store.defaults()) and not FileAccess.file_exists(recovery_path+".json"),"unloaded store cannot hide a recovery-only wallet in "+recovery_slot)
+		recovery_only.load_save()
+		check(recovery_only.data.gp==900 and recovery_only.save_data(recovery_only.data),"load then commit preserves recovered900GP from "+recovery_slot)
 	# Unknown future formats in any generation remain protected.
 	raw(store.base_path+".bak",JSON.stringify({"schema":4,"payload":"future"}))
 	store.load_save()

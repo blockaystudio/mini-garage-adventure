@@ -5,6 +5,7 @@ const MainScene = preload("res://scenes/main.tscn")
 const Store = preload("res://scripts/save_store.gd")
 const Content = preload("res://scripts/content.gd")
 const Progression = preload("res://scripts/progression/profile_progression.gd")
+const WorldData = preload("res://scripts/drive3d/world_content.gd")
 var checks := 0
 var failures := 0
 var game: Node
@@ -84,18 +85,24 @@ func compact_page(label: String) -> void:
 func compact_flow() -> void:
 	game.compact_mode = true
 	game.show_garage()
-	await compact_page("compact garage")
-	check(game.ui.get_node("CompactScroll/CompactContent/CompactVehiclePreview") != null, "compact garage retains real native vehicle preview")
-	var scroll: ScrollContainer = game.ui.get_node("CompactScroll")
-	scroll.ensure_control_visible(button("Purple"))
-	await process_frame
-	check(scroll.get_global_rect().intersects(button("Purple").get_global_rect()), "scrolled garage paint action remains reachable")
-	click("Purple")
 	await process_frame
 	await process_frame
-	check(game.state.build.paint == "purple", "compact garage retains connected build signals")
-	check(game.ui.get_node("CompactScroll").scroll_vertical > 0, "compact choice rebuild preserves scrolling position")
-	click("Choose a course  →")
+	check(game.ui.get_node_or_null("FocusedGarage") != null and game.ui.get_node_or_null("CompactScroll") == null, "phone garage uses focused tabs instead of the old stacked form")
+	for tab in ["Parts","Paint","Rides"]:
+		check(game.ui.get_node_or_null("GarageTab"+tab) != null, "phone garage exposes the "+tab+" tab")
+	for name in ["GarageQuickDrive","GarageExplore","GarageUpgrades","GarageTrackLab"]:
+		var action: Button = game.ui.get_node_or_null(name)
+		check(action != null and not action.disabled and action.is_visible_in_tree() and action.size.y >= 112.0, "persistent large phone action: "+name)
+	check(game.world.visible and game.world.garage_mode, "focused phone garage retains the native vehicle showcase")
+	compact_targets("focused phone garage")
+	click("Paint")
+	var paint := vehicle_button("Purple")
+	check(paint != null and not paint.disabled and paint.size.y >= 112.0, "focused paint tab offers a large actual owned paint button")
+	if paint != null:
+		paint.pressed.emit()
+	await process_frame
+	check(game.state.build.paint == "purple" and game.garage_tab == "Paint", "focused paint selection saves and preserves its selected tab")
+	click("Quick Drive")
 	await compact_page("compact courses")
 	var list: VBoxContainer = game.ui.get_node("CompactScroll/CompactContent")
 	var ordered := 0
@@ -163,6 +170,51 @@ func compact_flow() -> void:
 	game.store.reset()
 	game.compact_mode = false
 
+func explore_menu_flow() -> void:
+	game.show_explore("garage_valley")
+	await process_frame
+	await process_frame
+	var mode = game.explore
+	check(mode != null and mode.vehicle is CharacterBody3D and mode.camera != null, "Explore screen creates a genuine3D vehicle and chase camera")
+	click("World map")
+	check(mode.paused and not mode.input.active, "destination menu pauses3D controls")
+	click("Resume")
+	check(not mode.paused and mode.input.active and mode.vehicle.enabled, "map header Resume returns to drive without resetting the vehicle")
+	click("Missions")
+	check(mode.paused and not mode.input.active, "mission menu pauses3D controls")
+	click("Resume")
+	check(not mode.paused and mode.input.active, "mission header Resume is an active return action")
+	# An explicitly synthetic completion fixture isolates the result-screen
+	# state machine. It is not claimed as physical driving/route acceptance.
+	var item: Dictionary = WorldData.activity_by_id("valley_first_drive")
+	mode.start_activity(item)
+	for index in range(5):
+		game.economy.observe_run(mode.active_run,index*0.25,index*2.0)
+	mode.checkpoint_index = item.checkpoints.size()
+	mode.elapsed = 8.0
+	mode._finish_activity()
+	check(mode.paused and not mode.results.is_empty(), "synthetic settled-result fixture reaches the real reward panel")
+	var earned_balance: int = game.state.gp
+	var escape := InputEventKey.new()
+	escape.physical_keycode = KEY_ESCAPE
+	escape.pressed = true
+	mode._unhandled_key_input(escape)
+	check(not mode.paused and mode.activity.is_empty() and mode.input.active, "Escape after settled result clears the finished activity and resumes free explore")
+	mode._physics_process(1.0/60.0)
+	check(game.state.gp == earned_balance and not mode.paused, "resumed result cannot retry or duplicate a settled reward on the next frame")
+	mode.activity = item.duplicate(true)
+	mode.checkpoint_index = item.checkpoints.size()
+	mode.results = {}
+	mode.paused = true
+	mode.message = "Synthetic failed-write result fixture"
+	mode._result_panel(false)
+	mode._unhandled_key_input(escape)
+	check(mode.paused and not mode.input.active and button("Retry save") != null, "Escape keeps a failed-save result paused for an explicit retry")
+	game.show_garage()
+	game.store.reset()
+	game.state = game.store.data.duplicate(true)
+	game._sync_settings()
+
 func run() -> void:
 	game = MainScene.instantiate()
 	game.store = Store.new(test_path)
@@ -173,6 +225,16 @@ func run() -> void:
 	game.show_garage()
 	game.set_physics_process(false)
 	await process_frame
+	game._start_intro_drive()
+	drive_to_finish()
+	check(game.state.gp == 150 and game.state.completed.is_empty() and Progression.stars_count(game.state) == 0, "actual introductory drive grants150GP and replaces ordinary event/mastery rewards")
+	game._restart()
+	drive_to_finish()
+	check(game.state.gp == 150 and game.state.completed.is_empty(), "restarting introductory scene cannot repeat its grant")
+	check(game.store.reset(), "isolated tutorial profile can be reset before independent scene cases")
+	game.state = game.store.data.duplicate(true)
+	game._sync_settings()
+	game.show_garage()
 	check(game.page == "garage" and game.state.completed.is_empty(), "first launch opens garage with no medals")
 	check(game.state.build.vehicle == "buggy", "first launch selects available buggy")
 	check(vehicle_button("Moon Rover") != null and vehicle_button("Moon Rover").disabled, "new-profile vehicle threshold is visibly three mastery stars")
@@ -353,6 +415,7 @@ func run() -> void:
 	check(game.state.completed.is_empty() and game.state.build.vehicle == "buggy" and not game.state.settings.one_touch, "confirmed reset restores full defaults")
 	check(Store.new(test_path).load_save() == Store.defaults() and not FileAccess.file_exists(ProjectSettings.globalize_path(test_path + ".bak")) and not FileAccess.file_exists(ProjectSettings.globalize_path(test_path + ".tmp")), "reset writes fresh defaults and removes old backup and temporary files")
 	await compact_flow()
+	await explore_menu_flow()
 	game.queue_free()
 	await process_frame
 	await create_timer(0.3).timeout

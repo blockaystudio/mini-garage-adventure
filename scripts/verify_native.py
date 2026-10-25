@@ -2,6 +2,7 @@
 """Offline native checks. A desktop run never certifies Android or iOS."""
 from pathlib import Path
 import os
+import hashlib
 import re
 import shutil
 import subprocess
@@ -11,6 +12,14 @@ import tempfile
 ROOT = Path(__file__).resolve().parents[1]
 NATIVE = ROOT / "native"
 ENGINE_VERSION = "4.6.3.stable.official.7d41c59c4"
+
+
+def source_fingerprint():
+    paths = [path for path in NATIVE.rglob("*") if path.is_file()
+             and ".godot" not in path.parts and path.suffix in {".gd", ".tscn", ".tres", ".json", ".cfg", ".godot", ".uid", ".import", ".svg", ".png", ".wav", ".ogg", ".ttf"}]
+    paths += [ROOT / "scripts" / name for name in ("verify_native.py", "verify_save_concurrency.py")]
+    return {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in sorted(paths)}
 
 
 def check_runtime_contract():
@@ -55,6 +64,7 @@ def check_runtime_contract():
 
 
 def main():
+    initial_source = source_fingerprint()
     check_runtime_contract()
     engine = os.environ.get("GODOT_BIN") or shutil.which("godot") or shutil.which("godot4")
     if not engine:
@@ -80,12 +90,21 @@ def main():
         run(["--editor", "--import"])
         for script in sorted((NATIVE / "scripts").rglob("*.gd")) + sorted((NATIVE / "server").rglob("*.gd")):
             run(["--check-only", "--script", "res://" + script.relative_to(NATIVE).as_posix()])
-        for name in ("model_test.gd", "save_test.gd", "integration_test.gd", "accessibility_test.gd", "touch_test.gd", "economy_test.gd"):
+        for name in ("model_test.gd", "save_test.gd", "integration_test.gd", "accessibility_test.gd", "touch_test.gd", "economy_test.gd", "drive3d_test.gd", "world_content_test.gd", "world_traversal_test.gd", "explore_test.gd", "net_rules_test.gd", "net_view_test.gd"):
             if not (NATIVE / "tests" / name).is_file():
                 raise RuntimeError(f"Required native test missing: tests/{name}")
-            run(["--script", f"res://tests/{name}"])
+            run((["--fixed-fps", "60"] if name == "drive3d_test.gd" else []) + ["--script", f"res://tests/{name}"])
         run(["--quit-after", "5"])
-    print("PASS: native import, script parsing, model, save, integration, accessibility settings, scene boot (Linux headless).")
+        concurrency = [sys.executable, str(ROOT / "scripts" / "verify_save_concurrency.py")]
+        print("+", " ".join(concurrency), flush=True)
+        result = subprocess.run(concurrency, cwd=ROOT, env=dict(env, GODOT_BIN=engine),
+                                text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=240)
+        print(result.stdout, end="", flush=True)
+        if result.returncode or re.search(r"(?:SCRIPT ERROR:|Parse Error:|^ERROR:)", result.stdout, re.M):
+            raise RuntimeError("Native independent-process save contention/crash checks failed")
+    if source_fingerprint() != initial_source:
+        raise RuntimeError("Native source changed during verification; rerun the complete suite from a frozen checkpoint.")
+    print("PASS: source unchanged across native import/parsing/model/save/integration/settings/3D checks and main scene boot (Linux headless).")
     print("Mobile installation, real touch/lifecycle, rendered performance and device accessibility remain separate gates.")
 
 

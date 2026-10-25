@@ -1,0 +1,775 @@
+{
+  "host_cpu": "AMD EPYC 9V74 80-Core Processor",
+  "logical_cpus": 5,
+  "cases": [
+    {
+      "label": "two-clients",
+      "status": "pass",
+      "server_pid": 8106,
+      "client_pids": [
+        8116,
+        8117
+      ],
+      "clients": 2,
+      "latency_ms_per_direction": 0,
+      "jitter_ms": 0,
+      "loss_fraction": 0.0,
+      "impairment": "Application-level scheduling/drop on actual ENet input/snapshot messages; control handshake reliable; not OS netem",
+      "source_files_sha256": {
+        "native/scripts/net/private_session.gd": "7181d5f39661696ef77b582f86697b7a076abcff9aba6765bdb0ab0c8a1814a6",
+        "native/scripts/net/session_view.gd": "90ab8aad598c2db800f8f7b02c165c6b0ccb87cc3b8c28488af3ef8f27e92db3",
+        "native/scripts/net/test_profile_store.gd": "f4626d17a8eb6ad4d761e2108b836ceeeb9397012b1ecdded784e6c2a78bddc3",
+        "native/scripts/drive3d/vehicle_sim.gd": "c12135612029158b44b3e47ff1d130481449c487075ad4c613613afee5b4f307"
+      },
+      "race_results": [
+        {
+          "checkpoint": 3,
+          "claim": "race-5dadc5357daef7c8:qa-driver-1",
+          "gp": 125,
+          "name": "Driver 582",
+          "place": 1,
+          "profile": "qa-driver-1"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-5dadc5357daef7c8:qa-driver-2",
+          "gp": 100,
+          "name": "Driver 583",
+          "place": 2,
+          "profile": "qa-driver-2"
+        }
+      ],
+      "server_diagnostics": {
+        "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+        "correction_samples": 0,
+        "dropped_packets": 0,
+        "engine_static_memory_bytes": 22433848.0,
+        "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+        "mean_correction_m": 0.0,
+        "p95_correction_m": 0.0,
+        "p95_delayed_authority_gap_m": 0.0,
+        "received_payload_bytes": 36146,
+        "rejected_packets": 1,
+        "sent_payload_bytes": 218063,
+        "server_mean_tick_us": 163.456189151599,
+        "server_p95_tick_us": 385
+      },
+      "client_diagnostics": [
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 194,
+          "dropped_packets": 0,
+          "engine_static_memory_bytes": 22672062.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.166941268311948,
+          "p95_correction_m": 0.633333206176758,
+          "p95_delayed_authority_gap_m": 1.10439682006836,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 203,
+          "dropped_packets": 0,
+          "engine_static_memory_bytes": 22677078.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.146377694210395,
+          "p95_correction_m": 0.569999694824219,
+          "p95_delayed_authority_gap_m": 0.997499465942383,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Linux native headless separate processes on local UDP; no physical devices/browser/production service"
+    },
+    {
+      "label": "four-clients",
+      "status": "pass",
+      "server_pid": 8183,
+      "client_pids": [
+        8193,
+        8194,
+        8195,
+        8196
+      ],
+      "clients": 4,
+      "latency_ms_per_direction": 0,
+      "jitter_ms": 0,
+      "loss_fraction": 0.0,
+      "impairment": "Application-level scheduling/drop on actual ENet input/snapshot messages; control handshake reliable; not OS netem",
+      "source_files_sha256": {
+        "native/scripts/net/private_session.gd": "7181d5f39661696ef77b582f86697b7a076abcff9aba6765bdb0ab0c8a1814a6",
+        "native/scripts/net/session_view.gd": "90ab8aad598c2db800f8f7b02c165c6b0ccb87cc3b8c28488af3ef8f27e92db3",
+        "native/scripts/net/test_profile_store.gd": "f4626d17a8eb6ad4d761e2108b836ceeeb9397012b1ecdded784e6c2a78bddc3",
+        "native/scripts/drive3d/vehicle_sim.gd": "c12135612029158b44b3e47ff1d130481449c487075ad4c613613afee5b4f307"
+      },
+      "race_results": [
+        {
+          "checkpoint": 3,
+          "claim": "race-3fd5bdf60cdb3ad6:qa-driver-1",
+          "gp": 125,
+          "name": "Driver 582",
+          "place": 1,
+          "profile": "qa-driver-1"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-3fd5bdf60cdb3ad6:qa-driver-2",
+          "gp": 100,
+          "name": "Driver 583",
+          "place": 2,
+          "profile": "qa-driver-2"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-3fd5bdf60cdb3ad6:qa-driver-3",
+          "gp": 100,
+          "name": "Driver 584",
+          "place": 3,
+          "profile": "qa-driver-3"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-3fd5bdf60cdb3ad6:qa-driver-4",
+          "gp": 100,
+          "name": "Driver 585",
+          "place": 4,
+          "profile": "qa-driver-4"
+        }
+      ],
+      "server_diagnostics": {
+        "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+        "correction_samples": 0,
+        "dropped_packets": 0,
+        "engine_static_memory_bytes": 22451800.0,
+        "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+        "mean_correction_m": 0.0,
+        "p95_correction_m": 0.0,
+        "p95_delayed_authority_gap_m": 0.0,
+        "received_payload_bytes": 72726,
+        "rejected_packets": 1,
+        "sent_payload_bytes": 527198,
+        "server_mean_tick_us": 324.732962447844,
+        "server_p95_tick_us": 875
+      },
+      "client_diagnostics": [
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 197,
+          "dropped_packets": 0,
+          "engine_static_memory_bytes": 22939754.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.159518794606317,
+          "p95_correction_m": 0.633333206176758,
+          "p95_delayed_authority_gap_m": 1.0726318359375,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 207,
+          "dropped_packets": 0,
+          "engine_static_memory_bytes": 22956094.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.0884218250045886,
+          "p95_correction_m": 0.569999694824219,
+          "p95_delayed_authority_gap_m": 0.712499618530273,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 204,
+          "dropped_packets": 0,
+          "engine_static_memory_bytes": 22952518.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.0953225947108448,
+          "p95_correction_m": 0.50666618347168,
+          "p95_delayed_authority_gap_m": 0.678382873535156,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 205,
+          "dropped_packets": 0,
+          "engine_static_memory_bytes": 22954306.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.134515423670684,
+          "p95_correction_m": 0.443333625793457,
+          "p95_delayed_authority_gap_m": 0.775833129882812,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Linux native headless separate processes on local UDP; no physical devices/browser/production service"
+    },
+    {
+      "label": "network-50ms",
+      "status": "pass",
+      "server_pid": 8292,
+      "client_pids": [
+        8302,
+        8303,
+        8304,
+        8305
+      ],
+      "clients": 4,
+      "latency_ms_per_direction": 50,
+      "jitter_ms": 10,
+      "loss_fraction": 0.01,
+      "impairment": "Application-level scheduling/drop on actual ENet input/snapshot messages; control handshake reliable; not OS netem",
+      "source_files_sha256": {
+        "native/scripts/net/private_session.gd": "7181d5f39661696ef77b582f86697b7a076abcff9aba6765bdb0ab0c8a1814a6",
+        "native/scripts/net/session_view.gd": "90ab8aad598c2db800f8f7b02c165c6b0ccb87cc3b8c28488af3ef8f27e92db3",
+        "native/scripts/net/test_profile_store.gd": "f4626d17a8eb6ad4d761e2108b836ceeeb9397012b1ecdded784e6c2a78bddc3",
+        "native/scripts/drive3d/vehicle_sim.gd": "c12135612029158b44b3e47ff1d130481449c487075ad4c613613afee5b4f307"
+      },
+      "race_results": [
+        {
+          "checkpoint": 3,
+          "claim": "race-5ff91e798c24360d:qa-driver-1",
+          "gp": 125,
+          "name": "Driver 582",
+          "place": 1,
+          "profile": "qa-driver-1"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-5ff91e798c24360d:qa-driver-2",
+          "gp": 100,
+          "name": "Driver 583",
+          "place": 2,
+          "profile": "qa-driver-2"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-5ff91e798c24360d:qa-driver-3",
+          "gp": 100,
+          "name": "Driver 584",
+          "place": 3,
+          "profile": "qa-driver-3"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-5ff91e798c24360d:qa-driver-4",
+          "gp": 100,
+          "name": "Driver 585",
+          "place": 4,
+          "profile": "qa-driver-4"
+        }
+      ],
+      "server_diagnostics": {
+        "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+        "correction_samples": 0,
+        "dropped_packets": 4,
+        "engine_static_memory_bytes": 22451844.0,
+        "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+        "mean_correction_m": 0.0,
+        "p95_correction_m": 0.0,
+        "p95_delayed_authority_gap_m": 0.0,
+        "received_payload_bytes": 71858,
+        "rejected_packets": 1,
+        "sent_payload_bytes": 522854,
+        "server_mean_tick_us": 328.216968011127,
+        "server_p95_tick_us": 766
+      },
+      "client_diagnostics": [
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 197,
+          "dropped_packets": 5,
+          "engine_static_memory_bytes": 22940974.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.0987598891346361,
+          "p95_correction_m": 0.628963470458984,
+          "p95_delayed_authority_gap_m": 2.375,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 205,
+          "dropped_packets": 1,
+          "engine_static_memory_bytes": 22957910.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.10723784662238,
+          "p95_correction_m": 0.555728912353516,
+          "p95_delayed_authority_gap_m": 2.22821140289307,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 202,
+          "dropped_packets": 4,
+          "engine_static_memory_bytes": 22949890.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.116400834675509,
+          "p95_correction_m": 0.506668090820312,
+          "p95_delayed_authority_gap_m": 2.15333557128906,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 202,
+          "dropped_packets": 3,
+          "engine_static_memory_bytes": 22949566.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.097270174274719,
+          "p95_correction_m": 0.443332672119141,
+          "p95_delayed_authority_gap_m": 1.66250038146973,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Linux native headless separate processes on local UDP; no physical devices/browser/production service"
+    },
+    {
+      "label": "network-100ms",
+      "status": "pass",
+      "server_pid": 8355,
+      "client_pids": [
+        8365,
+        8366,
+        8367,
+        8368
+      ],
+      "clients": 4,
+      "latency_ms_per_direction": 100,
+      "jitter_ms": 20,
+      "loss_fraction": 0.02,
+      "impairment": "Application-level scheduling/drop on actual ENet input/snapshot messages; control handshake reliable; not OS netem",
+      "source_files_sha256": {
+        "native/scripts/net/private_session.gd": "7181d5f39661696ef77b582f86697b7a076abcff9aba6765bdb0ab0c8a1814a6",
+        "native/scripts/net/session_view.gd": "90ab8aad598c2db800f8f7b02c165c6b0ccb87cc3b8c28488af3ef8f27e92db3",
+        "native/scripts/net/test_profile_store.gd": "f4626d17a8eb6ad4d761e2108b836ceeeb9397012b1ecdded784e6c2a78bddc3",
+        "native/scripts/drive3d/vehicle_sim.gd": "c12135612029158b44b3e47ff1d130481449c487075ad4c613613afee5b4f307"
+      },
+      "race_results": [
+        {
+          "checkpoint": 3,
+          "claim": "race-b4eaddf85e8d03a4:qa-driver-1",
+          "gp": 125,
+          "name": "Driver 582",
+          "place": 1,
+          "profile": "qa-driver-1"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-b4eaddf85e8d03a4:qa-driver-2",
+          "gp": 100,
+          "name": "Driver 583",
+          "place": 2,
+          "profile": "qa-driver-2"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-b4eaddf85e8d03a4:qa-driver-3",
+          "gp": 100,
+          "name": "Driver 584",
+          "place": 3,
+          "profile": "qa-driver-3"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-b4eaddf85e8d03a4:qa-driver-4",
+          "gp": 100,
+          "name": "Driver 585",
+          "place": 4,
+          "profile": "qa-driver-4"
+        }
+      ],
+      "server_diagnostics": {
+        "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+        "correction_samples": 0,
+        "dropped_packets": 9,
+        "engine_static_memory_bytes": 22451836.0,
+        "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+        "mean_correction_m": 0.0,
+        "p95_correction_m": 0.0,
+        "p95_delayed_authority_gap_m": 0.0,
+        "received_payload_bytes": 70804,
+        "rejected_packets": 4,
+        "sent_payload_bytes": 513778,
+        "server_mean_tick_us": 337.059805285118,
+        "server_p95_tick_us": 740
+      },
+      "client_diagnostics": [
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 190,
+          "dropped_packets": 4,
+          "engine_static_memory_bytes": 22928754.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.155252207560759,
+          "p95_correction_m": 0.694263458251953,
+          "p95_delayed_authority_gap_m": 4.59166526794434,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 202,
+          "dropped_packets": 1,
+          "engine_static_memory_bytes": 22949718.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.111868805888266,
+          "p95_correction_m": 0.569999694824219,
+          "p95_delayed_authority_gap_m": 3.84749984741211,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 198,
+          "dropped_packets": 6,
+          "engine_static_memory_bytes": 22939134.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.116609561247657,
+          "p95_correction_m": 0.506668090820312,
+          "p95_delayed_authority_gap_m": 3.46682262420654,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 202,
+          "dropped_packets": 6,
+          "engine_static_memory_bytes": 22953758.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.115305289902752,
+          "p95_correction_m": 0.443333625793457,
+          "p95_delayed_authority_gap_m": 3.21416664123535,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Linux native headless separate processes on local UDP; no physical devices/browser/production service"
+    },
+    {
+      "label": "network-150ms",
+      "status": "pass",
+      "server_pid": 8587,
+      "client_pids": [
+        8607,
+        8608,
+        8609,
+        8610
+      ],
+      "clients": 4,
+      "latency_ms_per_direction": 150,
+      "jitter_ms": 30,
+      "loss_fraction": 0.03,
+      "impairment": "Application-level scheduling/drop on actual ENet input/snapshot messages; control handshake reliable; not OS netem",
+      "source_files_sha256": {
+        "native/scripts/net/private_session.gd": "7181d5f39661696ef77b582f86697b7a076abcff9aba6765bdb0ab0c8a1814a6",
+        "native/scripts/net/session_view.gd": "90ab8aad598c2db800f8f7b02c165c6b0ccb87cc3b8c28488af3ef8f27e92db3",
+        "native/scripts/net/test_profile_store.gd": "f4626d17a8eb6ad4d761e2108b836ceeeb9397012b1ecdded784e6c2a78bddc3",
+        "native/scripts/drive3d/vehicle_sim.gd": "c12135612029158b44b3e47ff1d130481449c487075ad4c613613afee5b4f307"
+      },
+      "race_results": [
+        {
+          "checkpoint": 3,
+          "claim": "race-f3732072d7e69a6b:qa-driver-1",
+          "gp": 125,
+          "name": "Driver 582",
+          "place": 1,
+          "profile": "qa-driver-1"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-f3732072d7e69a6b:qa-driver-2",
+          "gp": 100,
+          "name": "Driver 583",
+          "place": 2,
+          "profile": "qa-driver-2"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-f3732072d7e69a6b:qa-driver-3",
+          "gp": 100,
+          "name": "Driver 584",
+          "place": 3,
+          "profile": "qa-driver-3"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-f3732072d7e69a6b:qa-driver-4",
+          "gp": 100,
+          "name": "Driver 585",
+          "place": 4,
+          "profile": "qa-driver-4"
+        }
+      ],
+      "server_diagnostics": {
+        "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+        "correction_samples": 0,
+        "dropped_packets": 14,
+        "engine_static_memory_bytes": 22451852.0,
+        "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+        "mean_correction_m": 0.0,
+        "p95_correction_m": 0.0,
+        "p95_delayed_authority_gap_m": 0.0,
+        "received_payload_bytes": 66526,
+        "rejected_packets": 59,
+        "sent_payload_bytes": 511202,
+        "server_mean_tick_us": 336.766342141864,
+        "server_p95_tick_us": 709
+      },
+      "client_diagnostics": [
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 189,
+          "dropped_packets": 10,
+          "engine_static_memory_bytes": 22929942.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.207614145650671,
+          "p95_correction_m": 0.94999885559082,
+          "p95_delayed_authority_gap_m": 6.39416313171387,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 191,
+          "dropped_packets": 5,
+          "engine_static_memory_bytes": 22925278.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.134382083797486,
+          "p95_correction_m": 0.569999694824219,
+          "p95_delayed_authority_gap_m": 5.55749893188477,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 192,
+          "dropped_packets": 6,
+          "engine_static_memory_bytes": 22932366.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.149298489375118,
+          "p95_correction_m": 0.759998321533203,
+          "p95_delayed_authority_gap_m": 5.19333267211914,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 202,
+          "dropped_packets": 10,
+          "engine_static_memory_bytes": 22951054.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.143814471345118,
+          "p95_correction_m": 0.665000915527344,
+          "p95_delayed_authority_gap_m": 4.76583290100098,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Linux native headless separate processes on local UDP; no physical devices/browser/production service"
+    },
+    {
+      "label": "network-250ms",
+      "status": "pass",
+      "server_pid": 9046,
+      "client_pids": [
+        9056,
+        9057,
+        9058,
+        9059
+      ],
+      "clients": 4,
+      "latency_ms_per_direction": 250,
+      "jitter_ms": 50,
+      "loss_fraction": 0.05,
+      "impairment": "Application-level scheduling/drop on actual ENet input/snapshot messages; control handshake reliable; not OS netem",
+      "source_files_sha256": {
+        "native/scripts/net/private_session.gd": "7181d5f39661696ef77b582f86697b7a076abcff9aba6765bdb0ab0c8a1814a6",
+        "native/scripts/net/session_view.gd": "90ab8aad598c2db800f8f7b02c165c6b0ccb87cc3b8c28488af3ef8f27e92db3",
+        "native/scripts/net/test_profile_store.gd": "f4626d17a8eb6ad4d761e2108b836ceeeb9397012b1ecdded784e6c2a78bddc3",
+        "native/scripts/drive3d/vehicle_sim.gd": "c12135612029158b44b3e47ff1d130481449c487075ad4c613613afee5b4f307"
+      },
+      "race_results": [
+        {
+          "checkpoint": 3,
+          "claim": "race-e9c1f3a2662141c7:qa-driver-1",
+          "gp": 125,
+          "name": "Driver 582",
+          "place": 1,
+          "profile": "qa-driver-1"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-e9c1f3a2662141c7:qa-driver-2",
+          "gp": 100,
+          "name": "Driver 583",
+          "place": 2,
+          "profile": "qa-driver-2"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-e9c1f3a2662141c7:qa-driver-3",
+          "gp": 100,
+          "name": "Driver 584",
+          "place": 3,
+          "profile": "qa-driver-3"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-e9c1f3a2662141c7:qa-driver-4",
+          "gp": 100,
+          "name": "Driver 585",
+          "place": 4,
+          "profile": "qa-driver-4"
+        }
+      ],
+      "server_diagnostics": {
+        "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+        "correction_samples": 0,
+        "dropped_packets": 42,
+        "engine_static_memory_bytes": 22451824.0,
+        "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+        "mean_correction_m": 0.0,
+        "p95_correction_m": 0.0,
+        "p95_delayed_authority_gap_m": 0.0,
+        "received_payload_bytes": 56234,
+        "rejected_packets": 180,
+        "sent_payload_bytes": 485302,
+        "server_mean_tick_us": 357.415855354659,
+        "server_p95_tick_us": 787
+      },
+      "client_diagnostics": [
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 159,
+          "dropped_packets": 11,
+          "engine_static_memory_bytes": 22861486.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.264969266646501,
+          "p95_correction_m": 1.02725219726562,
+          "p95_delayed_authority_gap_m": 10.2519311904907,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 170,
+          "dropped_packets": 18,
+          "engine_static_memory_bytes": 22881194.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.228053680960746,
+          "p95_correction_m": 0.854999542236328,
+          "p95_delayed_authority_gap_m": 8.97749900817871,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 178,
+          "dropped_packets": 14,
+          "engine_static_memory_bytes": 22899282.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.188916468741686,
+          "p95_correction_m": 0.760002136230469,
+          "p95_delayed_authority_gap_m": 8.48666572570801,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        },
+        {
+          "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+          "correction_samples": 172,
+          "dropped_packets": 11,
+          "engine_static_memory_bytes": 22890614.0,
+          "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+          "mean_correction_m": 0.22732675432899,
+          "p95_correction_m": 0.886667251586914,
+          "p95_delayed_authority_gap_m": 7.4123649597168,
+          "received_payload_bytes": 0,
+          "rejected_packets": 0,
+          "sent_payload_bytes": 0,
+          "server_mean_tick_us": 0.0,
+          "server_p95_tick_us": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Linux native headless separate processes on local UDP; no physical devices/browser/production service"
+    }
+  ],
+  "all_passed": true,
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "source_sha256": {
+    "native/scripts/net/private_session.gd": "7181d5f39661696ef77b582f86697b7a076abcff9aba6765bdb0ab0c8a1814a6",
+    "native/scripts/net/session_view.gd": "90ab8aad598c2db800f8f7b02c165c6b0ccb87cc3b8c28488af3ef8f27e92db3",
+    "native/scripts/net/test_profile_store.gd": "f4626d17a8eb6ad4d761e2108b836ceeeb9397012b1ecdded784e6c2a78bddc3"
+  }
+}

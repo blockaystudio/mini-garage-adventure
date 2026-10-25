@@ -1,0 +1,134 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: bundled economy/region catalogs validate
+PASS: eight real performance upgrades and six gates
+PASS: new profile starts without spendable GP or stars
+PASS: foundational parts stay free; new vehicles use mastery
+PASS: authored run begins: valley_first_drive
+PASS: ordered observation 1 run1
+PASS: ordered observation 2 run1
+PASS: ordered observation 3 run1
+PASS: ordered observation 4 run1
+PASS: E01 tutorial replaces all ordinary rewards and mastery
+PASS: authored run begins: valley_first_drive
+PASS: ordered observation 1 run2
+PASS: ordered observation 2 run2
+PASS: ordered observation 3 run2
+PASS: ordered observation 4 run2
+PASS: repeated tutorial grants nothing
+PASS: authored run begins: meadow
+PASS: ordered observation 1 run3
+PASS: ordered observation 2 run3
+PASS: ordered observation 3 run3
+PASS: ordered observation 4 run3
+PASS: E02 first authored2D finish pays30+50+25
+PASS: E04 duplicate callback cannot award twice
+PASS: E04 settled run cannot replay after relaunch
+PASS: authored run begins: orchard
+PASS: ordered observation 1 run4
+PASS: ordered observation 2 run4
+PASS: ordered observation 3 run4
+PASS: ordered observation 4 run4
+PASS: onboarding arithmetic gives360GP and two stars
+PASS: upgrade goal persists
+PASS: W03 stars alone do not admit marsh
+PASS: E07 atomic debit+grant buys mud tires
+PASS: E08 purchase retries/commands never charge again
+PASS: same transaction cannot buy a different item
+PASS: unowned part cannot be equipped
+PASS: free equip updates visible build and capability
+PASS: W04 entry is free and items are not consumed
+PASS: W05 admitted region survives free refitting
+PASS: earn/buy/equip/admit state survives real files/reload
+PASS: authored run begins: meadow
+PASS: ordered observation 1 run5
+PASS: ordered observation 2 run5
+PASS: ordered observation 3 run5
+PASS: ordered observation 4 run5
+PASS: E03 legitimate repeat pays30GP only
+PASS: authored run begins: meadow
+PASS: ordered observation 1 run6
+PASS: ordered observation 2 run6
+PASS: ordered observation 3 run6
+PASS: ordered observation 4 run6
+PASS: E05 a new objective pays once despite duplicated objective input
+PASS: authored run begins: meadow
+PASS: ordered observation 1 run7
+PASS: ordered observation 2 run7
+PASS: ordered observation 3 run7
+PASS: ordered observation 4 run7
+PASS: already-owned mastery is not spent or awarded again
+PASS: authored run begins: custom
+PASS: ordered observation 1 run8
+PASS: ordered observation 2 run8
+PASS: ordered observation 3 run8
+PASS: ordered observation 4 run8
+PASS: E15 custom tracks never farm currency or mastery
+PASS: unknown activity/server-only race kind rejected offline
+PASS: instant finish without measurements rejected
+PASS: teleported/skipped route cannot claim finish
+PASS: reverse checkpoint order rejected
+PASS: rapid restart invalidates superseded run
+PASS: ordered observation 1 run10
+PASS: ordered observation 2 run10
+PASS: ordered observation 3 run10
+PASS: ordered observation 4 run10
+PASS: new legitimate restart still finishes
+PASS: price fixture commits actual file
+PASS: E06 insufficient funds deduct/grant nothing and explain missing1GP
+PASS: E07 exact price reaches zero without negative balance
+PASS: E13 unknown item cannot enter inventory
+PASS: E13 invalid wallet/item/star IDs normalize safely
+PASS: non-finite wallet is rejected
+PASS: E10 schema2 grants75GP plus one completion star per course
+PASS: E10 migration preserves build settings private track and best times
+PASS: W09 all historical six-vehicle unlocks survive higher new thresholds
+PASS: migration commits current schema atomically
+PASS: E10 committed migration never grants twice
+PASS: authored run begins: valley_first_drive
+PASS: ordered observation 1 run1
+PASS: ordered observation 2 run1
+PASS: ordered observation 3 run1
+PASS: ordered observation 4 run1
+PASS: E11 migration compensation replaces introductory grant
+PASS: authored run begins: meadow
+PASS: ordered observation 1 run2
+PASS: ordered observation 2 run2
+PASS: ordered observation 3 run2
+PASS: ordered observation 4 run2
+PASS: historical clear/star claims prevent first-clear compensation being repeated
+PASS: E12 schema1 migrates through same compensation exactly once
+PASS: E09 failed backup cannot split purchase debit/grant
+PASS: E09 relaunch sees old complete transaction state
+PASS: E09 retry after storage repair buys exactly once
+PASS: E14 ledger remains64entries without forgetting permanent claims/high-water mark
+PASS: old settled IDs remain rejected after history compaction/relaunch
+PASS: ordered observation 1 run1
+PASS: ordered observation 2 run1
+PASS: ordered observation 3 run1
+PASS: ordered observation 4 run1
+PASS: failed reward commit leaves in-memory balance and claims unchanged
+PASS: lost primary plus valid interrupted record recovers complete award and deduplication claim
+PASS: recovered interrupted award cannot be claimed again
+PASS: recovered award can be committed after storage repair
+PASS: mismatched supported envelope/payload versions are corruption, not a second migration
+PASS: new steering sensitivity is bounded without discarding old settings
+PASS: missing optional Explore progress defaults safely
+PASS: admitted Explore region/checkpoint/heading persist across reload
+PASS: nonfinite checkpoint returns to safe default
+PASS: out-of-world checkpoint returns to safe default
+PASS: unadmitted destination cannot be restored from a local checkpoint
+PASS: schema1/2 migration receives safe optional Explore defaults
+PASS: concurrent-wallet fixture commits900GP
+PASS: first loaded writer buys mud
+PASS: stale writer rejects purchase and explains required reload
+PASS: stale writer cannot change committed wallet or temporary generation
+PASS: explicit reload then retry keeps both purchases with correct zero balance
+PASS: stale ordinary settings/build save also cannot overwrite newer purchases
+PASS: store that never loaded an existing profile cannot replace it
+PASS: unloaded store cannot hide a recovery-only wallet in .bak
+PASS: load then commit preserves recovered900GP from .bak
+PASS: unloaded store cannot hide a recovery-only wallet in .tmp
+PASS: load then commit preserves recovered900GP from .tmp
+PASS: E12 future schema4 is preserved and economic writes fail closed
+ECONOMY_RESULT checks=131 failures=0

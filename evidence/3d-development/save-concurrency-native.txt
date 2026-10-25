@@ -1,0 +1,49 @@
+PASS: isolated native wallet starts with900GP
+PASS: independent native PIDs load the same initial wallet
+PASS: first native process commits mud purchase
+PASS: second native process rejects its stale purchase
+PASS: new native process reloads then buys sand without losing mud
+PASS: race0 seed
+PASS: race0 exactly one concurrent snapshot may commit
+PASS: race0 disk contains one complete transaction
+PASS: race1 seed
+PASS: race1 exactly one concurrent snapshot may commit
+PASS: race1 disk contains one complete transaction
+PASS: race2 seed
+PASS: race2 exactly one concurrent snapshot may commit
+PASS: race2 disk contains one complete transaction
+PASS: race3 seed
+PASS: race3 exactly one concurrent snapshot may commit
+PASS: race3 disk contains one complete transaction
+PASS: race4 seed
+PASS: race4 exactly one concurrent snapshot may commit
+PASS: race4 disk contains one complete transaction
+PASS: race5 seed
+PASS: race5 exactly one concurrent snapshot may commit
+PASS: race5 disk contains one complete transaction
+PASS: race6 seed
+PASS: race6 exactly one concurrent snapshot may commit
+PASS: race6 disk contains one complete transaction
+PASS: race7 seed
+PASS: race7 exactly one concurrent snapshot may commit
+PASS: race7 disk contains one complete transaction
+PASS: crash fixture seed
+PASS: native process acquires nonempty writer lock
+PASS: live native writer lock rejects other purchases
+PASS: reset cannot remove a live writer's files
+PASS: after killed writer is reaped, dead native lock recovers safely
+PASS: successful save releases writer lock
+PASS: normal and contested writers leave no candidate locks
+PASS: reclaim0 seed
+PASS: reclaim0 native writer lock acquired
+PASS: reclaim0 competing dead-owner reclaimers permit one transaction
+PASS: reclaim0 surviving complete wallet is preserved
+PASS: reclaim1 seed
+PASS: reclaim1 native writer lock acquired
+PASS: reclaim1 competing dead-owner reclaimers permit one transaction
+PASS: reclaim1 surviving complete wallet is preserved
+PASS: reclaim2 seed
+PASS: reclaim2 native writer lock acquired
+PASS: reclaim2 competing dead-owner reclaimers permit one transaction
+PASS: reclaim2 surviving complete wallet is preserved
+SAVE_CONCURRENCY_RESULT checks=48 failures=0 (native Linux processes)

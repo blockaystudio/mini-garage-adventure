@@ -31,7 +31,10 @@ static func render(game: Node) -> void:
 	else:
 		action = game._button("Buy for %d GP" % int(selected.price),660,508,540,func(): game._purchase_upgrade(game.selected_upgrade),true,80)
 		action.disabled = int(game.state.gp) < int(selected.price)
-	game._button("Goal pinned" if game.state.goal == game.selected_upgrade else "Pin upgrade goal",44,644,548,func(): game._pin_upgrade(game.selected_upgrade),game.state.goal == game.selected_upgrade)
+	if "another game instance" in game.store.warning:
+		game._button("Reload saved garage",44,644,548,game.reload_saved_garage,true)
+	else:
+		game._button("Goal pinned" if game.state.goal == game.selected_upgrade else "Pin upgrade goal",44,644,548,func(): game._pin_upgrade(game.selected_upgrade),game.state.goal == game.selected_upgrade)
 	game._label(game.store.warning if not game.store.warning.is_empty() else game.status,634,632,596,65,20,game.ORANGE)
 	if game.compact_mode:
 		# Focused detail drawer: keep the action visible and scroll only the catalog.

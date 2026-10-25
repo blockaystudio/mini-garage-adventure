@@ -13,6 +13,16 @@ const Economy = preload("res://scripts/progression/economy.gd")
 const Progression = preload("res://scripts/progression/profile_progression.gd")
 const Catalog = preload("res://scripts/progression/catalog.gd")
 const UpgradeScreen = preload("res://scripts/ui/upgrade_screen.gd")
+const GarageScreen = preload("res://scripts/ui/garage_screen.gd")
+const ExploreMode = preload("res://scripts/drive3d/explore_mode.gd")
+var explore: Node3D
+var private_mode: Node3D
+var private_session: Node
+var private_join := {"host":"127.0.0.1","port":24680,"invite":"","profile":"","token":""}
+var network_test_enabled := false
+var garage_tab := "Parts"
+var wallet_header: Label
+var header_section := ""
 var economy
 var active_run_id := 0
 var selected_upgrade := "mud"
@@ -45,6 +55,7 @@ var transition_time := 0.0
 
 func _ready() -> void:
 	compact_mode = OS.has_feature("mobile") or OS.has_feature("web_ios") or OS.has_feature("web_android") or DisplayServer.window_get_size().x < 1100
+	network_test_enabled = "--private-network-test" in OS.get_cmdline_user_args() and not OS.has_feature("web")
 	state = store.load_save()
 	economy = Economy.new(store)
 	add_child(world)
@@ -106,6 +117,16 @@ func _fit_ui_to_rect(safe: Rect2) -> void:
 	ui.position = safe.position + (safe.size-design*factor)*0.5
 
 func _clear(next_page: String) -> void:
+	if next_page != "friends" and is_instance_valid(private_mode):
+		private_mode.close_mode()
+		private_mode.queue_free()
+		private_mode = null
+		_close_private_session()
+	if next_page != "explore" and is_instance_valid(explore):
+		explore.close_mode()
+		explore.queue_free()
+		explore = null
+		state = store.data.duplicate(true)
 	router.clear()
 	router.active = false
 	router.regions.clear()
@@ -117,6 +138,7 @@ func _clear(next_page: String) -> void:
 	clock_label = null
 	progress_bar = null
 	status_label = null
+	wallet_header = null
 	world.visible = next_page in ["garage", "drive"]
 	world.garage_mode = next_page == "garage"
 	world.build = state.build.duplicate()
@@ -176,16 +198,21 @@ func _background() -> void:
 	background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	ui.add_child(background)
 
-func _header(section: String, back: Callable = Callable()) -> void:
+func _header(section: String, back: Callable = Callable(), show_actions: bool = true) -> void:
 	_panel(24,20,1232,100,Color("142c40ed"))
 	_label("MINI GARAGE",48,30,380,42,30,TEAL)
-	_label("%d GP  /  %d stars  /  %s" % [int(state.get("gp",0)),Progression.stars_count(state),section.to_upper()],49,74,850,32,17)
+	header_section = section.to_upper()
+	wallet_header = _label("%d GP  /  %d stars  /  %s" % [int(state.get("gp",0)),Progression.stars_count(state),header_section],49,74,850,32,17)
+	if not show_actions:
+		return
 	if back.is_valid():
 		_button("Back",1100,42,132,back)
 	else:
 		_button("Grown-ups",1060,42,172,show_gate)
 
 func _save(message: String = "Saved on this device") -> bool:
+	if page == "explore":
+		state = store.data.duplicate(true)
 	if store.save_data(state):
 		state = store.data.duplicate(true)
 		status = message
@@ -219,7 +246,12 @@ func _build_choice(key: String, value: String) -> void:
 func show_garage() -> void:
 	paused = false
 	_clear("garage")
+	if compact_mode:
+		GarageScreen.render(self)
+		return
 	_header("Build your ride")
+	if network_test_enabled:
+		_button("Private test",850,42,190,show_private_sessions)
 	_panel(30,138,600,550, Color("142c40f2"))
 	_label("Little ride. Big possibilities.",52,151,550,40,28)
 	_label("01  VEHICLE · number = mastery stars",52,202,540,30,17,TEAL)
@@ -256,7 +288,8 @@ func show_garage() -> void:
 	_label(store.warning if not store.warning.is_empty() else status,52,643,550,32,16,ORANGE)
 	var vehicle: Dictionary = Content.VEHICLES[state.build.vehicle]
 	_panel(667,138,563,139,Color("142c40ef"))
-	_label(vehicle.label.to_upper(),690,153,510,52,40,CREAM)
+	_label(vehicle.label.to_upper(),690,153,340,52,36,CREAM)
+	_button("Explore 3D",1040,153,172,func(): show_explore(),true)
 	_label(vehicle.description,690,210,510,60,20,TEAL)
 	_panel(667,453,563,121,Color("142c40ef"))
 	_label("FEEL THE DIFFERENCE",688,463,510,25,16,TEAL)
@@ -357,6 +390,8 @@ func _physics_process(delta: float) -> void:
 		_finish()
 
 func _process(delta: float) -> void:
+	if is_instance_valid(wallet_header):
+		wallet_header.text = "%d GP  /  %d stars  /  %s" % [int(state.get("gp",0)),Progression.stars_count(state),header_section]
 	if is_instance_valid(world) and world.visible:
 		world.queue_redraw()
 	if is_instance_valid(ui):
@@ -535,6 +570,17 @@ func show_parents() -> void:
 		_sync_settings())
 	volume.drag_ended.connect(func(_changed): _save())
 	volume.focus_exited.connect(func(): _save())
+	_label("Steering sensitivity",940,248,280,34,20,TEAL)
+	var steering := HSlider.new()
+	steering.accessibility_name = "Steering sensitivity"
+	steering.min_value = 0.5
+	steering.max_value = 1.5
+	steering.step = 0.1
+	steering.value = state.settings.get("steering_sensitivity",1.0)
+	_place(steering,940,286,280,56)
+	steering.value_changed.connect(func(value): state.settings.steering_sensitivity = value)
+	steering.drag_ended.connect(func(_changed): _save())
+	steering.focus_exited.connect(func(): _save())
 	_button("Reduced motion: ON" if state.settings.reduced_motion else "Reduced motion: OFF",44,327,425,func():
 		state.settings.reduced_motion = not state.settings.reduced_motion
 		_settings_changed(),state.settings.reduced_motion)
@@ -546,6 +592,8 @@ func show_parents() -> void:
 	_button("Help & privacy",44,591,270,show_help)
 	_button("Reset local progress",336,591,340,_confirm_reset)
 	_button("Engine licenses",698,591,270,show_licenses)
+	if network_test_enabled:
+		_button("Private rooms",988,591,244,show_private_sessions)
 	_label(store.warning if not store.warning.is_empty() else status,44,661,1150,33,18,ORANGE)
 	_compact()
 
@@ -574,7 +622,7 @@ func show_help() -> void:
 	_label("Build. Explore. Make it yours.",44,144,1170,48,34)
 	_label("DRIVING\nHold Drive to go, Brake to slow. Lean helps your ride settle on a slope. Restart as often as you like. A finish earns a local medal. Try a tire or suspension change on the same course to feel its tradeoff.",46,220,1160,124,23,TEAL)
 	_label("PRIVATE TRACKS\nChoose 4–16 pieces with flat start and finish sections. Save, then test drive your design. Tracks, builds, settings and course progress stay in the app’s local storage. Uninstalling or losing the device can lose them.",46,366,1160,115,22)
-	_label("PRIVACY\nThis game has no ads, purchases, accounts, chat, analytics, camera, microphone, location or public sharing. It makes no runtime network requests. No personal details are needed. Reset local progress in Settings to erase the game’s save files.",46,500,1160,115,22,TEAL)
+	_label("PRIVACY\nThis game has no ads, real-money purchases, accounts, chat, analytics, camera, microphone, location or public sharing. It makes no runtime network requests. No personal details are needed. Reset local progress in Settings to erase the game’s save files.",46,500,1160,115,22,TEAL)
 	_label("Arcade play, not real-world driving instruction. Support contact and publisher identity await owner confirmation before release. The grown-up check is an interaction gate, not legal consent.",46,632,1160,65,18,ORANGE)
 	_compact()
 
@@ -613,11 +661,22 @@ func _notification(what: int) -> void:
 		router.clear()
 		if page == "drive":
 			_pause()
+		elif page == "explore" and is_instance_valid(explore):
+			explore.pause_drive()
 		else:
 			_save()
 	elif what == NOTIFICATION_WM_GO_BACK_REQUEST:
-		if page == "drive":
-			_pause()
+		if page == "explore" and is_instance_valid(explore):
+			if explore.paused:
+				explore.resume_drive()
+			else:
+				explore.pause_drive()
+		elif page == "drive":
+			if paused:
+				paused = false
+				_show_drive()
+			else:
+				_pause()
 		else:
 			show_garage()
 	elif what == NOTIFICATION_WM_CLOSE_REQUEST:
@@ -629,6 +688,10 @@ func quit_game() -> void:
 	if closing:
 		return
 	closing = true
+	_close_private_session()
+	if is_instance_valid(explore):
+		explore.close_mode()
+		state = store.data.duplicate(true)
 	router.clear()
 	router.active = false
 	paused = true
@@ -713,3 +776,101 @@ func _start_intro_drive() -> void:
 	intro.label = "Introductory garage drive"
 	intro.reward_kind = "tutorial"
 	start_course(intro)
+
+func show_explore(region_id: String = "") -> void:
+	if is_instance_valid(explore):
+		explore.close_mode()
+		remove_child(explore)
+		explore.queue_free()
+		explore = null
+	state = store.data.duplicate(true)
+	var destination := region_id if not region_id.is_empty() else str(state.get("explore",{}).get("region","garage_valley"))
+	if not Progression.gate_reason(state,destination).is_empty():
+		destination = "garage_valley"
+	if not Progression.admit_region(store,destination):
+		status = store.warning
+		show_garage()
+		return
+	state = store.data.duplicate(true)
+	_clear("explore")
+	paused = false
+	explore = ExploreMode.new()
+	explore.name = "ExploreMode"
+	explore.game = self
+	explore.region = destination
+	add_child(explore)
+
+func show_private_sessions() -> void:
+	if not network_test_enabled or OS.has_feature("web"):
+		status = "This build keeps solo offline. Private native testing has a separate launch option."
+		show_garage()
+		return
+	if is_instance_valid(private_session):
+		private_join.profile = private_session.profile_id
+		private_join.token = private_session.rejoin_token
+		private_session.leave()
+		get_tree().root.remove_child(private_session)
+		private_session.queue_free()
+		private_session = null
+	_clear("friends_menu")
+	_background()
+	_header("Private native test",show_garage)
+	_label("Four real drivers. One private test room.",44,148,1160,52,32)
+	_label("Isolated test profiles only. Solo GP is never imported. No public lobby, chat or voice. This is not a child-facing online release.",46,213,1160,86,23,TEAL)
+	_label("Server private address",44,310,550,35,22)
+	var host := LineEdit.new()
+	host.text = private_join.host
+	host.accessibility_name = "Private server address"
+	_place(host,44,358,540,88)
+	_label("Invitation code",632,310,580,35,22)
+	var invitation := LineEdit.new()
+	invitation.text = private_join.invite
+	invitation.accessibility_name = "Expiring private invitation"
+	_place(invitation,632,358,580,88)
+	_button("Create local room",44,484,540,func():
+		private_join.host = host.text.strip_edges()
+		_start_private_room(true,private_join.host,""),true,112)
+	_button("Join / rejoin room",632,484,580,func():
+		private_join.host = host.text.strip_edges()
+		private_join.invite = invitation.text.strip_edges().to_upper()
+		_start_private_room(false,private_join.host,private_join.invite),false,112)
+	_label(status+" Native ENet test only; browser crossplay and public hosting are not configured.",46,625,1160,62,21,ORANGE)
+
+func _start_private_room(hosting: bool, address: String, invitation: String) -> void:
+	var script = load("res://scripts/net/private_session.gd")
+	private_session = script.new()
+	private_session.name = "PrivateSession"
+	get_tree().root.add_child(private_session)
+	var error: Error
+	if hosting:
+		error = private_session.start_server(int(private_join.port),4,"user://network-test/room-"+str(private_join.port)+".json",true,address)
+	else:
+		error = private_session.join(address,int(private_join.port),invitation,private_join.profile,private_join.token)
+	if error != OK:
+		status = private_session.status
+		show_private_sessions()
+		return
+	private_join.invite = private_session.invite if hosting else invitation
+	_clear("friends")
+	private_mode = load("res://scripts/net/session_view.gd").new()
+	private_mode.game = self
+	private_mode.session = private_session
+	add_child(private_mode)
+
+func reload_saved_garage() -> void:
+	state = store.load_save()
+	economy = Economy.new(store)
+	active_run_id = 0
+	status = "Loaded the latest saved garage. Your GP and owned parts are safe."
+	show_garage()
+
+func _close_private_session() -> void:
+	if not is_instance_valid(private_session):
+		return
+	private_join.profile = private_session.profile_id
+	private_join.token = private_session.rejoin_token
+	private_session.leave()
+	if private_session.get_parent():
+		private_session.get_parent().remove_child(private_session)
+	private_session.queue_free()
+	private_session = null

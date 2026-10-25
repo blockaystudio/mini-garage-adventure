@@ -1,0 +1,1 @@
+NATIVE3D CAPTURE FAILED: Source changed during capture; retain as development capture only and rerun frozen source
