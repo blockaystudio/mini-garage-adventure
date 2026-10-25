@@ -5,16 +5,16 @@
     "native/scripts/compact_layout.gd": "9d16dd7d8e99ac30a387f759a9f13effe51581c815d6d8a4ae7267ec033492b9",
     "native/scripts/content.gd": "6a66313533f38e8dacf89cd04a019a398d5b16791e8425cb9c66827ccb5db99b",
     "native/scripts/editor_model.gd": "75b72351f3efe45e63fb8699c2acf271f8617e9416894c2c5b9b4059aeae0d22",
-    "native/scripts/input_router.gd": "dd1cadd26858393b8b49fbb9e908aad660e19a3c310e43ed44628d9058c26ee6",
-    "native/scripts/main.gd": "9260a0e06d417d3627d7e2776998a70d2fd2353394509c68c3b2cb13548d9bfa",
+    "native/scripts/input_router.gd": "0d777f253568b710561fafe446de606e82e348f1d01686318c4e86b4a57c3b09",
+    "native/scripts/main.gd": "3f8dc63652095b807d611a1898e4a26116b3fb5fec1bd60c5617997f564cc321",
     "native/scripts/save_store.gd": "1dab65dcebf9ff11a0ff2166ca39a3567d8a668d1dea478dea03a9f2640b8708",
     "native/scripts/sound.gd": "c701e4d2db1e1d2d85c26a883ba704bdf73cce9e6073498112f08c933e9e632a",
     "native/scripts/track_model.gd": "03c24f16e03226455a1972e7c999cf3b62ff377ea6ddb5350d3994c53283584a",
     "native/scripts/vehicle_model.gd": "e5759e62daecb55f5bcfa8bbcc1c69b9888746bae5ffe133da26fa51d3ea72b9",
     "native/scripts/world_view.gd": "0616603b17c4b1356ccbfafce05507dfc45faf7623a5faddc9ea5b8f8199171d",
     "native/scenes/main.tscn": "e33db81e6d6d6edbb0bf6c23c435bc534bb62f8f849c67ae500cb7de3d22c423",
-    "native/project.godot": "4fc1438e58c577c1b9b4caba9e4da0c0bafd32cf6f5e151d078e1e14f5aab7e7",
-    "native/export_presets.cfg": "a91916f5fb6e8290a7bad2fc05896d91291b2037691e6f6cc1c33c82534d85bb",
+    "native/project.godot": "02468ffa47a46a2700185ce6002e697dac10ef3e22ec5aea0eae7499266e4b93",
+    "native/export_presets.cfg": "3e88bd13dc62e30cfa4a4d30ae9515be978b0754629ff14dc0f1f41a5a1d0b4a",
     "native/art/icon.svg": "ccc6f6bf8f626e13e9b7e96ffa997479fc99242783f0e59880b22333e21b0792",
     "native/licenses/GODOT_AUTHORS.md": "2eb271244aea70a5818c6c004892a74eecc129aed84e97656d5563be3769f560",
     "native/licenses/GODOT_COPYRIGHT.txt": "b3330849267d56ddd3d62a513817506606c2195034411fe05859f0140bff9d8a",
@@ -23,18 +23,18 @@
   "artifacts": [
     {
       "path": "builds/mini-garage-adventure.x86_64",
-      "bytes": 71287152,
-      "sha256": "fa7cf61f34f29ba8a36d7eacb2b2dcefc8edf7c447fd4fed15d726ddd261e506"
+      "bytes": 71287728,
+      "sha256": "10f428e429bbd8ca93a241702ab95b49b9be4c071da7b4fef5aef950f1884830"
     },
     {
       "path": "builds/mini-garage-adventure-linux.zip",
-      "bytes": 27421533,
-      "sha256": "09f29213733b96676624b1c751273746e69083a2e55dd22992bc7979e0a9dddc"
+      "bytes": 27315630,
+      "sha256": "937ec66af1531f2ced85fabe35599689557e3352ed5bf72e56be8244adb97ab0"
     },
     {
       "path": "builds/mini-garage-adventure-debug.apk",
-      "bytes": 55966318,
-      "sha256": "fbd9a2147feb94fafcb0deb3146fcf5b4fc16c068bb10a0c9831580846992653"
+      "bytes": 55970414,
+      "sha256": "50d713836d46d90e567e9a7df57cd45b21bf25e1b32b07da0b0d89eb986a3678"
     },
     {
       "path": "builds/native-gameplay-desktop.mp4",
@@ -46,5 +46,7 @@
   "android_scope": "debug-signed APK, v2/v3 signature independently verified, static binary-manifest/inventory audit; NOT installed or run on device/emulator",
   "ios": "not exported/built; macOS/Xcode/signing unavailable",
   "release_candidate": "not all acceptance gates met; see docs/RELEASE_CHECKLIST.md",
-  "main_source_unchanged_during_both_final_exports": true
+  "main_source_unchanged_during_both_final_exports": true,
+  "rebuilt_for": "Actual touch GUI dispatch fix: mouse emulation enabled, raw router ignores emulated mouse; explicit Web mobile compact features and deferred Web GUI actions. Previous build evidence preserved under evidence/native-build-history/pre-touch-fix",
+  "runtime_source_unchanged_during_exports": true
 }

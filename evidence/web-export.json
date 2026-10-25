@@ -1,0 +1,79 @@
+{
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "native_runtime_commit": "0659db7a95a1ab1fe72716f177e52e52536cbd65",
+  "preset": "Web phone test",
+  "single_threaded": true,
+  "source_files_sha256": {
+    "native/scripts/compact_layout.gd": "9d16dd7d8e99ac30a387f759a9f13effe51581c815d6d8a4ae7267ec033492b9",
+    "native/scripts/content.gd": "6a66313533f38e8dacf89cd04a019a398d5b16791e8425cb9c66827ccb5db99b",
+    "native/scripts/editor_model.gd": "75b72351f3efe45e63fb8699c2acf271f8617e9416894c2c5b9b4059aeae0d22",
+    "native/scripts/input_router.gd": "0d777f253568b710561fafe446de606e82e348f1d01686318c4e86b4a57c3b09",
+    "native/scripts/main.gd": "3f8dc63652095b807d611a1898e4a26116b3fb5fec1bd60c5617997f564cc321",
+    "native/scripts/save_store.gd": "1dab65dcebf9ff11a0ff2166ca39a3567d8a668d1dea478dea03a9f2640b8708",
+    "native/scripts/sound.gd": "c701e4d2db1e1d2d85c26a883ba704bdf73cce9e6073498112f08c933e9e632a",
+    "native/scripts/track_model.gd": "03c24f16e03226455a1972e7c999cf3b62ff377ea6ddb5350d3994c53283584a",
+    "native/scripts/vehicle_model.gd": "e5759e62daecb55f5bcfa8bbcc1c69b9888746bae5ffe133da26fa51d3ea72b9",
+    "native/scripts/world_view.gd": "0616603b17c4b1356ccbfafce05507dfc45faf7623a5faddc9ea5b8f8199171d",
+    "native/project.godot": "02468ffa47a46a2700185ce6002e697dac10ef3e22ec5aea0eae7499266e4b93",
+    "native/export_presets.cfg": "3e88bd13dc62e30cfa4a4d30ae9515be978b0754629ff14dc0f1f41a5a1d0b4a",
+    "native/scenes/main.tscn": "e33db81e6d6d6edbb0bf6c23c435bc534bb62f8f849c67ae500cb7de3d22c423"
+  },
+  "renderer": "Compatibility/WebGL2",
+  "requires_cross_origin_isolation": false,
+  "wasm_delivery": {
+    "encoding": "first-party gzip file + bounded DecompressionStream loader",
+    "raw_bytes": 37700666,
+    "compressed_bytes": 9382282,
+    "raw_sha256": "26b61ce95247012ab3dca3ff51e96d1cdbff44ee91a8c20a83e150afca83f1b6",
+    "roundtrip_verified": true,
+    "minimum_safari": "16.4"
+  },
+  "scope": "Actual complete Godot game export; not the preserved one-buggy browser prototype. No mobile browser/device test inferred.",
+  "files": [
+    {
+      "name": "index.apple-touch-icon.png",
+      "bytes": 6035,
+      "sha256": "d52776d5fbbc58ceb1fba22e7c640811d11bceb229260658c2f3b0e07eac1a77"
+    },
+    {
+      "name": "index.audio.position.worklet.js",
+      "bytes": 2973,
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    {
+      "name": "index.audio.worklet.js",
+      "bytes": 7298,
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    {
+      "name": "index.html",
+      "bytes": 9134,
+      "sha256": "a4fb79678b05896ed4cfc9a83e7168b781cd0b6bffceaab6222d6004a0e47a6c"
+    },
+    {
+      "name": "index.icon.png",
+      "bytes": 51426,
+      "sha256": "175cb5c11ef63c02b8bea2b38ea9efad784578f7b19089b5e9e24416dc8c3b0d"
+    },
+    {
+      "name": "index.js",
+      "bytes": 315759,
+      "sha256": "e3f56ee40e6f84371053db06692cfac15e2c8659547b11c6b2dfa1996dabd981"
+    },
+    {
+      "name": "index.pck",
+      "bytes": 211856,
+      "sha256": "4e57077cbd5c4fb1d2002e65dd490396a72e703b09ebbb3bc90d520bb17a3ef6"
+    },
+    {
+      "name": "index.png",
+      "bytes": 21443,
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    {
+      "name": "index.wasm.gz",
+      "bytes": 9382282,
+      "sha256": "9352825a316f4449b81d326706e78be95ed5a81c0e797f35879ef8b39bc505bd"
+    }
+  ]
+}

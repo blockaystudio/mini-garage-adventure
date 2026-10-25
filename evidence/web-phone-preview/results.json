@@ -1,0 +1,102 @@
+{
+  "scope": "Actual local HTTP Chromium154/SwiftShader plus Chromium phone emulation; no physical phone/Safari or native Android/iOS QA",
+  "checks": [
+    {
+      "passed": true,
+      "description": "phone launcher has a direct top-level Play link"
+    },
+    {
+      "passed": true,
+      "description": "portrait launcher has no horizontal overflow"
+    },
+    {
+      "passed": true,
+      "description": "portrait launcher shows rotate-phone advice"
+    },
+    {
+      "passed": true,
+      "description": "phone-emulated landscape full-game canvas fits844px width"
+    },
+    {
+      "passed": true,
+      "description": "actual touchscreen Grown-ups tap opens the dark parent-gate form"
+    },
+    {
+      "passed": false,
+      "description": "phone-emulated raw-touch driving completes/saves Meadow after keyboard menu setup"
+    },
+    {
+      "passed": true,
+      "description": "no page errors or console errors in full-game flows"
+    },
+    {
+      "passed": true,
+      "description": "no unexpected external requests from launcher/game"
+    },
+    {
+      "passed": true,
+      "description": "actual packed gzip WebAssembly asset is fetched and booted"
+    },
+    {
+      "passed": true,
+      "description": "iPhone-UA DPR3 chooses the large compact phone form, not the desktop grid"
+    },
+    {
+      "passed": true,
+      "description": "all DPR3/mobile flows finish without page or console errors"
+    }
+  ],
+  "passed": 10,
+  "failed": 1,
+  "errors": [],
+  "console": [
+    {
+      "type": "log",
+      "text": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org"
+    },
+    {
+      "type": "log",
+      "text": "OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL"
+    },
+    {
+      "type": "log",
+      "text": "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+    },
+    {
+      "type": "log",
+      "text": "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org"
+    },
+    {
+      "type": "log",
+      "text": "OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL"
+    },
+    {
+      "type": "log",
+      "text": "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+    }
+  ],
+  "requests": [
+    "[local-origin]/",
+    "[local-origin]/assets/garage-icon.svg",
+    "[local-origin]/assets/garage-icon.svg",
+    "[local-origin]/game/",
+    "[local-origin]/game/index.png",
+    "[local-origin]/game/index.js",
+    "[local-origin]/game/index.wasm.gz",
+    "[local-origin]/game/index.pck",
+    "[local-origin]/game/index.icon.png",
+    "blob:[local-origin]/78bade9b-6cac-4516-b550-76e4aad82a79",
+    "[local-origin]/game/",
+    "[local-origin]/game/index.png",
+    "[local-origin]/game/index.js",
+    "[local-origin]/game/index.wasm.gz",
+    "[local-origin]/game/index.pck",
+    "[local-origin]/game/index.icon.png",
+    "blob:[local-origin]/b27afe68-45ec-470d-864c-11b6dac9d27e"
+  ],
+  "wall_seconds": 58.255,
+  "wasm_sha256": "9352825a316f4449b81d326706e78be95ed5a81c0e797f35879ef8b39bc505bd",
+  "manual_review": [
+    "Actual screenshots inspected. Touch opens the gate and scrolls. Keyboard focus is used only for deterministic menu setup before raw-touch driving. No game state is injected. Browser touch emulation, not hardware gestures."
+  ]
+}

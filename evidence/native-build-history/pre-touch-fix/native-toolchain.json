@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-25",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "templates": {
+    "name": "Godot_v4.6.3-stable_export_templates.tpz",
+    "url": "https://github.com/godotengine/godot/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz",
+    "bytes": 1255918323,
+    "sha256": "3fbe2c0e2dec9d537ab9ec97bcf8da91dcf23357fc51f67092dd068d839290a8"
+  },
+  "java": "OpenJDK21.0.12.1 Debian",
+  "adb": "34.0.5-debian",
+  "apksigner_package": "35.0.2-1",
+  "apksigner_cli_version": "0.9",
+  "tool_package_source": "https://deb.debian.org/debian/pool/main/a/",
+  "debian_packages": [
+    {
+      "file": "adb_34.0.5-13_amd64.deb",
+      "sha256": "0e02db8e1305633513a4b0985bb97b42e20ce880b8f837eb493f2ac9b51c2d46"
+    },
+    {
+      "file": "android-libbase_34.0.5-13_amd64.deb",
+      "sha256": "707654e979c3064937fe9ee9f7d919c56001c87cab2421818fa29b484cee559f"
+    },
+    {
+      "file": "android-libboringssl_14.0.0+r45-2_amd64.deb",
+      "sha256": "f139f5a5192f7dc3b5442976523c505e1ff2b900336ad654d07a91a517939aaa"
+    },
+    {
+      "file": "android-libcutils_34.0.5-13_amd64.deb",
+      "sha256": "2affb192dd2d807d2d1dfafa52996cbac771579015b5d7a7ec8bbd7476f91558"
+    },
+    {
+      "file": "android-liblog_34.0.5-13_amd64.deb",
+      "sha256": "f179c3d5e326a1b34d6f0198aa92cc731b9b2ed15a4788eeffbc2c649083bddc"
+    },
+    {
+      "file": "android-libziparchive_34.0.5-13_amd64.deb",
+      "sha256": "7be3c3adbb5d41273d15efae5e38fd34a78ac3f60e2050d127b69ff3b5abd72d"
+    },
+    {
+      "file": "apksigner_35.0.2-1_all.deb",
+      "sha256": "5525a18d6a4cbb5025c2f74def51fa170b9eefdb98e3be18bb3d5207ed857797"
+    },
+    {
+      "file": "libapksig-java_35.0.2-1_all.deb",
+      "sha256": "231c0f14ff5362b62bf92cdfdfbad6338f45f8c2e612dc4c1c96b542160ffe2f"
+    }
+  ],
+  "sdk_agreements_accepted": false,
+  "android_execution": "not installed/run on a device or emulator",
+  "ios_toolchain": "not available on Linux",
+  "android_release_aab": "not built; full Gradle SDK and owner production signing pending",
+  "final_artifacts": [
+    {
+      "path": "builds/mini-garage-adventure.x86_64",
+      "bytes": 71287440,
+      "sha256": "d4fc09b75965314f78fcc04a77d42dd8e4b2cfecc02f036aa8f7672d8d2bee6e"
+    },
+    {
+      "path": "builds/mini-garage-adventure-linux.zip",
+      "bytes": 27315304,
+      "sha256": "355183645f80cbe23b16a938d2a44120066b94e76967cdcb0365d4104476471b"
+    },
+    {
+      "path": "builds/mini-garage-adventure-debug.apk",
+      "bytes": 55966318,
+      "sha256": "6e69f2afc8b2a8b9852498402e98107fed18f9d6b5fd467d20daaf2851132337"
+    },
+    {
+      "path": "builds/native-gameplay-desktop.mp4",
+      "bytes": 1299040,
+      "sha256": "1d6d7ac3e1f87dba858637177d8ec17678a09b519afc31269046fd5de6dca20e"
+    }
+  ]
+}

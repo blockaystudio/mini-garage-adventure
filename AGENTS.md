@@ -1,9 +1,7 @@
 # AGENTS.md — Mini Garage Adventure
 
 ## Product and current state
-This repository contains a playable browser prototype: vehicle customization, arcade driving, and a local track editor.
-Production goal: an original child-appropriate iOS/Android game, with a native Godot
-implementation still to be built. Do not present HTML as a finished native app.
+This repository contains a preserved browser reference and a real native Godot4.6.3 game under `native/`: six vehicles, twelve authored courses, part handling changes, local progression and a private track editor. Native source is desktop-verified; mobile device acceptance and release reviews remain open. Read the latest production checkpoint in `docs/MASTER_TRACKER.md`; do not present desktop tests as mobile approval.
 
 Read `HANDOFF.md`, `docs/GITHUB_CODEX_STATUS.md`, `docs/CODEX_TASKS.md`,
 `docs/MASTER_TRACKER.md`, and `evidence/QA_REPORT.md` before changing code.
@@ -15,11 +13,13 @@ The original master plan describes intended scope, not delivered features.
 - Rebuild: `python build.py`.
 - Verify: `python scripts/verify.py`.
 - Local preview: `python server/serve_preview.py` (serves only `play/` on loopback).
-- Browser/UI tests are not included in this standalone initial test harness. Add
-  real browser tests as task OPT-01; do not mislabel Node tests as UI/device testing.
+- Browser regression: `python tests/browser_smoke.py` after installing `tests/requirements-browser.txt` and Chromium. Real local HTTP origin, not a storage fixture.
+- Native run: `godot --path native` (Godot4.6.3 standard); checks: `python scripts/verify_native.py`.
+- Device/build/benchmark instructions: `native/README.md`, `docs/ANDROID_QA.md`, `docs/IOS_BUILD.md`, `docs/PERFORMANCE.md`. Do not mislabel desktop/injected tests as device testing.
 
 ## Source map and editing rules
-- `games/garage.js`, `.css`, `.body.html`: this game's source.
+- `native/`: separate native models/UI/input/rendering/saves/content/art and native tests; no browser remote scaffold is shipped.
+- `games/garage.js`, `.css`, `.body.html`: preserved browser reference source.
 - `shared/`: shared models, rendering/UI, and future disabled remote policy logic.
 - `play/`: generated standalone pages. Edit source, rebuild, commit generated pages.
 - `art/`, `storefronts/`: draft art and marketing, not final approved store assets.
@@ -42,7 +42,7 @@ visibility changes, deletion of history or changes to unrelated repositories.
 
 ## Workflow and evidence
 Use a separate `codex/<short-task>` branch and one bounded task per pull request.
-Start with OPT-01 and OPT-02; do not perform an unrequested engine rewrite.
+The supplied production prompt explicitly authorizes the native Godot implementation and full base-game scope, superseding older OPT-only/no-native scope. Continue from actual current work; do not reimport/reset or confuse historical portfolio plans with implemented Garage features.
 For this game: Improve driving input, pause/background handling, predictable physics, accessible controls, and local track editing. Preserve measurable handling differences between parts.
 Preserve compatible shared behavior. Document shared changes in
 `docs/SHARED_CHANGES.md`; do not edit the other game repositories without scope.

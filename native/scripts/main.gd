@@ -37,7 +37,7 @@ var drive_pads: Dictionary = {}
 var transition_time := 0.0
 
 func _ready() -> void:
-	compact_mode = OS.has_feature("mobile") or DisplayServer.window_get_size().x < 1100
+	compact_mode = OS.has_feature("mobile") or OS.has_feature("web_ios") or OS.has_feature("web_android") or DisplayServer.window_get_size().x < 1100
 	state = store.load_save()
 	add_child(world)
 	add_child(sound)
@@ -115,6 +115,8 @@ func _clear(next_page: String) -> void:
 	world.reduced_motion = state.settings.reduced_motion
 	_safe_area()
 	transition_time = 0.0
+	if state.settings.reduced_motion:
+		ui.modulate.a = 1.0
 
 func _place(control: Control, x: float, y: float, width: float, height: float) -> Control:
 	control.position = Vector2(x,y)
@@ -146,7 +148,7 @@ func _button(text: String, x: float, y: float, width: float, callback: Callable,
 		button.add_theme_color_override("font_color", NAVY)
 	button.pressed.connect(func():
 		sound.play_cue("click")
-		callback.call())
+		_invoke_ui_action(callback))
 	return button
 
 func _panel(x: float,y: float,width: float,height: float, color: Color = Color("142c40")) -> Panel:
@@ -188,6 +190,8 @@ func _sync_settings() -> void:
 	sound.volume = state.settings.volume
 	router.toggle_drive = state.settings.one_touch
 	world.reduced_motion = state.settings.reduced_motion
+	if is_instance_valid(ui) and state.settings.reduced_motion:
+		ui.modulate.a = 1.0
 
 func _build_choice(key: String, value: String) -> void:
 	state.build[key] = value
@@ -287,6 +291,7 @@ func _show_drive() -> void:
 	_button("Restart",874,42,164,_restart)
 	_button("Pause",1052,42,180,_pause)
 	progress_bar = ProgressBar.new()
+	progress_bar.accessibility_name = "Course progress"
 	progress_bar.show_percentage = false
 	progress_bar.max_value = 1.0
 	_place(progress_bar,52,135,1176,12)
@@ -329,9 +334,12 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	if is_instance_valid(world) and world.visible:
 		world.queue_redraw()
-	if is_instance_valid(ui) and not state.settings.reduced_motion:
-		transition_time = minf(transition_time + delta*6.0,1.0)
-		ui.modulate.a = 0.65 + transition_time*0.35
+	if is_instance_valid(ui):
+		if state.settings.reduced_motion:
+			ui.modulate.a = 1.0
+		else:
+			transition_time = minf(transition_time + delta*6.0,1.0)
+			ui.modulate.a = 0.65 + transition_time*0.35
 	if page == "drive":
 		for action in drive_pads:
 			if is_instance_valid(drive_pads[action]):
@@ -415,7 +423,7 @@ func _draw_editor() -> void:
 			button.add_theme_color_override("font_color",NAVY)
 		button.pressed.connect(func():
 			selected_slot = i
-			_draw_editor())
+			_invoke_ui_action(_draw_editor))
 		row.add_child(button)
 	_label("SHAPE FOR SECTION " + str(selected_slot+1),46,435,1150,30,17,TEAL)
 	var n := 0
@@ -465,6 +473,7 @@ func show_gate() -> void:
 	_label("%d + %d =" % [a,b],370,380,240,62,34)
 	var answer := LineEdit.new()
 	answer.placeholder_text = "Answer"
+	answer.accessibility_name = "Grown-up check answer"
 	answer.virtual_keyboard_type = LineEdit.KEYBOARD_TYPE_NUMBER
 	_place(answer,640,382,220,64)
 	var feedback := _label("",370,466,510,32,19,ORANGE)
@@ -474,7 +483,7 @@ func show_gate() -> void:
 		else:
 			feedback.text = "Try again with a grown-up."
 	_button("Open settings",370,531,490,submit,true)
-	answer.text_submitted.connect(func(_value): submit.call())
+	answer.text_submitted.connect(func(_value): _invoke_ui_action(submit))
 	_compact()
 
 func show_parents() -> void:
@@ -488,6 +497,7 @@ func show_parents() -> void:
 		_settings_changed(),state.settings.muted)
 	_label("Volume",414,260,180,32,22)
 	var volume := HSlider.new()
+	volume.accessibility_name = "Sound volume"
 	volume.min_value = 0.0
 	volume.max_value = 1.0
 	volume.step = 0.05
@@ -633,3 +643,11 @@ func _compact_modal() -> void:
 			child.custom_minimum_size = child.size
 			child.add_theme_font_size_override("font_size",30)
 			buttons += 1
+
+func _invoke_ui_action(callback: Callable) -> void:
+	# Web touch dispatch emits a GUI mouse copy and still walks that tree.
+	# Change screens after dispatch completes so active controls remain valid.
+	if OS.has_feature("web"):
+		callback.call_deferred()
+	else:
+		callback.call()

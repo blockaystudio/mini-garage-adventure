@@ -1,0 +1,30 @@
+usage: android_smoke.py [-h] [--adb ADB] [--serial SERIAL]
+                        [--device-label DEVICE_LABEL] [--apk APK] [--install]
+                        [--output OUTPUT]
+                        {probe,smoke,capture}
+
+Collect real-device evidence for the disposable Garage Android debug package.
+Requires an existing, authorized Android device/emulator and working adb. This
+script does not acquire SDKs, accept licenses, enable device debugging, change
+network/settings/permissions, unlock a device, or fabricate a device result.
+Only org.example.minigarage.test may be installed/stopped/launched/read.
+
+positional arguments:
+  {probe,smoke,capture}
+                        probe is read-only; smoke
+                        launches/backgrounds/restarts the test app; capture
+                        records its current foreground screen
+
+options:
+  -h, --help            show this help message and exit
+  --adb ADB             adb executable; inherit any library configuration
+                        needed by your installed toolchain
+  --serial SERIAL       select a transport in memory only; never saved in
+                        reports
+  --device-label DEVICE_LABEL
+                        non-identifying test label, e.g. qa-phone-01; never a
+                        person name, serial or Android ID
+  --apk APK
+  --install             install/replace only the validated disposable DEBUG
+                        package
+  --output OUTPUT

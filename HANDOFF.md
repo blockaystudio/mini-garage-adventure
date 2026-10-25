@@ -1,3 +1,11 @@
+# Current production handoff — 2026-10-25
+
+Native source and exports now exist; the original Build01 text below is historical. See `docs/MASTER_TRACKER.md`, `WORK_LOG.md`, `BUGS.md` and `NEXT_TASK_PROMPT.txt` for current state. Draft PRs are open: [reference #1](https://github.com/blockaystudio/mini-garage-adventure/pull/1) and stacked [native game #2](https://github.com/blockaystudio/mini-garage-adventure/pull/2). Neither is merged. Current engineering follow-up uses `codex/garage-production-readiness`.
+
+The game includes six vehicles/twelve courses and the offline local editor. All mobile acceptance/rights/privacy/identity blockers remain explicit. Debug APK and desktop builds are private test artifacts. Do not claim emulator, hardware, iOS build, retention or store results that were not executed.
+
+---
+
 # Mini Garage Adventure — Work Chat Handoff
 **Checkpoint:** Build 01, October 24, 2026  
 **Primary audience:** ages 9–11  

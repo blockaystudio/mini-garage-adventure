@@ -48,6 +48,10 @@ func _input(event: InputEvent) -> void:
 		else:
 			release(event.index)
 	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		# GUI buttons need emulated mouse events from touch. The raw driving
+		# router already owns that finger, so never count its mouse copy twice.
+		if event.device == InputEvent.DEVICE_ID_EMULATION:
+			return
 		if event.pressed:
 			press(-1, event.position)
 		else:

@@ -2,7 +2,9 @@
 
 The source-import/upload statements below are historical. Existing remote `main` was verified at `3dabbde7bf3f30ad0f7b8db9fb547583de5180dd`; repository source was cloned as-is, not reimported or reset. Native production work is authorized by the supplied production prompt, with local `codex/garage-production-*` milestones and evidence in `MASTER_TRACKER.md` and `WORK_LOG.md`.
 
-A remote branch push was rejected by automatic approval review, which interpreted the prompt's prohibition on publishing as including GitHub code upload. No remote branch, PR, merge or deployment has been created by this production session. Local commits and a Git bundle remain reviewable; owner confirmation of remote upload is required to resolve this environment approval block. This is an access/approval outcome, not a source-test failure.
+The user explicitly approved branch uploads and draft PRs in the next turn. Both branches were pushed without force and read back by GitHub. Draft PR1: https://github.com/blockaystudio/mini-garage-adventure/pull/1 (`codex/garage-production-native` → `main`); draft PR2: https://github.com/blockaystudio/mini-garage-adventure/pull/2 (`codex/garage-production-game` → reference branch). Both remain unmerged; repository visibility and deployment settings were not changed.
+
+Actual GitHub CI passed for the reference and native PRs. `evidence/github-production-ci.json` records run/commit/job details. Follow-up work is isolated on `codex/garage-production-readiness`; current PR/checkpoint status is recorded in the latest tracker/work-log entry. The previous automatic-review upload block is resolved by the user's explicit approval, not by a workaround.
 
 ---
 
@@ -26,3 +28,7 @@ After real upload, replace this status with repository URL, commit SHA, remote
 read-back result, CI result, and Codex environment/task evidence. Never mark the
 work complete based only on this package. Original tracker entries describing the
 full three-game archive remain historical context, not this repository's inventory.
+
+## Readiness branch upload gate
+
+Resolved by the next explicit user approval: readiness branch0659db7 was pushed and draftPR3 opened at https://github.com/blockaystudio/mini-garage-adventure/pull/3, stacked on nativePR2 and unmerged. A separate user request authorized the owner-private phone Site documented in WEB_PREVIEW.md; no app-store publication or merge was authorized.

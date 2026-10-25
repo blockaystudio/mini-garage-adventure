@@ -1,0 +1,30 @@
+{
+  "id": "appgdep_6add935128f48191978b47749d0fab5f",
+  "project_id": "appgprj_6add8f84620c81918e5790d522adbb4c",
+  "title": "Mini Garage Adventure · Phone Test",
+  "version_id": "appgprj_6add8f84620c81918e5790d522adbb4c~appgver_ae58d781e460819181cba417cb98116c",
+  "type": "publish",
+  "status": "succeeded",
+  "url": "https://mini-garage-phone-test.wholeclock.chatgpt.site",
+  "has_mcp": false,
+  "screenshot_asset_pointer": null,
+  "provider_deployment_id": "site---6add8f84620c81918e5790d522adbb4c",
+  "failure_message": null,
+  "env_set_revision": 0,
+  "updated_at": "2026-10-25T05:27:52.753300+00:00",
+  "source_commit_sha": "783b6fe2d4016b05d6c6c54a9f2cdb30645f4791",
+  "audience": "owner-private, unchanged from creation",
+  "source_remote_verified": true,
+  "archive_matches_source": true,
+  "site_checkout": "/workspace/sites/mini-garage-phone-test",
+  "full_game": {
+    "vehicles": 6,
+    "courses": 12,
+    "private_track_editor": true
+  },
+  "notes": [
+    "User explicitly requested hosted phone testing; this does not authorize app-store publishing.",
+    "Actual browser tests use desktop Chromium and phone emulation, not physical iPhone/Android.",
+    "Installed Sites workflow helper unavailable; ordinary authenticated Git and an exact verified static archive fulfilled source/version contracts."
+  ]
+}

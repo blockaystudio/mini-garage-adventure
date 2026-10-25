@@ -1,7 +1,7 @@
 {
   "artifact": "builds/mini-garage-adventure-debug.apk",
-  "bytes": 55966318,
-  "sha256": "fbd9a2147feb94fafcb0deb3146fcf5b4fc16c068bb10a0c9831580846992653",
+  "bytes": 55970414,
+  "sha256": "50d713836d46d90e567e9a7df57cd45b21bf25e1b32b07da0b0d89eb986a3678",
   "manifest": {
     "versionCode": 1,
     "versionName": "0.1.0-test",

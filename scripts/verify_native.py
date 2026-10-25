@@ -63,12 +63,12 @@ def main():
         run(["--editor", "--import"])
         for script in sorted((NATIVE / "scripts").glob("*.gd")):
             run(["--check-only", "--script", "res://" + script.relative_to(NATIVE).as_posix()])
-        for name in ("model_test.gd", "save_test.gd", "integration_test.gd"):
+        for name in ("model_test.gd", "save_test.gd", "integration_test.gd", "accessibility_test.gd", "touch_test.gd"):
             if not (NATIVE / "tests" / name).is_file():
                 raise RuntimeError(f"Required native test missing: tests/{name}")
             run(["--script", f"res://tests/{name}"])
         run(["--quit-after", "5"])
-    print("PASS: native import, script parsing, model, save, integration, scene boot (Linux headless).")
+    print("PASS: native import, script parsing, model, save, integration, accessibility settings, scene boot (Linux headless).")
     print("Mobile installation, real touch/lifecycle, rendered performance and device accessibility remain separate gates.")
 
 

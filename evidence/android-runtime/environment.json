@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-10-25T03:02:13.189399+00:00",
+  "host": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "kvm_device_present": false,
+  "usb_bus_present": false,
+  "tun_device_present": false,
+  "emulator_executable": null,
+  "qemu_system_x86_64": null,
+  "available_android_sdk": {
+    "path": "/workspace/.garage-tools/android-sdk",
+    "contains": [
+      "platform-tools/adb symlink to Debian adb34.0.5",
+      "build-tools/35.0.2/apksigner wrapper"
+    ],
+    "emulator_or_system_image_found": false
+  },
+  "adb_probe": "Attempted real Debian adb34.0.5; startup requires /home/agent/.android, which is read-only. ANDROID_USER_HOME override was ignored by this executable. No adb daemon or device transport was established.",
+  "agreements_accepted": false,
+  "android_runtime_execution": "BLOCKED; no emulator or physical device tested",
+  "followup": "Use a normal adb environment with an existing authorized Android emulator/device. Do not use desktop test results as Android runtime evidence."
+}

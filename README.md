@@ -47,7 +47,7 @@ not a live advertisement service. Keep all keys out of source control.
 ## Codex and CI
 `docs/CODEX_SETUP.md` gives setup steps. `AGENTS.md` states boundaries and commands.
 The verification workflows run tests only, with read-only repository permissions; they
-publish nothing. Local results do not claim a successful remote CI run.
+publish nothing. Reference and native GitHub CI runs have now passed; exact commit/job evidence is recorded in `evidence/github-production-ci.json`. Draft PRs remain unmerged.
 
 Private commercial work: no open-source license has been selected or granted in
 this handoff. Do not add a license or publish the repository without owner approval.

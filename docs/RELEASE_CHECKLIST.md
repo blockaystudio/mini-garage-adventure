@@ -16,7 +16,7 @@ different states. Consult `MASTER_TRACKER.md` for the latest executed results.
 | Performance | Loading/frame-time/memory on named supported physical hardware; 60fps target or documented lower-device decision | Android/iOS QA; headless timing does not satisfy |
 | Android artifact | `builds/mini-garage-adventure-debug.apk` built; static manifest audit and v2/v3 signature verified in `evidence/native-android-*`; actual install/offline relaunch still pending | Authorized Android device/emulator; no runtime result claimed |
 | Android production | Owner-approved final ID, release signing/AAB, tested install splits; current target API/store checks | Owner signing/setup + engineering |
-| iOS artifact | Actual macOS/Xcode export/build with authorized signing, simulator and physical iPhone/iPad tests | Owner Mac/Xcode/signing/devices |
+| iOS artifact | Actual macOS/Xcode export/build with authorized signing, physical iPhone/iPad tests; Godot4.6 simulator export is documented unsupported | Owner Mac/Xcode/signing/devices |
 | Network/SDK inventory | Inspect shipped native files and final manifests; record network observation on devices | Engineering/privacy; no runtime endpoint/SDK intended |
 | Parent/help/privacy | Factual implementation-based text, gated external actions if added, approved support/policy URLs, no consent claim | Owner identity/contact + privacy specialist |
 | Asset rights | Original asset source/provenance, engine/font/library notices, title/trademark and rights review | Owner/rights reviewer |

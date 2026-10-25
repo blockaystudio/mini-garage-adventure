@@ -1,0 +1,51 @@
+{
+  "status": "phone-preview core verified; physical phone and fully touch-driven course completion remain unverified",
+  "scope": "Actual local HTTP full-game Chromium WebAssembly/WebGL2. Chromium phone/DPR3/iPhone-UA emulation is not Safari or a physical device.",
+  "final_mobile_passed_checks": [
+    "phone launcher has a direct top-level Play link",
+    "portrait launcher has no horizontal overflow",
+    "portrait launcher shows rotate-phone advice",
+    "phone-emulated landscape full-game canvas fits844px width",
+    "actual touchscreen Grown-ups tap opens the dark parent-gate form",
+    "no page errors or console errors in full-game flows",
+    "no unexpected external requests from launcher/game",
+    "actual packed gzip WebAssembly asset is fetched and booted",
+    "iPhone-UA DPR3 chooses the large compact phone form, not the desktop grid",
+    "all DPR3/mobile flows finish without page or console errors"
+  ],
+  "known_harness_limitation": "The one failed touch-completion assertion did not start a course: fixed canvas navigation coordinates and later keyboard-focus assumptions were not reliable after variable touch scrolling. It is not evidence of a model completion or touch-throttle defect. Raw failed development result is retained.",
+  "earlier_actual_desktop_verification": [
+    "Full packed gzip WASM game boots",
+    "Canvas tire/paint changes saved to actual IndexedDB",
+    "Actual course keyboard driving reaches finish and records Meadow medal/best",
+    "Actual page reload restores saved build/progress",
+    "Actual track-editor changes/save open a playable preview"
+  ],
+  "final_source_bugs_caught_and_rechecked": [
+    "Disabled mouse-from-touch blocked standard Godot GUI; actual touchscreen Grown-ups tap now opens the gate",
+    "High-DPI phone selected desktop grid; final iPhone-UA DPR3 screenshot now shows compact large controls",
+    "Rebuilding GUI during emulated touch logged detached-node errors; final deferred-callback run has zero errors"
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "final_wasm_gzip_sha256": "9352825a316f4449b81d326706e78be95ed5a81c0e797f35879ef8b39bc505bd",
+  "servers_and_browsers": "All owned local HTTP servers and browser processes closed at end of actual runs.",
+  "screenshots_reviewed": [
+    "phone-touch-grown-up-gate.png",
+    "phone-landscape-scrolled.png",
+    "phone-dpr3-compact-form.png",
+    "desktop-completion.png",
+    "desktop-reloaded-save.png",
+    "desktop-private-preview.png"
+  ],
+  "pending": [
+    "Physical iPhone/Safari and Android/Chrome tests",
+    "A complete authored course using only phone touch navigation and throttle",
+    "Hardware interruption/storage/performance/accessibility acceptance"
+  ],
+  "misleading_development_filename_corrected": {
+    "original": "phone-touch-completion.png",
+    "current": "phone-touch-drive-attempt-not-completed.png",
+    "meaning": "Uncompleted automated navigation attempt, not a touch-driven course completion."
+  }
+}

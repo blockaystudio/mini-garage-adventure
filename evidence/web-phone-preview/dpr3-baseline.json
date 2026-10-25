@@ -1,0 +1,14 @@
+{
+  "scope": "Chromium emulating iPhoneUA/DPR3; notSafari/device",
+  "viewport_css": {
+    "width": 844,
+    "height": 390
+  },
+  "canvas_backing": {
+    "width": 2532,
+    "height": 1170
+  },
+  "status": "failed",
+  "observed": "Desktop grid instead ofcompactphoneform; physicaldrawing-buffer width defeatedwindow-size threshold andWebmobilefeature wasnotdetected",
+  "screenshot": "phone-dpr3-baseline-desktop-grid.png"
+}

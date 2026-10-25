@@ -12,6 +12,10 @@
 - Native: garage labels clipped, preview wheels hid behind cards, course captions extended beyond cards. Shorter labels, compact margins, fitted showcase and correctly initialized wrapped-label geometry; rendered review and caption-bounds checks.
 - Native: immediate shutdown while cues played retained audio-server playback references. Stop all voices, release streams and allow0.25s server drain before orderly quit; separate-process persistence test exits without warnings.
 
+- Follow-up: enabling reduced motion mid-transition left the entire UI translucent. Restore full opacity immediately and during reduced-motion frames/navigation; failing baseline and23passing setting checks are in `evidence/accessibility-settings.txt`. Added names to the volume, parent-answer and progress controls; this does not certify assistive-technology support.
+
+Remote branch upload approval is resolved: user approved, both branches pushed, draft PRs #1/#2 opened; no merge/deploy.
+
 ## Open release gates
 
 No unresolved reproduced P0 crash/data-loss defect is known from the executed desktop suites. No claim is made about undiscovered device defects.
@@ -23,6 +27,10 @@ No unresolved reproduced P0 crash/data-loss defect is known from the executed de
 | P1 performance | Software-rendered1600x1000 desktop sample falls below60fps; supported mobile device targets not measured | Performance/device QA measures representative scene and chooses supported-device floor; do not project llvmpipe result to phones |
 | P1 UX/accessibility | Actual physical target sizes, notches, system gestures, screen readers, reading level and long-scroll compact-form usability not reviewed on devices | Device/accessibility reviewer and supervised parent/child protocol |
 | P1 release identity/privacy | Final IDs, publisher, support contact/policy URLs, trademark/asset rights and specialist privacy review unconfirmed | Owner/legal/rights/privacy reviewers approve factual materials before release |
-| Delivery approval | Remote push blocked by automatic approval review; no remote PR | Owner confirms GitHub branch upload and PR creation; no merge/public release implied |
+| P1 accessibility acceptance | Driving pads are raw touch Panels, without verified screen-reader activation actions | Accessibility engineering plus actual VoiceOver/TalkBack device review; named inputs and keyboard alternatives alone do not satisfy this gate |
 
 These gates prevent calling the current build a fully accepted iOS/Android release candidate. They do not justify silently removing any of the six vehicles/twelve courses or offline editor from scope.
+
+Follow-up delivery gate: automatic approval review rejected uploading new `codex/garage-production-readiness` as outside its interpretation of the two-branch approval. Readiness changes are local/bundled; a third PR has not been created. Explicit approval of this named third branch is needed for remote delivery; this is separate from mobile acceptance.
+
+Web phone test found/fixed GUI finger taps not activating menus, emulated-mouse duplication risk, Web touch dispatch tree-mutation errors and HiDPI phones selecting the desktop layout. Evidence: web-phone-preview/ and web-touch-native-verification.txt. Readiness upload block is now resolved by explicit user approval; draftPR3 exists. Physical-device accessibility/touch acceptance remains open.
