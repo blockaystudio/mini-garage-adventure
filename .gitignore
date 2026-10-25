@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+node_modules/
+.venv/
+.DS_Store
+*.private.pem
+private.pem
+.env
+secrets/
+.godot/
+
+# Local credentials, mobile signing files, test output and virtual environments
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+*.keystore
+*.jks
+coverage/
+test-results/
+playwright-report/

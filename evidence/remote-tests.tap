@@ -1,0 +1,82 @@
+TAP version 13
+# Subtest: Valid RSA signed payload verifies against pinned public key
+ok 1 - Valid RSA signed payload verifies against pinned public key
+  ---
+  duration_ms: 10.704878
+  type: 'test'
+  ...
+# Subtest: Unsigned envelope fails verification
+ok 2 - Unsigned envelope fails verification
+  ---
+  duration_ms: 0.173621
+  type: 'test'
+  ...
+# Subtest: Tampered payload fails verification
+ok 3 - Tampered payload fails verification
+  ---
+  duration_ms: 4.108074
+  type: 'test'
+  ...
+# Subtest: Tampered signature fails verification
+ok 4 - Tampered signature fails verification
+  ---
+  duration_ms: 2.817574
+  type: 'test'
+  ...
+# Subtest: Malformed base64 fails verification
+ok 5 - Malformed base64 fails verification
+  ---
+  duration_ms: 2.121729
+  type: 'test'
+  ...
+# Subtest: Wrong public key fails verification
+ok 6 - Wrong public key fails verification
+  ---
+  duration_ms: 648.548191
+  type: 'test'
+  ...
+# Subtest: Unknown algorithm fails verification
+ok 7 - Unknown algorithm fails verification
+  ---
+  duration_ms: 2.219806
+  type: 'test'
+  ...
+# Subtest: Absent remote endpoint makes no request
+ok 8 - Absent remote endpoint makes no request
+  ---
+  duration_ms: 0.253181
+  type: 'test'
+  ...
+# Subtest: Insecure remote endpoint makes no request
+ok 9 - Insecure remote endpoint makes no request
+  ---
+  duration_ms: 0.631369
+  type: 'test'
+  ...
+# Subtest: Network failure defaults to off
+ok 10 - Network failure defaults to off
+  ---
+  duration_ms: 0.693833
+  type: 'test'
+  ...
+# Subtest: Fetch omits credentials and denies redirects
+ok 11 - Fetch omits credentials and denies redirects
+  ---
+  duration_ms: 24.842966
+  type: 'test'
+  ...
+# Subtest: Oversized response fails closed
+ok 12 - Oversized response fails closed
+  ---
+  duration_ms: 0.495235
+  type: 'test'
+  ...
+1..12
+# tests 12
+# suites 0
+# pass 12
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1310.502152

@@ -1,0 +1,414 @@
++ /opt/pyvenv/bin/python build.py
+Built Mini Garage Adventure standalone prototype.
++ node --check games/garage.js
++ node --check shared/art.js
++ node --check shared/core.js
++ node --check shared/remote-config.js
++ node --check shared/ui.js
++ node --check tests/core.test.cjs
++ node --check tests/remote.test.cjs
++ node --test tests/core.test.cjs tests/remote.test.cjs
+TAP version 13
+# Subtest: Current compiled browser build can never enable advertising
+ok 1 - Current compiled browser build can never enable advertising
+  ---
+  duration_ms: 1.872593
+  type: 'test'
+  ...
+# Subtest: Future synthetic reviewed-capability fixture can reach allowed branch
+ok 2 - Future synthetic reviewed-capability fixture can reach allowed branch
+  ---
+  duration_ms: 0.303227
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: unsigned
+ok 3 - Ads fail closed: unsigned
+  ---
+  duration_ms: 0.246839
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: expiredClock
+ok 4 - Ads fail closed: expiredClock
+  ---
+  duration_ms: 0.097917
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: firstSession
+ok 5 - Ads fail closed: firstSession
+  ---
+  duration_ms: 0.160674
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: installDayZero
+ok 6 - Ads fail closed: installDayZero
+  ---
+  duration_ms: 0.081382
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: installDayOne
+ok 7 - Ads fail closed: installDayOne
+  ---
+  duration_ms: 0.137398
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: notReturning
+ok 8 - Ads fail closed: notReturning
+  ---
+  duration_ms: 0.091908
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: midGameplay
+ok 9 - Ads fail closed: midGameplay
+  ---
+  duration_ms: 0.303634
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: tooEarly
+ok 10 - Ads fail closed: tooEarly
+  ---
+  duration_ms: 1.248796
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: tooFrequent
+ok 11 - Ads fail closed: tooFrequent
+  ---
+  duration_ms: 2.088256
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: dailyCap
+ok 12 - Ads fail closed: dailyCap
+  ---
+  duration_ms: 0.121695
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: holdout
+ok 13 - Ads fail closed: holdout
+  ---
+  duration_ms: 0.053091
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: privacyMissing
+ok 14 - Ads fail closed: privacyMissing
+  ---
+  duration_ms: 0.11251
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: buildMismatch
+ok 15 - Ads fail closed: buildMismatch
+  ---
+  duration_ms: 0.045642
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: rollback
+ok 16 - Ads fail closed: rollback
+  ---
+  duration_ms: 0.034259
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: noClock
+ok 17 - Ads fail closed: noClock
+  ---
+  duration_ms: 0.032859
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: negativeImpressions
+ok 18 - Ads fail closed: negativeImpressions
+  ---
+  duration_ms: 0.038566
+  type: 'test'
+  ...
+# Subtest: Ads fail closed: missingActiveDays
+ok 19 - Ads fail closed: missingActiveDays
+  ---
+  duration_ms: 0.082071
+  type: 'test'
+  ...
+# Subtest: Remote policy refuses killSwitch
+ok 20 - Remote policy refuses killSwitch
+  ---
+  duration_ms: 0.093635
+  type: 'test'
+  ...
+# Subtest: Remote policy refuses missingKillSwitch
+ok 21 - Remote policy refuses missingKillSwitch
+  ---
+  duration_ms: 0.048572
+  type: 'test'
+  ...
+# Subtest: Remote policy refuses overCap
+ok 22 - Remote policy refuses overCap
+  ---
+  duration_ms: 0.102871
+  type: 'test'
+  ...
+# Subtest: Remote policy refuses overRollout
+ok 23 - Remote policy refuses overRollout
+  ---
+  duration_ms: 0.048896
+  type: 'test'
+  ...
+# Subtest: Remote policy refuses missingApp
+ok 24 - Remote policy refuses missingApp
+  ---
+  duration_ms: 0.047267
+  type: 'test'
+  ...
+# Subtest: Remote policy refuses schemaMismatch
+ok 25 - Remote policy refuses schemaMismatch
+  ---
+  duration_ms: 0.039555
+  type: 'test'
+  ...
+# Subtest: Remote policy refuses disabled
+ok 26 - Remote policy refuses disabled
+  ---
+  duration_ms: 0.038405
+  type: 'test'
+  ...
+# Subtest: Remote policy refuses invalidIssued
+ok 27 - Remote policy refuses invalidIssued
+  ---
+  duration_ms: 0.039452
+  type: 'test'
+  ...
+# Subtest: Remote policy refuses wrongType
+ok 28 - Remote policy refuses wrongType
+  ---
+  duration_ms: 0.04486
+  type: 'test'
+  ...
+# Subtest: Local save round trip
+ok 29 - Local save round trip
+  ---
+  duration_ms: 1.050456
+  type: 'test'
+  ...
+# Subtest: Corrupt save recovers last valid backup
+ok 30 - Corrupt save recovers last valid backup
+  ---
+  duration_ms: 0.97652
+  type: 'test'
+  ...
+# Subtest: Unknown save schema uses safe defaults
+ok 31 - Unknown save schema uses safe defaults
+  ---
+  duration_ms: 0.135148
+  type: 'test'
+  ...
+# Subtest: Reset removes primary and backup
+ok 32 - Reset removes primary and backup
+  ---
+  duration_ms: 0.242354
+  type: 'test'
+  ...
+# Subtest: Storage exception never breaks gameplay
+ok 33 - Storage exception never breaks gameplay
+  ---
+  duration_ms: 0.561044
+  type: 'test'
+  ...
+# Subtest: Absent storage keeps an in-memory playable state
+ok 34 - Absent storage keeps an in-memory playable state
+  ---
+  duration_ms: 0.180791
+  type: 'test'
+  ...
+# Subtest: Pet normalization limits objects and rejects arbitrary strings
+ok 35 - Pet normalization limits objects and rejects arbitrary strings
+  ---
+  duration_ms: 1.245239
+  type: 'test'
+  ...
+# Subtest: Each pet has a distinct favorite
+ok 36 - Each pet has a distinct favorite
+  ---
+  duration_ms: 0.086206
+  type: 'test'
+  ...
+# Subtest: Light experiment 1: initial unsolved and provided route solves
+ok 37 - Light experiment 1: initial unsolved and provided route solves
+  ---
+  duration_ms: 0.376333
+  type: 'test'
+  ...
+# Subtest: Light experiment 2: initial unsolved and provided route solves
+ok 38 - Light experiment 2: initial unsolved and provided route solves
+  ---
+  duration_ms: 0.066825
+  type: 'test'
+  ...
+# Subtest: Light experiment 3: initial unsolved and provided route solves
+ok 39 - Light experiment 3: initial unsolved and provided route solves
+  ---
+  duration_ms: 0.066482
+  type: 'test'
+  ...
+# Subtest: Light tracing remains bounded on arbitrary mirror states
+ok 40 - Light tracing remains bounded on arbitrary mirror states
+  ---
+  duration_ms: 0.562334
+  type: 'test'
+  ...
+# Subtest: Lab progress deduplicates and validates puzzle indexes
+ok 41 - Lab progress deduplicates and validates puzzle indexes
+  ---
+  duration_ms: 0.892886
+  type: 'test'
+  ...
+# Subtest: Garage road tires finish meadow
+ok 42 - Garage road tires finish meadow
+  ---
+  duration_ms: 3.963091
+  type: 'test'
+  ...
+# Subtest: Garage road tires finish dunes
+ok 43 - Garage road tires finish dunes
+  ---
+  duration_ms: 1.703762
+  type: 'test'
+  ...
+# Subtest: Garage trail tires finish meadow
+ok 44 - Garage trail tires finish meadow
+  ---
+  duration_ms: 1.402438
+  type: 'test'
+  ...
+# Subtest: Garage trail tires finish dunes
+ok 45 - Garage trail tires finish dunes
+  ---
+  duration_ms: 1.622417
+  type: 'test'
+  ...
+# Subtest: Garage giant tires finish meadow
+ok 46 - Garage giant tires finish meadow
+  ---
+  duration_ms: 0.969636
+  type: 'test'
+  ...
+# Subtest: Garage giant tires finish dunes
+ok 47 - Garage giant tires finish dunes
+  ---
+  duration_ms: 2.705847
+  type: 'test'
+  ...
+# Subtest: Different tires measurably change run time
+ok 48 - Different tires measurably change run time
+  ---
+  duration_ms: 5.618446
+  type: 'test'
+  ...
+# Subtest: Road tires are fastest on a flat course
+ok 49 - Road tires are fastest on a flat course
+  ---
+  duration_ms: 2.128535
+  type: 'test'
+  ...
+# Subtest: Garage braking slows the car
+ok 50 - Garage braking slows the car
+  ---
+  duration_ms: 0.190532
+  type: 'test'
+  ...
+# Subtest: Garage invalid configuration resets to a playable setup
+ok 51 - Garage invalid configuration resets to a playable setup
+  ---
+  duration_ms: 0.33605
+  type: 'test'
+  ...
+# Subtest: Valid RSA signed payload verifies against pinned public key
+ok 52 - Valid RSA signed payload verifies against pinned public key
+  ---
+  duration_ms: 16.387262
+  type: 'test'
+  ...
+# Subtest: Unsigned envelope fails verification
+ok 53 - Unsigned envelope fails verification
+  ---
+  duration_ms: 0.225718
+  type: 'test'
+  ...
+# Subtest: Tampered payload fails verification
+ok 54 - Tampered payload fails verification
+  ---
+  duration_ms: 5.361284
+  type: 'test'
+  ...
+# Subtest: Tampered signature fails verification
+ok 55 - Tampered signature fails verification
+  ---
+  duration_ms: 4.176693
+  type: 'test'
+  ...
+# Subtest: Malformed base64 fails verification
+ok 56 - Malformed base64 fails verification
+  ---
+  duration_ms: 3.360072
+  type: 'test'
+  ...
+# Subtest: Wrong public key fails verification
+ok 57 - Wrong public key fails verification
+  ---
+  duration_ms: 809.958542
+  type: 'test'
+  ...
+# Subtest: Unknown algorithm fails verification
+ok 58 - Unknown algorithm fails verification
+  ---
+  duration_ms: 3.023649
+  type: 'test'
+  ...
+# Subtest: Absent remote endpoint makes no request
+ok 59 - Absent remote endpoint makes no request
+  ---
+  duration_ms: 0.354525
+  type: 'test'
+  ...
+# Subtest: Insecure remote endpoint makes no request
+ok 60 - Insecure remote endpoint makes no request
+  ---
+  duration_ms: 0.543173
+  type: 'test'
+  ...
+# Subtest: Network failure defaults to off
+ok 61 - Network failure defaults to off
+  ---
+  duration_ms: 0.861271
+  type: 'test'
+  ...
+# Subtest: Fetch omits credentials and denies redirects
+ok 62 - Fetch omits credentials and denies redirects
+  ---
+  duration_ms: 38.72825
+  type: 'test'
+  ...
+# Subtest: Oversized response fails closed
+ok 63 - Oversized response fails closed
+  ---
+  duration_ms: 1.872407
+  type: 'test'
+  ...
+1..63
+# tests 63
+# suites 0
+# pass 63
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2196.099964
++ /opt/pyvenv/bin/python tests/test_signer.py
+test_disabled_default_valid (__main__.SigningTests.test_disabled_default_valid) ... ok
+test_enabled_policy_rejected (__main__.SigningTests.test_enabled_policy_rejected) ... ok
+test_expired_rejected (__main__.SigningTests.test_expired_rejected) ... ok
+test_missing_app_rejected (__main__.SigningTests.test_missing_app_rejected) ... ok
+test_rollout_rejected_in_build01 (__main__.SigningTests.test_rollout_rejected_in_build01) ... ok
+test_signatures_and_key_permissions (__main__.SigningTests.test_signatures_and_key_permissions) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.262s
+
+OK
+Keypair created. Never distribute or serve the private key.
+Signed disabled policy revision 1; payload SHA256 7258510b5fdf2b7c14fe525749dc9be95565f3f2be8ee6d93795c222e2dd38e0
+PASS: build, syntax, metadata, 63 Node tests, 6 Python tests, and offline-page checks.
+This is not browser interaction, physical-device, native-export, store, or compliance validation.

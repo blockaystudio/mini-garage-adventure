@@ -1,0 +1,16 @@
+{
+  "publication_status": "INTERNAL_DRAFT_DO_NOT_SUBMIT",
+  "name": "Mini Garage Adventure",
+  "subtitle": "Build it. Paint it. Drive it.",
+  "google_short_description": "Build a buggy, try different parts, and drive a track you designed.",
+  "primary_age_band": "9\u201311",
+  "headline_A": "Build it. Paint it. Drive it.",
+  "headline_B": "What will you build today?",
+  "two_distinctive_factors": [
+    "Parts that change the ride",
+    "A private, build-your-own track"
+  ],
+  "native_store_screenshots": "Pending final native builds; browser captures supplied for internal review only",
+  "iap_ad_disclosures": "Must reflect the actual submitted binary; no purchases or ads in this prototype",
+  "name_trademark_clearance": "Not completed"
+}

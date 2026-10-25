@@ -1,15 +1,9 @@
 {
   "repository": "blockaystudio/mini-garage-adventure",
-  "original_zip_sha256": "429633b7d3f3833244804790573913411a83577e17c144b86bca3d9f02c09fbc",
-  "common": {
-    "sha256": "1c72e1abb21cf3db3d8cdc0250ea4df2f183ac113004e9c32e3a75d52fdcb75f",
-    "parts": [".source-import/common-0.txt", ".source-import/common-1.txt", ".source-import/common-2.txt", ".source-import/common-3.txt", ".source-import/common-4.txt"]
-  },
-  "app": {
-    "sha256": "72cb56bf8b9d285cb28188249858c00eb1c2745a326523ec9f7c5a73524c92ca",
-    "parts": [".source-import/app-0.txt", ".source-import/app-1.txt", ".source-import/app-2.txt"]
-  },
-  "expected": {
+  "completed_utc": "2026-10-25T02:06:10.172623+00:00",
+  "original_source_zip_sha256": "429633b7d3f3833244804790573913411a83577e17c144b86bca3d9f02c09fbc",
+  "source_files_verified": 47,
+  "source_sha256": {
     "README.md": "7636480c1d5cc8951a41a5766337bb1e1254c74157cf4c62f689bf0af4bc501b",
     ".nvmrc": "177d20030d4dcc37eae9ef92865ec54dadce60e8f19e9a34a5d4f37502195a36",
     "AGENTS.md": "1e263a8c9ec3c3dc95977c311cca7e674d2bce11843c767f3d8ca17544d4c977",
@@ -58,5 +52,17 @@
     "server/serve_preview.py": "416fd8e78f88db18b94ec2d9c4ddc8de7ce313ebc42c00c8ed83f61288779605",
     ".github/workflows/checks.yml": "f2af631089bb32a960d6314a2316b80a70b84bfa6410fee0ea9e2e935969611c"
   },
-  "raster_exports": ["evidence/garage-mobile.png", "evidence/garage-desktop.png", "art/mini-garage-adventure-icon-draft-1024.png", "art/mini-garage-adventure-feature-draft-1024x500.png", "art/mini-garage-adventure-icon-draft-512.png"]
+  "raster_exports_sha256": {
+    "evidence/garage-mobile.png": "fc9e5c479d296c2c1d806535df655a9673eb983f2fce7e1dcd60dc8f1abb912e",
+    "evidence/garage-desktop.png": "38ab9cf3e3e1542e14473c4eafb7b3a9b196d9c8ad88fa1a2400f77d55704be5",
+    "art/mini-garage-adventure-icon-draft-1024.png": "1d51b71dcc83df15709ce2f7c1867db14c972d312c947b1449f0e15e6e7e6dcd",
+    "art/mini-garage-adventure-feature-draft-1024x500.png": "7a0fbdb036ec49fdf2afd1711f410de99089df662384ddd2a6073298b2bf35e1",
+    "art/mini-garage-adventure-icon-draft-512.png": "04f362f10311f9f71318368a09ab32b5031e5f059392c9918e39c8b058dd1862"
+  },
+  "source_changes": [
+    "CI guard skips only the one-time bootstrap push. Game code is unchanged."
+  ],
+  "artifact_note": "PNG exports and browser screenshots were regenerated from original source in GitHub Actions. They are not asserted byte-identical to archived PNGs.",
+  "verification": "python scripts/verify.py completed before this finalization step.",
+  "limitations": "Browser prototypes only. No native-device tests, store submissions, ad activation, deployment, or Codex optimization was performed."
 }

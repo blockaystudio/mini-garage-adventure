@@ -1,0 +1,17 @@
+const test=require('node:test'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const {verifyEnvelope,fetchVerifiedPolicy}=require('../shared/remote-config.js');
+const {publicKey,privateKey}=crypto.generateKeyPairSync('rsa',{modulusLength:3072});
+const pem=publicKey.export({type:'spki',format:'pem'});
+function envelope(value={schema_version:1,revision:1,kill_switch:true}){const payload=Buffer.from(JSON.stringify(value));return {algorithm:'RS256',payload_b64:payload.toString('base64'),signature_b64:crypto.sign('sha256',payload,privateKey).toString('base64')}};
+test('Valid RSA signed payload verifies against pinned public key',async()=>{const r=await verifyEnvelope(envelope(),pem,crypto.webcrypto);assert.equal(r.verified,true);assert.equal(r.config.kill_switch,true)});
+test('Unsigned envelope fails verification',async()=>assert.equal((await verifyEnvelope({payload_b64:'e30='},pem,crypto.webcrypto)).verified,false));
+test('Tampered payload fails verification',async()=>{const e=envelope();e.payload_b64=Buffer.from('{"kill_switch":false}').toString('base64');assert.equal((await verifyEnvelope(e,pem,crypto.webcrypto)).verified,false)});
+test('Tampered signature fails verification',async()=>{const e=envelope(),s=Buffer.from(e.signature_b64,'base64');s[0]^=255;e.signature_b64=s.toString('base64');assert.equal((await verifyEnvelope(e,pem,crypto.webcrypto)).verified,false)});
+test('Malformed base64 fails verification',async()=>{const e=envelope();e.payload_b64='<script>';assert.equal((await verifyEnvelope(e,pem,crypto.webcrypto)).verified,false)});
+test('Wrong public key fails verification',async()=>{const other=crypto.generateKeyPairSync('rsa',{modulusLength:3072}).publicKey.export({type:'spki',format:'pem'});assert.equal((await verifyEnvelope(envelope(),other,crypto.webcrypto)).verified,false)});
+test('Unknown algorithm fails verification',async()=>{const e=envelope();e.algorithm='none';assert.equal((await verifyEnvelope(e,pem,crypto.webcrypto)).verified,false)});
+test('Absent remote endpoint makes no request',async()=>{let calls=0;const r=await fetchVerifiedPolicy(null,pem,{fetchImpl:()=>calls++});assert.equal(calls,0);assert.equal(r.verified,false)});
+test('Insecure remote endpoint makes no request',async()=>{let calls=0;const r=await fetchVerifiedPolicy('http://example.invalid/policy',pem,{fetchImpl:()=>calls++});assert.equal(calls,0);assert.equal(r.verified,false)});
+test('Network failure defaults to off',async()=>{const r=await fetchVerifiedPolicy('https://example.invalid/policy',pem,{fetchImpl:async()=>{throw Error('offline')}});assert.equal(r.verified,false)});
+test('Fetch omits credentials and denies redirects',async()=>{let options;const r=await fetchVerifiedPolicy('https://example.invalid/policy',pem,{cryptoProvider:crypto.webcrypto,fetchImpl:async(url,o)=>{options=o;return new Response(JSON.stringify(envelope()),{status:200})}});assert.equal(r.verified,true);assert.equal(options.credentials,'omit');assert.equal(options.redirect,'error');assert.equal(options.referrerPolicy,'no-referrer')});
+test('Oversized response fails closed',async()=>{const r=await fetchVerifiedPolicy('https://example.invalid/policy',pem,{fetchImpl:async()=>new Response('x'.repeat(66000),{status:200})});assert.equal(r.verified,false)});

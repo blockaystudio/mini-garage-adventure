@@ -1,0 +1,36 @@
+PROJECT: Mini Garage Adventure
+REPOSITORY: blockaystudio/mini-garage-adventure
+
+Act as the implementation engineer for this game. Perform actual development and testing, not just an audit or plan.
+
+FIRST: VERIFY THE SOURCE
+Confirm the repository and inspect its working tree. Read AGENTS.md, HANDOFF.md, docs/GITHUB_CODEX_STATUS.md, docs/CODEX_TASKS.md, docs/MASTER_TRACKER.md, and evidence/QA_REPORT.md when present.
+If the repository has only a README, import the matching mini-garage-adventure source package only when its files are actually accessible in this workspace. Put its contents at repository root, including hidden configuration files. Preserve .git and existing work; do not import another game's folder. Make a separate baseline-import commit after review of the files. If the source is unavailable, report the exact missing input and stop; do not invent the existing code or recreate it from the app name.
+
+PRODUCT GOAL
+Build an original, offline-first vehicle-building game for ages 9–11. Protect the two distinguishing features: modifications that visibly affect driving and a private, locally saved track creator.
+Visual quality and an original, coherent interface are priorities. Do not substitute a generic template or copy another game's artwork.
+
+FIRST TASK: OPT-01 — REPRODUCIBLE BASELINE AND CORE-LOOP REGRESSION TESTS
+Use an isolated codex/garage-opt01 branch or task worktree. Honor existing repository instructions. Use the pinned runtimes and an isolated Python environment. Install the declared test dependencies, run python scripts/verify.py, and record the real baseline before editing. Reviewable import and code changes are authorized; merging, deployment, and spending are not.
+
+Add a minimal, reproducible browser regression harness against the actual local HTTP preview, using real origin storage and fresh browser contexts—not a fake storage fixture as proof of persistence. Use available browser tooling; pin any new development dependencies and keep them out of the shipped game.
+
+GAME-SPECIFIC COVERAGE
+- Choose parts and colors, save a buggy, drive a preset course, finish or restart, build a custom track, reload, and recover the saved build and track.
+- Verify tire and suspension choices affect the driving model as intended, using repeatable model tests rather than visual guesses.
+- Exercise press/release, multiple pointers where relevant, pointer cancellation, focus loss, pause/resume, and rapid restart. Prevent stuck throttle or controls after returning to the game.
+- Check custom-track boundaries, invalid saved parts, malformed or unavailable storage, and extreme or interrupted frame timing. Preserve compatible saves and prevent corrupt physics states.
+
+Also check phone and tablet layouts in both orientations, browser console errors, and unexpected outbound requests. The local preview server is allowed; third-party runtime requests are not. Fix reproducible defects encountered in this scope and add regression coverage. Keep unrelated redesigns and content expansion out of this first pull request.
+
+IMPLEMENTATION BOUNDARIES
+Edit games/garage.js, games/garage.css, games/garage.body.html and relevant shared source; regenerate play/ with python build.py. Do not hand-edit only generated HTML or rewrite the engine. Preserve original artwork, offline play, and save compatibility. Document shared-library changes without editing the other repositories.
+Keep ads OFF. Preserve disabled remote-config scaffolding and fail-closed behavior. Do not activate ad SDKs, analytics, purchases, accounts, chat, uploads, tracking, or production endpoints. Never commit secrets or child data. Do not weaken tests, remove safety gates, change visibility, force-push, merge, buy services, or publish.
+
+FINISH THIS TASK
+Run the verifier and new browser tests after changes. If a browser or device is unavailable, clearly distinguish tests written from tests executed; do not claim physical-device testing or improved real-user retention.
+Update docs/WORK_LOG.md and docs/MASTER_TRACKER.md. Save screenshots only when actually captured. Open one reviewable pull request if permissions allow; otherwise provide the exact diff and the access blocker. Report changed files, commands, test counts/results, bugs fixed, remaining risks, and a playable-preview command. Stop after this bounded task.
+
+NEXT BACKLOG, NOT THIS TASK
+More understandable build choices; forgiving touch driving; clearer finish/restart flow; easier private track editing; measured physics/rendering performance; original storefront artwork; then the native Godot milestone.
