@@ -42,5 +42,10 @@
     "Physical iPhone/Safari and Android/Chrome tests",
     "A complete authored course using only phone touch navigation and throttle",
     "Hardware interruption/storage/performance/accessibility acceptance"
-  ]
+  ],
+  "misleading_development_filename_corrected": {
+    "original": "phone-touch-completion.png",
+    "current": "phone-touch-drive-attempt-not-completed.png",
+    "meaning": "Uncompleted automated navigation attempt, not a touch-driven course completion."
+  }
 }
