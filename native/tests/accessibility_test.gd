@@ -115,6 +115,7 @@ func run() -> void:
 		if child is Button and child.text == "Accessible controls":
 			launch = child
 	check(launch != null, "accessible drive action uses a real Button")
+	launch.grab_focus()
 	var launch_position := launch.get_global_rect().get_center()
 	launch.pressed.emit()
 	await process_frame
@@ -160,6 +161,7 @@ func run() -> void:
 	check(game.router.strength("throttle") == 0.0, "focus loss clears accessible drive")
 	close.pressed.emit()
 	check(not game.router.accessible.enabled and game.router.strength("throttle") == 0.0 and launch.visible, "closing accessible controls clears input and restores background actions")
+	check(game.get_viewport().gui_get_focus_owner() == launch, "closing the drawer restores previous keyboard focus")
 	var actions = preload("res://scripts/accessible_drive.gd").new()
 	actions.enabled = true
 	actions.command("throttle", 100)

@@ -414,6 +414,7 @@ func _accessible_controls(input_router: Node, is_3d: bool) -> void:
 	input_router.clear()
 	input_router.accessible.enabled = true
 	var before := ui.get_children()
+	var previous_focus := get_viewport().gui_get_focus_owner()
 	var visibility: Dictionary = {}
 	for child in before:
 		if child is Control:
@@ -441,7 +442,9 @@ func _accessible_controls(input_router: Node, is_3d: bool) -> void:
 				node.queue_free()
 		for node in visibility:
 			if is_instance_valid(node):
-				node.visible = visibility[node], false, 80)
+				node.visible = visibility[node]
+		if is_instance_valid(previous_focus) and previous_focus.is_visible_in_tree():
+			previous_focus.grab_focus(), false, 80)
 	for node in ui.get_children():
 		if node not in before:
 			nodes.append(node)
