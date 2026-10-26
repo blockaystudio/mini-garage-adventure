@@ -1,0 +1,17 @@
+[   179.770] _XSERVTransSocketCreateListener: failed to bind listener
+[   179.770] _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+[   179.770] _XSERVTransMakeAllCOTSServerListeners: failed to create listener for local
+[   179.770] _XSERVTransmkdir: ERROR: euid != 0,directory /tmp/.X11-unix will not be created.
+[   179.770] _XSERVTransSocketCreateListener: failed to bind listener
+[   179.770] _XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+[   179.770] _XSERVTransMakeAllCOTSServerListeners: failed to create listener for unix
+[   179.770] (EE) 
+Fatal server error:
+[   179.770] (EE) Cannot establish any listening sockets - Make sure an X server isn't already running(EE) 
+[   179.770] (EE) 
+Please consult the The X.Org Foundation support 
+	 at http://wiki.x.org
+ for help. 
+[   179.770] (EE) Please also check the log file at "/workspace/mini-garage-adventure/evidence/solo-hardening/exported-gui/Xorg.log" for additional information.
+[   179.770] (EE) 
+[   179.770] (EE) Server terminated with error (1). Closing log file.

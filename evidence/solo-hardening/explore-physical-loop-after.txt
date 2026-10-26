@@ -1,0 +1,73 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: fresh schema3 profile starts with no seeded GP
+PASS: actual Quick Drive scene completes meadow
+PASS: new authored 2D event awards30+50+25 once
+PASS: actual Quick Drive scene completes orchard
+PASS: new authored 2D event awards30+50+25 once
+PASS: two real authored courses produce210GP and two completion stars
+PASS: mud tires cannot be purchased before affordability
+PASS: Explore creates a real3D vehicle and chase camera
+PASS: new Explore profile starts at the authored safe spawn
+PASS: 3D authored activity starts: valley_first_drive
+ROUTE valley_first_drive checkpoint=0 position=(0.0, 0.263056, 84.0) elapsed=0.0
+ROUTE valley_first_drive checkpoint=1 position=(0.0, 0.032956, 72.88033) elapsed=3.01666666666666
+ROUTE valley_first_drive checkpoint=2 position=(-0.000001, 0.068016, 41.91025) elapsed=8.65000000000001
+ROUTE valley_first_drive checkpoint=3 position=(-18.81241, 0.062956, 31.25947) elapsed=13.8166666666669
+ROUTE valley_first_drive checkpoint=4 position=(-26.82217, 0.032954, -22.21692) elapsed=22.6
+ROUTE valley_first_drive checkpoint=5 position=(-6.438943, 0.070984, -43.40535) elapsed=28.483333333333
+ROUTE valley_first_drive checkpoint=6 position=(23.14442, 0.371244, -21.24212) elapsed=35.5666666666659
+ROUTE valley_first_drive checkpoint=7 position=(28.5843, 0.03301, 27.23207) elapsed=43.6666666666655
+PASS: actual 3D ordered route completed without teleport: valley_first_drive
+PASS: 3D route requires real traveled distance
+PASS: all authored checkpoints were reached in order
+PASS: real3D introductory loop grants150GP and no normal-event components
+PASS: duplicate 3D finish signal cannot award twice
+PASS: 3D authored activity starts: valley_parts_delivery
+ROUTE valley_parts_delivery checkpoint=1 position=(3.901618, 0.03295, 65.12526) elapsed=0.01666666666667
+ROUTE valley_parts_delivery checkpoint=2 position=(-38.12702, 0.032951, 60.96012) elapsed=7.49999999999998
+ROUTE valley_parts_delivery checkpoint=3 position=(-69.24389, 0.032949, 20.39683) elapsed=25.3666666666665
+ROUTE valley_parts_delivery checkpoint=4 position=(-71.70795, 0.032948, -58.13123) elapsed=36.6833333333325
+ROUTE valley_parts_delivery checkpoint=5 position=(17.21888, 0.032945, -75.4837) elapsed=49.8999999999984
+ROUTE valley_parts_delivery checkpoint=6 position=(63.42511, 0.032946, -44.36057) elapsed=58.6999999999979
+ROUTE valley_parts_delivery checkpoint=7 position=(70.7405, 0.032943, 42.21215) elapsed=71.0499999999973
+PASS: actual 3D ordered route completed without teleport: valley_parts_delivery
+PASS: 3D route requires real traveled distance
+PASS: all authored checkpoints were reached in order
+PASS: actual 3D delivery earns its120GP base plus first clear/mastery
+PASS: only real completed activities made the mud upgrade affordable
+PASS: real upgrade drawer exposes affordable mud-tire purchase
+PASS: drawer atomically deducts300GP and grants mud tires
+PASS: owned mud tires expose free equipment action
+PASS: drawer equips owned mud tires and preserves wallet
+PASS: earned stars plus equipped mud tires admit Moss Marsh
+PASS: actual destination changes and first admission persists
+PASS: Moss Marsh loads actual world geometry at its own region coordinates
+PASS: pause clears live 3D controls and freezes collision movement
+PASS: free recovery retains wallet and clears input
+PASS: background notification pauses actual3D mode
+EXPLORE PHASE write: 31 checks, 0 failures
+
+ACTIVITY MEASUREMENT {"checkpoints":8.0,"completed":true,"distance_m":282.920654024929,"event":"valley_first_drive","gp_per_minute":175.097276264597,"recoveries":0.0,"reward_gp":150.0,"scope":"Automated real3D CharacterBody keyboard controls, headless desktop; not a human duration study","seconds":51.3999999999984,"total_checkpoints":8.0}
+ACTIVITY MEASUREMENT {"checkpoints":8.0,"completed":true,"distance_m":449.807263923343,"event":"valley_parts_delivery","gp_per_minute":183.826594414347,"recoveries":0.0,"reward_gp":245.0,"scope":"Automated real3D CharacterBody keyboard controls, headless desktop; not a human duration study","seconds":79.9666666666634,"total_checkpoints":8.0}
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: real app relaunch restores exact earned-and-spent wallet
+PASS: real app relaunch restores ownership and equipped tire
+PASS: relaunch retains mastery and previous2D completions
+PASS: relaunch retains private track
+PASS: relaunch retains admitted destination and checkpoint region
+PASS: replayed finish after a fresh process cannot duplicate an award
+PASS: new process resumes in the actual saved3D world
+PASS: new process never restores held driving input
+PASS: equipped mud tires actually drive through the new destination
+PASS: legacy tire can be refitted for free after region admission
+PASS: previous region admission survives an unsuitable tire refit
+PASS: same actual3D mud lane measurably favors purchased mud tires over legacy trail tires
+ACTUAL_MUD_LANE mud={ "distance": 17.9721527099609, "slip": 0.06, "surface": "mud", "tires": "mud" } trail={ "distance": 10.6180648803711, "slip": 0.62, "surface": "mud", "tires": "trail" }
+PASS: free refitting never consumes GP
+EXPLORE PHASE read: 13 checks, 0 failures
+
+EXPLORE LOOP: 44 checks, 0 failures; actual separate-process quit/relaunch

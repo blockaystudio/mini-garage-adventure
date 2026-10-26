@@ -1,0 +1,21 @@
+{
+  "source_commit": "5fb2751cc0ae5ed6524d72f7eb6a9ca232f75ce2",
+  "purpose": "Exact pre-hardening exports retained before replacement; historical evidence remains unchanged.",
+  "artifacts": [
+    {
+      "path": "builds/checkpoints/5fb2751/mini-garage-adventure-explore.x86_64",
+      "bytes": 71488464,
+      "sha256": "f4e0ac3b68f7c12b7b73400be7fdbd4e7f8fe913273c60363dc7f91d6bbad793"
+    },
+    {
+      "path": "builds/checkpoints/5fb2751/mini-garage-adventure-explore-linux.zip",
+      "bytes": 27477569,
+      "sha256": "80f3e6037b666bfaebf6ff9f0ff838869ec0da278bfbeecdfa1df3acbcd94314"
+    },
+    {
+      "path": "builds/checkpoints/5fb2751/mini-garage-adventure-explore-debug.apk",
+      "bytes": 56145895,
+      "sha256": "71bf94a41c08d44c948e1c11fc999ceb2ea17bb2a1e4fa321c52e793a5079ede"
+    }
+  ]
+}

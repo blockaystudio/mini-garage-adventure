@@ -1,0 +1,54 @@
+{
+  "scope": "Static APK payload audit; no device execution",
+  "source_commit": "5ef89c3e494e624a04d3f35bcf17dc474c34d94e",
+  "checks": [
+    {
+      "asset": "assets/data/activities.json",
+      "matches_native_source": true,
+      "sha256": "18301263162c2e74c0be95ae4fc62d51e2f3e76eb0689a535f3dbf6adcc127ea"
+    },
+    {
+      "asset": "assets/data/economy.json",
+      "matches_native_source": true,
+      "sha256": "02e37292a3a9054ef8fb9779710ae7aa25a71c6638fdbcb8db8b5ec39867e5f3"
+    },
+    {
+      "asset": "assets/data/regions.json",
+      "matches_native_source": true,
+      "sha256": "9acdf4647116b946f4a6dbf9f04b20503fe4395362d08f1d7522936ab0a170ba"
+    },
+    {
+      "asset": "assets/scripts/drive3d/explore_mode.gdc",
+      "present": true
+    },
+    {
+      "asset": "assets/scripts/drive3d/vehicle_controller.gdc",
+      "present": true
+    },
+    {
+      "asset": "assets/scripts/drive3d/world_builder.gdc",
+      "present": true
+    },
+    {
+      "asset": "assets/scripts/net/private_session.gdc",
+      "present": true
+    },
+    {
+      "asset": "scenes/main.tscn",
+      "actual_binary_scene": "assets/.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn",
+      "present": true
+    },
+    {
+      "asset": "scenes/drive3d/world.tscn",
+      "actual_binary_scene": "assets/.godot/exported/133200997/export-6863e061aebb3e77c7c877c2d6fd6e33-world.scn",
+      "present": true
+    },
+    {
+      "asset": "scenes/drive3d/vehicle.tscn",
+      "actual_binary_scene": "assets/.godot/exported/133200997/export-ab769896a11362602fd5f814d3ec1412-vehicle.scn",
+      "present": true
+    }
+  ],
+  "forbidden_test_or_server_assets": [],
+  "all_passed": true
+}

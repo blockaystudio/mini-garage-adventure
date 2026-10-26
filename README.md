@@ -3,6 +3,13 @@
 **Playable native Godot adventure, preserved 2D Quick Drive/editor and browser reference. Mobile and public-online release acceptance remain open.**
 Prepared for a private GitHub repository and bounded Codex development tasks.
 
+The current phase verifies and hardens the existing solo build. See
+[hardening delivery](docs/SOLO_HARDENING_DELIVERY.md),
+[remaining acceptance gates](docs/SOLO_HARDENING_BUGS.md) and the
+[exact continuation task](docs/SOLO_HARDENING_NEXT_TASK.txt). The earlier 3D
+checkpoint below remains preserved history. No new content or shared-world
+expansion is part of this phase.
+
 ## Native game
 
 ```sh
@@ -12,7 +19,7 @@ python scripts/verify_native.py
 
 Use Godot 4.6.3 standard/GDScript. Quick Drive retains six vehicles, twelve authored 2D courses and a private 4–16-section track editor. Explore adds real 3D driving, six destinations, eighteen activities and eighteen discoveries, with earnable Garage Points, owned upgrades and non-spendable mastery stars. Schema-3 migration preserves existing native progress and equipment. Native and browser saves remain separate.
 
-The current source checkpoint is `5fb2751` on `codex/garage-explore-native` (Explore core `37d0cf1` plus private-bind, saved-heading, privacy and reward-save recovery fixes), following economy checkpoint `74e9e9b`. Draft [economy PR #4](https://github.com/blockaystudio/mini-garage-adventure/pull/4) and stacked [Explore PR #5](https://github.com/blockaystudio/mini-garage-adventure/pull/5) are unmerged. Read [actual results, playable artifacts and exact run/build commands](docs/3D_DELIVERY.md), [remaining defects](docs/3D_BUGS.md) and the [next development milestone](docs/3D_NEXT_TASK.txt). Inspect the [tracker](docs/MASTER_TRACKER.md) for later evidence commits before editing.
+The preceding 3D source checkpoint is `5fb2751` on `codex/garage-explore-native` (Explore core `37d0cf1` plus private-bind, saved-heading, privacy and reward-save recovery fixes), following economy checkpoint `74e9e9b`. Draft [economy PR #4](https://github.com/blockaystudio/mini-garage-adventure/pull/4) and stacked [Explore PR #5](https://github.com/blockaystudio/mini-garage-adventure/pull/5) are unmerged. Their historical [delivery](docs/3D_DELIVERY.md) and [defects](docs/3D_BUGS.md) remain available; use the current hardening documents above and inspect the [tracker](docs/MASTER_TRACKER.md) before editing.
 
 Native ENet engineering tests use independent clients and a server with isolated TEST profiles. They currently prove a bounded Festival race strip; full authoritative shared-world traversal is unfinished. Solo play stays offline, Android has no Internet permission, and browser crossplay is not implemented. See [networking instructions and limits](docs/NETWORKING.md).
 
@@ -48,7 +55,7 @@ Artwork and metadata still require final publisher review. Runtime contains no a
 ## Codex and CI
 `docs/CODEX_SETUP.md` gives setup steps. `AGENTS.md` states boundaries and commands.
 The verification workflows run tests only, with read-only repository permissions; they
-publish nothing. Final source `5fb2751` passes actual reference/browser and native
+publish nothing. Earlier source `5fb2751` passed actual reference/browser and native
 GitHub CI, including the real multi-process network/failure tests; exact job/step
 evidence is in `evidence/3d-development/github-final-source-ci.json`. Earlier CI
 history remains in `evidence/github-production-ci.json`. Draft PRs remain unmerged.

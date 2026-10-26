@@ -1,0 +1,70 @@
+{
+  "scope": "Actual compiled Linux game window with OS mouse/key input, isolated profile; not source-harness/mobile/human/performance acceptance.",
+  "source_commit": "5ef89c3e494e624a04d3f35bcf17dc474c34d94e",
+  "binary": "builds/mini-garage-adventure-explore.x86_64",
+  "binary_sha256": "091c67e58a49ad7f795a2316fe5480ac0812fee3b3cbcff16ec07f03e357d247",
+  "helper_sha256": {
+    "scripts/play_exported_native.py": "c8261bfc46f8e91a0b7b88fd837fdb55e95531a694834ae0ca5852a6260a1d0e",
+    "scripts/native_save_audit.py": "39a98273226834168a65115cc8604f1d13b666ce78e858cdfd26dd9458f0739a",
+    "scripts/capture_native.py": "d6d5e93a746c873e11c61c5a952b41cb89f7d45aeacbe62dd58d90bafc707018"
+  },
+  "viewport": [
+    1280,
+    720
+  ],
+  "actions": [
+    {
+      "at_seconds": 0.15,
+      "kind": "launch_compiled_export",
+      "pid": 2114,
+      "phase": "first-launch"
+    },
+    {
+      "at_seconds": 13.18,
+      "kind": "mouse_click",
+      "x": 842,
+      "y": 633,
+      "meaning": "Choose a course"
+    },
+    {
+      "at_seconds": 14.947,
+      "kind": "mouse_click",
+      "x": 187,
+      "y": 271,
+      "meaning": "Start authored course meadow"
+    },
+    {
+      "at_seconds": 15.2,
+      "kind": "key_down",
+      "key": "Right",
+      "meaning": "Hold real2D Drive until legitimate course completion"
+    },
+    {
+      "at_seconds": 60.667,
+      "kind": "key_up",
+      "key": "Right"
+    }
+  ],
+  "captures": [
+    {
+      "file": "01-fresh-garage.png",
+      "sha256": "0300fc6386c63ccfa167fab1f661e6536ad6188da51a9e46a300c3aacb04a2db",
+      "source": "Untouched actual exported-game X11 viewport"
+    },
+    {
+      "file": "failed-state.png",
+      "sha256": "06423ccea210dd66b520e972f1a763e7372068aec7e8704c289129199f73cd0b",
+      "source": "Untouched actual exported-game X11 viewport"
+    }
+  ],
+  "checks": [
+    {
+      "label": "Fresh actual exported-game viewport shows zeroGP before any earning",
+      "passed": true
+    }
+  ],
+  "status": "fail",
+  "failure": "Actual saved profile did not satisfy: Authored meadow completion banked105GP exactly once",
+  "elapsed_seconds": 60.683,
+  "all_checks_passed": false
+}

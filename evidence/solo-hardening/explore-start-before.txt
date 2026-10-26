@@ -1,0 +1,3 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+ASSESSMENT_REPORT {"active_run_after_failed_switch":0,"activity_after_failed_switch":"valley_first_drive","block_result":0,"first_valid_run":1,"input_active":true,"mode_message":"Could not keep a backup, so the old save was kept. Please try again.","paused":false,"store_active_run":{"event":"valley_first_drive","id":1,"kind":"tutorial"},"visible_goal":"First little adventure · checkpoint 1 / 8","warning":"Could not keep a backup, so the old save was kept. Please try again."}

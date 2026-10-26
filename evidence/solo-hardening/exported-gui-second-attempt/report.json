@@ -1,0 +1,260 @@
+{
+  "scope": "Actual compiled Linux game window with OS mouse/key input, isolated profile; not source-harness/mobile/human/performance acceptance.",
+  "source_commit": "5ef89c3e494e624a04d3f35bcf17dc474c34d94e",
+  "binary": "builds/mini-garage-adventure-explore.x86_64",
+  "binary_sha256": "091c67e58a49ad7f795a2316fe5480ac0812fee3b3cbcff16ec07f03e357d247",
+  "helper_sha256": {
+    "scripts/play_exported_native.py": "1abe49bd74b14cbaaf949357aaf315f7e93af3f62d4dd1d3f63737e61bb2e3bc",
+    "scripts/native_save_audit.py": "39a98273226834168a65115cc8604f1d13b666ce78e858cdfd26dd9458f0739a",
+    "scripts/capture_native.py": "d6d5e93a746c873e11c61c5a952b41cb89f7d45aeacbe62dd58d90bafc707018"
+  },
+  "viewport": [
+    1280,
+    720
+  ],
+  "actions": [
+    {
+      "at_seconds": 0.109,
+      "kind": "launch_compiled_export",
+      "pid": 2740,
+      "phase": "first-launch"
+    },
+    {
+      "at_seconds": 12.509,
+      "kind": "mouse_click",
+      "x": 842,
+      "y": 633,
+      "meaning": "Choose a course"
+    },
+    {
+      "at_seconds": 14.079,
+      "kind": "mouse_click",
+      "x": 187,
+      "y": 271,
+      "meaning": "Start authored course meadow"
+    },
+    {
+      "at_seconds": 14.768,
+      "kind": "mouse_down",
+      "x": 1095,
+      "y": 645,
+      "meaning": "Hold actual2D Drive pad until legitimate course completion"
+    },
+    {
+      "at_seconds": 22.109,
+      "kind": "mouse_up",
+      "x": 1095,
+      "y": 645
+    },
+    {
+      "at_seconds": 22.671,
+      "kind": "mouse_click",
+      "x": 796,
+      "y": 438,
+      "meaning": "Keep exploring"
+    },
+    {
+      "at_seconds": 24.157,
+      "kind": "mouse_click",
+      "x": 489,
+      "y": 271,
+      "meaning": "Start authored course orchard"
+    },
+    {
+      "at_seconds": 24.853,
+      "kind": "mouse_down",
+      "x": 1095,
+      "y": 645,
+      "meaning": "Hold actual2D Drive pad until legitimate course completion"
+    },
+    {
+      "at_seconds": 33.728,
+      "kind": "mouse_up",
+      "x": 1095,
+      "y": 645
+    },
+    {
+      "at_seconds": 34.238,
+      "kind": "mouse_click",
+      "x": 796,
+      "y": 438,
+      "meaning": "Keep exploring"
+    },
+    {
+      "at_seconds": 36.175,
+      "kind": "mouse_click",
+      "x": 791,
+      "y": 271,
+      "meaning": "Start authored course coast"
+    },
+    {
+      "at_seconds": 36.982,
+      "kind": "mouse_down",
+      "x": 1095,
+      "y": 645,
+      "meaning": "Hold actual2D Drive pad until legitimate course completion"
+    },
+    {
+      "at_seconds": 46.519,
+      "kind": "mouse_up",
+      "x": 1095,
+      "y": 645
+    },
+    {
+      "at_seconds": 47.101,
+      "kind": "mouse_click",
+      "x": 640,
+      "y": 513,
+      "meaning": "Back to garage"
+    },
+    {
+      "at_seconds": 48.379,
+      "kind": "mouse_click",
+      "x": 1107,
+      "y": 519,
+      "meaning": "Open upgrade workshop"
+    },
+    {
+      "at_seconds": 49.752,
+      "kind": "mouse_click",
+      "x": 930,
+      "y": 548,
+      "meaning": "Buy mud tires300GP"
+    },
+    {
+      "at_seconds": 50.003,
+      "kind": "mouse_click",
+      "x": 930,
+      "y": 548,
+      "meaning": "Equip owned mud tiresFREE"
+    },
+    {
+      "at_seconds": 51.113,
+      "kind": "mouse_click",
+      "x": 1166,
+      "y": 70,
+      "meaning": "Back to garage"
+    },
+    {
+      "at_seconds": 52.312,
+      "kind": "mouse_click",
+      "x": 1126,
+      "y": 181,
+      "meaning": "Explore3D"
+    },
+    {
+      "at_seconds": 54.157,
+      "kind": "mouse_click",
+      "x": 144,
+      "y": 398,
+      "meaning": "World map"
+    },
+    {
+      "at_seconds": 55.677,
+      "kind": "mouse_click",
+      "x": 1061,
+      "y": 358,
+      "meaning": "Enter Moss Marsh with actual earned stars and owned/equipped mud"
+    },
+    {
+      "at_seconds": 57.285,
+      "kind": "key_down",
+      "key": "w",
+      "meaning": "Actual3D throttle input; distance is not inferred from pixels"
+    },
+    {
+      "at_seconds": 59.286,
+      "kind": "key_up",
+      "key": "w"
+    },
+    {
+      "at_seconds": 60.567,
+      "kind": "normal_window_close",
+      "phase": "first-launch"
+    }
+  ],
+  "captures": [
+    {
+      "file": "01-fresh-garage.png",
+      "sha256": "dcc92c146f7f85e7292661fe83e31f4a3a2e909b2c4ad0dca5227727aadcdfc6",
+      "source": "Untouched actual exported-game X11 viewport"
+    },
+    {
+      "file": "02-meadow-complete.png",
+      "sha256": "e341bb6aebd89bb05ca6de558db2797212d70ab215d8033df29f0c62c0ea82ec",
+      "source": "Untouched actual exported-game X11 viewport"
+    },
+    {
+      "file": "03-orchard-complete.png",
+      "sha256": "259d447236a8d88d54e603553004cd52d6878ef8b0fa80a15aacb560dd6b7a80",
+      "source": "Untouched actual exported-game X11 viewport"
+    },
+    {
+      "file": "04-coast-complete.png",
+      "sha256": "3c3d6bf103ff6894ed3f7cf5c61bb1af892506bba9a9ca3567d6b0083175ddcc",
+      "source": "Untouched actual exported-game X11 viewport"
+    },
+    {
+      "file": "05-mud-owned-equipped.png",
+      "sha256": "e2de00cd97277d940e94d290dfa86b4ad850c00e3e276a4bf24bcd4b54a0e510",
+      "source": "Untouched actual exported-game X11 viewport"
+    },
+    {
+      "file": "06-moss-before-input.png",
+      "sha256": "472a2488e3cc1d84f46c6e503d5b5d4f749a759c4b5caa510bc0aa42c056444f",
+      "source": "Untouched actual exported-game X11 viewport"
+    },
+    {
+      "file": "07-moss-after-input.png",
+      "sha256": "575407f236e5380d4ec710e48a5004cb4f4662113e8a85cf723d5d12d246a6ba",
+      "source": "Untouched actual exported-game X11 viewport"
+    }
+  ],
+  "checks": [
+    {
+      "label": "Fresh actual exported-game viewport shows zeroGP before any earning",
+      "passed": true
+    },
+    {
+      "label": "Authored meadow completion banked105GP exactly once",
+      "passed": true
+    },
+    {
+      "label": "Authored orchard completion banked105GP exactly once",
+      "passed": true
+    },
+    {
+      "label": "Authored coast completion banked105GP exactly once",
+      "passed": true
+    },
+    {
+      "label": "Atomic mud purchase leaves15GP and grants ownership",
+      "passed": true
+    },
+    {
+      "label": "Free equipment swap retains15GP",
+      "passed": true
+    },
+    {
+      "label": "Moss Marsh admitted and its checkpoint saved",
+      "passed": true
+    },
+    {
+      "label": "Decoded actual3D viewport pixels differ after OS throttle input; review original frames for travel",
+      "passed": true
+    },
+    {
+      "label": "Final wallet and three mastery claims remain unchanged",
+      "passed": true
+    }
+  ],
+  "status": "fail",
+  "pixel_change_evidence": {
+    "comparison": "Decoded RGB pixels, excluding PNG metadata; no distance or performance inference.",
+    "before_rgb_sha256": "976c310e74ff1799158b6e29b019740e01e7ce6c1681a9ef9ea04d734712ed53",
+    "after_rgb_sha256": "87f2c6a4d237c41828bd9ecd0e1ec9bce64cdee5061220ab7527d91bc8053acb"
+  },
+  "failure": "Command '['/workspace/mini-garage-adventure/builds/mini-garage-adventure-explore.x86_64', '--resolution', '1280x720', '--position', '0,0', '--audio-driver', 'Dummy']' timed out after 12 seconds",
+  "elapsed_seconds": 72.596,
+  "all_checks_passed": false
+}

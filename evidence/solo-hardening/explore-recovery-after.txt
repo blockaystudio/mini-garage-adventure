@@ -1,0 +1,130 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: isolated recovery fixture starts with a committed fresh profile
+PASS: previous mission has a real valid ordered observation
+PASS: real backup-path directory blocks an atomic write
+PASS: failed switch retains the previous valid run, activity and checkpoint
+PASS: failed switch visibly pauses with the actual storage warning
+PASS: failed reservation changes neither committed run nor wallet
+PASS: failed switch exposes an explicit retry
+PASS: repeated blocked reservation retry keeps the original mission coherent
+PASS: explicit resume can continue the original valid observation
+PASS: repaired storage can retry the intended new mission
+PASS: only successful reservation publishes the requested fresh mission
+PASS: new reservation commits exactly its own run and no reward
+PASS: isolated recovery fixture starts with a committed fresh profile
+PASS: real backup-path directory blocks an atomic write
+PASS: failed first reservation stays in a paused non-mission state with the warning visible
+PASS: repair can start the initially requested mission without an ineligible drive
+PASS: isolated recovery fixture starts with a committed fresh profile
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: real backup-path directory blocks an atomic write
+PASS: valid completion with failed commit remains unpaid and retryable
+PASS: unpaid completion survives Workshop navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: Workshop
+PASS: canceling leave returns to the same pending reward: Workshop
+PASS: unpaid completion survives Garage navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: Garage
+PASS: canceling leave returns to the same pending reward: Garage
+PASS: unpaid completion survives courses navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: courses
+PASS: canceling leave returns to the same pending reward: courses
+PASS: unpaid completion survives Quick Drive navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: Quick Drive
+PASS: canceling leave returns to the same pending reward: Quick Drive
+PASS: unpaid completion survives editor navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: editor
+PASS: canceling leave returns to the same pending reward: editor
+PASS: unpaid completion survives parent gate navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: parent gate
+PASS: canceling leave returns to the same pending reward: parent gate
+PASS: unpaid completion survives parents navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: parents
+PASS: canceling leave returns to the same pending reward: parents
+PASS: unpaid completion survives help navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: help
+PASS: canceling leave returns to the same pending reward: help
+PASS: unpaid completion survives licenses navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: licenses
+PASS: canceling leave returns to the same pending reward: licenses
+PASS: unpaid completion survives Explore replacement navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: Explore replacement
+PASS: canceling leave returns to the same pending reward: Explore replacement
+PASS: unpaid completion survives private sessions navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: private sessions
+PASS: canceling leave returns to the same pending reward: private sessions
+PASS: unpaid completion survives reload navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: reload
+PASS: canceling leave returns to the same pending reward: reload
+PASS: unpaid completion survives missions navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: missions
+PASS: canceling leave returns to the same pending reward: missions
+PASS: unpaid completion survives map navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: map
+PASS: canceling leave returns to the same pending reward: map
+PASS: unpaid completion survives destination navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: destination
+PASS: canceling leave returns to the same pending reward: destination
+PASS: unpaid completion survives mission replacement navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: mission replacement
+PASS: canceling leave returns to the same pending reward: mission replacement
+PASS: unpaid completion survives restart route navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: restart route
+PASS: canceling leave returns to the same pending reward: restart route
+PASS: unpaid completion survives free explore navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: free explore
+PASS: canceling leave returns to the same pending reward: free explore
+PASS: unpaid completion survives free recovery navigation
+PASS: navigation requires an explicit unpaid-result consequence choice: free recovery
+PASS: canceling leave returns to the same pending reward: free recovery
+PASS: actual Workshop result button is protected by the same navigation guard
+PASS: actual top Garage button is protected by the same navigation guard
+PASS: Escape cancels the old discard intent and a delayed confirmation callback cannot discard the run
+PASS: ordinary quit retries but cannot silently discard an unbanked result
+PASS: ordinary quit can be canceled while the run remains open
+PASS: back/Escape/background/pause/resume retain the paused pending result
+PASS: all rejected retries/navigation issue no success cue or phantom GP
+PASS: pending original run retries after storage repair
+PASS: same original tutorial run settles150GP exactly once after repair
+PASS: duplicate successful callbacks add no save, reward, cue or UI
+PASS: Workshop opens normally after the reward has committed
+PASS: committed repaired reward survives an independent file reload
+PASS: isolated recovery fixture starts with a committed fresh profile
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: real backup-path directory blocks an atomic write
+PASS: canceling the consequence choice preserves the original run
+PASS: explicit unpaid-result discard action is available
+PASS: confirmed discard opens the requested Workshop without awarding or marking a claim
+PASS: only explicit discard permits returning without the unbanked activity
+PASS: isolated recovery fixture starts with a committed fresh profile
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: second native store commits a newer legitimate setting
+PASS: stale completion stays pending with an actual reload warning
+PASS: reload cannot replace a pending reward without consequence confirmation
+PASS: stale pending reward can be kept and retried safely
+PASS: repeated stale settlement never overwrites or merges the newer profile
+PASS: user may explicitly leave the unpaid stale run and reload
+PASS: confirmed reload preserves the newer profile and adds no unbanked reward
+PASS: isolated recovery fixture starts with a committed fresh profile
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: checkpoint-only rejection is distinct from an unpaid completed reward
+PASS: blocked checkpoint retries cannot settle or cue a committed reward twice
+PASS: checkpoint repair restores the successful result with the existing saved receipt
+PASS: a committed reward can leave normally without an unpaid-result confirmation
+EXPLORE_RECOVERY_RESULT checks=127 failures=0

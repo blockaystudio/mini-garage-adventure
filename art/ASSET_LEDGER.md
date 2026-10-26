@@ -60,3 +60,15 @@ The new low-poly 3D geometry is authored for this repository in editable GDScrip
 | Surface and finish feedback | `vehicle_art.gd` | Bounded CPU-particle dust/mud/snow/ice colors and skid intensity, plus a small finish burst; reduced motion suppresses decorative emission | Original procedural meshes/colors; no external texture; actual platform visual/performance review pending |
 
 The supplied handoff `assets/WORLD_MAP.svg`/PNG is conceptual reference artwork and is not counted here as a playable map or integrated 3D mesh. The existing icon/feature art, browser screenshots and native 2D captures remain separate from 3D gameplay evidence. Actual rendered 3D review captures and source fingerprints belong in `evidence/3d-development/`; desktop render/physics results are not Android/iOS certification. Stage-A targets such as sixteen distinct production icons, ten reviewed audio cues, final model exports and every proposed cosmetic have not been silently marked complete by this procedural asset layer.
+
+## Current-build solo hardening — 2026-10-26
+
+No runtime art, audio, models, fonts or external asset dependencies were added in
+this phase. Existing procedural meshes, effects, generated audio and license
+notices remain as recorded above. Source/test tooling and synthetic save fixtures
+are verification artifacts, not integrated game assets. Fresh native screenshots
+and exported Linux GUI captures, when recorded in `evidence/solo-hardening/`, are
+actual desktop verification evidence only; phone-sized rendering does not make
+them Android/iOS screenshots or final store art. Rights/title/owner review and
+physical-device visual/audio acceptance remain open. No concept art is counted as
+a playable environment or shipped production asset.

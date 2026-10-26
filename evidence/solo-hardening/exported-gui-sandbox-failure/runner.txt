@@ -1,0 +1,1 @@
+EXPORTED GUI FAILED: Owned Xorg did not start; inspect Xorg.log

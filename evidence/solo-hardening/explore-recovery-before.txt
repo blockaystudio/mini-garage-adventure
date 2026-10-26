@@ -1,0 +1,63 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: isolated recovery fixture starts with a committed fresh profile
+PASS: previous mission has a real valid ordered observation
+PASS: real backup-path directory blocks an atomic write
+FAIL: failed switch retains the previous valid run, activity and checkpoint
+FAIL: failed switch visibly pauses with the actual storage warning
+PASS: failed reservation changes neither committed run nor wallet
+FAIL: failed switch exposes an explicit retry
+FAIL: repeated blocked reservation retry keeps the original mission coherent
+FAIL: explicit resume can continue the original valid observation
+FAIL: repaired storage can retry the intended new mission
+FAIL: only successful reservation publishes the requested fresh mission
+FAIL: new reservation commits exactly its own run and no reward
+PASS: isolated recovery fixture starts with a committed fresh profile
+PASS: real backup-path directory blocks an atomic write
+FAIL: failed first reservation stays in a paused non-mission state with the warning visible
+FAIL: repair can start the initially requested mission without an ineligible drive
+PASS: isolated recovery fixture starts with a committed fresh profile
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: real backup-path directory blocks an atomic write
+PASS: valid completion with failed commit remains unpaid and retryable
+FAIL: unpaid completion survives Workshop navigation
+FAIL: navigation requires an explicit unpaid-result consequence choice: Workshop
+PASS: isolated recovery fixture starts with a committed fresh profile
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: real backup-path directory blocks an atomic write
+FAIL: canceling the consequence choice preserves the original run
+FAIL: explicit unpaid-result discard action is available
+PASS: confirmed discard opens the requested Workshop without awarding or marking a claim
+PASS: only explicit discard permits returning without the unbanked activity
+PASS: isolated recovery fixture starts with a committed fresh profile
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: second native store commits a newer legitimate setting
+PASS: stale completion stays pending with an actual reload warning
+FAIL: reload cannot replace a pending reward without consequence confirmation
+FAIL: stale pending reward can be kept and retried safely
+FAIL: repeated stale settlement never overwrites or merges the newer profile
+FAIL: user may explicitly leave the unpaid stale run and reload
+PASS: confirmed reload preserves the newer profile and adds no unbanked reward
+PASS: isolated recovery fixture starts with a committed fresh profile
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: synthetic ordered observation is accepted for run1
+PASS: checkpoint-only rejection is distinct from an unpaid completed reward
+PASS: blocked checkpoint retries cannot settle or cue a committed reward twice
+PASS: checkpoint repair restores the successful result with the existing saved receipt
+PASS: a committed reward can leave normally without an unpaid-result confirmation
+EXPLORE_RECOVERY_RESULT checks=60 failures=18

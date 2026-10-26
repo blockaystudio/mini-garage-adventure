@@ -1,0 +1,1 @@
+NATIVE TEST BUILD FAILED: Command failed(exit0); inspect evidence/solo-hardening/native-builds-final/linux-export.txt

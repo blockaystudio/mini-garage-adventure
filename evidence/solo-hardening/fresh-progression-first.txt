@@ -1,0 +1,447 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: single new profile starts with exact defaults,0GP, no seeded inventory/stars/admission
+PASS: fresh profile cannot buy300GP mud tires
+PASS: fresh profile cannot bypass locked first entry
+PASS: real Quick Drive reserves an eligible run: meadow
+PASS: actual throttle scene completes untimed Quick Drive: meadow
+PASS: legitimate Quick Drive currency is exact: meadow
+PASS: Quick Drive completion mastery is earned, never seeded
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":105,"components":[{"gp":30,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"}],"earned_gp":105,"elapsed_seconds":7.29166666666682,"event":"meadow","kind":"quick_drive","mastery":1,"timed_bonus_required":false}
+PASS: real Quick Drive reserves an eligible run: orchard
+PASS: actual throttle scene completes untimed Quick Drive: orchard
+PASS: legitimate Quick Drive currency is exact: orchard
+PASS: Quick Drive completion mastery is earned, never seeded
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":210,"components":[{"gp":30,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"}],"earned_gp":105,"elapsed_seconds":8.84166666666681,"event":"orchard","kind":"quick_drive","mastery":2,"timed_bonus_required":false}
+PASS: real Quick Drive reserves an eligible run: coast
+PASS: actual throttle scene completes untimed Quick Drive: coast
+PASS: legitimate Quick Drive currency is exact: coast
+PASS: Quick Drive completion mastery is earned, never seeded
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":315,"components":[{"gp":30,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"}],"earned_gp":105,"elapsed_seconds":9.51666666666677,"event":"coast","kind":"quick_drive","mastery":3,"timed_bonus_required":false}
+PASS: real Quick Drive reserves an eligible run: parcel
+PASS: actual throttle scene completes untimed Quick Drive: parcel
+PASS: legitimate Quick Drive currency is exact: parcel
+PASS: Quick Drive completion mastery is earned, never seeded
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":420,"components":[{"gp":30,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"}],"earned_gp":105,"elapsed_seconds":11.65,"event":"parcel","kind":"quick_drive","mastery":4,"timed_bonus_required":false}
+PASS: real Quick Drive reserves an eligible run: firefly
+PASS: actual throttle scene completes untimed Quick Drive: firefly
+PASS: legitimate Quick Drive currency is exact: firefly
+PASS: Quick Drive completion mastery is earned, never seeded
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":525,"components":[{"gp":30,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"}],"earned_gp":105,"elapsed_seconds":9.00000000000013,"event":"firefly","kind":"quick_drive","mastery":5,"timed_bonus_required":false}
+PASS: real Quick Drive reserves an eligible run: quarry
+PASS: actual throttle scene completes untimed Quick Drive: quarry
+PASS: legitimate Quick Drive currency is exact: quarry
+PASS: Quick Drive completion mastery is earned, never seeded
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":630,"components":[{"gp":30,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"}],"earned_gp":105,"elapsed_seconds":12.0583333333333,"event":"quarry","kind":"quick_drive","mastery":6,"timed_bonus_required":false}
+PASS: real Quick Drive reserves an eligible run: dunes
+PASS: actual throttle scene completes untimed Quick Drive: dunes
+PASS: legitimate Quick Drive currency is exact: dunes
+PASS: Quick Drive completion mastery is earned, never seeded
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":735,"components":[{"gp":30,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"}],"earned_gp":105,"elapsed_seconds":14.1083333333332,"event":"dunes","kind":"quick_drive","mastery":7,"timed_bonus_required":false}
+PASS: real Quick Drive reserves an eligible run: moon
+PASS: actual throttle scene completes untimed Quick Drive: moon
+PASS: legitimate Quick Drive currency is exact: moon
+PASS: Quick Drive completion mastery is earned, never seeded
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":840,"components":[{"gp":30,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"}],"earned_gp":105,"elapsed_seconds":14.6333333333331,"event":"moon","kind":"quick_drive","mastery":8,"timed_bonus_required":false}
+PASS: real Quick Drive reserves an eligible run: river
+PASS: actual throttle scene completes untimed Quick Drive: river
+PASS: legitimate Quick Drive currency is exact: river
+PASS: Quick Drive completion mastery is earned, never seeded
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":945,"components":[{"gp":30,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"}],"earned_gp":105,"elapsed_seconds":16.1833333333331,"event":"river","kind":"quick_drive","mastery":9,"timed_bonus_required":false}
+PASS: real Quick Drive reserves an eligible run: switchback
+PASS: actual throttle scene completes untimed Quick Drive: switchback
+PASS: legitimate Quick Drive currency is exact: switchback
+PASS: Quick Drive completion mastery is earned, never seeded
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":1050,"components":[{"gp":30,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"}],"earned_gp":105,"elapsed_seconds":14.6499999999998,"event":"switchback","kind":"quick_drive","mastery":10,"timed_bonus_required":false}
+PASS: real Quick Drive reserves an eligible run: lantern
+PASS: actual throttle scene completes untimed Quick Drive: lantern
+PASS: legitimate Quick Drive currency is exact: lantern
+PASS: Quick Drive completion mastery is earned, never seeded
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":1155,"components":[{"gp":30,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"}],"earned_gp":105,"elapsed_seconds":17.558333333333,"event":"lantern","kind":"quick_drive","mastery":11,"timed_bonus_required":false}
+PASS: real Quick Drive reserves an eligible run: summit
+PASS: actual throttle scene completes untimed Quick Drive: summit
+PASS: legitimate Quick Drive currency is exact: summit
+PASS: Quick Drive completion mastery is earned, never seeded
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":1260,"components":[{"gp":30,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"}],"earned_gp":105,"elapsed_seconds":20.9499999999995,"event":"summit","kind":"quick_drive","mastery":12,"timed_bonus_required":false}
+PASS: twelve actual untimed course first-clears earn1260GP and12stars
+PASS: real Quick Drive reserves an eligible run: custom
+PASS: actual throttle scene completes untimed Quick Drive: custom
+PASS: legitimate Quick Drive currency is exact: custom
+PASS: Quick Drive completion mastery is earned, never seeded
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":1260,"components":[],"earned_gp":0,"elapsed_seconds":7.29166666666682,"event":"custom","kind":"custom_practice","mastery":12,"timed_bonus_required":false}
+PASS: progression chooses an untimed authored mode: valley_first_drive
+PASS: actual3D activity reserves a valid run: valley_first_drive
+PASS: physical collision route completes without time limit: valley_first_drive
+PASS: no recovery or transform warp during activity: valley_first_drive
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"automatic_discoveries":0,"balance_gp":1410,"checkpoint":8,"checkpoint_count":8,"completed":true,"components":[{"gp":150,"label":"Introductory drive"}],"distance_m":283.001422166824,"elapsed_seconds":54.0333333333315,"id":"valley_first_drive","kind":"activity","mastery":12,"mode":"tutorial","new_mastery":[],"recoveries_during_route":0,"region":"garage_valley","reward_gp":150,"timed_bonus_required":false,"tires":"trail","vehicle":"buggy"}
+PASS: duplicate completed activity never awards again
+PASS: progression chooses an untimed authored mode: valley_parts_delivery
+PASS: actual3D activity reserves a valid run: valley_parts_delivery
+PASS: physical collision route completes without time limit: valley_parts_delivery
+PASS: no recovery or transform warp during activity: valley_parts_delivery
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"automatic_discoveries":0,"balance_gp":1655,"checkpoint":8,"checkpoint_count":8,"completed":true,"components":[{"gp":120,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":465.891379236942,"elapsed_seconds":88.8499999999962,"id":"valley_parts_delivery","kind":"activity","mastery":15,"mode":"delivery","new_mastery":["valley_parts_delivery:completion","valley_parts_delivery:event_skill","valley_parts_delivery:suitable_build_route"],"recoveries_during_route":0,"region":"garage_valley","reward_gp":245,"timed_bonus_required":false,"tires":"trail","vehicle":"buggy"}
+PASS: duplicate completed activity never awards again
+PASS: earned wallet can afford required part: mud
+PASS: usable current game action: Buy for 300 GP
+PASS: UI purchase atomically deducts price and owns mud
+PASS: purchase never spends mastery
+PASS: duplicate owned-part purchase charges once: mud
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_before":1655,"balance_gp":1355,"item":"mud","kind":"purchase","mastery":15,"owned_after":true,"price_gp":300}
+PASS: usable current game action: Equip · FREE
+PASS: UI equips owned part free: mud
+PASS: vehicle was unlocked by earned mastery: buggy
+PASS: regional tire was actually purchased or foundational: mud
+PASS: free regional equipment action: suspension_upgrade 
+PASS: free regional equipment action: gearing 
+PASS: free regional equipment action: drivetrain 
+PASS: free regional equipment action: engine 
+PASS: all regional refitting is free
+PASS: current genuinely owned/equipped build meets gate: garage_valley
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":1355,"build":{"tires":"mud","vehicle":"buggy"},"cost_gp":0,"kind":"free_refit","mastery":15,"region":"garage_valley"}
+PASS: actual map action admits and loads destination: garage_valley
+PASS: destination entry consumes no GP
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":1355,"equipped":{"drivetrain":"","engine":"","gearing":"","suspension_upgrade":"","tires":"mud"},"first_admission":false,"kind":"region_entry","mastery":15,"owned":["road","trail","giant","soft","firm","orange","cyan","purple","lime","mud"],"region":"garage_valley","wallet_gp":1355}
+PASS: progression chooses an untimed authored mode: valley_tire_trial
+PASS: actual3D activity reserves a valid run: valley_tire_trial
+PASS: physical collision route completes without time limit: valley_tire_trial
+PASS: no recovery or transform warp during activity: valley_tire_trial
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"automatic_discoveries":0,"balance_gp":1580,"checkpoint":11,"checkpoint_count":11,"completed":true,"components":[{"gp":100,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":363.566043399274,"elapsed_seconds":70.1999999999973,"id":"valley_tire_trial","kind":"activity","mastery":18,"mode":"surface_test","new_mastery":["valley_tire_trial:completion","valley_tire_trial:event_skill","valley_tire_trial:suitable_build_route"],"recoveries_during_route":0,"region":"garage_valley","reward_gp":225,"timed_bonus_required":false,"tires":"mud","vehicle":"buggy"}
+PASS: duplicate completed activity never awards again
+PASS: actual driving reaches and claims landmark: valley_workshop_bell
+PASS: discovery wallet contains only new actual claims
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":1655,"earned_gp":75,"kind":"discovery","landmark":"valley_workshop_bell","mastery":18,"new_discoveries":1,"position":[-55.2205238342285,0.0329089462757111,70.8427200317383]}
+PASS: repeat landmark claim adds no currency
+PASS: actual driving reaches and claims landmark: valley_waterwheel
+PASS: discovery wallet contains only new actual claims
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":1730,"earned_gp":75,"kind":"discovery","landmark":"valley_waterwheel","mastery":18,"new_discoveries":1,"position":[-76.1020126342773,0.0328997857868671,-61.1347541809082]}
+PASS: repeat landmark claim adds no currency
+PASS: actual driving reaches and claims landmark: valley_antenna
+PASS: discovery wallet contains only new actual claims
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":1805,"earned_gp":75,"kind":"discovery","landmark":"valley_antenna","mastery":18,"new_discoveries":1,"position":[72.1660003662109,0.0327984094619751,-61.137508392334]}
+PASS: repeat landmark claim adds no currency
+PASS: vehicle was unlocked by earned mastery: kart
+PASS: regional tire was actually purchased or foundational: trail
+PASS: free regional equipment action: suspension_upgrade 
+PASS: free regional equipment action: gearing 
+PASS: free regional equipment action: drivetrain 
+PASS: free regional equipment action: engine 
+PASS: all regional refitting is free
+PASS: current genuinely owned/equipped build meets gate: festival_circuit
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":1805,"build":{"tires":"trail","vehicle":"kart"},"cost_gp":0,"kind":"free_refit","mastery":18,"region":"festival_circuit"}
+PASS: actual map action admits and loads destination: festival_circuit
+PASS: destination entry consumes no GP
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":1805,"equipped":{"drivetrain":"","engine":"","gearing":"","suspension_upgrade":"","tires":"trail"},"first_admission":false,"kind":"region_entry","mastery":18,"owned":["road","trail","giant","soft","firm","orange","cyan","purple","lime","mud"],"region":"festival_circuit","wallet_gp":1805}
+PASS: progression chooses an untimed authored mode: festival_parcel_pit
+PASS: actual3D activity reserves a valid run: festival_parcel_pit
+PASS: physical collision route completes without time limit: festival_parcel_pit
+PASS: no recovery or transform warp during activity: festival_parcel_pit
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"automatic_discoveries":0,"balance_gp":2050,"checkpoint":8,"checkpoint_count":8,"completed":true,"components":[{"gp":120,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":410.97308149375,"elapsed_seconds":69.0833333333307,"id":"festival_parcel_pit","kind":"activity","mastery":21,"mode":"delivery","new_mastery":["festival_parcel_pit:completion","festival_parcel_pit:event_skill","festival_parcel_pit:suitable_build_route"],"recoveries_during_route":0,"region":"festival_circuit","reward_gp":245,"timed_bonus_required":false,"tires":"trail","vehicle":"kart"}
+PASS: duplicate completed activity never awards again
+PASS: progression chooses an untimed authored mode: festival_slalom
+PASS: actual3D activity reserves a valid run: festival_slalom
+PASS: physical collision route completes without time limit: festival_slalom
+PASS: no recovery or transform warp during activity: festival_slalom
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"automatic_discoveries":0,"balance_gp":2275,"checkpoint":10,"checkpoint_count":10,"completed":true,"components":[{"gp":100,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":410.310908042826,"elapsed_seconds":74.7666666666637,"id":"festival_slalom","kind":"activity","mastery":24,"mode":"slalom","new_mastery":["festival_slalom:completion","festival_slalom:event_skill","festival_slalom:suitable_build_route"],"recoveries_during_route":0,"region":"festival_circuit","reward_gp":225,"timed_bonus_required":false,"tires":"trail","vehicle":"kart"}
+PASS: duplicate completed activity never awards again
+PASS: actual driving reaches and claims landmark: festival_podium
+PASS: discovery wallet contains only new actual claims
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":2350,"earned_gp":75,"kind":"discovery","landmark":"festival_podium","mastery":24,"new_discoveries":1,"position":[186.632614135742,0.032905139029026,70.8477325439453]}
+PASS: repeat landmark claim adds no currency
+PASS: actual driving reaches and claims landmark: festival_grandstand
+PASS: discovery wallet contains only new actual claims
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":2425,"earned_gp":75,"kind":"discovery","landmark":"festival_grandstand","mastery":24,"new_discoveries":1,"position":[313.524841308594,0.0328202024102211,-57.1829452514648]}
+PASS: repeat landmark claim adds no currency
+PASS: actual driving reaches and claims landmark: festival_trophy
+PASS: discovery wallet contains only new actual claims
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":2500,"earned_gp":75,"kind":"discovery","landmark":"festival_trophy","mastery":24,"new_discoveries":1,"position":[164.447906494141,0.0328161530196667,-65.1885375976562]}
+PASS: repeat landmark claim adds no currency
+PASS: vehicle was unlocked by earned mastery: rover
+PASS: regional tire was actually purchased or foundational: mud
+PASS: free regional equipment action: suspension_upgrade 
+PASS: free regional equipment action: gearing 
+PASS: free regional equipment action: drivetrain 
+PASS: free regional equipment action: engine 
+PASS: all regional refitting is free
+PASS: current genuinely owned/equipped build meets gate: moss_marsh
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit"],"balance_gp":2500,"build":{"tires":"mud","vehicle":"rover"},"cost_gp":0,"kind":"free_refit","mastery":24,"region":"moss_marsh"}
+PASS: actual map action admits and loads destination: moss_marsh
+PASS: destination entry consumes no GP
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh"],"balance_gp":2500,"equipped":{"drivetrain":"","engine":"","gearing":"","suspension_upgrade":"","tires":"mud"},"first_admission":true,"kind":"region_entry","mastery":24,"owned":["road","trail","giant","soft","firm","orange","cyan","purple","lime","mud"],"region":"moss_marsh","wallet_gp":2500}
+PASS: Marsh remains admitted after free unsuitable tire refit
+PASS: actual map reentry preserves prior admission without required equipped tire
+PASS: free recovery cannot strand a previously admitted player by spending points
+PASS: vehicle was unlocked by earned mastery: rover
+PASS: regional tire was actually purchased or foundational: mud
+PASS: free regional equipment action: suspension_upgrade 
+PASS: free regional equipment action: gearing 
+PASS: free regional equipment action: drivetrain 
+PASS: free regional equipment action: engine 
+PASS: all regional refitting is free
+PASS: current genuinely owned/equipped build meets gate: moss_marsh
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh"],"balance_gp":2500,"build":{"tires":"mud","vehicle":"rover"},"cost_gp":0,"kind":"free_refit","mastery":24,"region":"moss_marsh"}
+PASS: actual map action admits and loads destination: moss_marsh
+PASS: destination entry consumes no GP
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh"],"balance_gp":2500,"equipped":{"drivetrain":"","engine":"","gearing":"","suspension_upgrade":"","tires":"mud"},"first_admission":false,"kind":"region_entry","mastery":24,"owned":["road","trail","giant","soft","firm","orange","cyan","purple","lime","mud"],"region":"moss_marsh","wallet_gp":2500}
+PASS: progression chooses an untimed authored mode: marsh_supply_loop
+PASS: actual3D activity reserves a valid run: marsh_supply_loop
+PASS: physical collision route completes without time limit: marsh_supply_loop
+PASS: no recovery or transform warp during activity: marsh_supply_loop
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh"],"automatic_discoveries":2,"balance_gp":2875,"checkpoint":11,"checkpoint_count":11,"completed":true,"components":[{"gp":100,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":530.482832234353,"elapsed_seconds":91.7666666666627,"id":"marsh_supply_loop","kind":"activity","mastery":27,"mode":"trail","new_mastery":["marsh_supply_loop:completion","marsh_supply_loop:event_skill","marsh_supply_loop:suitable_build_route"],"recoveries_during_route":0,"region":"moss_marsh","reward_gp":225,"timed_bonus_required":false,"tires":"mud","vehicle":"rover"}
+PASS: duplicate completed activity never awards again
+PASS: progression chooses an untimed authored mode: marsh_reed_delivery
+PASS: actual3D activity reserves a valid run: marsh_reed_delivery
+PASS: physical collision route completes without time limit: marsh_reed_delivery
+PASS: no recovery or transform warp during activity: marsh_reed_delivery
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh"],"automatic_discoveries":0,"balance_gp":3120,"checkpoint":8,"checkpoint_count":8,"completed":true,"components":[{"gp":120,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":404.968995541334,"elapsed_seconds":72.3833333333305,"id":"marsh_reed_delivery","kind":"activity","mastery":30,"mode":"delivery","new_mastery":["marsh_reed_delivery:completion","marsh_reed_delivery:event_skill","marsh_reed_delivery:suitable_build_route"],"recoveries_during_route":0,"region":"moss_marsh","reward_gp":245,"timed_bonus_required":false,"tires":"mud","vehicle":"rover"}
+PASS: duplicate completed activity never awards again
+PASS: progression chooses an untimed authored mode: marsh_boardwalk
+PASS: actual3D activity reserves a valid run: marsh_boardwalk
+PASS: physical collision route completes without time limit: marsh_boardwalk
+PASS: no recovery or transform warp during activity: marsh_boardwalk
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh"],"automatic_discoveries":0,"balance_gp":3345,"checkpoint":9,"checkpoint_count":9,"completed":true,"components":[{"gp":100,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":305.817068265518,"elapsed_seconds":61.0999999999978,"id":"marsh_boardwalk","kind":"activity","mastery":33,"mode":"precision","new_mastery":["marsh_boardwalk:completion","marsh_boardwalk:event_skill","marsh_boardwalk:suitable_build_route"],"recoveries_during_route":0,"region":"moss_marsh","reward_gp":225,"timed_bonus_required":false,"tires":"mud","vehicle":"rover"}
+PASS: duplicate completed activity never awards again
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh"],"balance_gp":3345,"extra_gp":0,"kind":"discovery_already_reached_on_route","landmark":"marsh_lookout","mastery":33}
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh"],"balance_gp":3345,"extra_gp":0,"kind":"discovery_already_reached_on_route","landmark":"marsh_pump","mastery":33}
+PASS: actual driving reaches and claims landmark: marsh_firefly
+PASS: discovery wallet contains only new actual claims
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh"],"balance_gp":3420,"earned_gp":75,"kind":"discovery","landmark":"marsh_firefly","mastery":33,"new_discoveries":1,"position":[-168.687286376953,0.032810851931572,-58.171501159668]}
+PASS: repeat landmark claim adds no currency
+PASS: earned wallet can afford required part: sand
+PASS: usable current game action: Buy for 600 GP
+PASS: UI purchase atomically deducts price and owns sand
+PASS: purchase never spends mastery
+PASS: duplicate owned-part purchase charges once: sand
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh"],"balance_before":3420,"balance_gp":2820,"item":"sand","kind":"purchase","mastery":33,"owned_after":true,"price_gp":600}
+PASS: usable current game action: Equip · FREE
+PASS: UI equips owned part free: sand
+PASS: vehicle was unlocked by earned mastery: rally
+PASS: regional tire was actually purchased or foundational: sand
+PASS: free regional equipment action: suspension_upgrade 
+PASS: free regional equipment action: gearing 
+PASS: free regional equipment action: drivetrain 
+PASS: free regional equipment action: engine 
+PASS: all regional refitting is free
+PASS: current genuinely owned/equipped build meets gate: sunspoke_dunes
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh"],"balance_gp":2820,"build":{"tires":"sand","vehicle":"rally"},"cost_gp":0,"kind":"free_refit","mastery":33,"region":"sunspoke_dunes"}
+PASS: actual map action admits and loads destination: sunspoke_dunes
+PASS: destination entry consumes no GP
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes"],"balance_gp":2820,"equipped":{"drivetrain":"","engine":"","gearing":"","suspension_upgrade":"","tires":"sand"},"first_admission":true,"kind":"region_entry","mastery":33,"owned":["road","trail","giant","soft","firm","orange","cyan","purple","lime","mud","sand"],"region":"sunspoke_dunes","wallet_gp":2820}
+PASS: progression chooses an untimed authored mode: dunes_ridge_climb
+PASS: actual3D activity reserves a valid run: dunes_ridge_climb
+PASS: physical collision route completes without time limit: dunes_ridge_climb
+PASS: no recovery or transform warp during activity: dunes_ridge_climb
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes"],"automatic_discoveries":2,"balance_gp":3195,"checkpoint":9,"checkpoint_count":9,"completed":true,"components":[{"gp":100,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":391.374052755535,"elapsed_seconds":68.5666666666641,"id":"dunes_ridge_climb","kind":"activity","mastery":36,"mode":"hill_climb","new_mastery":["dunes_ridge_climb:completion","dunes_ridge_climb:event_skill","dunes_ridge_climb:suitable_build_route"],"recoveries_during_route":0,"region":"sunspoke_dunes","reward_gp":225,"timed_bonus_required":false,"tires":"sand","vehicle":"rally"}
+PASS: duplicate completed activity never awards again
+PASS: progression chooses an untimed authored mode: dunes_water_delivery
+PASS: actual3D activity reserves a valid run: dunes_water_delivery
+PASS: physical collision route completes without time limit: dunes_water_delivery
+PASS: no recovery or transform warp during activity: dunes_water_delivery
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes"],"automatic_discoveries":0,"balance_gp":3440,"checkpoint":7,"checkpoint_count":7,"completed":true,"components":[{"gp":120,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":416.428015483078,"elapsed_seconds":71.8499999999972,"id":"dunes_water_delivery","kind":"activity","mastery":39,"mode":"delivery","new_mastery":["dunes_water_delivery:completion","dunes_water_delivery:event_skill","dunes_water_delivery:suitable_build_route"],"recoveries_during_route":0,"region":"sunspoke_dunes","reward_gp":245,"timed_bonus_required":false,"tires":"sand","vehicle":"rally"}
+PASS: duplicate completed activity never awards again
+PASS: progression chooses an untimed authored mode: dunes_arch_slalom
+PASS: actual3D activity reserves a valid run: dunes_arch_slalom
+PASS: physical collision route completes without time limit: dunes_arch_slalom
+PASS: no recovery or transform warp during activity: dunes_arch_slalom
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes"],"automatic_discoveries":0,"balance_gp":3665,"checkpoint":10,"checkpoint_count":10,"completed":true,"components":[{"gp":100,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":489.238507232163,"elapsed_seconds":89.2999999999962,"id":"dunes_arch_slalom","kind":"activity","mastery":42,"mode":"slalom","new_mastery":["dunes_arch_slalom:completion","dunes_arch_slalom:event_skill","dunes_arch_slalom:suitable_build_route"],"recoveries_during_route":0,"region":"sunspoke_dunes","reward_gp":225,"timed_bonus_required":false,"tires":"sand","vehicle":"rally"}
+PASS: duplicate completed activity never awards again
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes"],"balance_gp":3665,"extra_gp":0,"kind":"discovery_already_reached_on_route","landmark":"dunes_flag_ridge","mastery":42}
+PASS: actual driving reaches and claims landmark: dunes_oasis
+PASS: discovery wallet contains only new actual claims
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes"],"balance_gp":3740,"earned_gp":75,"kind":"discovery","landmark":"dunes_oasis","mastery":42,"new_discoveries":1,"position":[-75.6631164550781,0.0327980257570744,-293.158569335938]}
+PASS: repeat landmark claim adds no currency
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes"],"balance_gp":3740,"extra_gp":0,"kind":"discovery_already_reached_on_route","landmark":"dunes_sun_arch","mastery":42}
+PASS: earned wallet can afford required part: rock
+PASS: usable current game action: Buy for 900 GP
+PASS: UI purchase atomically deducts price and owns rock
+PASS: purchase never spends mastery
+PASS: duplicate owned-part purchase charges once: rock
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes"],"balance_before":3740,"balance_gp":2840,"item":"rock","kind":"purchase","mastery":42,"owned_after":true,"price_gp":900}
+PASS: usable current game action: Equip · FREE
+PASS: UI equips owned part free: rock
+PASS: earned wallet can afford required part: long_travel
+PASS: usable current game action: Buy for 450 GP
+PASS: UI purchase atomically deducts price and owns long_travel
+PASS: purchase never spends mastery
+PASS: duplicate owned-part purchase charges once: long_travel
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes"],"balance_before":2840,"balance_gp":2390,"item":"long_travel","kind":"purchase","mastery":42,"owned_after":true,"price_gp":450}
+PASS: usable current game action: Equip · FREE
+PASS: UI equips owned part free: long_travel
+PASS: vehicle was unlocked by earned mastery: crawler
+PASS: regional tire was actually purchased or foundational: rock
+PASS: free regional equipment action: suspension_upgrade long_travel
+PASS: free regional equipment action: gearing 
+PASS: free regional equipment action: drivetrain 
+PASS: free regional equipment action: engine 
+PASS: all regional refitting is free
+PASS: current genuinely owned/equipped build meets gate: redstone_canyon
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes"],"balance_gp":2390,"build":{"suspension_upgrade":"long_travel","tires":"rock","vehicle":"crawler"},"cost_gp":0,"kind":"free_refit","mastery":42,"region":"redstone_canyon"}
+PASS: actual map action admits and loads destination: redstone_canyon
+PASS: destination entry consumes no GP
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon"],"balance_gp":2390,"equipped":{"drivetrain":"","engine":"","gearing":"","suspension_upgrade":"long_travel","tires":"rock"},"first_admission":true,"kind":"region_entry","mastery":42,"owned":["road","trail","giant","soft","firm","orange","cyan","purple","lime","mud","sand","rock","long_travel"],"region":"redstone_canyon","wallet_gp":2390}
+PASS: progression chooses an untimed authored mode: canyon_precision
+PASS: actual3D activity reserves a valid run: canyon_precision
+PASS: physical collision route completes without time limit: canyon_precision
+PASS: no recovery or transform warp during activity: canyon_precision
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon"],"automatic_discoveries":0,"balance_gp":2615,"checkpoint":9,"checkpoint_count":9,"completed":true,"components":[{"gp":100,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":349.655634231865,"elapsed_seconds":63.9999999999976,"id":"canyon_precision","kind":"activity","mastery":45,"mode":"precision","new_mastery":["canyon_precision:completion","canyon_precision:event_skill","canyon_precision:suitable_build_route"],"recoveries_during_route":0,"region":"redstone_canyon","reward_gp":225,"timed_bonus_required":false,"tires":"rock","vehicle":"crawler"}
+PASS: duplicate completed activity never awards again
+PASS: progression chooses an untimed authored mode: canyon_bridge_delivery
+PASS: actual3D activity reserves a valid run: canyon_bridge_delivery
+PASS: physical collision route completes without time limit: canyon_bridge_delivery
+PASS: no recovery or transform warp during activity: canyon_bridge_delivery
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon"],"automatic_discoveries":0,"balance_gp":2860,"checkpoint":7,"checkpoint_count":7,"completed":true,"components":[{"gp":120,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":421.164424535586,"elapsed_seconds":72.9666666666638,"id":"canyon_bridge_delivery","kind":"activity","mastery":48,"mode":"delivery","new_mastery":["canyon_bridge_delivery:completion","canyon_bridge_delivery:event_skill","canyon_bridge_delivery:suitable_build_route"],"recoveries_during_route":0,"region":"redstone_canyon","reward_gp":245,"timed_bonus_required":false,"tires":"rock","vehicle":"crawler"}
+PASS: duplicate completed activity never awards again
+PASS: progression chooses an untimed authored mode: canyon_rock_route
+PASS: actual3D activity reserves a valid run: canyon_rock_route
+PASS: physical collision route completes without time limit: canyon_rock_route
+PASS: no recovery or transform warp during activity: canyon_rock_route
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon"],"automatic_discoveries":0,"balance_gp":3085,"checkpoint":9,"checkpoint_count":9,"completed":true,"components":[{"gp":100,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":398.319247669075,"elapsed_seconds":72.5333333333305,"id":"canyon_rock_route","kind":"activity","mastery":51,"mode":"hill_climb","new_mastery":["canyon_rock_route:completion","canyon_rock_route:event_skill","canyon_rock_route:suitable_build_route"],"recoveries_during_route":0,"region":"redstone_canyon","reward_gp":225,"timed_bonus_required":false,"tires":"rock","vehicle":"crawler"}
+PASS: duplicate completed activity never awards again
+PASS: actual driving reaches and claims landmark: canyon_overlook
+PASS: discovery wallet contains only new actual claims
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon"],"balance_gp":3235,"earned_gp":150,"kind":"discovery","landmark":"canyon_overlook","mastery":51,"new_discoveries":2,"position":[-311.173950195312,0.0328032709658146,-300.193450927734]}
+PASS: repeat landmark claim adds no currency
+PASS: actual driving reaches and claims landmark: canyon_crane
+PASS: discovery wallet contains only new actual claims
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon"],"balance_gp":3310,"earned_gp":75,"kind":"discovery","landmark":"canyon_crane","mastery":51,"new_discoveries":1,"position":[-170.127639770508,0.032797746360302,-297.455200195312]}
+PASS: repeat landmark claim adds no currency
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon"],"balance_gp":3310,"extra_gp":0,"kind":"discovery_already_reached_on_route","landmark":"canyon_balanced_rock","mastery":51}
+PASS: earned wallet can afford required part: snow
+PASS: usable current game action: Buy for 1400 GP
+PASS: UI purchase atomically deducts price and owns snow
+PASS: purchase never spends mastery
+PASS: duplicate owned-part purchase charges once: snow
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon"],"balance_before":3310,"balance_gp":1910,"item":"snow","kind":"purchase","mastery":51,"owned_after":true,"price_gp":1400}
+PASS: usable current game action: Equip · FREE
+PASS: UI equips owned part free: snow
+PASS: earned wallet can afford required part: awd
+PASS: usable current game action: Buy for 1200 GP
+PASS: UI purchase atomically deducts price and owns awd
+PASS: purchase never spends mastery
+PASS: duplicate owned-part purchase charges once: awd
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon"],"balance_before":1910,"balance_gp":710,"item":"awd","kind":"purchase","mastery":51,"owned_after":true,"price_gp":1200}
+PASS: usable current game action: Equip · FREE
+PASS: UI equips owned part free: awd
+PASS: vehicle was unlocked by earned mastery: truck
+PASS: regional tire was actually purchased or foundational: snow
+PASS: free regional equipment action: suspension_upgrade 
+PASS: free regional equipment action: gearing 
+PASS: free regional equipment action: drivetrain awd
+PASS: free regional equipment action: engine 
+PASS: all regional refitting is free
+PASS: current genuinely owned/equipped build meets gate: frostline_summit
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon"],"balance_gp":710,"build":{"drivetrain":"awd","tires":"snow","vehicle":"truck"},"cost_gp":0,"kind":"free_refit","mastery":51,"region":"frostline_summit"}
+PASS: actual map action admits and loads destination: frostline_summit
+PASS: destination entry consumes no GP
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon","frostline_summit"],"balance_gp":710,"equipped":{"drivetrain":"awd","engine":"","gearing":"","suspension_upgrade":"","tires":"snow"},"first_admission":true,"kind":"region_entry","mastery":51,"owned":["road","trail","giant","soft","firm","orange","cyan","purple","lime","mud","sand","rock","long_travel","snow","awd"],"region":"frostline_summit","wallet_gp":710}
+PASS: progression chooses an untimed authored mode: summit_ice_route
+PASS: actual3D activity reserves a valid run: summit_ice_route
+PASS: physical collision route completes without time limit: summit_ice_route
+PASS: no recovery or transform warp during activity: summit_ice_route
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon","frostline_summit"],"automatic_discoveries":0,"balance_gp":935,"checkpoint":9,"checkpoint_count":9,"completed":true,"components":[{"gp":100,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":454.94155498594,"elapsed_seconds":77.2999999999969,"id":"summit_ice_route","kind":"activity","mastery":54,"mode":"ice_route","new_mastery":["summit_ice_route:completion","summit_ice_route:event_skill","summit_ice_route:suitable_build_route"],"recoveries_during_route":0,"region":"frostline_summit","reward_gp":225,"timed_bonus_required":false,"tires":"snow","vehicle":"truck"}
+PASS: duplicate completed activity never awards again
+PASS: progression chooses an untimed authored mode: summit_supply_delivery
+PASS: actual3D activity reserves a valid run: summit_supply_delivery
+PASS: physical collision route completes without time limit: summit_supply_delivery
+PASS: no recovery or transform warp during activity: summit_supply_delivery
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon","frostline_summit"],"automatic_discoveries":0,"balance_gp":1180,"checkpoint":7,"checkpoint_count":7,"completed":true,"components":[{"gp":120,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":415.404748443165,"elapsed_seconds":72.9833333333305,"id":"summit_supply_delivery","kind":"activity","mastery":57,"mode":"delivery","new_mastery":["summit_supply_delivery:completion","summit_supply_delivery:event_skill","summit_supply_delivery:suitable_build_route"],"recoveries_during_route":0,"region":"frostline_summit","reward_gp":245,"timed_bonus_required":false,"tires":"snow","vehicle":"truck"}
+PASS: duplicate completed activity never awards again
+PASS: progression chooses an untimed authored mode: summit_switchback
+PASS: actual3D activity reserves a valid run: summit_switchback
+PASS: physical collision route completes without time limit: summit_switchback
+PASS: no recovery or transform warp during activity: summit_switchback
+PASS: route wallet matches reward plus actual proximity discoveries
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon","frostline_summit"],"automatic_discoveries":0,"balance_gp":1405,"checkpoint":10,"checkpoint_count":10,"completed":true,"components":[{"gp":100,"label":"Completed run"},{"gp":50,"label":"First authored clear"},{"gp":25,"label":"New mastery: completion"},{"gp":25,"label":"New mastery: event skill"},{"gp":25,"label":"New mastery: suitable build route"}],"distance_m":506.270726023591,"elapsed_seconds":95.4666666666625,"id":"summit_switchback","kind":"activity","mastery":60,"mode":"switchback","new_mastery":["summit_switchback:completion","summit_switchback:event_skill","summit_switchback:suitable_build_route"],"recoveries_during_route":0,"region":"frostline_summit","reward_gp":225,"timed_bonus_required":false,"tires":"snow","vehicle":"truck"}
+PASS: duplicate completed activity never awards again
+PASS: actual driving reaches and claims landmark: summit_station
+PASS: discovery wallet contains only new actual claims
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon","frostline_summit"],"balance_gp":1480,"earned_gp":75,"kind":"discovery","landmark":"summit_station","mastery":60,"new_discoveries":1,"position":[-299.720794677734,0.0328122116625309,-539.248657226562]}
+PASS: repeat landmark claim adds no currency
+PASS: actual driving reaches and claims landmark: summit_ice_arch
+PASS: discovery wallet contains only new actual claims
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon","frostline_summit"],"balance_gp":1555,"earned_gp":75,"kind":"discovery","landmark":"summit_ice_arch","mastery":60,"new_discoveries":1,"position":[-168.852462768555,0.0327999368309975,-535.399658203125]}
+PASS: repeat landmark claim adds no currency
+PASS: actual driving reaches and claims landmark: summit_weather
+PASS: discovery wallet contains only new actual claims
+PROGRESSION {"admitted_regions":["garage_valley","festival_circuit","moss_marsh","sunspoke_dunes","redstone_canyon","frostline_summit"],"balance_gp":1630,"earned_gp":75,"kind":"discovery","landmark":"summit_weather","mastery":60,"new_discoveries":1,"position":[-170.283828735352,0.0327973701059818,-416.268432617188]}
+PASS: repeat landmark claim adds no currency
+PASS: same unseeded profile legitimately admits all six destinations
+PASS: all17untimed3Dactivities completed; timed Festival challenge intentionally unnecessary
+PASS: all18actual discoveries are earned on the fresh progression profile
+PASS: all original authored2D completions/best times remain
+PASS: all six used vehicle identities were unlocked through genuine mastery
+PASS: wallet exactly reconciles earned rewards and required upgrade prices
+PASS: inventory contains only foundational items and six actual purchases
+PASS: untimed route had no recovery/warp: valley_first_drive
+PASS: untimed route had no recovery/warp: valley_parts_delivery
+PASS: untimed route had no recovery/warp: valley_tire_trial
+PASS: untimed route had no recovery/warp: festival_parcel_pit
+PASS: untimed route had no recovery/warp: festival_slalom
+PASS: untimed route had no recovery/warp: marsh_supply_loop
+PASS: untimed route had no recovery/warp: marsh_reed_delivery
+PASS: untimed route had no recovery/warp: marsh_boardwalk
+PASS: untimed route had no recovery/warp: dunes_ridge_climb
+PASS: untimed route had no recovery/warp: dunes_water_delivery
+PASS: untimed route had no recovery/warp: dunes_arch_slalom
+PASS: untimed route had no recovery/warp: canyon_precision
+PASS: untimed route had no recovery/warp: canyon_bridge_delivery
+PASS: untimed route had no recovery/warp: canyon_rock_route
+PASS: untimed route had no recovery/warp: summit_ice_route
+PASS: untimed route had no recovery/warp: summit_supply_delivery
+PASS: untimed route had no recovery/warp: summit_switchback
+PASS: final admitted3D checkpoint saves through the current game path
+FRESH PROGRESSION PHASE write: 337 checks, 0 failures
+
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: independent relaunch restores exact legitimately earned/spent wallet
+PASS: independent relaunch retains stars
+PASS: independent relaunch retains regions
+PASS: independent relaunch retains owned
+PASS: independent relaunch retains owned_vehicles
+PASS: independent relaunch retains discoveries
+PASS: independent relaunch retains completed
+PASS: independent relaunch retains custom
+PASS: independent relaunch retains equipped
+PASS: independent relaunch retains build
+PASS: independent relaunch retains settings
+PASS: independent relaunch retains goal
+PASS: all destinations/discoveries survive actual app quit/relaunch
+PASS: all twelve original best times survive
+PASS: relaunch retains actual measured best: coast
+PASS: relaunch retains actual measured best: dunes
+PASS: relaunch retains actual measured best: firefly
+PASS: relaunch retains actual measured best: lantern
+PASS: relaunch retains actual measured best: meadow
+PASS: relaunch retains actual measured best: moon
+PASS: relaunch retains actual measured best: orchard
+PASS: relaunch retains actual measured best: parcel
+PASS: relaunch retains actual measured best: quarry
+PASS: relaunch retains actual measured best: river
+PASS: relaunch retains actual measured best: summit
+PASS: relaunch retains actual measured best: switchback
+PASS: replayed last finish after process restart cannot award again
+PASS: owned upgrade after relaunch cannot charge again
+PASS: new app process resumes in actual final admitted3D world
+PASS: new app process never restores held driving input
+PASS: permanent Canyon admission remains despite final build refit
+FRESH PROGRESSION PHASE read: 31 checks, 0 failures
+
+FRESH PROGRESSION: 368 checks, 0 failures; unseeded untimed six-destination solo path

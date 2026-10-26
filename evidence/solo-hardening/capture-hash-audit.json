@@ -1,0 +1,52 @@
+{
+  "captures": [
+    {
+      "path": "evidence/3d-development/solo-hardening-desktop-1280x720/01-garage.png",
+      "matches": true
+    },
+    {
+      "path": "evidence/3d-development/solo-hardening-desktop-1280x720/02-earned-upgrade.png",
+      "matches": true
+    },
+    {
+      "path": "evidence/3d-development/solo-hardening-desktop-1280x720/03-mud-installed.png",
+      "matches": true
+    },
+    {
+      "path": "evidence/3d-development/solo-hardening-desktop-1280x720/04-garage-valley-3d.png",
+      "matches": true
+    },
+    {
+      "path": "evidence/3d-development/solo-hardening-desktop-1280x720/05-real-3d-drive.png",
+      "matches": true
+    },
+    {
+      "path": "evidence/3d-development/solo-hardening-desktop-1280x720/06-moss-marsh-3d.png",
+      "matches": true
+    },
+    {
+      "path": "evidence/3d-development/solo-hardening-phone-800x450/01-garage.png",
+      "matches": true
+    },
+    {
+      "path": "evidence/3d-development/solo-hardening-phone-800x450/02-earned-upgrade.png",
+      "matches": true
+    },
+    {
+      "path": "evidence/3d-development/solo-hardening-phone-800x450/03-mud-installed.png",
+      "matches": true
+    },
+    {
+      "path": "evidence/3d-development/solo-hardening-phone-800x450/04-garage-valley-3d.png",
+      "matches": true
+    },
+    {
+      "path": "evidence/3d-development/solo-hardening-phone-800x450/05-real-3d-drive.png",
+      "matches": true
+    },
+    {
+      "path": "evidence/3d-development/solo-hardening-phone-800x450/06-moss-marsh-3d.png",
+      "matches": true
+    }
+  ]
+}

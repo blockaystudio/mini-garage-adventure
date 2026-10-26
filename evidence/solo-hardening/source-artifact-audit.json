@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "manifest": "evidence/solo-hardening/native-builds-final/artifacts.json",
+      "matched_files": 79,
+      "compared_to_commit": "9c5c472bfb9e2b18e72833908e151a48fa28ede9",
+      "recorded_build_source": "5ef89c3e494e624a04d3f35bcf17dc474c34d94e",
+      "unchanged_during_run": true,
+      "failures": []
+    },
+    {
+      "manifest": "evidence/3d-development/solo-hardening-desktop-1280x720/capture-results.json",
+      "matched_files": 80,
+      "compared_to_commit": "9c5c472bfb9e2b18e72833908e151a48fa28ede9",
+      "recorded_build_source": null,
+      "unchanged_during_run": true,
+      "failures": []
+    },
+    {
+      "manifest": "evidence/3d-development/solo-hardening-phone-800x450/capture-results.json",
+      "matched_files": 80,
+      "compared_to_commit": "9c5c472bfb9e2b18e72833908e151a48fa28ede9",
+      "recorded_build_source": null,
+      "unchanged_during_run": true,
+      "failures": []
+    }
+  ],
+  "pass": true
+}

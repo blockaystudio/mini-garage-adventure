@@ -1,0 +1,34 @@
+Explore recovery hardening — source/test audit
+
+Owned files:
+ native/scripts/drive3d/explore_mode.gd
+ native/scripts/main.gd
+ native/scripts/ui/upgrade_screen.gd
+ native/tests/explore_recovery_test.gd
+
+Reproduction before edits:
+ explore-start-before.txt reproduces real failed backup write leaving active_run0 with previous activity driving.
+ explore-pending-before.txt reproduces native pending-result loss on Workshop navigation. Its ordered-completion observations are explicitly synthetic; the filesystem rejection and scene navigation are real.
+
+Same regression on old and corrected code:
+ explore-recovery-before.txt: identical new regression script run against untouched7d5bb05 native worktree,60checks/18failures, exit1. This is behavior failure, not missing methods/parse errors. The old code exits a navigation scenario early after its mode is destroyed.
+ explore-recovery-after.txt:127checks/0failures, exit0, no script/engine errors.
+
+New coverage:
+ Failed first reservation and rejected mission switch retain coherent state; actual warning, paused input/vehicle, repeated rejected retry, explicit continuation of previous ordered observation, storage repair and successful new run reservation.
+ Pending completed reward survives17ordinary destinations/actions plus restart/free-explore, actual Workshop/Garagebuttons, ordinary quit, back/Escape/background/pause, stale writer/reload, explicit consequence/cancel/discard, and delayed old confirmation callback after Escape.
+ Original run settles150GP exactly once after repair; duplicate callbacks perform no extra save, cue or UI. Already banked rewards with checkpoint-only failure remain separate and retry only that checkpoint.
+
+Implementation:
+ begin_run result is reserved locally; publish active_run/activity only after successful commit. Failure displays paused actualwarning/retry without corrupting the old run.
+ Main has pre-side-effect pending guards and a boolean _clear stop contract respected by main and UpgradeScreen callers. Existing private-session view callers cannot coexist with pending Explore under guarded room entry; no network protocol/source changes.
+ Explore detects a real unpaid completion using its unsettled active run, retains its observations across navigation, and offers Keep pending run or Leave without reward. Explicit discard clears in-memory run only after the consequence choice. It does not award GP, fabricate a claim or overwrite newer saves.
+ Ordinary quit retries settlement first; failure keeps Explore open and offers the same consequence choice. In-process observations are not claimed crash-durable while storage is unwritable.
+
+Additional regressions:
+ explore-existing-integration.txt:228checks/0failures.
+ explore-physical-loop-after.txt:44checks/0failures in actual separate native processes; fresh GP/ownership/equipment/Marsh persists. Mud17.972m versusTrail10.618m in the same two-second actual-body lane.
+ These latter two runs preceded the final three-line canceled-confirmation-context cleanup, covered by the final127case; root will rerun full frozen-source verification.
+
+No schema, rewards/prices, geometry, controller, native engine or networking changes.
+No commits made by this agent; parent owns final importUID, source commit, verification and artifacts.

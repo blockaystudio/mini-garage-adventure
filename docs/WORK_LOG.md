@@ -115,3 +115,72 @@ Reproduced actual rejected-write failures before fixing: Quick Drive could start
 Final frozen5fb2751 complete Linux native verifier PASS:5,363checks (4,044models,45save/editor,228integration,23accessibilitysettings,10touch,131economy,40rewardretry,44controller,580worldcontent,57physicaltraversal,44freshExplore/processpersistence,36netrules,21settlement,12networkview,48real-processcontention), recursive import/parse/mainboot and source integrity. Nine fresh actual server/client process scenarios PASS, including real two-client .tmp obstruction past race timeout and recovery125/100GP once; latency/loss/repeat/auth tests rerun against final net source. Details/fingerprints in net-settlement-fix/final-summary.json. Reference-final passes63Node+6Python; baseline actual browser14 passes. Device safety1 and synthetic iOS inspector12 pass; --require-build-ready exits2 with actual Linux/Xcode/signing/device blockers. No mobile execution is inferred.
 
 Final evidence/capture/export manifest and downloads are recorded in3D_DELIVERY.md; all earlier37/776 build evidence and copies are preserved. Current supplied-plan overlay3D_TASK_STATUS.md marks every task's actual acceptance scope; original handoff checklist is preserved unchanged. README/HANDOFF/AGENTS/current queue/privacy/delivery/decisions/bugs point to this source and exact next task. No website redeployment, paid service, agreement, spending, tester contact, store action, force push, merge or release occurred.
+
+## 2026-10-26 — Current-build verification and solo hardening
+
+The owner requested verification of the existing build before expansion, specifically
+failed Explore reservation, unpaid completion navigation and schema-3 Android save
+collection. Inspected starting branch/remote/PR state at delivery `7d5bb05`, with
+runtime/artifacts `5fb2751`; preserved the open stack, source history, saves and
+assessment evidence. Created `codex/current-build-acceptance`; assessment preservation
+is `511fce9`. Godot remains pinned to4.6.3. Baseline reproduction is separately
+retained under `evidence/solo-hardening/baseline/` (5,363 native assertions,
+63 Node +6 Python reference tests and14 actual-origin Chromium scenarios).
+
+`260b99c` corrects Explore reservation and navigation. Reservation publishes new
+runtime activity state only after a valid transaction; failed writes preserve the
+eligible prior run and visible paused recovery. Valid unpaid observations survive
+same-run retries and ordinary navigation until settlement or explicit discard.
+Guards precede navigation side effects; banked reward/checkpoint-only retry cannot
+pay twice. The new test fails against old source with18 behavioral failures and
+no parser errors, and passes127 corrected-source checks. Original failure and
+passing evidence remain distinct in `evidence/solo-hardening/`.
+
+`11a1448` adds a370-check fresh-profile, untimed six-destination proof through actual
+scene inputs, physical traversal and independent-process quit/relaunch. There is no
+wallet, stars, ownership, region, observation, checkpoint-progress or in-route
+transform seeding. Legitimate earnings total6,480GP, gate purchases4,850GP, final
+wallet1,630GP/mastery60; all six vehicles/destinations and eighteen discoveries are
+used. Twelve authored2D courses and seventeen untimed3D activities complete; a
+custom-track run earns zero. Approximately1,431 activity simulation seconds and
+7.02km are measured automated traversal, not human duration or mobile performance.
+Free refit/recovery, permanent admission and duplicate claims/charges remain tested.
+
+`b792865` changes Android collection to preserve raw bytes before parsing and report
+validation independently. Twenty-one tooling tests pass, including actual Godot
+Store-written schema3 records, numeric/checksum differential, tamper rejection,
+legacy/future/corrupt preservation and identifier redaction. Fixtures and synthetic
+adb responses do not establish Android installation. `5ef89c3` adds an exported
+Linux OS-input GUI verifier; its result must be read from fresh package evidence
+before claiming the packaged loop passes.
+
+Corrected runtime full verification passes5,860 native assertions, source stability,
+recursive import/parse and boot, plus63 Node +6 Python reference tests and14 actual
+HTTP-origin Chromium scenarios. All nine real native network scenarios pass again:
+six matrix cases including two/four clients and latency/jitter/loss, two consecutive
+races, invalid invite/rejoin authentication and server-storage failure/recovery.
+Evidence is phase-specific under `evidence/solo-hardening/`, separate from historical
+assessment and3D reports. Matching-source Linux/Android exports are built from `5ef89c3`; actual
+manifest/signature checks pass (`evidence/solo-hardening/native-builds-final/artifacts.json`).
+Twelve source-scene software-rendered captures pass with source/hash provenance.
+The compiled Linux GUI test used OS input to complete three fresh courses,
+buy/equip Mud and admit Marsh, but synthetic `WM_DELETE_WINDOW` timed out and
+packaged GUI relaunch was not proven. The whole GUI test is failed; whether the
+cause is the game or dummy-X11 integration remains unknown. See
+[`SOLO_HARDENING_DELIVERY.md`](SOLO_HARDENING_DELIVERY.md) and
+[`x-close-diagnostic.txt`](../evidence/solo-hardening/x-close-diagnostic.txt).
+Do not substitute this partial gameplay, prior binaries or static package audit
+for complete exported-runtime or device acceptance.
+
+Physical platform acceptance remains blocked. The actual Android probe exits2
+because adb cannot initialize its auth directory in the read-only home; it did not
+enumerate devices. The iOS inspector passes12 synthetic self-tests, while actual preflight remains
+blocked. No iOS build/device evidence is possible here without configured
+Mac/Xcode/IDs/signing/device access. Named-device lifecycle, touch/safe-area,
+TalkBack/VoiceOver, thermal/performance and interrupted-storage checks remain open.
+No balance values, migration rules or runtime assets changed; content/shared-world
+expansion is frozen. No merge, website deployment, purchase, agreement acceptance,
+store action or tester contact occurred. See the current delivery/bugs/continuation
+ledgers for final source/artifact/PR references and precise next acceptance work.
+
+The new branch is pushed normally as draft [PR #6](https://github.com/blockaystudio/mini-garage-adventure/pull/6), stacked on `codex/garage-explore-native` (PR #5). No PR was merged. Final CI/export/package-input results remain separately reported in the delivery ledger.

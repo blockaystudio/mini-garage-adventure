@@ -1,5 +1,12 @@
 # Current production handoff — 2026-10-25
 
+**2026-10-26 phase override:** continue the latest `codex/current-build-acceptance`
+work and preserve its subsequent commits. The owner's current instruction is
+verification and solo hardening before scope expansion. Read
+`docs/SOLO_HARDENING_DELIVERY.md`, `SOLO_HARDENING_BUGS.md` and
+`SOLO_HARDENING_NEXT_TASK.txt` for the current checkpoint. The older references
+below are preserved provenance, not an instruction to reset or expand the world.
+
 Native source and exports now exist; the original Build01 text below is historical and does not describe the current app or task scope. Continue from `codex/garage-explore-native` (source `5fb2751`: core `37d0cf1` plus private-bind, saved-heading/privacy and reward-save recovery fixes), which follows the economy/schema-3 checkpoint `74e9e9b`. Inspect the actual latest branch/commit and remote PRs before editing; do not reset to these checkpoints. Later evidence/PR references are recorded in `docs/MASTER_TRACKER.md`.
 
 Draft PRs [#1](https://github.com/blockaystudio/mini-garage-adventure/pull/1), [#2](https://github.com/blockaystudio/mini-garage-adventure/pull/2), [readiness #3](https://github.com/blockaystudio/mini-garage-adventure/pull/3), [economy #4](https://github.com/blockaystudio/mini-garage-adventure/pull/4) and [Explore #5](https://github.com/blockaystudio/mini-garage-adventure/pull/5) remain stacked and unmerged. The current request authorizes rewards, real 3D and isolated native private-network development, while prohibiting website deployment, public release, merges, force-pushes, spending, agreement acceptance and tester contact.

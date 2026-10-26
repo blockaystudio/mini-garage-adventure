@@ -1,0 +1,59 @@
+Fresh solo progression proof
+
+The test starts one isolated profile with Store.defaults(): zero GP, no mastery,
+foundational equipment, Sunny Buggy, and only Valley/Festival already admitted.
+It never assigns wallet, stars, ownership, admissions, observations, checkpoint
+progress or vehicle transforms. UI/game APIs reserve, drive, settle, purchase,
+equip and enter regions. Map entry transports between activities and regions as
+the current game allows. There are no in-route transform writes or recoveries.
+
+The initially successful development run passed 368 checks. The final run after
+the Explore fixes passes 370 checks with source_unchanged=true, including saved
+checkpoint position/heading restoration. It took 38.63 wall seconds on this host.
+The wrapper records runtime/catalog/scene/test SHA256 values and rejects a run if
+those source files change before both worker processes finish. The development
+log/report remains separate; the final complete native verifier must also pass.
+
+Path:
+- Complete all twelve existing 2D courses in order: 1,260 GP and twelve stars.
+- Complete an actual private custom-track drive: zero GP and zero mastery.
+- Drive Valley's tutorial and parts delivery, buy/equip Mud, finish tire trial.
+- Use the six legitimately unlocked vehicle identities in suitable owned builds.
+- Drive Festival parcel delivery and slalom. Its timed clockwork challenge is
+  deliberately omitted; this proof shows that it is unnecessary for progression.
+- Drive all three untimed activities in Marsh, Dunes, Canyon and Summit.
+- Reach all eighteen actual landmark proximity triggers. Four are naturally
+  discovered during activity driving; the remaining claims use normal free
+  exploration with injected steering/throttle/brake states.
+- Buy Sand, Rock, Long-travel, Snow and AWD only after legitimate affordability.
+- Enter each destination through the real current map action and gate authority.
+- Refit Road tires after Marsh admission, re-enter the admitted world and recover
+  for free, then refit Mud for its activities. Permanent admission remains intact.
+- Quit the actual app normally, start an independent process and verify wallet,
+  inventory, equipment, vehicles, regions, discoveries, mastery, course times,
+  settings, track and goal. Duplicate reward/purchase retries add/charge nothing.
+
+Untimed result when all non-timed objectives are achieved:
+  Twelve Quick Drive first clears: 12 x 105 = 1,260 GP.
+  Introduction: 150 GP, replacing ordinary tutorial rewards.
+  Six delivery first clears: 6 x 245 = 1,470 GP.
+  Ten untimed trail first clears: 10 x 225 = 2,250 GP.
+  Eighteen discoveries: 18 x 75 = 1,350 GP.
+  Total earned: 6,480 GP.
+  Required purchases: Mud300 + Sand600 + Rock900 + Long-travel450 + Snow1400
+    + AWD1200 = 4,850 GP. Swaps, recoveries and admission cost zero.
+  Final balance: 1,630 GP, 60 non-spendable stars, all six destinations admitted.
+
+The first run physically traversed 7,017.81 metres across seventeen 3D activities,
+with zero in-route recoveries. Activity simulation time, including the 2D drives,
+was 1,430.88 seconds; free-exploration discovery travel is not included in that
+sum. These are accelerated automated simulation measurements, not human session
+duration, physical-device performance, enjoyment or retention evidence. The test
+does not seed a rich inventory and then call that fresh progression. The older
+18-activity inventory-seeded reachability test remains a separate content test.
+
+No runtime, catalog, reward, price or save-schema change was needed for this path.
+See fresh-progression.json for per-event components/balances, first-entry build
+requirements, purchases, actual route times/distances, source hashes and separate
+write/read process IDs. Source test files are native/tests/fresh_progression_test.gd
+and fresh_progression_phase.gd; shipped presets exclude tests/*.

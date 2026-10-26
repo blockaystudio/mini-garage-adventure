@@ -1,0 +1,16 @@
+usage: play_exported_native.py [-h] [--binary BINARY] [--manifest MANIFEST]
+                               [--output OUTPUT]
+
+Exercise the compiled Linux export through its real window and OS input.
+Starts an owned dummy Xorg display and an isolated game profile. No SceneTree,
+external GDScript, remote debugger, save injection, image compositing or
+browser substitution is used. Requires existing Xorg/dummy/Mesa, ImageMagick,
+Tesseract, libX11 and libXtst; installs nothing. This is desktop GUI/package
+evidence, not physical Android/iOS, accessibility, human-play or performance
+acceptance.
+
+options:
+  -h, --help           show this help message and exit
+  --binary BINARY
+  --manifest MANIFEST
+  --output OUTPUT

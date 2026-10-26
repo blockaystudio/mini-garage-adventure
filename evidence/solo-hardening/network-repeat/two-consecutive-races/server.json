@@ -1,0 +1,211 @@
+{
+  "banked_profiles": {
+    "qa-driver-1": {
+      "claims": {
+        "race-586ebd1dff8e18b0:qa-driver-1": 125,
+        "race-8f3b11993d91e241:qa-driver-1": 125
+      },
+      "gp": 250,
+      "owned": [
+        "trail"
+      ],
+      "regions": [
+        "garage_valley",
+        "festival_circuit"
+      ]
+    },
+    "qa-driver-2": {
+      "claims": {
+        "race-586ebd1dff8e18b0:qa-driver-2": 100,
+        "race-8f3b11993d91e241:qa-driver-2": 100
+      },
+      "gp": 200,
+      "owned": [
+        "trail"
+      ],
+      "regions": [
+        "garage_valley",
+        "festival_circuit"
+      ]
+    }
+  },
+  "completed_races": {
+    "race-586ebd1dff8e18b0": {
+      "checkpoints": [
+        -12.0,
+        -24.0,
+        -36.0
+      ],
+      "countdown": 0.0,
+      "elapsed": 3.04999999999999,
+      "entrants": [
+        "qa-driver-1",
+        "qa-driver-2"
+      ],
+      "equal_build": {
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "buggy"
+      },
+      "finish_order": [
+        "qa-driver-1",
+        "qa-driver-2"
+      ],
+      "id": "race-586ebd1dff8e18b0",
+      "phase": "finished",
+      "results": [
+        {
+          "checkpoint": 3,
+          "claim": "race-586ebd1dff8e18b0:qa-driver-1",
+          "gp": 125,
+          "name": "Driver 582",
+          "place": 1,
+          "profile": "qa-driver-1"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-586ebd1dff8e18b0:qa-driver-2",
+          "gp": 100,
+          "name": "Driver 583",
+          "place": 2,
+          "profile": "qa-driver-2"
+        }
+      ],
+      "statuses": {
+        "qa-driver-1": "finished",
+        "qa-driver-2": "finished"
+      }
+    },
+    "race-8f3b11993d91e241": {
+      "checkpoints": [
+        -12.0,
+        -24.0,
+        -36.0
+      ],
+      "countdown": 0.0,
+      "elapsed": 3.04999999999999,
+      "entrants": [
+        "qa-driver-1",
+        "qa-driver-2"
+      ],
+      "equal_build": {
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "buggy"
+      },
+      "finish_order": [
+        "qa-driver-1",
+        "qa-driver-2"
+      ],
+      "id": "race-8f3b11993d91e241",
+      "phase": "finished",
+      "results": [
+        {
+          "checkpoint": 3,
+          "claim": "race-8f3b11993d91e241:qa-driver-1",
+          "gp": 125,
+          "name": "Driver 582",
+          "place": 1,
+          "profile": "qa-driver-1"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-8f3b11993d91e241:qa-driver-2",
+          "gp": 100,
+          "name": "Driver 583",
+          "place": 2,
+          "profile": "qa-driver-2"
+        }
+      ],
+      "statuses": {
+        "qa-driver-1": "finished",
+        "qa-driver-2": "finished"
+      }
+    }
+  },
+  "diagnostics": {
+    "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+    "correction_samples": 0,
+    "dropped_packets": 0,
+    "engine_static_memory_bytes": 22497472.0,
+    "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+    "mean_correction_m": 0.0,
+    "p95_correction_m": 0.0,
+    "p95_delayed_authority_gap_m": 0.0,
+    "received_payload_bytes": 54560,
+    "rejected_packets": 1,
+    "sent_payload_bytes": 337921,
+    "server_mean_tick_us": 187.807654563297,
+    "server_p95_tick_us": 435
+  },
+  "duration_seconds": 16.968,
+  "pid": 9454,
+  "scope": "actual dedicated native Godot ENet process; isolated TEST profiles only",
+  "snapshot": {
+    "common_regions": [
+      "garage_valley",
+      "festival_circuit",
+      "moss_marsh",
+      "sunspoke_dunes",
+      "redstone_canyon",
+      "frostline_summit"
+    ],
+    "destination": "festival_circuit",
+    "leader": 0,
+    "players": {
+
+    },
+    "proposed_destination": "",
+    "race": {
+      "checkpoints": [
+        -12.0,
+        -24.0,
+        -36.0
+      ],
+      "countdown": 0.0,
+      "elapsed": 3.04999999999999,
+      "entrants": [
+        "qa-driver-1",
+        "qa-driver-2"
+      ],
+      "equal_build": {
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "buggy"
+      },
+      "finish_order": [
+        "qa-driver-1",
+        "qa-driver-2"
+      ],
+      "id": "race-8f3b11993d91e241",
+      "pending_results": [],
+      "phase": "finished",
+      "results": [
+        {
+          "checkpoint": 3,
+          "claim": "race-8f3b11993d91e241:qa-driver-1",
+          "gp": 125,
+          "name": "Driver 582",
+          "place": 1,
+          "profile": "qa-driver-1"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-8f3b11993d91e241:qa-driver-2",
+          "gp": 100,
+          "name": "Driver 583",
+          "place": 2,
+          "profile": "qa-driver-2"
+        }
+      ],
+      "statuses": {
+        "qa-driver-1": "finished",
+        "qa-driver-2": "finished"
+      }
+    },
+    "settlement_status": "",
+    "test_scope": true,
+    "tick": 1017
+  },
+  "storage_fault_events": []
+}

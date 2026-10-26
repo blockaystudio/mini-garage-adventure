@@ -1,0 +1,2 @@
+PASS: Fresh actual exported-game viewport shows zeroGP before any earning
+EXPORTED GUI FAILED: Actual saved profile did not satisfy: Authored meadow completion banked105GP exactly once

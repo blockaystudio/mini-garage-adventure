@@ -1,0 +1,3565 @@
+{
+	"checks": 368,
+	"failures": 0,
+	"phases": [
+		{
+			"activities": [
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 8.0,
+					"checkpoint_count": 8.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 150.0,
+							"label": "Introductory drive"
+						}
+					],
+					"distance_m": 283.001422166824,
+					"elapsed_seconds": 54.0333333333315,
+					"id": "valley_first_drive",
+					"mode": "tutorial",
+					"new_mastery": [],
+					"recoveries_during_route": 0.0,
+					"region": "garage_valley",
+					"reward_gp": 150.0,
+					"timed_bonus_required": false,
+					"tires": "trail",
+					"vehicle": "buggy"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 8.0,
+					"checkpoint_count": 8.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 120.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 465.891379236942,
+					"elapsed_seconds": 88.8499999999962,
+					"id": "valley_parts_delivery",
+					"mode": "delivery",
+					"new_mastery": [
+						"valley_parts_delivery:completion",
+						"valley_parts_delivery:event_skill",
+						"valley_parts_delivery:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "garage_valley",
+					"reward_gp": 245.0,
+					"timed_bonus_required": false,
+					"tires": "trail",
+					"vehicle": "buggy"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 11.0,
+					"checkpoint_count": 11.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 363.566043399274,
+					"elapsed_seconds": 70.1999999999973,
+					"id": "valley_tire_trial",
+					"mode": "surface_test",
+					"new_mastery": [
+						"valley_tire_trial:completion",
+						"valley_tire_trial:event_skill",
+						"valley_tire_trial:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "garage_valley",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "mud",
+					"vehicle": "buggy"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 8.0,
+					"checkpoint_count": 8.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 120.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 410.97308149375,
+					"elapsed_seconds": 69.0833333333307,
+					"id": "festival_parcel_pit",
+					"mode": "delivery",
+					"new_mastery": [
+						"festival_parcel_pit:completion",
+						"festival_parcel_pit:event_skill",
+						"festival_parcel_pit:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "festival_circuit",
+					"reward_gp": 245.0,
+					"timed_bonus_required": false,
+					"tires": "trail",
+					"vehicle": "kart"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 10.0,
+					"checkpoint_count": 10.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 410.310908042826,
+					"elapsed_seconds": 74.7666666666637,
+					"id": "festival_slalom",
+					"mode": "slalom",
+					"new_mastery": [
+						"festival_slalom:completion",
+						"festival_slalom:event_skill",
+						"festival_slalom:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "festival_circuit",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "trail",
+					"vehicle": "kart"
+				},
+				{
+					"automatic_discoveries": 2.0,
+					"checkpoint": 11.0,
+					"checkpoint_count": 11.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 530.482832234353,
+					"elapsed_seconds": 91.7666666666627,
+					"id": "marsh_supply_loop",
+					"mode": "trail",
+					"new_mastery": [
+						"marsh_supply_loop:completion",
+						"marsh_supply_loop:event_skill",
+						"marsh_supply_loop:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "moss_marsh",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "mud",
+					"vehicle": "rover"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 8.0,
+					"checkpoint_count": 8.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 120.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 404.968995541334,
+					"elapsed_seconds": 72.3833333333305,
+					"id": "marsh_reed_delivery",
+					"mode": "delivery",
+					"new_mastery": [
+						"marsh_reed_delivery:completion",
+						"marsh_reed_delivery:event_skill",
+						"marsh_reed_delivery:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "moss_marsh",
+					"reward_gp": 245.0,
+					"timed_bonus_required": false,
+					"tires": "mud",
+					"vehicle": "rover"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 9.0,
+					"checkpoint_count": 9.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 305.817068265518,
+					"elapsed_seconds": 61.0999999999978,
+					"id": "marsh_boardwalk",
+					"mode": "precision",
+					"new_mastery": [
+						"marsh_boardwalk:completion",
+						"marsh_boardwalk:event_skill",
+						"marsh_boardwalk:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "moss_marsh",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "mud",
+					"vehicle": "rover"
+				},
+				{
+					"automatic_discoveries": 2.0,
+					"checkpoint": 9.0,
+					"checkpoint_count": 9.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 391.374052755535,
+					"elapsed_seconds": 68.5666666666641,
+					"id": "dunes_ridge_climb",
+					"mode": "hill_climb",
+					"new_mastery": [
+						"dunes_ridge_climb:completion",
+						"dunes_ridge_climb:event_skill",
+						"dunes_ridge_climb:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "sunspoke_dunes",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "sand",
+					"vehicle": "rally"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 7.0,
+					"checkpoint_count": 7.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 120.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 416.428015483078,
+					"elapsed_seconds": 71.8499999999972,
+					"id": "dunes_water_delivery",
+					"mode": "delivery",
+					"new_mastery": [
+						"dunes_water_delivery:completion",
+						"dunes_water_delivery:event_skill",
+						"dunes_water_delivery:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "sunspoke_dunes",
+					"reward_gp": 245.0,
+					"timed_bonus_required": false,
+					"tires": "sand",
+					"vehicle": "rally"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 10.0,
+					"checkpoint_count": 10.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 489.238507232163,
+					"elapsed_seconds": 89.2999999999962,
+					"id": "dunes_arch_slalom",
+					"mode": "slalom",
+					"new_mastery": [
+						"dunes_arch_slalom:completion",
+						"dunes_arch_slalom:event_skill",
+						"dunes_arch_slalom:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "sunspoke_dunes",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "sand",
+					"vehicle": "rally"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 9.0,
+					"checkpoint_count": 9.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 349.655634231865,
+					"elapsed_seconds": 63.9999999999976,
+					"id": "canyon_precision",
+					"mode": "precision",
+					"new_mastery": [
+						"canyon_precision:completion",
+						"canyon_precision:event_skill",
+						"canyon_precision:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "redstone_canyon",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "rock",
+					"vehicle": "crawler"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 7.0,
+					"checkpoint_count": 7.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 120.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 421.164424535586,
+					"elapsed_seconds": 72.9666666666638,
+					"id": "canyon_bridge_delivery",
+					"mode": "delivery",
+					"new_mastery": [
+						"canyon_bridge_delivery:completion",
+						"canyon_bridge_delivery:event_skill",
+						"canyon_bridge_delivery:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "redstone_canyon",
+					"reward_gp": 245.0,
+					"timed_bonus_required": false,
+					"tires": "rock",
+					"vehicle": "crawler"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 9.0,
+					"checkpoint_count": 9.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 398.319247669075,
+					"elapsed_seconds": 72.5333333333305,
+					"id": "canyon_rock_route",
+					"mode": "hill_climb",
+					"new_mastery": [
+						"canyon_rock_route:completion",
+						"canyon_rock_route:event_skill",
+						"canyon_rock_route:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "redstone_canyon",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "rock",
+					"vehicle": "crawler"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 9.0,
+					"checkpoint_count": 9.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 454.94155498594,
+					"elapsed_seconds": 77.2999999999969,
+					"id": "summit_ice_route",
+					"mode": "ice_route",
+					"new_mastery": [
+						"summit_ice_route:completion",
+						"summit_ice_route:event_skill",
+						"summit_ice_route:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "frostline_summit",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "snow",
+					"vehicle": "truck"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 7.0,
+					"checkpoint_count": 7.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 120.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 415.404748443165,
+					"elapsed_seconds": 72.9833333333305,
+					"id": "summit_supply_delivery",
+					"mode": "delivery",
+					"new_mastery": [
+						"summit_supply_delivery:completion",
+						"summit_supply_delivery:event_skill",
+						"summit_supply_delivery:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "frostline_summit",
+					"reward_gp": 245.0,
+					"timed_bonus_required": false,
+					"tires": "snow",
+					"vehicle": "truck"
+				},
+				{
+					"automatic_discoveries": 0.0,
+					"checkpoint": 10.0,
+					"checkpoint_count": 10.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 506.270726023591,
+					"elapsed_seconds": 95.4666666666625,
+					"id": "summit_switchback",
+					"mode": "switchback",
+					"new_mastery": [
+						"summit_switchback:completion",
+						"summit_switchback:event_skill",
+						"summit_switchback:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "frostline_summit",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "snow",
+					"vehicle": "truck"
+				}
+			],
+			"checks": 337.0,
+			"earned_gp": 6480.0,
+			"expected": {
+				"best": {
+					"coast": 9.51666666666677,
+					"dunes": 14.1083333333332,
+					"firefly": 9.00000000000013,
+					"lantern": 17.558333333333,
+					"meadow": 7.29166666666682,
+					"moon": 14.6333333333331,
+					"orchard": 8.84166666666681,
+					"parcel": 11.65,
+					"quarry": 12.0583333333333,
+					"river": 16.1833333333331,
+					"summit": 20.9499999999995,
+					"switchback": 14.6499999999998
+				},
+				"build": {
+					"paint": "orange",
+					"suspension": "soft",
+					"tires": "snow",
+					"vehicle": "truck"
+				},
+				"claims": {
+					"clear:canyon_bridge_delivery": true,
+					"clear:canyon_precision": true,
+					"clear:canyon_rock_route": true,
+					"clear:coast": true,
+					"clear:dunes": true,
+					"clear:dunes_arch_slalom": true,
+					"clear:dunes_ridge_climb": true,
+					"clear:dunes_water_delivery": true,
+					"clear:festival_parcel_pit": true,
+					"clear:festival_slalom": true,
+					"clear:firefly": true,
+					"clear:lantern": true,
+					"clear:marsh_boardwalk": true,
+					"clear:marsh_reed_delivery": true,
+					"clear:marsh_supply_loop": true,
+					"clear:meadow": true,
+					"clear:moon": true,
+					"clear:orchard": true,
+					"clear:parcel": true,
+					"clear:quarry": true,
+					"clear:river": true,
+					"clear:summit": true,
+					"clear:summit_ice_route": true,
+					"clear:summit_supply_delivery": true,
+					"clear:summit_switchback": true,
+					"clear:switchback": true,
+					"clear:valley_parts_delivery": true,
+					"clear:valley_tire_trial": true,
+					"landmark:canyon_balanced_rock": true,
+					"landmark:canyon_crane": true,
+					"landmark:canyon_overlook": true,
+					"landmark:dunes_flag_ridge": true,
+					"landmark:dunes_oasis": true,
+					"landmark:dunes_sun_arch": true,
+					"landmark:festival_grandstand": true,
+					"landmark:festival_podium": true,
+					"landmark:festival_trophy": true,
+					"landmark:marsh_firefly": true,
+					"landmark:marsh_lookout": true,
+					"landmark:marsh_pump": true,
+					"landmark:summit_ice_arch": true,
+					"landmark:summit_station": true,
+					"landmark:summit_weather": true,
+					"landmark:valley_antenna": true,
+					"landmark:valley_waterwheel": true,
+					"landmark:valley_workshop_bell": true,
+					"purchase:awd": "buy_awd",
+					"purchase:long_travel": "buy_long_travel",
+					"purchase:mud": "buy_mud",
+					"purchase:rock": "buy_rock",
+					"purchase:sand": "buy_sand",
+					"purchase:snow": "buy_snow",
+					"star:canyon_bridge_delivery:completion": true,
+					"star:canyon_bridge_delivery:event_skill": true,
+					"star:canyon_bridge_delivery:suitable_build_route": true,
+					"star:canyon_precision:completion": true,
+					"star:canyon_precision:event_skill": true,
+					"star:canyon_precision:suitable_build_route": true,
+					"star:canyon_rock_route:completion": true,
+					"star:canyon_rock_route:event_skill": true,
+					"star:canyon_rock_route:suitable_build_route": true,
+					"star:coast:completion": true,
+					"star:dunes:completion": true,
+					"star:dunes_arch_slalom:completion": true,
+					"star:dunes_arch_slalom:event_skill": true,
+					"star:dunes_arch_slalom:suitable_build_route": true,
+					"star:dunes_ridge_climb:completion": true,
+					"star:dunes_ridge_climb:event_skill": true,
+					"star:dunes_ridge_climb:suitable_build_route": true,
+					"star:dunes_water_delivery:completion": true,
+					"star:dunes_water_delivery:event_skill": true,
+					"star:dunes_water_delivery:suitable_build_route": true,
+					"star:festival_parcel_pit:completion": true,
+					"star:festival_parcel_pit:event_skill": true,
+					"star:festival_parcel_pit:suitable_build_route": true,
+					"star:festival_slalom:completion": true,
+					"star:festival_slalom:event_skill": true,
+					"star:festival_slalom:suitable_build_route": true,
+					"star:firefly:completion": true,
+					"star:lantern:completion": true,
+					"star:marsh_boardwalk:completion": true,
+					"star:marsh_boardwalk:event_skill": true,
+					"star:marsh_boardwalk:suitable_build_route": true,
+					"star:marsh_reed_delivery:completion": true,
+					"star:marsh_reed_delivery:event_skill": true,
+					"star:marsh_reed_delivery:suitable_build_route": true,
+					"star:marsh_supply_loop:completion": true,
+					"star:marsh_supply_loop:event_skill": true,
+					"star:marsh_supply_loop:suitable_build_route": true,
+					"star:meadow:completion": true,
+					"star:moon:completion": true,
+					"star:orchard:completion": true,
+					"star:parcel:completion": true,
+					"star:quarry:completion": true,
+					"star:river:completion": true,
+					"star:summit:completion": true,
+					"star:summit_ice_route:completion": true,
+					"star:summit_ice_route:event_skill": true,
+					"star:summit_ice_route:suitable_build_route": true,
+					"star:summit_supply_delivery:completion": true,
+					"star:summit_supply_delivery:event_skill": true,
+					"star:summit_supply_delivery:suitable_build_route": true,
+					"star:summit_switchback:completion": true,
+					"star:summit_switchback:event_skill": true,
+					"star:summit_switchback:suitable_build_route": true,
+					"star:switchback:completion": true,
+					"star:valley_parts_delivery:completion": true,
+					"star:valley_parts_delivery:event_skill": true,
+					"star:valley_parts_delivery:suitable_build_route": true,
+					"star:valley_tire_trial:completion": true,
+					"star:valley_tire_trial:event_skill": true,
+					"star:valley_tire_trial:suitable_build_route": true,
+					"tutorial:first_drive_v1": true
+				},
+				"completed": [
+					"meadow",
+					"orchard",
+					"coast",
+					"parcel",
+					"firefly",
+					"quarry",
+					"dunes",
+					"moon",
+					"river",
+					"switchback",
+					"lantern",
+					"summit"
+				],
+				"custom": [
+					"flat",
+					"ramp",
+					"bumps",
+					"flat"
+				],
+				"discoveries": [
+					"valley_workshop_bell",
+					"valley_waterwheel",
+					"valley_antenna",
+					"festival_podium",
+					"festival_grandstand",
+					"festival_trophy",
+					"marsh_pump",
+					"marsh_lookout",
+					"marsh_firefly",
+					"dunes_flag_ridge",
+					"dunes_sun_arch",
+					"dunes_oasis",
+					"canyon_balanced_rock",
+					"canyon_overlook",
+					"canyon_crane",
+					"summit_station",
+					"summit_ice_arch",
+					"summit_weather"
+				],
+				"economy": {
+					"active": {
+
+					},
+					"last_settled": 30.0,
+					"next_run": 31.0,
+					"recent": [
+						{
+							"balance": 105.0,
+							"event": "meadow",
+							"gp": 105.0,
+							"kind": "reward",
+							"run": 1.0
+						},
+						{
+							"balance": 210.0,
+							"event": "orchard",
+							"gp": 105.0,
+							"kind": "reward",
+							"run": 2.0
+						},
+						{
+							"balance": 315.0,
+							"event": "coast",
+							"gp": 105.0,
+							"kind": "reward",
+							"run": 3.0
+						},
+						{
+							"balance": 420.0,
+							"event": "parcel",
+							"gp": 105.0,
+							"kind": "reward",
+							"run": 4.0
+						},
+						{
+							"balance": 525.0,
+							"event": "firefly",
+							"gp": 105.0,
+							"kind": "reward",
+							"run": 5.0
+						},
+						{
+							"balance": 630.0,
+							"event": "quarry",
+							"gp": 105.0,
+							"kind": "reward",
+							"run": 6.0
+						},
+						{
+							"balance": 735.0,
+							"event": "dunes",
+							"gp": 105.0,
+							"kind": "reward",
+							"run": 7.0
+						},
+						{
+							"balance": 840.0,
+							"event": "moon",
+							"gp": 105.0,
+							"kind": "reward",
+							"run": 8.0
+						},
+						{
+							"balance": 945.0,
+							"event": "river",
+							"gp": 105.0,
+							"kind": "reward",
+							"run": 9.0
+						},
+						{
+							"balance": 1050.0,
+							"event": "switchback",
+							"gp": 105.0,
+							"kind": "reward",
+							"run": 10.0
+						},
+						{
+							"balance": 1155.0,
+							"event": "lantern",
+							"gp": 105.0,
+							"kind": "reward",
+							"run": 11.0
+						},
+						{
+							"balance": 1260.0,
+							"event": "summit",
+							"gp": 105.0,
+							"kind": "reward",
+							"run": 12.0
+						},
+						{
+							"balance": 1410.0,
+							"event": "valley_first_drive",
+							"gp": 150.0,
+							"kind": "reward",
+							"run": 14.0
+						},
+						{
+							"balance": 1655.0,
+							"event": "valley_parts_delivery",
+							"gp": 245.0,
+							"kind": "reward",
+							"run": 15.0
+						},
+						{
+							"balance": 1355.0,
+							"event": "mud",
+							"gp": 0.0,
+							"kind": "upgrade",
+							"run": 0.0
+						},
+						{
+							"balance": 1580.0,
+							"event": "valley_tire_trial",
+							"gp": 225.0,
+							"kind": "reward",
+							"run": 16.0
+						},
+						{
+							"balance": 1655.0,
+							"event": "valley_workshop_bell",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 1730.0,
+							"event": "valley_waterwheel",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 1805.0,
+							"event": "valley_antenna",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 2050.0,
+							"event": "festival_parcel_pit",
+							"gp": 245.0,
+							"kind": "reward",
+							"run": 17.0
+						},
+						{
+							"balance": 2275.0,
+							"event": "festival_slalom",
+							"gp": 225.0,
+							"kind": "reward",
+							"run": 18.0
+						},
+						{
+							"balance": 2350.0,
+							"event": "festival_podium",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 2425.0,
+							"event": "festival_grandstand",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 2500.0,
+							"event": "festival_trophy",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 2575.0,
+							"event": "marsh_pump",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 2650.0,
+							"event": "marsh_lookout",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 2875.0,
+							"event": "marsh_supply_loop",
+							"gp": 225.0,
+							"kind": "reward",
+							"run": 19.0
+						},
+						{
+							"balance": 3120.0,
+							"event": "marsh_reed_delivery",
+							"gp": 245.0,
+							"kind": "reward",
+							"run": 20.0
+						},
+						{
+							"balance": 3345.0,
+							"event": "marsh_boardwalk",
+							"gp": 225.0,
+							"kind": "reward",
+							"run": 21.0
+						},
+						{
+							"balance": 3420.0,
+							"event": "marsh_firefly",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 2820.0,
+							"event": "sand",
+							"gp": 0.0,
+							"kind": "upgrade",
+							"run": 0.0
+						},
+						{
+							"balance": 2895.0,
+							"event": "dunes_flag_ridge",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 2970.0,
+							"event": "dunes_sun_arch",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 3195.0,
+							"event": "dunes_ridge_climb",
+							"gp": 225.0,
+							"kind": "reward",
+							"run": 22.0
+						},
+						{
+							"balance": 3440.0,
+							"event": "dunes_water_delivery",
+							"gp": 245.0,
+							"kind": "reward",
+							"run": 23.0
+						},
+						{
+							"balance": 3665.0,
+							"event": "dunes_arch_slalom",
+							"gp": 225.0,
+							"kind": "reward",
+							"run": 24.0
+						},
+						{
+							"balance": 3740.0,
+							"event": "dunes_oasis",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 2840.0,
+							"event": "rock",
+							"gp": 0.0,
+							"kind": "upgrade",
+							"run": 0.0
+						},
+						{
+							"balance": 2390.0,
+							"event": "long_travel",
+							"gp": 0.0,
+							"kind": "upgrade",
+							"run": 0.0
+						},
+						{
+							"balance": 2615.0,
+							"event": "canyon_precision",
+							"gp": 225.0,
+							"kind": "reward",
+							"run": 25.0
+						},
+						{
+							"balance": 2860.0,
+							"event": "canyon_bridge_delivery",
+							"gp": 245.0,
+							"kind": "reward",
+							"run": 26.0
+						},
+						{
+							"balance": 3085.0,
+							"event": "canyon_rock_route",
+							"gp": 225.0,
+							"kind": "reward",
+							"run": 27.0
+						},
+						{
+							"balance": 3160.0,
+							"event": "canyon_balanced_rock",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 3235.0,
+							"event": "canyon_overlook",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 3310.0,
+							"event": "canyon_crane",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 1910.0,
+							"event": "snow",
+							"gp": 0.0,
+							"kind": "upgrade",
+							"run": 0.0
+						},
+						{
+							"balance": 710.0,
+							"event": "awd",
+							"gp": 0.0,
+							"kind": "upgrade",
+							"run": 0.0
+						},
+						{
+							"balance": 935.0,
+							"event": "summit_ice_route",
+							"gp": 225.0,
+							"kind": "reward",
+							"run": 28.0
+						},
+						{
+							"balance": 1180.0,
+							"event": "summit_supply_delivery",
+							"gp": 245.0,
+							"kind": "reward",
+							"run": 29.0
+						},
+						{
+							"balance": 1405.0,
+							"event": "summit_switchback",
+							"gp": 225.0,
+							"kind": "reward",
+							"run": 30.0
+						},
+						{
+							"balance": 1480.0,
+							"event": "summit_station",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 1555.0,
+							"event": "summit_ice_arch",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						},
+						{
+							"balance": 1630.0,
+							"event": "summit_weather",
+							"gp": 75.0,
+							"kind": "discovery",
+							"run": 0.0
+						}
+					]
+				},
+				"equipped": {
+					"drivetrain": "awd",
+					"engine": "",
+					"gearing": "",
+					"suspension_upgrade": "",
+					"tires": "snow"
+				},
+				"explore": {
+					"checkpoint": [
+						-240.0,
+						0.150000005960464,
+						-396.0
+					],
+					"region": "frostline_summit",
+					"yaw": 0.0
+				},
+				"goal": "engine_tier_1",
+				"gp": 1630.0,
+				"owned": [
+					"road",
+					"trail",
+					"giant",
+					"soft",
+					"firm",
+					"orange",
+					"cyan",
+					"purple",
+					"lime",
+					"mud",
+					"sand",
+					"rock",
+					"long_travel",
+					"snow",
+					"awd"
+				],
+				"owned_vehicles": [
+					"buggy",
+					"rover",
+					"rally",
+					"truck",
+					"kart",
+					"crawler"
+				],
+				"regions": [
+					"garage_valley",
+					"festival_circuit",
+					"moss_marsh",
+					"sunspoke_dunes",
+					"redstone_canyon",
+					"frostline_summit"
+				],
+				"settings": {
+					"muted": false,
+					"one_touch": false,
+					"reduced_motion": false,
+					"steering_sensitivity": 1.0,
+					"volume": 0.65
+				},
+				"stars": [
+					"meadow:completion",
+					"orchard:completion",
+					"coast:completion",
+					"parcel:completion",
+					"firefly:completion",
+					"quarry:completion",
+					"dunes:completion",
+					"moon:completion",
+					"river:completion",
+					"switchback:completion",
+					"lantern:completion",
+					"summit:completion",
+					"valley_parts_delivery:completion",
+					"valley_parts_delivery:event_skill",
+					"valley_parts_delivery:suitable_build_route",
+					"valley_tire_trial:completion",
+					"valley_tire_trial:event_skill",
+					"valley_tire_trial:suitable_build_route",
+					"festival_parcel_pit:completion",
+					"festival_parcel_pit:event_skill",
+					"festival_parcel_pit:suitable_build_route",
+					"festival_slalom:completion",
+					"festival_slalom:event_skill",
+					"festival_slalom:suitable_build_route",
+					"marsh_supply_loop:completion",
+					"marsh_supply_loop:event_skill",
+					"marsh_supply_loop:suitable_build_route",
+					"marsh_reed_delivery:completion",
+					"marsh_reed_delivery:event_skill",
+					"marsh_reed_delivery:suitable_build_route",
+					"marsh_boardwalk:completion",
+					"marsh_boardwalk:event_skill",
+					"marsh_boardwalk:suitable_build_route",
+					"dunes_ridge_climb:completion",
+					"dunes_ridge_climb:event_skill",
+					"dunes_ridge_climb:suitable_build_route",
+					"dunes_water_delivery:completion",
+					"dunes_water_delivery:event_skill",
+					"dunes_water_delivery:suitable_build_route",
+					"dunes_arch_slalom:completion",
+					"dunes_arch_slalom:event_skill",
+					"dunes_arch_slalom:suitable_build_route",
+					"canyon_precision:completion",
+					"canyon_precision:event_skill",
+					"canyon_precision:suitable_build_route",
+					"canyon_bridge_delivery:completion",
+					"canyon_bridge_delivery:event_skill",
+					"canyon_bridge_delivery:suitable_build_route",
+					"canyon_rock_route:completion",
+					"canyon_rock_route:event_skill",
+					"canyon_rock_route:suitable_build_route",
+					"summit_ice_route:completion",
+					"summit_ice_route:event_skill",
+					"summit_ice_route:suitable_build_route",
+					"summit_supply_delivery:completion",
+					"summit_supply_delivery:event_skill",
+					"summit_supply_delivery:suitable_build_route",
+					"summit_switchback:completion",
+					"summit_switchback:event_skill",
+					"summit_switchback:suitable_build_route"
+				],
+				"version": 3.0
+			},
+			"failures": 0.0,
+			"ledger": [
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 105.0,
+					"components": [
+						{
+							"gp": 30.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						}
+					],
+					"earned_gp": 105.0,
+					"elapsed_seconds": 7.29166666666682,
+					"event": "meadow",
+					"kind": "quick_drive",
+					"mastery": 1.0,
+					"timed_bonus_required": false
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 210.0,
+					"components": [
+						{
+							"gp": 30.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						}
+					],
+					"earned_gp": 105.0,
+					"elapsed_seconds": 8.84166666666681,
+					"event": "orchard",
+					"kind": "quick_drive",
+					"mastery": 2.0,
+					"timed_bonus_required": false
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 315.0,
+					"components": [
+						{
+							"gp": 30.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						}
+					],
+					"earned_gp": 105.0,
+					"elapsed_seconds": 9.51666666666677,
+					"event": "coast",
+					"kind": "quick_drive",
+					"mastery": 3.0,
+					"timed_bonus_required": false
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 420.0,
+					"components": [
+						{
+							"gp": 30.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						}
+					],
+					"earned_gp": 105.0,
+					"elapsed_seconds": 11.65,
+					"event": "parcel",
+					"kind": "quick_drive",
+					"mastery": 4.0,
+					"timed_bonus_required": false
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 525.0,
+					"components": [
+						{
+							"gp": 30.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						}
+					],
+					"earned_gp": 105.0,
+					"elapsed_seconds": 9.00000000000013,
+					"event": "firefly",
+					"kind": "quick_drive",
+					"mastery": 5.0,
+					"timed_bonus_required": false
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 630.0,
+					"components": [
+						{
+							"gp": 30.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						}
+					],
+					"earned_gp": 105.0,
+					"elapsed_seconds": 12.0583333333333,
+					"event": "quarry",
+					"kind": "quick_drive",
+					"mastery": 6.0,
+					"timed_bonus_required": false
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 735.0,
+					"components": [
+						{
+							"gp": 30.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						}
+					],
+					"earned_gp": 105.0,
+					"elapsed_seconds": 14.1083333333332,
+					"event": "dunes",
+					"kind": "quick_drive",
+					"mastery": 7.0,
+					"timed_bonus_required": false
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 840.0,
+					"components": [
+						{
+							"gp": 30.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						}
+					],
+					"earned_gp": 105.0,
+					"elapsed_seconds": 14.6333333333331,
+					"event": "moon",
+					"kind": "quick_drive",
+					"mastery": 8.0,
+					"timed_bonus_required": false
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 945.0,
+					"components": [
+						{
+							"gp": 30.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						}
+					],
+					"earned_gp": 105.0,
+					"elapsed_seconds": 16.1833333333331,
+					"event": "river",
+					"kind": "quick_drive",
+					"mastery": 9.0,
+					"timed_bonus_required": false
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 1050.0,
+					"components": [
+						{
+							"gp": 30.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						}
+					],
+					"earned_gp": 105.0,
+					"elapsed_seconds": 14.6499999999998,
+					"event": "switchback",
+					"kind": "quick_drive",
+					"mastery": 10.0,
+					"timed_bonus_required": false
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 1155.0,
+					"components": [
+						{
+							"gp": 30.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						}
+					],
+					"earned_gp": 105.0,
+					"elapsed_seconds": 17.558333333333,
+					"event": "lantern",
+					"kind": "quick_drive",
+					"mastery": 11.0,
+					"timed_bonus_required": false
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 1260.0,
+					"components": [
+						{
+							"gp": 30.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						}
+					],
+					"earned_gp": 105.0,
+					"elapsed_seconds": 20.9499999999995,
+					"event": "summit",
+					"kind": "quick_drive",
+					"mastery": 12.0,
+					"timed_bonus_required": false
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 1260.0,
+					"components": [],
+					"earned_gp": 0.0,
+					"elapsed_seconds": 7.29166666666682,
+					"event": "custom",
+					"kind": "custom_practice",
+					"mastery": 12.0,
+					"timed_bonus_required": false
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 1410.0,
+					"checkpoint": 8.0,
+					"checkpoint_count": 8.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 150.0,
+							"label": "Introductory drive"
+						}
+					],
+					"distance_m": 283.001422166824,
+					"elapsed_seconds": 54.0333333333315,
+					"id": "valley_first_drive",
+					"kind": "activity",
+					"mastery": 12.0,
+					"mode": "tutorial",
+					"new_mastery": [],
+					"recoveries_during_route": 0.0,
+					"region": "garage_valley",
+					"reward_gp": 150.0,
+					"timed_bonus_required": false,
+					"tires": "trail",
+					"vehicle": "buggy"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 1655.0,
+					"checkpoint": 8.0,
+					"checkpoint_count": 8.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 120.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 465.891379236942,
+					"elapsed_seconds": 88.8499999999962,
+					"id": "valley_parts_delivery",
+					"kind": "activity",
+					"mastery": 15.0,
+					"mode": "delivery",
+					"new_mastery": [
+						"valley_parts_delivery:completion",
+						"valley_parts_delivery:event_skill",
+						"valley_parts_delivery:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "garage_valley",
+					"reward_gp": 245.0,
+					"timed_bonus_required": false,
+					"tires": "trail",
+					"vehicle": "buggy"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_before": 1655.0,
+					"balance_gp": 1355.0,
+					"item": "mud",
+					"kind": "purchase",
+					"mastery": 15.0,
+					"owned_after": true,
+					"price_gp": 300.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 1355.0,
+					"build": {
+						"tires": "mud",
+						"vehicle": "buggy"
+					},
+					"cost_gp": 0.0,
+					"kind": "free_refit",
+					"mastery": 15.0,
+					"region": "garage_valley"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 1355.0,
+					"equipped": {
+						"drivetrain": "",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "",
+						"tires": "mud"
+					},
+					"first_admission": false,
+					"kind": "region_entry",
+					"mastery": 15.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud"
+					],
+					"region": "garage_valley",
+					"wallet_gp": 1355.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 1580.0,
+					"checkpoint": 11.0,
+					"checkpoint_count": 11.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 363.566043399274,
+					"elapsed_seconds": 70.1999999999973,
+					"id": "valley_tire_trial",
+					"kind": "activity",
+					"mastery": 18.0,
+					"mode": "surface_test",
+					"new_mastery": [
+						"valley_tire_trial:completion",
+						"valley_tire_trial:event_skill",
+						"valley_tire_trial:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "garage_valley",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "mud",
+					"vehicle": "buggy"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 1655.0,
+					"earned_gp": 75.0,
+					"kind": "discovery",
+					"landmark": "valley_workshop_bell",
+					"mastery": 18.0,
+					"new_discoveries": 1.0,
+					"position": [
+						-55.2205238342285,
+						0.0329089462757111,
+						70.8427200317383
+					]
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 1730.0,
+					"earned_gp": 75.0,
+					"kind": "discovery",
+					"landmark": "valley_waterwheel",
+					"mastery": 18.0,
+					"new_discoveries": 1.0,
+					"position": [
+						-76.1020126342773,
+						0.0328997857868671,
+						-61.1347541809082
+					]
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 1805.0,
+					"earned_gp": 75.0,
+					"kind": "discovery",
+					"landmark": "valley_antenna",
+					"mastery": 18.0,
+					"new_discoveries": 1.0,
+					"position": [
+						72.1660003662109,
+						0.0327984094619751,
+						-61.137508392334
+					]
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 1805.0,
+					"build": {
+						"tires": "trail",
+						"vehicle": "kart"
+					},
+					"cost_gp": 0.0,
+					"kind": "free_refit",
+					"mastery": 18.0,
+					"region": "festival_circuit"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 1805.0,
+					"equipped": {
+						"drivetrain": "",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "",
+						"tires": "trail"
+					},
+					"first_admission": false,
+					"kind": "region_entry",
+					"mastery": 18.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud"
+					],
+					"region": "festival_circuit",
+					"wallet_gp": 1805.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 2050.0,
+					"checkpoint": 8.0,
+					"checkpoint_count": 8.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 120.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 410.97308149375,
+					"elapsed_seconds": 69.0833333333307,
+					"id": "festival_parcel_pit",
+					"kind": "activity",
+					"mastery": 21.0,
+					"mode": "delivery",
+					"new_mastery": [
+						"festival_parcel_pit:completion",
+						"festival_parcel_pit:event_skill",
+						"festival_parcel_pit:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "festival_circuit",
+					"reward_gp": 245.0,
+					"timed_bonus_required": false,
+					"tires": "trail",
+					"vehicle": "kart"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 2275.0,
+					"checkpoint": 10.0,
+					"checkpoint_count": 10.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 410.310908042826,
+					"elapsed_seconds": 74.7666666666637,
+					"id": "festival_slalom",
+					"kind": "activity",
+					"mastery": 24.0,
+					"mode": "slalom",
+					"new_mastery": [
+						"festival_slalom:completion",
+						"festival_slalom:event_skill",
+						"festival_slalom:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "festival_circuit",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "trail",
+					"vehicle": "kart"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 2350.0,
+					"earned_gp": 75.0,
+					"kind": "discovery",
+					"landmark": "festival_podium",
+					"mastery": 24.0,
+					"new_discoveries": 1.0,
+					"position": [
+						186.632614135742,
+						0.032905139029026,
+						70.8477325439453
+					]
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 2425.0,
+					"earned_gp": 75.0,
+					"kind": "discovery",
+					"landmark": "festival_grandstand",
+					"mastery": 24.0,
+					"new_discoveries": 1.0,
+					"position": [
+						313.524841308594,
+						0.0328202024102211,
+						-57.1829452514648
+					]
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 2500.0,
+					"earned_gp": 75.0,
+					"kind": "discovery",
+					"landmark": "festival_trophy",
+					"mastery": 24.0,
+					"new_discoveries": 1.0,
+					"position": [
+						164.447906494141,
+						0.0328161530196667,
+						-65.1885375976562
+					]
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit"
+					],
+					"balance_gp": 2500.0,
+					"build": {
+						"tires": "mud",
+						"vehicle": "rover"
+					},
+					"cost_gp": 0.0,
+					"kind": "free_refit",
+					"mastery": 24.0,
+					"region": "moss_marsh"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh"
+					],
+					"balance_gp": 2500.0,
+					"equipped": {
+						"drivetrain": "",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "",
+						"tires": "mud"
+					},
+					"first_admission": true,
+					"kind": "region_entry",
+					"mastery": 24.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud"
+					],
+					"region": "moss_marsh",
+					"wallet_gp": 2500.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh"
+					],
+					"balance_gp": 2500.0,
+					"build": {
+						"tires": "mud",
+						"vehicle": "rover"
+					},
+					"cost_gp": 0.0,
+					"kind": "free_refit",
+					"mastery": 24.0,
+					"region": "moss_marsh"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh"
+					],
+					"balance_gp": 2500.0,
+					"equipped": {
+						"drivetrain": "",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "",
+						"tires": "mud"
+					},
+					"first_admission": false,
+					"kind": "region_entry",
+					"mastery": 24.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud"
+					],
+					"region": "moss_marsh",
+					"wallet_gp": 2500.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh"
+					],
+					"automatic_discoveries": 2.0,
+					"balance_gp": 2875.0,
+					"checkpoint": 11.0,
+					"checkpoint_count": 11.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 530.482832234353,
+					"elapsed_seconds": 91.7666666666627,
+					"id": "marsh_supply_loop",
+					"kind": "activity",
+					"mastery": 27.0,
+					"mode": "trail",
+					"new_mastery": [
+						"marsh_supply_loop:completion",
+						"marsh_supply_loop:event_skill",
+						"marsh_supply_loop:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "moss_marsh",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "mud",
+					"vehicle": "rover"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 3120.0,
+					"checkpoint": 8.0,
+					"checkpoint_count": 8.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 120.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 404.968995541334,
+					"elapsed_seconds": 72.3833333333305,
+					"id": "marsh_reed_delivery",
+					"kind": "activity",
+					"mastery": 30.0,
+					"mode": "delivery",
+					"new_mastery": [
+						"marsh_reed_delivery:completion",
+						"marsh_reed_delivery:event_skill",
+						"marsh_reed_delivery:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "moss_marsh",
+					"reward_gp": 245.0,
+					"timed_bonus_required": false,
+					"tires": "mud",
+					"vehicle": "rover"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 3345.0,
+					"checkpoint": 9.0,
+					"checkpoint_count": 9.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 305.817068265518,
+					"elapsed_seconds": 61.0999999999978,
+					"id": "marsh_boardwalk",
+					"kind": "activity",
+					"mastery": 33.0,
+					"mode": "precision",
+					"new_mastery": [
+						"marsh_boardwalk:completion",
+						"marsh_boardwalk:event_skill",
+						"marsh_boardwalk:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "moss_marsh",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "mud",
+					"vehicle": "rover"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh"
+					],
+					"balance_gp": 3345.0,
+					"extra_gp": 0.0,
+					"kind": "discovery_already_reached_on_route",
+					"landmark": "marsh_lookout",
+					"mastery": 33.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh"
+					],
+					"balance_gp": 3345.0,
+					"extra_gp": 0.0,
+					"kind": "discovery_already_reached_on_route",
+					"landmark": "marsh_pump",
+					"mastery": 33.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh"
+					],
+					"balance_gp": 3420.0,
+					"earned_gp": 75.0,
+					"kind": "discovery",
+					"landmark": "marsh_firefly",
+					"mastery": 33.0,
+					"new_discoveries": 1.0,
+					"position": [
+						-168.687286376953,
+						0.032810851931572,
+						-58.171501159668
+					]
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh"
+					],
+					"balance_before": 3420.0,
+					"balance_gp": 2820.0,
+					"item": "sand",
+					"kind": "purchase",
+					"mastery": 33.0,
+					"owned_after": true,
+					"price_gp": 600.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh"
+					],
+					"balance_gp": 2820.0,
+					"build": {
+						"tires": "sand",
+						"vehicle": "rally"
+					},
+					"cost_gp": 0.0,
+					"kind": "free_refit",
+					"mastery": 33.0,
+					"region": "sunspoke_dunes"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes"
+					],
+					"balance_gp": 2820.0,
+					"equipped": {
+						"drivetrain": "",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "",
+						"tires": "sand"
+					},
+					"first_admission": true,
+					"kind": "region_entry",
+					"mastery": 33.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud",
+						"sand"
+					],
+					"region": "sunspoke_dunes",
+					"wallet_gp": 2820.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes"
+					],
+					"automatic_discoveries": 2.0,
+					"balance_gp": 3195.0,
+					"checkpoint": 9.0,
+					"checkpoint_count": 9.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 391.374052755535,
+					"elapsed_seconds": 68.5666666666641,
+					"id": "dunes_ridge_climb",
+					"kind": "activity",
+					"mastery": 36.0,
+					"mode": "hill_climb",
+					"new_mastery": [
+						"dunes_ridge_climb:completion",
+						"dunes_ridge_climb:event_skill",
+						"dunes_ridge_climb:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "sunspoke_dunes",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "sand",
+					"vehicle": "rally"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 3440.0,
+					"checkpoint": 7.0,
+					"checkpoint_count": 7.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 120.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 416.428015483078,
+					"elapsed_seconds": 71.8499999999972,
+					"id": "dunes_water_delivery",
+					"kind": "activity",
+					"mastery": 39.0,
+					"mode": "delivery",
+					"new_mastery": [
+						"dunes_water_delivery:completion",
+						"dunes_water_delivery:event_skill",
+						"dunes_water_delivery:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "sunspoke_dunes",
+					"reward_gp": 245.0,
+					"timed_bonus_required": false,
+					"tires": "sand",
+					"vehicle": "rally"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 3665.0,
+					"checkpoint": 10.0,
+					"checkpoint_count": 10.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 489.238507232163,
+					"elapsed_seconds": 89.2999999999962,
+					"id": "dunes_arch_slalom",
+					"kind": "activity",
+					"mastery": 42.0,
+					"mode": "slalom",
+					"new_mastery": [
+						"dunes_arch_slalom:completion",
+						"dunes_arch_slalom:event_skill",
+						"dunes_arch_slalom:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "sunspoke_dunes",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "sand",
+					"vehicle": "rally"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes"
+					],
+					"balance_gp": 3665.0,
+					"extra_gp": 0.0,
+					"kind": "discovery_already_reached_on_route",
+					"landmark": "dunes_flag_ridge",
+					"mastery": 42.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes"
+					],
+					"balance_gp": 3740.0,
+					"earned_gp": 75.0,
+					"kind": "discovery",
+					"landmark": "dunes_oasis",
+					"mastery": 42.0,
+					"new_discoveries": 1.0,
+					"position": [
+						-75.6631164550781,
+						0.0327980257570744,
+						-293.158569335938
+					]
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes"
+					],
+					"balance_gp": 3740.0,
+					"extra_gp": 0.0,
+					"kind": "discovery_already_reached_on_route",
+					"landmark": "dunes_sun_arch",
+					"mastery": 42.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes"
+					],
+					"balance_before": 3740.0,
+					"balance_gp": 2840.0,
+					"item": "rock",
+					"kind": "purchase",
+					"mastery": 42.0,
+					"owned_after": true,
+					"price_gp": 900.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes"
+					],
+					"balance_before": 2840.0,
+					"balance_gp": 2390.0,
+					"item": "long_travel",
+					"kind": "purchase",
+					"mastery": 42.0,
+					"owned_after": true,
+					"price_gp": 450.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes"
+					],
+					"balance_gp": 2390.0,
+					"build": {
+						"suspension_upgrade": "long_travel",
+						"tires": "rock",
+						"vehicle": "crawler"
+					},
+					"cost_gp": 0.0,
+					"kind": "free_refit",
+					"mastery": 42.0,
+					"region": "redstone_canyon"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon"
+					],
+					"balance_gp": 2390.0,
+					"equipped": {
+						"drivetrain": "",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "long_travel",
+						"tires": "rock"
+					},
+					"first_admission": true,
+					"kind": "region_entry",
+					"mastery": 42.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud",
+						"sand",
+						"rock",
+						"long_travel"
+					],
+					"region": "redstone_canyon",
+					"wallet_gp": 2390.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 2615.0,
+					"checkpoint": 9.0,
+					"checkpoint_count": 9.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 349.655634231865,
+					"elapsed_seconds": 63.9999999999976,
+					"id": "canyon_precision",
+					"kind": "activity",
+					"mastery": 45.0,
+					"mode": "precision",
+					"new_mastery": [
+						"canyon_precision:completion",
+						"canyon_precision:event_skill",
+						"canyon_precision:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "redstone_canyon",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "rock",
+					"vehicle": "crawler"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 2860.0,
+					"checkpoint": 7.0,
+					"checkpoint_count": 7.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 120.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 421.164424535586,
+					"elapsed_seconds": 72.9666666666638,
+					"id": "canyon_bridge_delivery",
+					"kind": "activity",
+					"mastery": 48.0,
+					"mode": "delivery",
+					"new_mastery": [
+						"canyon_bridge_delivery:completion",
+						"canyon_bridge_delivery:event_skill",
+						"canyon_bridge_delivery:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "redstone_canyon",
+					"reward_gp": 245.0,
+					"timed_bonus_required": false,
+					"tires": "rock",
+					"vehicle": "crawler"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 3085.0,
+					"checkpoint": 9.0,
+					"checkpoint_count": 9.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 398.319247669075,
+					"elapsed_seconds": 72.5333333333305,
+					"id": "canyon_rock_route",
+					"kind": "activity",
+					"mastery": 51.0,
+					"mode": "hill_climb",
+					"new_mastery": [
+						"canyon_rock_route:completion",
+						"canyon_rock_route:event_skill",
+						"canyon_rock_route:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "redstone_canyon",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "rock",
+					"vehicle": "crawler"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon"
+					],
+					"balance_gp": 3235.0,
+					"earned_gp": 150.0,
+					"kind": "discovery",
+					"landmark": "canyon_overlook",
+					"mastery": 51.0,
+					"new_discoveries": 2.0,
+					"position": [
+						-311.173950195312,
+						0.0328032709658146,
+						-300.193450927734
+					]
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon"
+					],
+					"balance_gp": 3310.0,
+					"earned_gp": 75.0,
+					"kind": "discovery",
+					"landmark": "canyon_crane",
+					"mastery": 51.0,
+					"new_discoveries": 1.0,
+					"position": [
+						-170.127639770508,
+						0.032797746360302,
+						-297.455200195312
+					]
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon"
+					],
+					"balance_gp": 3310.0,
+					"extra_gp": 0.0,
+					"kind": "discovery_already_reached_on_route",
+					"landmark": "canyon_balanced_rock",
+					"mastery": 51.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon"
+					],
+					"balance_before": 3310.0,
+					"balance_gp": 1910.0,
+					"item": "snow",
+					"kind": "purchase",
+					"mastery": 51.0,
+					"owned_after": true,
+					"price_gp": 1400.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon"
+					],
+					"balance_before": 1910.0,
+					"balance_gp": 710.0,
+					"item": "awd",
+					"kind": "purchase",
+					"mastery": 51.0,
+					"owned_after": true,
+					"price_gp": 1200.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon"
+					],
+					"balance_gp": 710.0,
+					"build": {
+						"drivetrain": "awd",
+						"tires": "snow",
+						"vehicle": "truck"
+					},
+					"cost_gp": 0.0,
+					"kind": "free_refit",
+					"mastery": 51.0,
+					"region": "frostline_summit"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon",
+						"frostline_summit"
+					],
+					"balance_gp": 710.0,
+					"equipped": {
+						"drivetrain": "awd",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "",
+						"tires": "snow"
+					},
+					"first_admission": true,
+					"kind": "region_entry",
+					"mastery": 51.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud",
+						"sand",
+						"rock",
+						"long_travel",
+						"snow",
+						"awd"
+					],
+					"region": "frostline_summit",
+					"wallet_gp": 710.0
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon",
+						"frostline_summit"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 935.0,
+					"checkpoint": 9.0,
+					"checkpoint_count": 9.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 454.94155498594,
+					"elapsed_seconds": 77.2999999999969,
+					"id": "summit_ice_route",
+					"kind": "activity",
+					"mastery": 54.0,
+					"mode": "ice_route",
+					"new_mastery": [
+						"summit_ice_route:completion",
+						"summit_ice_route:event_skill",
+						"summit_ice_route:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "frostline_summit",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "snow",
+					"vehicle": "truck"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon",
+						"frostline_summit"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 1180.0,
+					"checkpoint": 7.0,
+					"checkpoint_count": 7.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 120.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 415.404748443165,
+					"elapsed_seconds": 72.9833333333305,
+					"id": "summit_supply_delivery",
+					"kind": "activity",
+					"mastery": 57.0,
+					"mode": "delivery",
+					"new_mastery": [
+						"summit_supply_delivery:completion",
+						"summit_supply_delivery:event_skill",
+						"summit_supply_delivery:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "frostline_summit",
+					"reward_gp": 245.0,
+					"timed_bonus_required": false,
+					"tires": "snow",
+					"vehicle": "truck"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon",
+						"frostline_summit"
+					],
+					"automatic_discoveries": 0.0,
+					"balance_gp": 1405.0,
+					"checkpoint": 10.0,
+					"checkpoint_count": 10.0,
+					"completed": true,
+					"components": [
+						{
+							"gp": 100.0,
+							"label": "Completed run"
+						},
+						{
+							"gp": 50.0,
+							"label": "First authored clear"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: completion"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: event skill"
+						},
+						{
+							"gp": 25.0,
+							"label": "New mastery: suitable build route"
+						}
+					],
+					"distance_m": 506.270726023591,
+					"elapsed_seconds": 95.4666666666625,
+					"id": "summit_switchback",
+					"kind": "activity",
+					"mastery": 60.0,
+					"mode": "switchback",
+					"new_mastery": [
+						"summit_switchback:completion",
+						"summit_switchback:event_skill",
+						"summit_switchback:suitable_build_route"
+					],
+					"recoveries_during_route": 0.0,
+					"region": "frostline_summit",
+					"reward_gp": 225.0,
+					"timed_bonus_required": false,
+					"tires": "snow",
+					"vehicle": "truck"
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon",
+						"frostline_summit"
+					],
+					"balance_gp": 1480.0,
+					"earned_gp": 75.0,
+					"kind": "discovery",
+					"landmark": "summit_station",
+					"mastery": 60.0,
+					"new_discoveries": 1.0,
+					"position": [
+						-299.720794677734,
+						0.0328122116625309,
+						-539.248657226562
+					]
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon",
+						"frostline_summit"
+					],
+					"balance_gp": 1555.0,
+					"earned_gp": 75.0,
+					"kind": "discovery",
+					"landmark": "summit_ice_arch",
+					"mastery": 60.0,
+					"new_discoveries": 1.0,
+					"position": [
+						-168.852462768555,
+						0.0327999368309975,
+						-535.399658203125
+					]
+				},
+				{
+					"admitted_regions": [
+						"garage_valley",
+						"festival_circuit",
+						"moss_marsh",
+						"sunspoke_dunes",
+						"redstone_canyon",
+						"frostline_summit"
+					],
+					"balance_gp": 1630.0,
+					"earned_gp": 75.0,
+					"kind": "discovery",
+					"landmark": "summit_weather",
+					"mastery": 60.0,
+					"new_discoveries": 1.0,
+					"position": [
+						-170.283828735352,
+						0.0327973701059818,
+						-416.268432617188
+					]
+				}
+			],
+			"phase": "write",
+			"pid": 6343.0,
+			"region_entries": [
+				{
+					"equipped": {
+						"drivetrain": "",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "",
+						"tires": "mud"
+					},
+					"first_admission": false,
+					"mastery": 15.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud"
+					],
+					"region": "garage_valley",
+					"wallet_gp": 1355.0
+				},
+				{
+					"equipped": {
+						"drivetrain": "",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "",
+						"tires": "trail"
+					},
+					"first_admission": false,
+					"mastery": 18.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud"
+					],
+					"region": "festival_circuit",
+					"wallet_gp": 1805.0
+				},
+				{
+					"equipped": {
+						"drivetrain": "",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "",
+						"tires": "mud"
+					},
+					"first_admission": true,
+					"mastery": 24.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud"
+					],
+					"region": "moss_marsh",
+					"wallet_gp": 2500.0
+				},
+				{
+					"equipped": {
+						"drivetrain": "",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "",
+						"tires": "mud"
+					},
+					"first_admission": false,
+					"mastery": 24.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud"
+					],
+					"region": "moss_marsh",
+					"wallet_gp": 2500.0
+				},
+				{
+					"equipped": {
+						"drivetrain": "",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "",
+						"tires": "sand"
+					},
+					"first_admission": true,
+					"mastery": 33.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud",
+						"sand"
+					],
+					"region": "sunspoke_dunes",
+					"wallet_gp": 2820.0
+				},
+				{
+					"equipped": {
+						"drivetrain": "",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "long_travel",
+						"tires": "rock"
+					},
+					"first_admission": true,
+					"mastery": 42.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud",
+						"sand",
+						"rock",
+						"long_travel"
+					],
+					"region": "redstone_canyon",
+					"wallet_gp": 2390.0
+				},
+				{
+					"equipped": {
+						"drivetrain": "awd",
+						"engine": "",
+						"gearing": "",
+						"suspension_upgrade": "",
+						"tires": "snow"
+					},
+					"first_admission": true,
+					"mastery": 51.0,
+					"owned": [
+						"road",
+						"trail",
+						"giant",
+						"soft",
+						"firm",
+						"orange",
+						"cyan",
+						"purple",
+						"lime",
+						"mud",
+						"sand",
+						"rock",
+						"long_travel",
+						"snow",
+						"awd"
+					],
+					"region": "frostline_summit",
+					"wallet_gp": 710.0
+				}
+			],
+			"scope": "Real native desktop scenes/processes; fresh default profile, actual authored2D/3D control traversal and current UI/API purchases. No seeded currency, stars, inventory or admissions; no in-route transform writes; no required timed bonus; not physical-device/human QA.",
+			"simulation_activity_seconds": 1430.88333333328,
+			"spent_gp": 4850.0,
+			"used_vehicles": [
+				"buggy",
+				"kart",
+				"rover",
+				"rally",
+				"crawler",
+				"truck"
+			]
+		},
+		{
+			"activities": [],
+			"checks": 31.0,
+			"earned_gp": 0.0,
+			"expected": {
+
+			},
+			"failures": 0.0,
+			"ledger": [],
+			"phase": "read",
+			"pid": 6474.0,
+			"region_entries": [],
+			"scope": "Real native desktop scenes/processes; fresh default profile, actual authored2D/3D control traversal and current UI/API purchases. No seeded currency, stars, inventory or admissions; no in-route transform writes; no required timed bonus; not physical-device/human QA.",
+			"simulation_activity_seconds": 0.0,
+			"spent_gp": 0.0,
+			"used_vehicles": []
+		}
+	],
+	"scope": "One initially default0GP profile; real2D scene drives and3D CharacterBody input/collision routes; independent write/quit/read processes. No inventory/admission/funds seeding or in-route transform writes. Not device/human QA."
+}

@@ -1,0 +1,10 @@
+PASS: Fresh actual exported-game viewport shows zeroGP before any earning
+PASS: Authored meadow completion banked105GP exactly once
+PASS: Authored orchard completion banked105GP exactly once
+PASS: Authored coast completion banked105GP exactly once
+PASS: Atomic mud purchase leaves15GP and grants ownership
+PASS: Free equipment swap retains15GP
+PASS: Moss Marsh admitted and its checkpoint saved
+PASS: Decoded actual3D viewport pixels differ after OS throttle input; review original frames for travel
+PASS: Final wallet and three mastery claims remain unchanged
+EXPORTED GUI FAILED: Command '['/workspace/mini-garage-adventure/builds/mini-garage-adventure-explore.x86_64', '--resolution', '1280x720', '--position', '0,0', '--audio-driver', 'Dummy']' timed out after 12 seconds
