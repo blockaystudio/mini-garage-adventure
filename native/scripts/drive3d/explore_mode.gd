@@ -29,6 +29,8 @@ var message := "Choose a mission, or explore at your own pace."
 var results: Dictionary = {}
 var _closing := false
 var _checkpoint_save_failed := false
+var _pending_exit_action := Callable()
+var _pending_exit_run := 0
 
 func _ready() -> void:
 	process_physics_priority = -20
@@ -142,13 +144,19 @@ func _physics_process(delta: float) -> void:
 func start_activity(item: Dictionary) -> void:
 	if str(item.get("region","")) != region:
 		return
-	input.clear()
-	active_run = game.economy.begin_run(item.id,item.kind)
-	game.state = game.store.data.duplicate(true)
-	if active_run <= 0:
-		message = game.economy.warning
-		_hud()
+	if _guard_pending_completion(Callable(self,"start_activity").bind(item.duplicate(true))):
 		return
+	input.clear()
+	var reserved: int = game.economy.begin_run(item.id,item.kind)
+	game.state = game.store.data.duplicate(true)
+	if reserved <= 0:
+		message = game.economy.warning
+		game.status = message
+		# The previous activity, valid run ID and ordered observation still own
+		# the vehicle. A rejected reservation must not publish half a transition.
+		_pause_panel(false,Callable(self,"start_activity").bind(item.duplicate(true)))
+		return
+	active_run = reserved
 	activity = item.duplicate(true)
 	_set_cargo(activity.kind == "delivery_clear")
 	checkpoint_index = 0
@@ -217,6 +225,10 @@ func _finish_activity() -> void:
 	_result_panel(saved)
 
 func _result_panel(saved: bool) -> void:
+	# Returning from a confirmation cancels its intent, including a delayed
+	# button callback from the old UI tree (for example Web touch dispatch).
+	_pending_exit_action = Callable()
+	_pending_exit_run = 0
 	_stop()
 	_top("Adventure complete" if saved else "Save needs attention")
 	game._panel(204,176,872,490)
@@ -244,6 +256,58 @@ func _stop() -> void:
 	input.clear()
 	vehicle.clear_controls()
 	vehicle.enabled = false
+
+func has_pending_completion() -> bool:
+	# A stale/synthetic already-settled result is not an unpaid transaction.
+	return not activity.is_empty() and active_run > int(game.store.data.economy.last_settled) and int(game.store.data.economy.active.get("id",0)) == active_run and checkpoint_index >= activity.get("checkpoints",[]).size() and results.is_empty()
+
+func _guard_pending_completion(action: Callable) -> bool:
+	if not has_pending_completion():
+		return false
+	confirm_leave_pending(action)
+	return true
+
+func confirm_leave_pending(action: Callable) -> void:
+	if not has_pending_completion():
+		return
+	_pending_exit_action = action
+	_pending_exit_run = active_run
+	paused = true
+	_stop()
+	_top("Leave this unpaid reward?")
+	game._panel(204,176,872,490)
+	game._label("This completed run has not been awarded.",242,201,792,90,32)
+	game._label("Keep the same run open and retry saving, or leave its unpaid reward behind. Your previously saved GP and parts stay safe.",242,317,792,144,25,game.TEAL)
+	game._button("Keep pending run",242,526,374,_keep_pending_completion,true,112)
+	game._button("Leave without reward",636,526,398,_discard_pending_completion,false,112)
+
+func _keep_pending_completion() -> void:
+	_pending_exit_action = Callable()
+	_pending_exit_run = 0
+	_result_panel(false)
+
+func _discard_pending_completion() -> void:
+	# A delayed button from an old dialog cannot discard a different/new run.
+	if not has_pending_completion() or active_run != _pending_exit_run:
+		_pending_exit_action = Callable()
+		_pending_exit_run = 0
+		resume_drive()
+		return
+	var action := _pending_exit_action
+	_pending_exit_action = Callable()
+	_pending_exit_run = 0
+	activity = {}
+	results = {}
+	active_run = 0
+	checkpoint_index = 0
+	world.show_activity({},0)
+	_set_cargo(false)
+	message = "The unpaid result was left behind. Previously saved progress is unchanged."
+	game.status = message
+	if action.is_valid():
+		action.call()
+	else:
+		_hud()
 
 func pause_drive() -> void:
 	if paused:
@@ -277,6 +341,8 @@ func _retry_checkpoint_pause() -> void:
 		_pause_panel(true)
 
 func recover_vehicle() -> void:
+	if _guard_pending_completion(recover_vehicle):
+		return
 	input.clear()
 	vehicle.recover()
 	camera.reset_view()
@@ -316,6 +382,8 @@ func _retry_discovery(landmark: Dictionary) -> void:
 		_pause_panel(_save_checkpoint())
 
 func show_missions() -> void:
+	if _guard_pending_completion(show_missions):
+		return
 	paused = true
 	_stop()
 	_top("Choose a mission")
@@ -327,12 +395,18 @@ func show_missions() -> void:
 		game._label(item.label,55,y,790,38,28)
 		game._label(item.description,57,y+47,786,76,22,game.TEAL)
 		game._button("Start mission",885,y+9,333,func(): start_activity(item),false,112)
-	game._button("Free explore",44,622,310,func():
-		activity = {}
-		world.show_activity({},0)
-		_hud(),true)
+	game._button("Free explore",44,622,310,free_explore,true)
+
+func free_explore() -> void:
+	if _guard_pending_completion(free_explore):
+		return
+	activity = {}
+	world.show_activity({},0)
+	_hud()
 
 func show_map() -> void:
+	if _guard_pending_completion(show_map):
+		return
 	paused = true
 	_stop()
 	_top("Your destinations")
@@ -348,6 +422,8 @@ func show_map() -> void:
 		button.disabled = not reason.is_empty()
 
 func enter_region(id: String) -> void:
+	if _guard_pending_completion(Callable(self,"enter_region").bind(id)):
+		return
 	if not Progression.admit_region(game.store,id):
 		var reason := Progression.gate_reason(game.store.data,id)
 		message = reason if not reason.is_empty() else game.store.warning
