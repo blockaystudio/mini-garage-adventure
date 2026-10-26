@@ -83,6 +83,11 @@ class Input:
         self.test.XTestFakeButtonEvent(self.display, 1, 0, 0)
         self.x.XFlush(self.display)
 
+    def mouse_button(self, x: int, y: int, down: bool):
+        self.test.XTestFakeMotionEvent(self.display, 0, x, y, 0)
+        self.test.XTestFakeButtonEvent(self.display, 1, int(down), 0)
+        self.x.XFlush(self.display)
+
     def key(self, name: str, down: bool):
         code = self.x.XKeysymToKeycode(self.display, self.x.XStringToKeysym(name.encode()))
         if not code:
@@ -269,14 +274,16 @@ def main() -> int:
             wait_text('PICK AN ADVENTURE')
             for index, course_id in enumerate(['meadow', 'orchard', 'coast']):
                 click(187 + index * 302, 271, 'Start authored course ' + course_id)
-                input_driver.key('Right', True)
-                record('key_down', key='Right', meaning='Hold real2D Drive until legitimate course completion')
+                wait_text(['MEADOW HELLO', 'ORCHARD', 'COAST'][index])
+                input_driver.focus(window)
+                input_driver.mouse_button(1095 + offset[0], 645 + offset[1], True)
+                record('mouse_down', x=1095, y=645, meaning='Hold actual2D Drive pad until legitimate course completion')
                 try:
                     payload, _ = wait_profile(lambda p: int(p['gp']) == 105 * (index + 1) and course_id in p['completed'],
                                               'Authored ' + course_id + ' completion banked105GP exactly once')
                 finally:
-                    input_driver.key('Right', False)
-                    record('key_up', key='Right')
+                    input_driver.mouse_button(1095 + offset[0], 645 + offset[1], False)
+                    record('mouse_up', x=1095, y=645)
                 time.sleep(.2)
                 capture(f'0{index+2}-{course_id}-complete')
                 if index < 2:
