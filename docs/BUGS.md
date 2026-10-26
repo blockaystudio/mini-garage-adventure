@@ -1,5 +1,10 @@
 # Native production defects and acceptance risks
 
+## Production acceptance follow-up — 2026-10-26
+
+- Quick Drive slide-off control retention is fixed in `b0159c5`; four focused checks failed on prior source and all sixteen pass after the fix. Physical touch cancellation and screen-reader driving are still device acceptance gates.
+- The older `5ef89c3` Linux export passes normal close and earned-profile relaunch under xfwm4 (`evidence/production-acceptance/exported-gui-xfwm4/report.json`). The earlier dummy-X11 timeout remains historical; it does not establish a game defect. The rebuilt current runtime from `233661f` also passed 17 GUI checks including close and relaunch; see `evidence/production-acceptance/exported-gui-final/report.json`.
+
 2026-10-25. This is an evidence ledger, not a device certification.
 
 The later rewards/schema-3, native 3D and private-session defects and acceptance

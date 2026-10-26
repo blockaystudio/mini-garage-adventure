@@ -18,10 +18,11 @@ The new 370-check unseeded untimed progression proof passes all six destination 
 
 | Priority | Gate | Actual evidence required |
 |---|---|---|
-| P1 | Packaged Linux window-close/relaunch | Synthetic WM_DELETE_WINDOW timed out in dummy X11 after a real earned purchase; a fresh window lacked the WM_DELETE_WINDOW protocol. Reproduce on a normal desktop/window manager, separate harness vs. Godot/game behavior, and verify normal close plus persisted relaunch |
+| Closed on tested Linux desktop | Packaged window-close/relaunch | Rebuilt `233661f` export passes 17 xfwm4 GUI checks including normal close and earned-profile relaunch; the earlier dummy-X11 timeout remains preserved. Physical device lifecycle remains a separate gate |
 | P1 | Physical Android acceptance | Named phone/tablet installs/updates, actual touch cancellation, background/lock/resume, storage/relaunch, safe areas and sustained frame/memory/thermal checks |
 | P1 | Physical iOS acceptance | Authorized Mac/Xcode/IDs/signing, actual build/resource audit and named iPhone/iPad runtime/lifecycle/storage/performance evidence |
 | P1 | Assistive-technology driving | Semantic gameplay activation with safe input lifecycle and actual TalkBack/VoiceOver testing; names/ROLE_PANEL metadata are insufficient |
+| P1 | Isolated accessibility prototype | Unmerged `628738c` can open duplicate non-isolated control drawers; closing one can leave another visible with inactive controls. Fix and test modal isolation, focus and input lifecycle before integration; physical bridge acceptance remains open |
 | P1 | Full shared-world authority | Real collision/slope/surface/checkpoint parity on an authority, first two then four independent native clients; current bounded Festival proof does not complete it |
 | P1 | Durable unbanked online results | Tested journal/replay across server crash/restart/shutdown; current pending records remain RAM-only until wallet commit, although banked GP is durable |
 | P1 | Production online operation | Parent/identity/privacy/retention/deletion/security/operating-cost work; isolated TEST names/invites are not consent or production accounts |

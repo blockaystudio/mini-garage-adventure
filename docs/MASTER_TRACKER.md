@@ -174,3 +174,15 @@ authority and crash-durable unbanked online results remain unfinished engineerin
 parent/identity/privacy/retention/deletion/security/cost and publisher/rights work
 remain production gates. No merge, deployment, spending, agreement acceptance or
 tester contact belongs to this checkpoint.
+
+## Production acceptance follow-up — 2026-10-26
+
+Quick Drive slide-off safety is fixed in `b0159c5`: held controls release when a finger exits its pad, and sliding off a tap-to-drive press cancels its latch. The pinned-engine regression fails 4/16 checks on the prior source and passes 16/16 after correction (`evidence/production-input/`). Independent fingers, keyboard input, normal toggle, cancellation and focus-loss handling remain covered. This is native automation, not physical touch acceptance.
+
+The earlier packaged Linux export from `5ef89c3` now passes 17 OS-input checks with the xfwm4 window manager, including earned Mud purchase, normal window close and separate-process relaunch restoring the profile (`evidence/production-acceptance/exported-gui-xfwm4/report.json`). The earlier dummy-X11 timeout is preserved; the window-manager test does not prove a game defect was present. The current-source rebuild from `233661f` subsequently passed all 17 GUI checks including normal close and relaunch; its 79 source-file hashes and three artifact hashes match (`evidence/production-acceptance/native-builds/independent-audit.json`, `evidence/production-acceptance/exported-gui-final/report.json`; evidence commit `8198586`).
+
+Named physical Android/iOS, actual TalkBack/VoiceOver driving, real device performance, human balance, production online identity/privacy and durable server-result settlement remain open. Keep shared-world/content expansion frozen until current-build acceptance is evidenced; retain the prior PR stack and saves.
+
+An isolated, unmerged accessibility prototype exists at `628738c` on `codex/accessible-drive-spike`. It is not part of this production branch. Review found its control drawer can open repeatedly without isolating underlying controls; closing one can leave another visible with inactive controls. Fix and verify modal isolation, focus, and routed-input lifecycle before integration. Prototype assertions do not establish physical TalkBack/VoiceOver support.
+
+Final current-runtime native verification passed **5,866 checks** at `233661f` (`evidence/production-final/native.txt`), including 16 touch, 127 Explore recovery, 370 fresh progression and 48 multi-process save-contention checks. The fresh pre-fix baseline at `3908f4d` separately passed 5,860 native, 63 Node plus six Python, 14 HTTP Chromium and nine network scenarios (`evidence/production-baseline/`). These baseline browser/network runs precede the input fix; do not mislabel them as final-runtime reruns.

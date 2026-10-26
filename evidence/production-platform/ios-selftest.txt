@@ -1,0 +1,1 @@
+PASS:12 synthetic adversarial plist fixtures; this is inspector validation, not an iOS build/device result.

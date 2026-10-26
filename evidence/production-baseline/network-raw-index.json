@@ -1,0 +1,135 @@
+{
+  "archive": "network-raw.zip",
+  "members": [
+    {
+      "path": "network-matrix/four-clients/client-1.json",
+      "bytes": 78824,
+      "sha256": "3f1553face8d95124b2964a51a96ee7a4c2d9bf5dfd3d4966dd43b110e465931"
+    },
+    {
+      "path": "network-matrix/four-clients/client-2.json",
+      "bytes": 81177,
+      "sha256": "e65a099ab52451124e76e3ff2c89cf57cc1da686ba02c8a8bcdc2d4639f2fb9d"
+    },
+    {
+      "path": "network-matrix/four-clients/client-3.json",
+      "bytes": 80053,
+      "sha256": "657c0994dccd13d1ee11aa1f41279a52f695c304cc3818ca7d30ea5f5d3616f9"
+    },
+    {
+      "path": "network-matrix/four-clients/client-4.json",
+      "bytes": 80613,
+      "sha256": "dade95998d547980fb1954f48b9922b57aac3730c4ec98b6e275c76ccff2d4a7"
+    },
+    {
+      "path": "network-matrix/network-100ms/client-1.json",
+      "bytes": 75712,
+      "sha256": "40cc9ac0523f5e7de8813d29d6a93361913d79d8b6b76ee367499d84ad5fca93"
+    },
+    {
+      "path": "network-matrix/network-100ms/client-2.json",
+      "bytes": 79357,
+      "sha256": "6ded842ba5185b1cc6b281a7d974f491119487083f09d21d459beaddd4e1db58"
+    },
+    {
+      "path": "network-matrix/network-100ms/client-3.json",
+      "bytes": 69232,
+      "sha256": "b0edc6bb601b52a05823b1fcd178280aa212f4ea6fd41a03c08964b67690e28e"
+    },
+    {
+      "path": "network-matrix/network-100ms/client-4.json",
+      "bytes": 77699,
+      "sha256": "4194c053184314b4a0bbd066bbc27fb9fd9bb6ce21d44b4973ce3ab6efd5b276"
+    },
+    {
+      "path": "network-matrix/network-150ms/client-1.json",
+      "bytes": 72923,
+      "sha256": "e7192ac715063fb5e10d0506b9d44fbd7b68adafb8621666553a3829e84ae0f2"
+    },
+    {
+      "path": "network-matrix/network-150ms/client-2.json",
+      "bytes": 79279,
+      "sha256": "603c9a96695ff9155730c61a35927055c2036e15f9cde04c2ce57b68aedd9694"
+    },
+    {
+      "path": "network-matrix/network-150ms/client-3.json",
+      "bytes": 77637,
+      "sha256": "85d4b3298ddb0c50713fec8115605b3a26f0a071b88c453668261c051ece8b17"
+    },
+    {
+      "path": "network-matrix/network-150ms/client-4.json",
+      "bytes": 77194,
+      "sha256": "27a50a472b5d7f29557a81c61c78a53684b0f0a13be5a2152eb36deca70cc972"
+    },
+    {
+      "path": "network-matrix/network-250ms/client-1.json",
+      "bytes": 64167,
+      "sha256": "dbe8dd61430cccddf543846b2aa3fb6e4b1c314682df6b7f8f8d0f9aa9d6b6fe"
+    },
+    {
+      "path": "network-matrix/network-250ms/client-2.json",
+      "bytes": 69374,
+      "sha256": "80ac830a85ae77a8fe6fde5f74affeeeff02c6259e7b0cca9a11fca86a7dfe15"
+    },
+    {
+      "path": "network-matrix/network-250ms/client-3.json",
+      "bytes": 70931,
+      "sha256": "440927058214bc67ed8086ccdf4db482b1c7b49076f675b2378d88872193d3a7"
+    },
+    {
+      "path": "network-matrix/network-250ms/client-4.json",
+      "bytes": 69262,
+      "sha256": "93673761a28c3ade36f422839590653f6a9fc364ef4df46b791de244ff744531"
+    },
+    {
+      "path": "network-matrix/network-50ms/client-1.json",
+      "bytes": 78051,
+      "sha256": "13407405dc67ea8f6de5dce6a01890277c7439f943697318abb3154a3c379a55"
+    },
+    {
+      "path": "network-matrix/network-50ms/client-2.json",
+      "bytes": 80762,
+      "sha256": "6fd314c54258f5ba402baf39f8f54fe6635dd98236d1ba5b90a0722b4ad32dc1"
+    },
+    {
+      "path": "network-matrix/network-50ms/client-3.json",
+      "bytes": 79680,
+      "sha256": "83bdca5f1328e118b877c3e7273bd13968a53e97cae68b09e09f1eef8baff44d"
+    },
+    {
+      "path": "network-matrix/network-50ms/client-4.json",
+      "bytes": 78205,
+      "sha256": "fd1bbb84e7271b3eb46eeee401e0b7bc7bda59af1e5ca9095635a2cf48dac151"
+    },
+    {
+      "path": "network-matrix/two-clients/client-1.json",
+      "bytes": 40254,
+      "sha256": "c8f99d8d171a9adfd74a39e14c7d19e073ed32c5054b684697a62f3b1c434925"
+    },
+    {
+      "path": "network-matrix/two-clients/client-2.json",
+      "bytes": 37581,
+      "sha256": "ee27c89bb0c82e5ce42970bc547198c3628aadb79ef733cdbc543f3a99e4de7e"
+    },
+    {
+      "path": "network-repeat/two-consecutive-races/client-1.json",
+      "bytes": 59141,
+      "sha256": "6ae2ecdecf702ecfb0f836ebb77aefbc8a4c3e3d989fd36856235ba8fa743c31"
+    },
+    {
+      "path": "network-repeat/two-consecutive-races/client-2.json",
+      "bytes": 60668,
+      "sha256": "00e7b23736c43c81f060f456def040e315c58416ed3d6182cb0baf9e54d495a4"
+    },
+    {
+      "path": "network-storage-fault/two-clients-storage-fault/client-1.json",
+      "bytes": 47874,
+      "sha256": "76fac845bdfe270e09ebc1aeec9bfb7001765d95fe7b531738e088a0566d1759"
+    },
+    {
+      "path": "network-storage-fault/two-clients-storage-fault/client-2.json",
+      "bytes": 48593,
+      "sha256": "2b852a4fcc0ad7b50833eba313ace5c98744b40c6e6d063649189c511280a27a"
+    }
+  ]
+}
