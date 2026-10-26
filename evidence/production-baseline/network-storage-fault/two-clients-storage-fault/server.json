@@ -1,0 +1,188 @@
+{
+  "banked_profiles": {
+    "qa-driver-1": {
+      "claims": {
+        "race-867642d8bbe44244:qa-driver-1": 125
+      },
+      "gp": 125,
+      "owned": [
+        "trail"
+      ],
+      "regions": [
+        "garage_valley",
+        "festival_circuit"
+      ]
+    },
+    "qa-driver-2": {
+      "claims": {
+        "race-867642d8bbe44244:qa-driver-2": 100
+      },
+      "gp": 100,
+      "owned": [
+        "trail"
+      ],
+      "regions": [
+        "garage_valley",
+        "festival_circuit"
+      ]
+    }
+  },
+  "completed_races": {
+    "race-867642d8bbe44244": {
+      "checkpoints": [
+        -12.0,
+        -24.0,
+        -36.0
+      ],
+      "countdown": 0.0,
+      "elapsed": 7.56666666666665,
+      "entrants": [
+        "qa-driver-2",
+        "qa-driver-1"
+      ],
+      "equal_build": {
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "buggy"
+      },
+      "finish_order": [
+        "qa-driver-1",
+        "qa-driver-2"
+      ],
+      "id": "race-867642d8bbe44244",
+      "phase": "finished",
+      "results": [
+        {
+          "checkpoint": 3,
+          "claim": "race-867642d8bbe44244:qa-driver-1",
+          "gp": 125,
+          "name": "Driver 582",
+          "place": 1,
+          "profile": "qa-driver-1"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-867642d8bbe44244:qa-driver-2",
+          "gp": 100,
+          "name": "Driver 583",
+          "place": 2,
+          "profile": "qa-driver-2"
+        }
+      ],
+      "statuses": {
+        "qa-driver-1": "finished",
+        "qa-driver-2": "finished"
+      }
+    }
+  },
+  "diagnostics": {
+    "correction_definition": "Actual predicted position before versus after acknowledged-input replay; delayed-authority gap is recorded separately.",
+    "correction_samples": 0,
+    "dropped_packets": 0,
+    "engine_static_memory_bytes": 22495520.0,
+    "impairment_note": "Application-level scheduling/drop of real ENet input/snapshot messages; not kernel netem or physical network measurement.",
+    "mean_correction_m": 0.0,
+    "p95_correction_m": 0.0,
+    "p95_delayed_authority_gap_m": 0.0,
+    "received_payload_bytes": 43586,
+    "rejected_packets": 1,
+    "sent_payload_bytes": 288415,
+    "server_mean_tick_us": 214.008343265793,
+    "server_p95_tick_us": 444
+  },
+  "duration_seconds": 13.965,
+  "pid": 8964,
+  "scope": "actual dedicated native Godot ENet process; isolated TEST profiles only",
+  "snapshot": {
+    "common_regions": [
+      "garage_valley",
+      "festival_circuit",
+      "moss_marsh",
+      "sunspoke_dunes",
+      "redstone_canyon",
+      "frostline_summit"
+    ],
+    "destination": "festival_circuit",
+    "leader": 0,
+    "players": {
+
+    },
+    "proposed_destination": "",
+    "race": {
+      "checkpoints": [
+        -12.0,
+        -24.0,
+        -36.0
+      ],
+      "countdown": 0.0,
+      "elapsed": 7.56666666666665,
+      "entrants": [
+        "qa-driver-2",
+        "qa-driver-1"
+      ],
+      "equal_build": {
+        "suspension": "soft",
+        "tires": "trail",
+        "vehicle": "buggy"
+      },
+      "finish_order": [
+        "qa-driver-1",
+        "qa-driver-2"
+      ],
+      "id": "race-867642d8bbe44244",
+      "pending_results": [],
+      "phase": "finished",
+      "results": [
+        {
+          "checkpoint": 3,
+          "claim": "race-867642d8bbe44244:qa-driver-1",
+          "gp": 125,
+          "name": "Driver 582",
+          "place": 1,
+          "profile": "qa-driver-1"
+        },
+        {
+          "checkpoint": 3,
+          "claim": "race-867642d8bbe44244:qa-driver-2",
+          "gp": 100,
+          "name": "Driver 583",
+          "place": 2,
+          "profile": "qa-driver-2"
+        }
+      ],
+      "statuses": {
+        "qa-driver-1": "finished",
+        "qa-driver-2": "finished"
+      }
+    },
+    "settlement_status": "",
+    "test_scope": true,
+    "tick": 837
+  },
+  "storage_fault_events": [
+    {
+      "at_seconds": 0.966,
+      "directory_error": 0,
+      "event": "server_storage_blocked"
+    },
+    {
+      "at_seconds": 7.969,
+      "banked_gp": {
+        "qa-driver-1": 0,
+        "qa-driver-2": 0
+      },
+      "event": "before_storage_recovery",
+      "pending_validated_finishes": 2,
+      "phase": "saving_results",
+      "race_elapsed": 7.09999999999998,
+      "statuses": {
+        "qa-driver-1": "pending_save",
+        "qa-driver-2": "pending_save"
+      }
+    },
+    {
+      "at_seconds": 7.969,
+      "event": "server_storage_restored"
+    }
+  ]
+}

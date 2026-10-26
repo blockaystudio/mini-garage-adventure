@@ -1,0 +1,21 @@
+Fontconfig error: No writable cache directories
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: GUI mouse-from-touch emulation is enabled
+Fontconfig error: No writable cache directories
+PASS: one real finger counts once despite emulated mouse copy
+PASS: first finger and mouse-copy release preserve second finger
+PASS: final finger release stops hold-to-drive
+PASS: sliding one finger off releases only its own hold
+PASS: sliding the final finger off stops hold-to-drive
+PASS: slide-off releases lean without interrupting another control
+PASS: sliding a tap-to-drive press off cancels its latch
+PASS: focus loss clears active tap-to-drive
+PASS: touch cancellation clears tap-to-drive
+PASS: one tap latches once without double-toggle from emulated mouse
+PASS: normal tap release preserves tap-to-drive
+PASS: second real tap stops tap-to-drive
+PASS: emulated mouse never leaves a phantom pointer
+PASS: physical desktop mouse remains usable
+PASS: physical desktop mouse release remains usable
+TOUCH INPUT: 16 checks, 0 failures

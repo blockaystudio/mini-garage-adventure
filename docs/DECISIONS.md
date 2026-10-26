@@ -97,3 +97,10 @@ implementation descriptions; they do not authorize a public service or release.
 - Shared-world authority, durable pending online settlement and production
   identity/privacy/operations remain later gates. No merge, deployment, spending,
   agreement acceptance or tester contact is part of this checkpoint.
+
+## Production acceptance follow-up — 2026-10-26
+
+- Apply per-finger slide-off cancellation to Quick Drive, matching existing Explore safety behavior while preserving independent inputs and intentional completed tap-to-drive toggles. Pin before/after regression results.
+- Validate normal packaged-game close under a real window manager. Preserve the old dummy-X11 timeout; xfwm4 passes on both the earlier export and the rebuilt `233661f` runtime with normal close and earned-profile relaunch.
+- Physical lifecycle, touch, TalkBack/VoiceOver and performance remain separate device gates. Continue the content/shared-world freeze and preserve offline saves and the existing Godot 4.6.3 pin.
+- Keep accessibility prototype `628738c` isolated and unmerged until its repeated-drawer/modal isolation failure, input and focus lifecycle, announcements and layouts are reviewed. Treat automated metadata and controls as engineering evidence only; named-device screen-reader operation remains unverified.
