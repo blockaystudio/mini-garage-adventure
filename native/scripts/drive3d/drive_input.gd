@@ -1,6 +1,7 @@
 extends Node
 ## 3D steering is separate from the Quick Drive balance controls. Every finger
 ## and physical key owns its lifetime, including GUI-emulated mouse copies.
+var accessible = preload("res://scripts/accessible_drive.gd").new()
 var regions: Dictionary = {}
 var pointers: Dictionary = {}
 var toggle_pointers: Dictionary = {}
@@ -19,6 +20,7 @@ func register(action: String, control: Control) -> void:
 	regions[action] = control
 
 func clear() -> void:
+	accessible.clear()
 	pointers.clear()
 	toggle_pointers.clear()
 	keys.clear()
@@ -45,6 +47,8 @@ func release(pointer: int) -> void:
 func strength(action: String) -> float:
 	if not active:
 		return 0.0
+	if accessible.enabled:
+		return accessible.strength(action)
 	if action == "throttle" and latched_drive:
 		return 1.0
 	return 1.0 if action in keys.values() or action in pointers.values() else 0.0
@@ -62,6 +66,8 @@ func get_controls() -> Dictionary:
 	result.brake = strength("brake")
 	result.reverse = strength("reverse")
 	result.steer = strength("steer_right")-strength("steer_left")
+	if accessible.enabled:
+		return result
 	var pads := Input.get_connected_joypads()
 	if not pads.is_empty():
 		var pad := int(pads[0])
@@ -85,6 +91,10 @@ func get_controls() -> Dictionary:
 	return result
 
 func _input(event: InputEvent) -> void:
+	if accessible.enabled:
+		if event is InputEventScreenTouch and event.canceled:
+			clear()
+		return
 	if event is InputEventScreenTouch:
 		if event.canceled:
 			clear()

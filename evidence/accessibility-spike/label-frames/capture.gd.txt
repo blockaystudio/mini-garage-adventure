@@ -1,0 +1,44 @@
+extends SceneTree
+const Main = preload("res://scenes/main.tscn")
+const Store = preload("res://scripts/save_store.gd")
+const Content = preload("res://scripts/content.gd")
+func _initialize(): call_deferred("run")
+func capture(name: String):
+ await RenderingServer.frame_post_draw
+ var image := root.get_texture().get_image()
+ image.save_png("/tmp/garage-accessible-"+name+".png")
+func run():
+ var game = Main.instantiate()
+ game.store = Store.new("user://accessible-capture-" + str(Time.get_ticks_usec()))
+ root.add_child(game)
+ await process_frame
+ game.start_course(Content.COURSES[0])
+ game._accessible_controls(game.router, false)
+ await create_timer(0.5).timeout
+ var start_x: float = game.car.x
+ game.router.accessible.command("throttle")
+ await create_timer(1.0).timeout
+ if game.car.x - start_x < 1.0: push_error("2D accessible input did not move"); quit(1); return
+ print("2D_MOVE ", game.car.x-start_x, " STATUS ", game._accessible_status.text, " PROGRESS ", game._accessible_progress.text)
+ await capture("2d")
+ game.router.accessible.command("stop")
+ print("2D_STOP ",game.router.strength("throttle"))
+ game.show_explore("garage_valley")
+ await process_frame
+ game._accessible_controls(game.explore.input, true)
+ await create_timer(0.5).timeout
+ var start: Vector3 = game.explore.vehicle.global_position
+ game.explore.input.accessible.command("throttle")
+ await create_timer(1.0).timeout
+ if game.explore.vehicle.global_position.distance_to(start) < 0.1: push_error("3D accessible input did not move"); quit(1); return
+ print("3D_MOVE ",game.explore.vehicle.global_position.distance_to(start)," STATUS ",game._accessible_status.text," PROGRESS ",game._accessible_progress.text)
+ await create_timer(1.0).timeout
+ for child in game.ui.get_children():
+  if child is Button: print("BUTTON ",child.text," vis=",child.visible," color=",child.get_theme_color("font_color")," mod=",child.modulate)
+ for n in range(8):
+  await capture("3d-"+str(n))
+  await create_timer(0.35).timeout
+ game.explore.input.accessible.command("stop")
+ print("3D_STOP ",game.explore.input.get_controls().throttle)
+ game.store.reset()
+ quit()

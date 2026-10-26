@@ -1,0 +1,49 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+PASS: motion-enabled screen starts a visible transition
+PASS: usable settings action: Reduced motion: OFF
+REDUCED_MOTION_ALPHA: previous=0.6836000084877 current=1.0
+PASS: reduced-motion UI action propagates to saved setting and scene
+PASS: enabling reduced motion during a fade restores full UI opacity
+PASS: reduced-motion screen navigation stays fully opaque
+PASS: usable settings action: Reduced motion: ON
+PASS: disabling reduced motion deliberately restores transition behavior
+PASS: audible setting permits a generated cue
+PASS: usable settings action: Sound: ON
+PASS: muting through UI stops existing cue voices immediately
+PASS: muted setting suppresses new cue voices
+PASS: usable settings action: Sound: OFF
+PASS: volume slider exposes its setting name to accessibility APIs
+PASS: volume UI changes current voices and persisted setting
+PASS: volume survives actual native file reload
+PASS: zero volume prevents new generated cues
+PASS: compact part control keeps keyboard focus and large logical target
+PASS: focused phone part control accepts keyboard focus
+PASS: grown-up answer field exposes its purpose to accessibility APIs
+PASS: course progress exposes a meaningful accessibility name
+PASS: large compact driving targets remain in simulated safe-area bounds
+PASS: keyboard drive alternative remains available with compact controls
+PASS: keyboard alternative releases without a held touch
+PASS: accessible drive action uses a real Button
+PASS: drawer hides background actions from focus and accessibility tree
+PASS: routed click and repeated open cannot create nested accessible drawers
+PASS: accessible driving exposes native button actions and stop
+PASS: accessible activation starts a bounded drive command
+PASS: accessible 2D status exposes active command and course progress
+PASS: drawer clicks cannot activate underlying raw controls
+PASS: accessible stop immediately clears drive
+PASS: focus loss clears accessible drive
+PASS: closing accessible controls clears input and restores background actions
+PASS: closing the drawer restores previous keyboard focus
+PASS: accessible drive and steering can be combined
+PASS: accessible drive expires at the monotonic deadline
+PASS: opposite steering replaces the earlier command
+PASS: brake cancels throttle
+PASS: reverse cancels brake
+PASS: accessible stop clears all commands
+PASS: Explore exposes an accessible driving button
+PASS: Explore accessible button drives through the real input router
+PASS: accessible 3D status exposes active command and terrain or mission
+PASS: Explore accessible stop clears throttle
+PASS: Explore pause cancels accessible commands
+ACCESSIBILITY SETTINGS: 45 checks, 0 failures

@@ -1,0 +1,122 @@
+{
+  "scope": "Checks decoded light-colored pixels in known button-label rectangles; not OCR, a mobile result, or proof of accessibility.",
+  "frames": [
+    {
+      "path": "accessible-3d-linux.png",
+      "sha256": "baf9a990332d644e451e6e16b833fef49b77f71358a4fdca9d4701015fe49da1",
+      "cream_pixel_counts": {
+        "drive": 145,
+        "brake": 184,
+        "reverse": 234,
+        "left": 133,
+        "right": 207,
+        "stop": 155,
+        "close": 715
+      }
+    },
+    {
+      "path": "label-frames/garage-accessible-3d-0.png",
+      "sha256": "3b9c8732d052e7c0d98769b958abf69f99ceaa68796b5c5ccf23a80a7c8f8e85",
+      "cream_pixel_counts": {
+        "drive": 145,
+        "brake": 184,
+        "reverse": 234,
+        "left": 133,
+        "right": 207,
+        "stop": 155,
+        "close": 715
+      }
+    },
+    {
+      "path": "label-frames/garage-accessible-3d-1.png",
+      "sha256": "574816160e14dcff09e6f8981038c1d187ca083e01ca208389537dd23f00d1e2",
+      "cream_pixel_counts": {
+        "drive": 145,
+        "brake": 184,
+        "reverse": 234,
+        "left": 133,
+        "right": 207,
+        "stop": 155,
+        "close": 715
+      }
+    },
+    {
+      "path": "label-frames/garage-accessible-3d-2.png",
+      "sha256": "44730fc132ef726d41af22bd12fcaa17e3418d52153a9adb07140976d1b4ab35",
+      "cream_pixel_counts": {
+        "drive": 145,
+        "brake": 184,
+        "reverse": 234,
+        "left": 133,
+        "right": 207,
+        "stop": 155,
+        "close": 715
+      }
+    },
+    {
+      "path": "label-frames/garage-accessible-3d-3.png",
+      "sha256": "eb10ecbf236570ddf8617d5fe078eb2f74a3b14acf457dc46485629354e950b2",
+      "cream_pixel_counts": {
+        "drive": 145,
+        "brake": 184,
+        "reverse": 234,
+        "left": 133,
+        "right": 207,
+        "stop": 155,
+        "close": 715
+      }
+    },
+    {
+      "path": "label-frames/garage-accessible-3d-4.png",
+      "sha256": "0136345b43c4f7f1c924253344ddb38dea8b58182b8e7dbb823a9e30c8dc8c51",
+      "cream_pixel_counts": {
+        "drive": 145,
+        "brake": 184,
+        "reverse": 234,
+        "left": 133,
+        "right": 207,
+        "stop": 155,
+        "close": 715
+      }
+    },
+    {
+      "path": "label-frames/garage-accessible-3d-5.png",
+      "sha256": "e43a6e1b0fbaf83a381f5d57235f80385be6281962baeeacc0bd2738908e3013",
+      "cream_pixel_counts": {
+        "drive": 145,
+        "brake": 184,
+        "reverse": 234,
+        "left": 133,
+        "right": 207,
+        "stop": 155,
+        "close": 715
+      }
+    },
+    {
+      "path": "label-frames/garage-accessible-3d-6.png",
+      "sha256": "2c72c9ab36a6d0e90d712f5d6f9419619ca4a942976ff6deef24bc149b5f97d3",
+      "cream_pixel_counts": {
+        "drive": 145,
+        "brake": 184,
+        "reverse": 234,
+        "left": 133,
+        "right": 207,
+        "stop": 155,
+        "close": 715
+      }
+    },
+    {
+      "path": "label-frames/garage-accessible-3d-7.png",
+      "sha256": "1b6840f0eeabf47851c2e76c693f5437734c6c6cc93b6e6ed8e20b0276aeb2a7",
+      "cream_pixel_counts": {
+        "drive": 145,
+        "brake": 184,
+        "reverse": 234,
+        "left": 133,
+        "right": 207,
+        "stop": 155,
+        "close": 715
+      }
+    }
+  ]
+}
