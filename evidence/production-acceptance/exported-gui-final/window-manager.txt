@@ -1,0 +1,4 @@
+
+(xfwm4:10427): xfwm4-CRITICAL **: 20:48:26.411: Xfconf could not be initialized
+
+(xfwm4:10427): xfwm4-WARNING **: 20:48:26.411: Missing data from default files
