@@ -1,5 +1,6 @@
 extends Node
 ## Every finger has its own lifetime. Focus changes clear both touch and keys.
+var accessible = preload("res://scripts/accessible_drive.gd").new()
 var regions: Dictionary = {}
 var pointers: Dictionary = {}
 var keys: Dictionary = {}
@@ -11,6 +12,7 @@ func register(action: String, control: Control) -> void:
 	regions[action] = control
 
 func clear() -> void:
+	accessible.clear()
 	pointers.clear()
 	keys.clear()
 	latched_drive = false
@@ -18,6 +20,8 @@ func clear() -> void:
 func strength(action: String) -> float:
 	if not active:
 		return 0.0
+	if accessible.enabled:
+		return accessible.strength(action)
 	if action == "throttle" and latched_drive:
 		return 1.0
 	if action in keys.values() or action in pointers.values():
@@ -40,6 +44,10 @@ func release(pointer: int) -> void:
 	pointers.erase(pointer)
 
 func _input(event: InputEvent) -> void:
+	if accessible.enabled:
+		if event is InputEventScreenTouch and event.canceled:
+			clear()
+		return
 	if event is InputEventScreenTouch:
 		if event.canceled:
 			clear()

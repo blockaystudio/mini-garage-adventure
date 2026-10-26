@@ -110,6 +110,69 @@ func run() -> void:
 	event.pressed = false
 	game.router._input(event)
 	check(game.router.strength("throttle") == 0.0, "keyboard alternative releases without a held touch")
+	var launch: Button
+	for child in game.ui.get_children():
+		if child is Button and child.text == "Accessible controls":
+			launch = child
+	check(launch != null, "accessible drive action uses a real Button")
+	launch.pressed.emit()
+	var drive: Button
+	var stop: Button
+	var close: Button
+	for child in game.ui.get_children():
+		if child is Button and child.text == "Drive": drive = child
+		if child is Button and child.text == "Stop": stop = child
+		if child is Button and child.text == "Close controls · stop": close = child
+	check(drive != null and stop != null and close != null, "accessible driving exposes native button actions and stop")
+	drive.pressed.emit()
+	check(game.router.strength("throttle") == 1.0, "accessible activation starts a bounded drive command")
+	var pointer := InputEventMouseButton.new()
+	pointer.button_index = MOUSE_BUTTON_LEFT
+	pointer.pressed = true
+	pointer.position = game.drive_pads.brake.get_global_rect().get_center()
+	game.router._input(pointer)
+	check(game.router.strength("brake") == 0.0, "drawer clicks cannot activate underlying raw controls")
+	stop.pressed.emit()
+	check(game.router.strength("throttle") == 0.0, "accessible stop immediately clears drive")
+	drive.pressed.emit()
+	game.router._notification(Node.NOTIFICATION_APPLICATION_FOCUS_OUT)
+	check(game.router.strength("throttle") == 0.0, "focus loss clears accessible drive")
+	close.pressed.emit()
+	check(not game.router.accessible.enabled and game.router.strength("throttle") == 0.0, "closing accessible controls clears and returns to regular input")
+	var actions = preload("res://scripts/accessible_drive.gd").new()
+	actions.enabled = true
+	actions.command("throttle", 100)
+	actions.command("steer_left", 200)
+	check(actions.strength("throttle", 3099) == 1.0 and actions.strength("steer_left", 3099) == 1.0, "accessible drive and steering can be combined")
+	check(actions.strength("throttle", 3100) == 0.0, "accessible drive expires at the monotonic deadline")
+	actions.command("steer_right", 500)
+	check(actions.strength("steer_left", 500) == 0.0 and actions.strength("steer_right", 500) == 1.0, "opposite steering replaces the earlier command")
+	actions.command("throttle", 500)
+	actions.command("brake", 600)
+	check(actions.strength("throttle", 600) == 0.0 and actions.strength("brake", 600) == 1.0, "brake cancels throttle")
+	actions.command("reverse", 700)
+	check(actions.strength("brake", 700) == 0.0 and actions.strength("reverse", 700) == 1.0, "reverse cancels brake")
+	actions.command("stop", 800)
+	check(actions.deadlines.is_empty(), "accessible stop clears all commands")
+	game.show_explore("garage_valley")
+	await process_frame
+	var explore_button: Button
+	for child in game.ui.get_children():
+		if child is Button and child.text == "Accessible controls": explore_button = child
+	check(explore_button != null, "Explore exposes an accessible driving button")
+	explore_button.pressed.emit()
+	var explore_drive: Button
+	var explore_stop: Button
+	for child in game.ui.get_children():
+		if child is Button and child.text == "Drive": explore_drive = child
+		if child is Button and child.text == "Stop": explore_stop = child
+	explore_drive.pressed.emit()
+	check(game.explore.input.get_controls().throttle == 1.0, "Explore accessible button drives through the real input router")
+	explore_stop.pressed.emit()
+	check(game.explore.input.get_controls().throttle == 0.0, "Explore accessible stop clears throttle")
+	explore_drive.pressed.emit()
+	game.explore.pause_drive()
+	check(not game.explore.input.accessible.enabled and game.explore.input.get_controls().throttle == 0.0, "Explore pause cancels accessible commands")
 	game.store.reset()
 	game.sound.stop_all()
 	game.queue_free()

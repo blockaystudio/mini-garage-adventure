@@ -101,6 +101,7 @@ func _hud() -> void:
 	game._button("World map",36,350,216,show_map,false,96)
 	game._button("Recover · FREE",36,462,254,recover_vehicle,false,96)
 
+	game._button("Accessible controls", 880, 235, 300, func(): game._accessible_controls(input, true), false, 70)
 	_pad("steer_left","LEFT",32,574,172,game.CREAM)
 	_pad("steer_right","RIGHT",216,574,172,game.CREAM)
 	_pad("reverse","REVERSE",424,574,220,Color("d4e4ed"))
@@ -252,6 +253,7 @@ func _result_panel(saved: bool) -> void:
 	game._button("Upgrade workshop",636,526,398,func(): game.show_upgrades(),false,112)
 
 func _stop() -> void:
+	input.accessible.enabled = false
 	input.active = false
 	input.clear()
 	vehicle.clear_controls()

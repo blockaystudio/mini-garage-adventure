@@ -141,6 +141,7 @@ func _clear(next_page: String, action: Callable = Callable()) -> bool:
 		explore = null
 		state = store.data.duplicate(true)
 	router.clear()
+	router.accessible.enabled = false
 	router.active = false
 	router.regions.clear()
 	drive_pads.clear()
@@ -394,6 +395,7 @@ func _show_drive() -> void:
 		instructions = "Tap DRIVE to go or stop · BRAKE slows · pause clears every control"
 	_panel(32,152,1216,42,Color("142c40e8"))
 	_label(instructions,48,156,1180,34,18,CREAM)
+	_button("Accessible controls",650,203,220,func(): _accessible_controls(router, false))
 	_pad("brake","BRAKE",32,610,215,Color("ffd094"))
 	_pad("lean_left","↶  LEAN",264,610,160,Color("d4e4ed"))
 	_pad("lean_right","LEAN  ↷",438,610,160,Color("d4e4ed"))
@@ -402,6 +404,29 @@ func _show_drive() -> void:
 	_label("→ / D",1040,566,150,28,17,NAVY)
 	router.active = true
 	_compact()
+
+func _accessible_controls(input_router: Node, is_3d: bool) -> void:
+	input_router.clear()
+	input_router.accessible.enabled = true
+	var before := ui.get_children()
+	_panel(260,175,760,415,Color("142c40"))
+	_label("Accessible driving · commands stop after 3 seconds",290,188,700,42,21,CREAM)
+	var actions := [["Drive", "throttle"], ["Brake", "brake"], ["Reverse", "reverse"], ["Left", "steer_left" if is_3d else "lean_left"], ["Right", "steer_right" if is_3d else "lean_right"], ["Stop", "stop"]]
+	if not is_3d:
+		actions.remove_at(2)
+	for index in range(actions.size()):
+		var action: String = actions[index][1]
+		_button(actions[index][0], 290 + (index % 3)*230, 250 + int(index / 3)*95, 210, func(): input_router.accessible.command(action), false, 78)
+	var nodes: Array = []
+	_button("Close controls · stop", 460, 465, 360, func():
+		input_router.clear()
+		input_router.accessible.enabled = false
+		for node in nodes:
+			if is_instance_valid(node):
+				node.queue_free(), false, 80)
+	for node in ui.get_children():
+		if node not in before:
+			nodes.append(node)
 
 func _pad(action: String,text: String,x: float,y: float,width: float,color: Color) -> void:
 	var panel = _panel(x,y,width,86,color)
