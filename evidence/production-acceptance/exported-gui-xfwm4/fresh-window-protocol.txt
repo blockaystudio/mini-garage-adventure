@@ -1,0 +1,4 @@
+wm alive: True
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW
+
+wm-delete exit: 0

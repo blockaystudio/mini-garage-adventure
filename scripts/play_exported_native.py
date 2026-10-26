@@ -145,6 +145,7 @@ def main() -> int:
     game = None
     input_driver = None
     xorg = None
+    window_manager = None
     logs = []
 
     def record(kind: str, **fields):
@@ -182,6 +183,16 @@ def main() -> int:
                                XDG_CACHE_HOME=str(temp / 'cache'))
             for name in ['data', 'settings', 'cache']:
                 (temp / name).mkdir()
+            if not shutil.which('xfwm4'):
+                raise RuntimeError('xfwm4 is required for the normal desktop window-close test')
+            wm_log = (args.output / 'window-manager.txt').open('w')
+            logs.append(wm_log)
+            window_manager = subprocess.Popen(['xfwm4', '--compositor=off'], env=environment,
+                                              stdout=wm_log, stderr=subprocess.STDOUT)
+            time.sleep(1)
+            if window_manager.poll() is not None:
+                raise RuntimeError('The isolated xfwm4 window manager did not start')
+            report['window_manager'] = 'xfwm4 on isolated Xorg'
             input_driver = Input(display_name)
             window = None
             offset = (0, 0)
@@ -240,6 +251,18 @@ def main() -> int:
                 input_driver.click(x + offset[0], y + offset[1])
                 record('mouse_click', x=x, y=y, meaning=meaning)
                 time.sleep(.25)
+
+            def normal_close():
+                deadline = time.monotonic() + 12
+                while True:
+                    protocols = subprocess.check_output(['xprop', '-display', display_name, '-id', hex(window),
+                                                         'WM_PROTOCOLS'], text=True)
+                    if 'WM_DELETE_WINDOW' in protocols:
+                        break
+                    if game.poll() is not None or time.monotonic() > deadline:
+                        raise RuntimeError('Game window never advertised WM_DELETE_WINDOW')
+                    time.sleep(.1)
+                input_driver.close_window(window)
 
             def read_profile():
                 matches = list((temp / 'data').rglob('garage-save.json'))
@@ -329,7 +352,7 @@ def main() -> int:
             input_driver.key('s', False)
             payload, raw = wait_profile(lambda p: int(p['gp']) == 15 and len(p['stars']) == 3, 'Final wallet and three mastery claims remain unchanged')
             (args.output / 'before-quit-save.json').write_bytes(raw)
-            input_driver.close_window(window)
+            normal_close()
             record('normal_window_close', phase='first-launch')
             game.wait(timeout=12)
             check(game.returncode == 0, 'Normal compiled-game window close exits successfully')
@@ -355,7 +378,7 @@ def main() -> int:
             click(1126, 181, 'Reopen saved Explore destination')
             wait_text('MOSS MARSH')
             capture('10-relaunched-marsh')
-            input_driver.close_window(window)
+            normal_close()
             record('normal_window_close', phase='relaunch')
             game.wait(timeout=12)
             check(game.returncode == 0, 'Relaunched exported game closes cleanly')
@@ -396,6 +419,13 @@ def main() -> int:
             except subprocess.TimeoutExpired:
                 game.kill()
                 game.wait()
+        if window_manager is not None and window_manager.poll() is None:
+            window_manager.terminate()
+            try:
+                window_manager.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                window_manager.kill()
+                window_manager.wait()
         if xorg is not None and xorg.poll() is None:
             xorg.terminate()
             try:

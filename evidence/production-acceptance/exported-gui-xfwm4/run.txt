@@ -1,0 +1,17 @@
+PASS: Fresh actual exported-game viewport shows zeroGP before any earning
+PASS: Authored meadow completion banked105GP exactly once
+PASS: Authored orchard completion banked105GP exactly once
+PASS: Authored coast completion banked105GP exactly once
+PASS: Atomic mud purchase leaves15GP and grants ownership
+PASS: Free equipment swap retains15GP
+PASS: Moss Marsh admitted and its checkpoint saved
+PASS: Decoded actual3D viewport pixels differ after OS throttle input; review original frames for travel
+PASS: Final wallet and three mastery claims remain unchanged
+PASS: Normal compiled-game window close exits successfully
+PASS: Saved wallet/build/mastery/course/destination fields remain valid after the second process launches
+PASS: Actual relaunched garage UI restores15GP and three mastery stars
+PASS: Actual relaunched workshop UI identifies Mud tires as equipped
+PASS: Relaunched exported game closes cleanly
+PASS: Second normal app close preserves the restored profile without overwriting it with defaults
+PASS: Both actual compiled-game process logs contain no engine/script errors
+PASS: Executable and verification helpers unchanged during actual GUI proof
