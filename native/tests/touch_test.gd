@@ -44,7 +44,39 @@ func run() -> void:
 	check(game.router.strength("throttle") == 1.0,"first finger and mouse-copy release preserve second finger")
 	touch(game,2,false,"throttle")
 	check(game.router.strength("throttle") == 0.0,"final finger release stops hold-to-drive")
+	touch(game,5,true,"throttle")
+	touch(game,6,true,"throttle")
+	var drag := InputEventScreenDrag.new()
+	drag.index = 5
+	drag.position = Vector2(-1000,-1000)
+	game.router._input(drag)
+	check(not game.router.pointers.has(5) and game.router.strength("throttle") == 1.0,"sliding one finger off releases only its own hold")
+	drag.index = 6
+	game.router._input(drag)
+	check(game.router.strength("throttle") == 0.0,"sliding the final finger off stops hold-to-drive")
+	game.router.clear()
+	touch(game,8,true,"throttle")
+	touch(game,9,true,"lean_left")
+	drag.index = 9
+	game.router._input(drag)
+	check(game.router.strength("lean_left") == 0.0 and game.router.strength("throttle") == 1.0,"slide-off releases lean without interrupting another control")
+	game.router.clear()
 	game.router.toggle_drive = true
+	touch(game,7,true,"throttle")
+	drag.index = 7
+	game.router._input(drag)
+	check(not game.router.latched_drive,"sliding a tap-to-drive press off cancels its latch")
+	touch(game,7,false,"throttle")
+	game.router.clear()
+	touch(game,10,true,"throttle")
+	game.router._notification(Node.NOTIFICATION_APPLICATION_FOCUS_OUT)
+	check(not game.router.latched_drive and game.router.strength("throttle") == 0.0,"focus loss clears active tap-to-drive")
+	touch(game,11,true,"throttle")
+	var canceled := InputEventScreenTouch.new()
+	canceled.index = 11
+	canceled.canceled = true
+	game.router._input(canceled)
+	check(not game.router.latched_drive and game.router.strength("throttle") == 0.0,"touch cancellation clears tap-to-drive")
 	touch(game,3,true,"throttle")
 	mouse_copy(game,true)
 	check(game.router.latched_drive,"one tap latches once without double-toggle from emulated mouse")
