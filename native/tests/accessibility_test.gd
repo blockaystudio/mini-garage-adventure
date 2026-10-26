@@ -115,7 +115,28 @@ func run() -> void:
 		if child is Button and child.text == "Accessible controls":
 			launch = child
 	check(launch != null, "accessible drive action uses a real Button")
+	var launch_position := launch.get_global_rect().get_center()
 	launch.pressed.emit()
+	await process_frame
+	check(not launch.visible, "drawer hides background actions from focus and accessibility tree")
+	var mouse_down := InputEventMouseButton.new()
+	mouse_down.button_index = MOUSE_BUTTON_LEFT
+	mouse_down.position = launch_position
+	mouse_down.global_position = launch_position
+	mouse_down.pressed = true
+	game.get_viewport().push_input(mouse_down, true)
+	var mouse_up := InputEventMouseButton.new()
+	mouse_up.button_index = MOUSE_BUTTON_LEFT
+	mouse_up.position = launch_position
+	mouse_up.global_position = launch_position
+	mouse_up.pressed = false
+	game.get_viewport().push_input(mouse_up, true)
+	await process_frame
+	game._accessible_controls(game.router, false)
+	var drawer_count := 0
+	for child in game.ui.get_children():
+		if child is Button and child.text == "Close controls · stop": drawer_count += 1
+	check(drawer_count == 1, "routed click and repeated open cannot create nested accessible drawers")
 	var drive: Button
 	var stop: Button
 	var close: Button
@@ -138,7 +159,7 @@ func run() -> void:
 	game.router._notification(Node.NOTIFICATION_APPLICATION_FOCUS_OUT)
 	check(game.router.strength("throttle") == 0.0, "focus loss clears accessible drive")
 	close.pressed.emit()
-	check(not game.router.accessible.enabled and game.router.strength("throttle") == 0.0, "closing accessible controls clears and returns to regular input")
+	check(not game.router.accessible.enabled and game.router.strength("throttle") == 0.0 and launch.visible, "closing accessible controls clears input and restores background actions")
 	var actions = preload("res://scripts/accessible_drive.gd").new()
 	actions.enabled = true
 	actions.command("throttle", 100)

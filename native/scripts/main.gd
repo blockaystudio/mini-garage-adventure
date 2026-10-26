@@ -54,6 +54,7 @@ var progress_bar: ProgressBar
 var status_label: Label
 var gate_value := 0
 var drive_pads: Dictionary = {}
+var _accessible_drawer_open := false
 var transition_time := 0.0
 
 func _ready() -> void:
@@ -140,6 +141,7 @@ func _clear(next_page: String, action: Callable = Callable()) -> bool:
 		explore.queue_free()
 		explore = null
 		state = store.data.duplicate(true)
+	_accessible_drawer_open = false
 	router.clear()
 	router.accessible.enabled = false
 	router.active = false
@@ -406,27 +408,45 @@ func _show_drive() -> void:
 	_compact()
 
 func _accessible_controls(input_router: Node, is_3d: bool) -> void:
+	if _accessible_drawer_open:
+		return
+	_accessible_drawer_open = true
 	input_router.clear()
 	input_router.accessible.enabled = true
 	var before := ui.get_children()
-	_panel(260,175,760,415,Color("142c40"))
+	var visibility: Dictionary = {}
+	for child in before:
+		if child is Control:
+			visibility[child] = child.visible
+			child.visible = false
+	var shade := _panel(0,0,1280,720,Color("142c40"))
+	shade.mouse_filter = Control.MOUSE_FILTER_STOP
 	_label("Accessible driving · commands stop after 3 seconds",290,188,700,42,21,CREAM)
 	var actions := [["Drive", "throttle"], ["Brake", "brake"], ["Reverse", "reverse"], ["Left", "steer_left" if is_3d else "lean_left"], ["Right", "steer_right" if is_3d else "lean_right"], ["Stop", "stop"]]
 	if not is_3d:
 		actions.remove_at(2)
+	var first: Button
 	for index in range(actions.size()):
 		var action: String = actions[index][1]
-		_button(actions[index][0], 290 + (index % 3)*230, 250 + int(index / 3)*95, 210, func(): input_router.accessible.command(action), false, 78)
+		var button := _button(actions[index][0], 290 + (index % 3)*230, 250 + int(index / 3)*95, 210, func(): input_router.accessible.command(action), false, 78)
+		if first == null:
+			first = button
 	var nodes: Array = []
 	_button("Close controls · stop", 460, 465, 360, func():
 		input_router.clear()
 		input_router.accessible.enabled = false
+		_accessible_drawer_open = false
 		for node in nodes:
 			if is_instance_valid(node):
-				node.queue_free(), false, 80)
+				node.queue_free()
+		for node in visibility:
+			if is_instance_valid(node):
+				node.visible = visibility[node], false, 80)
 	for node in ui.get_children():
 		if node not in before:
 			nodes.append(node)
+	if is_instance_valid(first):
+		first.grab_focus()
 
 func _pad(action: String,text: String,x: float,y: float,width: float,color: Color) -> void:
 	var panel = _panel(x,y,width,86,color)
