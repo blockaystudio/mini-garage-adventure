@@ -1,6 +1,8 @@
-# Native performance investigation — 2026-10-25
+# Native performance evidence and current3Dacceptance
 
-This is an executed Linux software-renderer investigation, not a mobile performance pass. The earlier capture sample at1600×1000 averaged40.77fps; a repeatable component benchmark now identifies where the current scene spends its frame budget without changing the shipped game.
+Current3Dsource captures are reproduced with `python scripts/capture_3d.py` and recorded with source hashes and scene scope in the current delivery evidence. They are short Linux/llvmpipe renderer samples, not named-phone GPU, thermal or battery measurements. The current-build phase must measure actual Valley/Marsh driving, demanding existing Canyon/Summit geometry, effects/finish activity and editor/QuickDrive comparison on named supported hardware. Record loading, p50/p95/p99/max frame times, native/process/GPU memory separately and at least10minutes sustained play with battery/thermal state. Select a supported60fps target or justified30fps mode only from that evidence. No new content or speculative optimization is needed to collect it.
+
+The2026-10-25 investigation below is specifically **2DQuickDrive RiverBridges**. Its earlier1600×1000 capture averaged40.77fps; the repeatable component benchmark isolates that scene's frame costs. It does not diagnose3Dbottlenecks or satisfy mobile acceptance. Keep its actual logs as historical evidence rather than treating a new3Dbuild as a rerun.
 
 ## Reproduce
 

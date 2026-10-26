@@ -22,6 +22,7 @@ import time
 import zipfile
 
 from inspect_apk import manifest_elements
+from native_save_audit import validate_save_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = "org.example.minigarage.test"
@@ -138,17 +139,23 @@ class Device:
 
     def save_copy(self, name: str) -> dict:
         path = self.shell("run-as", PACKAGE, "find", "files", "-name", "garage-save.json", required=False)
-        candidates = [line.strip() for line in path.splitlines() if re.fullmatch(r"files/(?:[A-Za-z0-9_. -]+/)*garage-save\.json", line.strip())]
+        candidates = [line.strip() for line in path.splitlines() if
+                      re.fullmatch(r"files/(?:[A-Za-z0-9_. -]+/)*garage-save\.json", line.strip()) and
+                      all(part not in {".", ".."} for part in line.strip().split("/"))]
         if len(candidates) != 1:
-            return {"status": "not_found", "note": "Choose/save a build or background the app, then retry."}
+            return {"status": "not_found", "note": "Expected exactly one package-relative garage save. No file was read; save a build or inspect the isolated test install before retrying."}
         data = self.run("exec-out", "run-as", PACKAGE, "cat", candidates[0], binary=True)
-        record = json.loads(data)
-        payload = record.get("payload", {})
-        if record.get("schema") != 2 or not isinstance(payload, dict) or not {"build", "completed", "custom", "settings", "best"} <= payload.keys():
-            raise Blocked("Native save did not match the expected schema2 envelope.")
+        # Forensics precede parsing. Corrupt/legacy/future bytes must survive a
+        # validation failure, and collecting them is not a current-save pass.
         (self.output / (name + "-save.json")).write_bytes(data)
-        return {"status": "copied", "file": name + "-save.json", "sha256": hashlib.sha256(data).hexdigest(),
-                "payload": payload, "note": "Native bytes copied from debug app sandbox. Main-scene restoration still requires visible review; file persistence alone is insufficient."}
+        validation = validate_save_bytes(data)
+        report = {"status": "copied", "file": name + "-save.json", "sha256": hashlib.sha256(data).hexdigest(),
+                  "bytes": len(data), "validation": validation,
+                  "note": "Exact debug-sandbox bytes preserved before validation. Collection alone is not device acceptance; main-scene restoration requires visible review."}
+        if validation["status"] in {"valid", "legacy"}:
+            record = json.loads(data)
+            report["payload"] = record.get("payload", record)
+        return report
 
     def performance_snapshot(self) -> None:
         # Package-restricted dumps only: do not collect all-app histories/logcat.
@@ -158,13 +165,22 @@ class Device:
             (self.output / (suffix + ".txt")).write_text(text + "\n")
 
 
+def require_current_save(evidence: dict) -> None:
+    """A copied forensic file alone cannot pass current-build acceptance."""
+    validation = evidence.get("validation", {})
+    if evidence.get("status") != "copied" or validation.get("status") != "valid":
+        classification = validation.get("status", evidence.get("status", "not_found"))
+        raise Blocked("Current schema3 save acceptance is blocked (" + classification +
+                      "). Any copied raw bytes remain in the evidence directory; inspect validation and the actual restored game.")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=["probe", "smoke", "capture"], help="probe is read-only; smoke launches/backgrounds/restarts the test app; capture records its current foreground screen")
     parser.add_argument("--adb", default=os.environ.get("ADB_BIN") or shutil.which("adb"), help="adb executable; inherit any library configuration needed by your installed toolchain")
     parser.add_argument("--serial", help="select a transport in memory only; never saved in reports")
     parser.add_argument("--device-label", default="unlabeled-test-device", help="non-identifying test label, e.g. qa-phone-01; never a person name, serial or Android ID")
-    parser.add_argument("--apk", type=Path, default=ROOT / "builds/mini-garage-adventure-debug.apk")
+    parser.add_argument("--apk", type=Path, default=ROOT / "builds/mini-garage-adventure-explore-debug.apk")
     parser.add_argument("--install", action="store_true", help="install/replace only the validated disposable DEBUG package")
     parser.add_argument("--output", type=Path, default=ROOT / "evidence/android-runtime" / dt.datetime.now(dt.timezone.utc).strftime("run-%Y%m%dT%H%M%SZ"))
     args = parser.parse_args()
@@ -202,10 +218,12 @@ def main() -> int:
                 report["resume"] = device.launch()
                 device.snapshot("02-resumed")
                 report["before_restart"] = device.save_copy("before-restart")
+                require_current_save(report["before_restart"])
                 device.shell("am", "force-stop", PACKAGE)
                 report["relaunch"] = device.launch()
                 device.snapshot("03-relaunched")
                 report["after_restart"] = device.save_copy("after-restart")
+                require_current_save(report["after_restart"])
                 before, after = report["before_restart"], report["after_restart"]
                 if before["status"] == "copied" and after["status"] == "copied":
                     report["sandbox_save_survived_restart"] = before["payload"] == after["payload"]
@@ -215,6 +233,7 @@ def main() -> int:
                 device.verify_installed_debug()
                 device.snapshot("manual-scene")
                 report["native_save"] = device.save_copy("manual-scene")
+                require_current_save(report["native_save"])
             device.performance_snapshot()
             report["status"] = "observed_pending_review"
     except (Blocked, OSError, subprocess.SubprocessError, ValueError, KeyError, StopIteration, zipfile.BadZipFile) as error:

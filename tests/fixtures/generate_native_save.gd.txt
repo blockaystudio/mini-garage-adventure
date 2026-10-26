@@ -1,0 +1,38 @@
+extends SceneTree
+# Tooling fixture only: inventory/GP seeded explicitly, not progression proof.
+const Store = preload("res://scripts/save_store.gd")
+func _initialize() -> void:
+ var arguments := OS.get_cmdline_user_args()
+ if arguments.size()!=1:
+  quit(2)
+  return
+ var destination: String = arguments[0]
+ var store = Store.new(destination.path_join("actual-schema3"))
+ if not store.reset():
+  printerr(store.warning)
+  quit(1)
+  return
+ var payload: Dictionary = store.data.duplicate(true)
+ payload.gp = 315
+ payload.owned.append("mud")
+ payload.build.tires = "mud"
+ payload.build.paint = "cyan"
+ payload.completed = ["meadow"]
+ payload.stars = ["meadow:completion"]
+ payload.claims = {"clear:meadow":true,"star:meadow:completion":true}
+ payload.best = {"meadow":7.29166666666665}
+ payload.explore.yaw = 0.0000001
+ if not store.save_data(payload):
+  printerr(store.warning)
+  quit(1)
+  return
+ var cases: Array = []
+ for number in [0.0,-0.0,0.65,0.0000001,-0.000000001,7.29166666666665,9.99999999999999,999999999.0,0.000000000000000000000000000001,0.0000000000000000000000000000000000000001,98765.4321098765]:
+  var probe: Dictionary = store.data.duplicate(true)
+  probe.numeric_probe = number
+  cases.append({"payload":probe,"canonical":Store._canonical(probe)})
+ var output := FileAccess.open(destination.path_join("canonical-cases.json"),FileAccess.WRITE)
+ output.store_string(JSON.stringify(cases,"",true))
+ output.close()
+ print("ACTUAL_STORE_FIXTURE schema=",store.data.version," gp=",store.data.gp," tire=",store.data.build.tires," decimal_best=",store.data.best.meadow," tiny_yaw=",store.data.explore.yaw)
+ quit()
