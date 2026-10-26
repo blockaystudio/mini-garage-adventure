@@ -1,0 +1,1 @@
+PASS: 6 actual native captures; /tmp/garage-assessment-20261026/evidence/3d-development/assessment-20261026-phone-sized

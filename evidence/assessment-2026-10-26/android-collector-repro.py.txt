@@ -1,0 +1,31 @@
+"""Read-only collector code-path demonstration with synthetic adb responses.
+
+No adb executable, native game, device, or user's save is accessed. This fixture
+isolates the collector's schema gate; it does not validate a full native envelope
+checksum or prove device persistence.
+"""
+from pathlib import Path
+from unittest.mock import patch
+import json
+import sys
+import tempfile
+
+sys.path.insert(0, '/workspace/mini-garage-adventure/scripts')
+import android_smoke
+
+payload = {'version': 3, 'build': {}, 'completed': [], 'custom': [],
+           'settings': {}, 'best': {}, 'gp': 0, 'stars': [], 'owned': [],
+           'claims': {}, 'regions': [], 'discoveries': [], 'explore': {},
+           'economy': {}}
+with tempfile.TemporaryDirectory(prefix='garage-collector-schema-proof-') as temporary:
+    device = android_smoke.Device('NOT-AN-ADB-EXECUTABLE', None, Path(temporary))
+    for schema in (2, 3):
+        data = json.dumps({'schema': schema, 'payload': payload}).encode()
+        with patch.object(device, 'shell', return_value='files/garage-save.json'), \
+                patch.object(device, 'run', return_value=data):
+            try:
+                result = device.save_copy('synthetic-fixture')
+                print(f'Synthetic schema {schema}: {result["status"]}')
+            except android_smoke.Blocked as error:
+                print(f'Synthetic schema {schema}: BLOCKED: {error}')
+print('Fixture only: no adb process, device access, or production save used.')

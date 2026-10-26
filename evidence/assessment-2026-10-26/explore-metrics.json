@@ -1,0 +1,57 @@
+{
+  "scope": "Native headless Godot4.6.3, automated keyboard steering of real CharacterBody3D; no teleports or seeded wallet. Not physical-device or human activity-duration results.",
+  "command": "XDG_DATA_HOME=/tmp/garage-explore-data XDG_CONFIG_HOME=/tmp/garage-explore-config XDG_CACHE_HOME=/tmp/garage-explore-cache godot --headless --path native --script tests/explore_test.gd",
+  "checks": 44,
+  "failures": 0,
+  "actual_processes": 2,
+  "activities": [
+    {
+      "checkpoints": 8.0,
+      "completed": true,
+      "distance_m": 282.920654024929,
+      "event": "valley_first_drive",
+      "gp_per_minute": 175.097276264597,
+      "recoveries": 0.0,
+      "reward_gp": 150.0,
+      "scope": "Automated real3D CharacterBody keyboard controls, headless desktop; not a human duration study",
+      "seconds": 51.3999999999984,
+      "total_checkpoints": 8.0
+    },
+    {
+      "checkpoints": 8.0,
+      "completed": true,
+      "distance_m": 449.807263923343,
+      "event": "valley_parts_delivery",
+      "gp_per_minute": 183.826594414347,
+      "recoveries": 0.0,
+      "reward_gp": 245.0,
+      "scope": "Automated real3D CharacterBody keyboard controls, headless desktop; not a human duration study",
+      "seconds": 79.9666666666634,
+      "total_checkpoints": 8.0
+    }
+  ],
+  "same_actual_mud_lane_2_seconds": {
+    "mud_tires_distance_m": 17.9721527099609,
+    "trail_tires_distance_m": 10.6180648803711,
+    "mud_tires_slip": 0.06,
+    "trail_tires_slip": 0.62
+  },
+  "saved_result": {
+    "completed": [
+      "meadow",
+      "orchard"
+    ],
+    "custom": [
+      "flat",
+      "ramp",
+      "bumps",
+      "flat"
+    ],
+    "gp": 305,
+    "last_settled": 4,
+    "region": "moss_marsh",
+    "stars": 5,
+    "tires": "mud"
+  },
+  "accelerated_clock_note": "The test-only --fixed-fps child advances timers faster than wall time. Earlier AudioServer ref cleanup warning is preserved; final helper drains real AudioServer thread350ms before the actual app quit path. Final run has no warnings/errors."
+}

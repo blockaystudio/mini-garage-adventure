@@ -1,0 +1,22 @@
+{
+  "scope": "Actual compiled Linux game window with OS mouse/key input, isolated profile; not source-harness/mobile/human/performance acceptance.",
+  "source_commit": "5ef89c3e494e624a04d3f35bcf17dc474c34d94e",
+  "binary": "builds/mini-garage-adventure-explore.x86_64",
+  "binary_sha256": "091c67e58a49ad7f795a2316fe5480ac0812fee3b3cbcff16ec07f03e357d247",
+  "helper_sha256": {
+    "scripts/play_exported_native.py": "c8261bfc46f8e91a0b7b88fd837fdb55e95531a694834ae0ca5852a6260a1d0e",
+    "scripts/native_save_audit.py": "39a98273226834168a65115cc8604f1d13b666ce78e858cdfd26dd9458f0739a",
+    "scripts/capture_native.py": "d6d5e93a746c873e11c61c5a952b41cb89f7d45aeacbe62dd58d90bafc707018"
+  },
+  "viewport": [
+    1280,
+    720
+  ],
+  "actions": [],
+  "captures": [],
+  "checks": [],
+  "status": "fail",
+  "failure": "Owned Xorg did not start; inspect Xorg.log",
+  "elapsed_seconds": 0.102,
+  "all_checks_passed": false
+}

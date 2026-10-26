@@ -8,6 +8,41 @@ plan's task-by-task status are in [`3D_DELIVERY.md`](3D_DELIVERY.md) and
 [`3D_TASK_STATUS.md`](3D_TASK_STATUS.md). The base-game records below remain
 historical evidence; they are not a fresh run of the 3D source.
 
+## Current solo-hardening phase — 2026-10-26
+
+See [`SOLO_HARDENING_BUGS.md`](SOLO_HARDENING_BUGS.md) for the current defect and
+acceptance ledger and [`SOLO_HARDENING_DELIVERY.md`](SOLO_HARDENING_DELIVERY.md)
+for source/build/test references. The earlier expansion-first next task is frozen.
+
+- **ASSESS-01 fixed:** failed Explore reservation no longer replaces a valid old
+  activity's run with0; blocked-write/stale-writer repair and retry regressions pass.
+- **ASSESS-02 fixed:** valid unpaid Explore observations are retained for same-run
+  settlement or explicit discard. Ordinary navigation/quit and duplicate callbacks
+  are exercised, including already-banked reward/checkpoint-only retries.
+- **ASSESS-03 fixed:** Android collection copies raw bytes before separate schema3
+  validation. Legacy, future and invalid records remain preserved;21 tooling tests
+  pass, including actual native-writer checksum fixtures. This is not device QA.
+- **Fresh untimed progression gap closed on Linux:**370 unseeded scene/process
+  checks reach all six destinations with legitimate earnings/purchases and actual
+  relaunch, retaining1,630GP and60stars. Human balance and device acceptance remain open.
+
+Corrected runtime verification passes5,860 assertions, reference63Node+6Python,
+14Chromium scenarios and all nine real local networking scenarios. Matching-source Linux/Android exports are built from `5ef89c3` with actual
+manifest/signature checks (`evidence/solo-hardening/native-builds-final/artifacts.json`);
+twelve source-scene software-rendered captures pass. The compiled Linux GUI
+completed three fresh courses, bought/equipped Mud and admitted Marsh, but the
+synthetic `WM_DELETE_WINDOW` event timed out before relaunch. The full GUI test
+failed; packaged GUI relaunch remains unproven and game versus dummy-X11 cause
+is unknown. See [`SOLO_HARDENING_DELIVERY.md`](SOLO_HARDENING_DELIVERY.md) and
+[`x-close-diagnostic.txt`](../evidence/solo-hardening/x-close-diagnostic.txt). Physical Android/iOS, screen-reader gameplay, named-device performance,
+human content/readability, publisher/privacy/rights and production online operation
+remain blocked or unfinished. Current Android adb fails auth-directory initialization
+before enumeration; no physical-device absence/presence or runtime result is inferred.
+Pending uncommitted solo/online observations are not promised durable through forced
+termination while storage is unwritable; the online pending-result journal is still
+unfinished. No additional content or shared-world authority expansion is authorized
+before current-build acceptance.
+
 ## Fixed with executed regressions
 
 - Browser: releasing one pointer cancelled another pointer or held keyboard source. Per-source aggregation and lifecycle cleanup; real HTTP Chromium14/14 (`evidence/reference-browser-results.json`).

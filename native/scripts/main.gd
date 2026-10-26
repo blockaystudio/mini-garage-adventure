@@ -119,7 +119,17 @@ func _fit_ui_to_rect(safe: Rect2) -> void:
 	ui.scale = Vector2.ONE * factor
 	ui.position = safe.position + (safe.size-design*factor)*0.5
 
-func _clear(next_page: String) -> void:
+func _guard_pending_explore(action: Callable) -> bool:
+	if is_instance_valid(explore) and explore.has_pending_completion():
+		explore.confirm_leave_pending(action)
+		return true
+	return false
+
+func _clear(next_page: String, action: Callable = Callable()) -> bool:
+	# Every screen caller must stop when an unpaid Explore result owns the UI.
+	# Actions with side effects also guard before reserving/replacing state.
+	if next_page != "explore" and _guard_pending_explore(action if action.is_valid() else Callable(self,"show_garage")):
+		return false
 	if next_page != "friends" and is_instance_valid(private_mode):
 		private_mode.close_mode()
 		private_mode.queue_free()
@@ -151,6 +161,7 @@ func _clear(next_page: String) -> void:
 	transition_time = 0.0
 	if state.settings.reduced_motion:
 		ui.modulate.a = 1.0
+	return true
 
 func _place(control: Control, x: float, y: float, width: float, height: float) -> Control:
 	control.position = Vector2(x,y)
@@ -248,8 +259,11 @@ func _build_choice(key: String, value: String) -> void:
 	show_garage()
 
 func show_garage() -> void:
+	if _guard_pending_explore(show_garage):
+		return
 	paused = false
-	_clear("garage")
+	if not _clear("garage",show_garage):
+		return
 	if compact_mode:
 		GarageScreen.render(self)
 		return
@@ -305,7 +319,8 @@ func show_garage() -> void:
 	_compact()
 
 func show_courses() -> void:
-	_clear("courses")
+	if not _clear("courses",show_courses):
+		return
 	_background()
 	_header("Pick an adventure",show_garage)
 	_label("Your next great little adventure",44,137,900,45,32)
@@ -329,6 +344,8 @@ func show_courses() -> void:
 	_compact()
 
 func start_course(item: Dictionary, preview: bool = false) -> void:
+	if _guard_pending_explore(Callable(self,"start_course").bind(item.duplicate(true),preview)):
+		return
 	if finish_pending:
 		_show_pending_finish()
 		return
@@ -357,7 +374,8 @@ func start_course(item: Dictionary, preview: bool = false) -> void:
 	_show_drive()
 
 func _show_drive() -> void:
-	_clear("drive")
+	if not _clear("drive",_show_drive):
+		return
 	world.pieces = course.pieces
 	world.palette = course.get("palette","meadow")
 	world.car = car
@@ -523,13 +541,16 @@ func _confirm_leave_pending_finish() -> void:
 			reload_saved_garage(),false]])
 
 func show_editor() -> void:
+	if _guard_pending_explore(show_editor):
+		return
 	paused = false
 	editor = Editor.new(state.custom)
 	selected_slot = mini(selected_slot,editor.pieces.size()-1)
 	_draw_editor()
 
 func _draw_editor() -> void:
-	_clear("editor")
+	if not _clear("editor",_draw_editor):
+		return
 	_background()
 	_header("Private track lab",show_garage)
 	_label("Make your own way",44,140,1100,48,34)
@@ -586,7 +607,8 @@ func _draw_editor() -> void:
 	_compact()
 
 func show_gate() -> void:
-	_clear("gate")
+	if not _clear("gate",show_gate):
+		return
 	_background()
 	_header("Grown-ups",show_garage)
 	_panel(330,180,620,460)
@@ -612,7 +634,8 @@ func show_gate() -> void:
 	_compact()
 
 func show_parents() -> void:
-	_clear("parents")
+	if not _clear("parents",show_parents):
+		return
 	_background()
 	_header("Settings & local progress",show_garage)
 	_label("A little space for grown-ups",44,139,1160,48,34)
@@ -681,7 +704,8 @@ func _confirm_reset() -> void:
 			show_parents(),false]])
 
 func show_help() -> void:
-	_clear("help")
+	if not _clear("help",show_help):
+		return
 	_background()
 	_header("Help & privacy",show_parents)
 	_label("Build. Explore. Make it yours.",44,144,1170,48,34)
@@ -695,7 +719,8 @@ func show_help() -> void:
 	_compact()
 
 func show_licenses() -> void:
-	_clear("licenses")
+	if not _clear("licenses",show_licenses):
+		return
 	_background()
 	_header("Engine licenses",show_parents)
 	_label("Made with Godot Engine",44,141,1160,48,32)
@@ -759,6 +784,12 @@ var closing := false
 func quit_game() -> void:
 	if closing:
 		return
+	if is_instance_valid(explore) and explore.has_pending_completion():
+		# Ordinary quit first retries the original completed run. Persistent
+		# failure keeps the mode alive unless the unpaid result is discarded.
+		explore._finish_activity()
+		if _guard_pending_explore(quit_game):
+			return
 	if finish_pending:
 		_finish()
 		if finish_pending:
@@ -819,6 +850,8 @@ func _invoke_ui_action(callback: Callable) -> void:
 		callback.call()
 
 func show_upgrades() -> void:
+	if _guard_pending_explore(show_upgrades):
+		return
 	state = store.data.duplicate(true)
 	UpgradeScreen.render(self)
 
@@ -856,6 +889,8 @@ func _start_intro_drive() -> void:
 	start_course(intro)
 
 func show_explore(region_id: String = "") -> void:
+	if _guard_pending_explore(Callable(self,"show_explore").bind(region_id)):
+		return
 	if is_instance_valid(explore):
 		explore.close_mode()
 		remove_child(explore)
@@ -870,7 +905,8 @@ func show_explore(region_id: String = "") -> void:
 		show_garage()
 		return
 	state = store.data.duplicate(true)
-	_clear("explore")
+	if not _clear("explore"):
+		return
 	paused = false
 	explore = ExploreMode.new()
 	explore.name = "ExploreMode"
@@ -879,6 +915,8 @@ func show_explore(region_id: String = "") -> void:
 	add_child(explore)
 
 func show_private_sessions() -> void:
+	if _guard_pending_explore(show_private_sessions):
+		return
 	if not network_test_enabled or OS.has_feature("web"):
 		status = "This build keeps solo offline. Private native testing has a separate launch option."
 		show_garage()
@@ -890,7 +928,8 @@ func show_private_sessions() -> void:
 		get_tree().root.remove_child(private_session)
 		private_session.queue_free()
 		private_session = null
-	_clear("friends_menu")
+	if not _clear("friends_menu",show_private_sessions):
+		return
 	_background()
 	_header("Private native test",show_garage)
 	_label("Four real drivers. One private test room.",44,148,1160,52,32)
@@ -915,6 +954,8 @@ func show_private_sessions() -> void:
 	_label(status+" Native ENet test only; browser crossplay and public hosting are not configured.",46,625,1160,62,21,ORANGE)
 
 func _start_private_room(hosting: bool, address: String, invitation: String) -> void:
+	if _guard_pending_explore(Callable(self,"_start_private_room").bind(hosting,address,invitation)):
+		return
 	var script = load("res://scripts/net/private_session.gd")
 	private_session = script.new()
 	private_session.name = "PrivateSession"
@@ -929,13 +970,16 @@ func _start_private_room(hosting: bool, address: String, invitation: String) -> 
 		show_private_sessions()
 		return
 	private_join.invite = private_session.invite if hosting else invitation
-	_clear("friends")
+	if not _clear("friends"):
+		return
 	private_mode = load("res://scripts/net/session_view.gd").new()
 	private_mode.game = self
 	private_mode.session = private_session
 	add_child(private_mode)
 
 func reload_saved_garage() -> void:
+	if _guard_pending_explore(reload_saved_garage):
+		return
 	if finish_pending:
 		_confirm_leave_pending_finish()
 		return

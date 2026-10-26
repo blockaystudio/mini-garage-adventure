@@ -1,0 +1,36 @@
++ /workspace/mini-garage-adventure/.venv/bin/python build.py
+Built Mini Garage Adventure standalone prototype.
++ node --check games/garage.js
++ node --check shared/art.js
++ node --check shared/core.js
++ node --check shared/remote-config.js
++ node --check shared/ui.js
++ node --check tests/core.test.cjs
++ node --check tests/remote.test.cjs
++ node --test tests/core.test.cjs tests/remote.test.cjs
+✔ tests/core.test.cjs (69.585287ms)
+✔ tests/remote.test.cjs (298.13005ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 309.252214
++ /workspace/mini-garage-adventure/.venv/bin/python tests/test_signer.py
+test_disabled_default_valid (__main__.SigningTests.test_disabled_default_valid) ... ok
+test_enabled_policy_rejected (__main__.SigningTests.test_enabled_policy_rejected) ... ok
+test_expired_rejected (__main__.SigningTests.test_expired_rejected) ... ok
+test_missing_app_rejected (__main__.SigningTests.test_missing_app_rejected) ... ok
+test_rollout_rejected_in_build01 (__main__.SigningTests.test_rollout_rejected_in_build01) ... ok
+test_signatures_and_key_permissions (__main__.SigningTests.test_signatures_and_key_permissions) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.351s
+
+OK
+Keypair created. Never distribute or serve the private key.
+Signed disabled policy revision 1; payload SHA256 ceeae3ba47191a3c1b6453a3e42fed6f4701149df40085a528ca436204d6598b
+PASS: build, syntax, metadata, 63 Node tests, 6 Python tests, and offline-page checks.
+This is not browser interaction, physical-device, native-export, store, or compliance validation.

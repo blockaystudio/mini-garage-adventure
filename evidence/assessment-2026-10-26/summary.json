@@ -1,0 +1,115 @@
+{
+  "assessment_at_utc": "2026-10-26T06:30:46.923204+00:00",
+  "repository": "blockaystudio/mini-garage-adventure",
+  "branch": "codex/garage-explore-native",
+  "delivery_head": "7d5bb0594a9ecfe10dee634703ec59ea1d3225f6",
+  "artifact_runtime_source": "5fb2751cc0ae5ed6524d72f7eb6a9ca232f75ce2",
+  "runtime_code_changed": false,
+  "method": "Fresh runs in detached exact-HEAD /tmp/garage-assessment-20261026; historical reports preserved. Runtime source not edited.",
+  "tests": {
+    "native": {
+      "status": "pass",
+      "checks": 5363,
+      "log": "native.txt",
+      "source_unchanged": true
+    },
+    "reference": {
+      "status": "pass",
+      "node_tests": 63,
+      "python_tests": 6,
+      "log": "reference.txt"
+    },
+    "browser_reference": {
+      "status": "pass",
+      "actual_http_origin_scenarios": 14,
+      "log": "browser-results.json"
+    },
+    "native_network": {
+      "status": "pass",
+      "independent_process_scenarios": 9,
+      "matrix_cases": 6,
+      "scope": "localhost ENet, application-level scheduling/drop; not Internet or device tests"
+    },
+    "existing_export_audit": {
+      "status": "pass",
+      "artifact_hashes_match": true,
+      "log": "artifact-audit.txt",
+      "artifacts": [
+        {
+          "path": "builds/mini-garage-adventure-explore.x86_64",
+          "bytes": 71488464,
+          "sha256": "f4e0ac3b68f7c12b7b73400be7fdbd4e7f8fe913273c60363dc7f91d6bbad793"
+        },
+        {
+          "path": "builds/mini-garage-adventure-explore-linux.zip",
+          "bytes": 27477569,
+          "sha256": "80f3e6037b666bfaebf6ff9f0ff838869ec0da278bfbeecdfa1df3acbcd94314"
+        },
+        {
+          "path": "builds/mini-garage-adventure-explore-debug.apk",
+          "bytes": 56145895,
+          "sha256": "71bf94a41c08d44c948e1c11fc999ceb2ea17bb2a1e4fa321c52e793a5079ede"
+        }
+      ]
+    },
+    "exported_linux_boot": {
+      "status": "pass",
+      "frames": 30,
+      "exit_code": 0,
+      "log": "export-boot.txt"
+    },
+    "exported_linux_external_harness": {
+      "status": "inconclusive",
+      "log": "export-loop-write.txt",
+      "note": "External --script produced no checks/result file, stopped by assessor after observing the running process. Not a passed full exported-binary loop and not a demonstrated game crash."
+    },
+    "linux_render": {
+      "status": "pass",
+      "captures": 6,
+      "viewport": [
+        800,
+        450
+      ],
+      "source_matches_git_blobs": true,
+      "source_unchanged": true,
+      "report": "render-800x450/capture-results.json",
+      "scope": "Actual source-driven Linux OpenGL viewport, desktop software renderer; not physical mobile"
+    },
+    "android_runtime": {
+      "status": "blocked",
+      "exit_code": 2,
+      "log": "android-probe.txt",
+      "reason": "adb cannot initialize its auth directory on the read-only home; no device acceptance performed"
+    },
+    "ios_build": {
+      "status": "blocked",
+      "exit_code": 2,
+      "log": "ios-preflight.json",
+      "reason": "Linux; no macOS/Xcode, owner IDs/signing or iOS device acceptance"
+    }
+  },
+  "new_reproduced_findings": [
+    {
+      "id": "ASSESS-01",
+      "priority": "P1",
+      "summary": "Explore failed mission reservation replaces active_run with0 and resumes previous activity with hidden warning",
+      "proof": "explore-failed-start.txt",
+      "kind": "actual native state and real filesystem write obstruction"
+    },
+    {
+      "id": "ASSESS-02",
+      "priority": "P1",
+      "summary": "Explore Upgrade workshop navigation discards valid unpaid completion observations and retry state",
+      "proof": "explore-pending.txt",
+      "kind": "native settlement/UI fixture with synthetic ordered observations and real rejected filesystem write, not physical-route proof"
+    },
+    {
+      "id": "ASSESS-03",
+      "priority": "P1 verification blocker",
+      "summary": "Android collector hardcodes schema2 and rejects schema3 before preserving raw save bytes",
+      "proof": "android-collector.txt",
+      "kind": "actual collector method with synthetic mocked adb responses; no physical-device claim"
+    }
+  ],
+  "recommendation": "Prioritize current-build acceptance and solo hardening before expanding shared-world scope. Production acceptance remains open despite passing existing suites."
+}

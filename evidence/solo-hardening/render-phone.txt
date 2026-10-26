@@ -1,0 +1,1 @@
+PASS: 6 actual native captures; /workspace/mini-garage-adventure/evidence/3d-development/solo-hardening-phone-800x450

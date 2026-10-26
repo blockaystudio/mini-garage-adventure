@@ -1,0 +1,29 @@
+{
+  "scope": "Collector method with mocked adb responses and an actual pinned-Godot Store fixture; not physical-device execution.",
+  "cases": [
+    {
+      "name": "actual-schema3",
+      "copy_status": "copied",
+      "validation_status": "valid",
+      "checksum": "verified",
+      "raw_bytes_preserved": true,
+      "sha256": "68c8113dc96b8deccf5258346dd714836d280eecc4f4552833fed73539bd8b92"
+    },
+    {
+      "name": "corrupt",
+      "copy_status": "copied",
+      "validation_status": "invalid",
+      "checksum": "not_checked",
+      "raw_bytes_preserved": true,
+      "sha256": "54341b3daef4029fb1759bcf058bf1cf9bd88f8be0f1aa9412b5fb8d9834d41b"
+    },
+    {
+      "name": "future",
+      "copy_status": "copied",
+      "validation_status": "unsupported_future",
+      "checksum": "not_checked_future",
+      "raw_bytes_preserved": true,
+      "sha256": "70b8e1e054d2268daa8e2c06ba15330e490ec5c9cf428816d7f268ed1e3d1b86"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "at_utc": "2026-10-26T20:23:20.985688+00:00",
+  "action": "probe",
+  "status": "blocked",
+  "package": "org.example.minigarage.test",
+  "device_label": "unlabeled-test-device",
+  "scope": "Real adb observations only. No manual, touch, retention, network or accessibility pass is inferred.",
+  "pending": [
+    "manual build/edit/drive/progression restoration",
+    "real multitouch/cancellation/tap-drive",
+    "lock/background/resume while driving",
+    "airplane-mode play and package traffic observation",
+    "physical target sizes/safe areas and assistive technologies",
+    "thermal/representative frame-time measurements",
+    "failed storage, backup/recovery/reset and uninstall/reinstall"
+  ],
+  "blocker": "adb devices -l failed: * daemon not running; starting now at tcp:5037\nADB server didn't ACK\nFull server startup log: /tmp/adb.1000.log\nServer had pid: 2357\n--- adb starting (pid 2357) ---\n10-26 20:23:21.001  2357  2357 I adb     : main.cpp:63 Android Debug Bridge version 1.0.41\n10-26 20:23:21.001  2357  2357 I adb     : main.cpp:63 Version 34.0.5-debian\n10-26 20:23:21.001  2357  2357 I adb     : main.cpp:63 Installed as /workspace/.garage-tools/android-debian/root/usr/lib/android-sdk/platform-tools/adb\n10-26 20:23:21.001  2357  2357 I adb     : main.cpp:63 Running on Linux 6.18.55 (x86_64)\n10-26 20:23:21.001  2357  2357 I adb     : main.cpp:63 \n10-26 20:23:21.001  2357  2357 I adb     : auth.cpp:416 adb_auth_init...\n10-26 20:23:21.001  2357  2357 F adb     : adb_utils.cpp:316 Cannot mkdir '/home/agent/.android': Read-only file system\n\n* failed to start daemon\nadb: failed to check server version: cannot connect to daemon",
+  "commands": [
+    {
+      "args": [
+        "devices",
+        "-l"
+      ],
+      "exit_code": 1
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+Synthetic schema 2: copied
+Synthetic schema 3: BLOCKED: Native save did not match the expected schema2 envelope.
+Fixture only: no adb process, device access, or production save used.

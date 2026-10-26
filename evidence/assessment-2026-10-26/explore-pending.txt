@@ -1,0 +1,3 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+ASSESSMENT_PENDING_REPORT {"after_return":{"gp":0,"new_active_run":0,"new_activity_empty":true,"store_active":{"event":"valley_first_drive","id":1,"kind":"tutorial"}},"after_workshop":{"gp":0,"mode_destroyed":true,"page":"upgrades","store_active":{"event":"valley_first_drive","id":1,"kind":"tutorial"}},"pending_before":{"gp":0,"result_empty":true,"run_id":1,"store_active":{"event":"valley_first_drive","id":1,"kind":"tutorial"}}}

@@ -1,3 +1,27 @@
+# Current solo-hardening status — 2026-10-26
+
+Continue from `codex/current-build-acceptance` and all subsequent work, preserving
+starting delivery7d5bb05/runtime5fb2751 and the open unmerged PR stack. Corrected
+runtime commits260b99c/11a1448 and collector/tooling commitsb792865/5ef89c3 are a
+bounded verification milestone. The branch is pushed as draft [PR #6](https://github.com/blockaystudio/mini-garage-adventure/pull/6),
+stacked on `codex/garage-explore-native` (PR #5). All remain unmerged. Final current
+HEAD, CI and artifact references are recorded in `SOLO_HARDENING_DELIVERY.md`;
+inspect actual remote branches/PRs before choosing a base. Godot remains4.6.3.
+
+`SOLO_HARDENING_NEXT_TASK.txt` supersedes the expansion-first order below. No new
+content or shared-world expansion is part of this phase. Current software tests pass and Linux/Android exports are built from `5ef89c3`
+with actual manifest/signature checks (`evidence/solo-hardening/native-builds-final/artifacts.json`).
+Twelve source-scene software-rendered captures pass. The compiled Linux GUI
+completed three fresh courses, Mud purchase/equip and Marsh admission, but the
+synthetic `WM_DELETE_WINDOW` event timed out before relaunch; the full GUI test
+failed and packaged GUI relaunch remains unproven. Game versus dummy-X11 cause
+is unknown; see [`SOLO_HARDENING_DELIVERY.md`](SOLO_HARDENING_DELIVERY.md) and
+[`x-close-diagnostic.txt`](../evidence/solo-hardening/x-close-diagnostic.txt).
+Physical platform acceptance remains blocked. Assess each evidence category separately. No merge, deployment or store
+action is authorized by this document. The2026-10-25 entries below are historical.
+
+---
+
 # Current repository status — 2026-10-25
 
 Continue on `codex/garage-explore-native`, source `5fb2751` (Explore core `37d0cf1` plus private-bind, saved-heading/privacy and reward-save recovery fixes), following schema-3 economy checkpoint `74e9e9b` on `codex/garage-rewards-schema3`. Inspect actual git status, remote branches and open PRs before selecting a base. Never reset or reimport over subsequent work. The latest `MASTER_TRACKER.md` entry identifies later evidence commits.

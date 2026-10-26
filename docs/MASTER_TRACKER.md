@@ -131,3 +131,46 @@ Final frozen Linux verification passes **5,363 checks**, recursive import/parse,
 Final failure audit corrected rejected Quick Drive run starts and retained finished runs for explicit same-ID reward retry; Explore now shows checkpoint/admission/discovery save failures and retries a committed reward's checkpoint without settling twice. Duplicate/late Explore callbacks do no extra save, UI or audio. Real two-client server-storage obstruction now retains validated finish order/pending rewards beyond timeout and disconnect, visibly unbanked until recovery pays125/100GP once. **Nine actual native process scenarios pass**: six 2/4-client latency/jitter/loss cases, consecutive races, invalid-invite/rejoin authentication and storage failure/recovery. Source fingerprints and secret-field scans pass. Unbanked observations/pending server results remain in-process; force termination while storage is unwritable can lose uncommitted results. This limitation is documented rather than represented as a production transaction ledger.
 
 Final captures and Linux/debug-APK artifacts, exact hashes and run/build commands are in [`3D_DELIVERY.md`](3D_DELIVERY.md). The task-by-task overlay [`3D_TASK_STATUS.md`](3D_TASK_STATUS.md) distinguishes implementation, desktop verification, partial work and blocked device/production acceptance. Next concrete code milestone: authoritative four-player traversal using actual six-region geometry/controller, followed by production online identity/ledger/privacy/retention/deletion and operating-cost work. Short installation/reward animation polish, exhaustive fresh untimed progression/build coverage, human balance/handling review and physical Android/iOS acceptance remain open. The earlier phone Site is unchanged and does not contain this milestone.
+
+## Current-build verification and solo hardening — 2026-10-26
+
+This phase supersedes the expansion-first next task above. Starting delivery
+`7d5bb05` and runtime `5fb2751` were inspected and preserved, along with the open
+PR stack and existing saves. Work continues on `codex/current-build-acceptance`;
+Godot remains **4.6.3**. Draft [PR #6](https://github.com/blockaystudio/mini-garage-adventure/pull/6) is
+pushed and stacked on Explore PR #5; it remains unmerged. Current detail and final artifact/review references are in
+[`SOLO_HARDENING_DELIVERY.md`](SOLO_HARDENING_DELIVERY.md), with exact continuation
+instructions in [`SOLO_HARDENING_NEXT_TASK.txt`](SOLO_HARDENING_NEXT_TASK.txt).
+
+| Scope | Current result | Fresh evidence |
+|---|---|---|
+| Failed Explore reservation | Fixed; state changes only after valid reservation, retained run/warning and retry exercised | `260b99c`; failing-before native reproduction and 127-check recovery/navigation suite |
+| Unpaid Explore completion navigation | Fixed; same-run retry and explicit discard guard ordinary navigation/quit, without duplicate settlement | `260b99c`; `evidence/solo-hardening/explore-recovery-before.txt` and `explore-recovery-after.txt` |
+| Android schema-3 evidence collection | Fixed; exact raw bytes copied before independent validation; legacy/future/corrupt records preserved | `b792865`; 21 Python tests, actual native-writer fixtures and checksum differential |
+| Unseeded untimed six-destination progression | Verified Linux native scene/process proof | `11a1448`; 370 checks, 6,480 GP earned/4,850 spent, 1,630 GP and 60 stars after actual quit/relaunch |
+| Full native/reference/browser checks | Pass on corrected runtime | 5,860 native assertions; 63 Node + 6 Python reference tests; 14 real-HTTP Chromium scenarios, under `evidence/solo-hardening/` |
+| Real private native networking regression | Pass on corrected runtime | All nine scenarios: six two/four-client/latency/jitter/loss matrix cases, consecutive races, authentication/rejoin and storage failure/recovery |
+| Matching-source Linux/APK exports | Built and statically verified from `5ef89c3` | `evidence/solo-hardening/native-builds-final/artifacts.json`; actual manifest/signature checks pass; preceding artifacts remain historical |
+| Native software-rendered captures | Pass; twelve source-scene captures | Source/hash-audited desktop and phone-sized Linux captures; not physical-device evidence |
+| Exported Linux GUI loop | Partial gameplay verified; full test failed | Three fresh courses, Mud purchase/equip and Marsh admission passed; synthetic `WM_DELETE_WINDOW` timed out before relaunch. App versus dummy-X11 cause remains unknown; see [delivery](SOLO_HARDENING_DELIVERY.md) and [diagnostic](../evidence/solo-hardening/x-close-diagnostic.txt) |
+| iOS inspector tooling | Synthetic fixtures pass; actual build blocked | 12 adversarial self-tests pass; Linux preflight remains blocked, without Xcode/signing/device result |
+| Named physical Android/iOS acceptance | Blocked | Android adb cannot initialize its authentication directory under the read-only home; no device enumeration occurred. Linux lacks configured Mac/Xcode/signing/device access for iOS |
+
+The progression proof uses real scene input/collision and legitimate earnings,
+purchases and admissions, with no seeded wallet/parts/stars/regions or in-route
+transform writes/recoveries. It completes twelve 2D authored courses, seventeen
+untimed 3D activities and eighteen discoveries; the Festival timed activity is
+not required. Approximate automated activity simulation time is 1,431 seconds
+across 7.02 km, excluding discovery travel; this is not human balance or device
+performance evidence. Historical migration behavior remains unchanged: one star
+and 75 GP per prior completed course once, replacing the introduction grant for
+legacy profiles; historical equipment/builds/settings/tracks and newer-schema
+protection remain preserved.
+
+Prioritize current-build evidence, physical lifecycle/input/storage/accessibility
+and performance acceptance when hardware is available. Freeze additional content,
+new regions/vehicles/activities and shared-world expansion. Full six-region online
+authority and crash-durable unbanked online results remain unfinished engineering;
+parent/identity/privacy/retention/deletion/security/cost and publisher/rights work
+remain production gates. No merge, deployment, spending, agreement acceptance or
+tester contact belongs to this checkpoint.

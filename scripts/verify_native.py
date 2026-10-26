@@ -90,7 +90,7 @@ def main():
         run(["--editor", "--import"])
         for script in sorted((NATIVE / "scripts").rglob("*.gd")) + sorted((NATIVE / "server").rglob("*.gd")):
             run(["--check-only", "--script", "res://" + script.relative_to(NATIVE).as_posix()])
-        for name in ("model_test.gd", "save_test.gd", "integration_test.gd", "accessibility_test.gd", "touch_test.gd", "economy_test.gd", "reward_retry_test.gd", "drive3d_test.gd", "world_content_test.gd", "world_traversal_test.gd", "explore_test.gd", "net_rules_test.gd", "net_settlement_test.gd", "net_view_test.gd"):
+        for name in ("model_test.gd", "save_test.gd", "integration_test.gd", "accessibility_test.gd", "touch_test.gd", "economy_test.gd", "reward_retry_test.gd", "drive3d_test.gd", "world_content_test.gd", "world_traversal_test.gd", "explore_test.gd", "explore_recovery_test.gd", "fresh_progression_test.gd", "net_rules_test.gd", "net_settlement_test.gd", "net_view_test.gd"):
             if not (NATIVE / "tests" / name).is_file():
                 raise RuntimeError(f"Required native test missing: tests/{name}")
             run((["--fixed-fps", "60"] if name == "drive3d_test.gd" else []) + ["--script", f"res://tests/{name}"])

@@ -1,0 +1,47 @@
+Mini Garage Adventure — current-build assessment,2026-10-26
+
+Verdict: a playable, substantially desktop-verified native development build. Production acceptance remains open. Verify and harden this build before expanding world content or multiplayer scope. Runtime code was not changed during this assessment; the new defects below remain unfixed.
+
+Source/review state
+- Current local and remote branch codex/garage-explore-native:7d5bb0594a9ecfe10dee634703ec59ea1d3225f6.
+- Artifact/runtime source:5fb2751cc0ae5ed6524d72f7eb6a9ca232f75ce2; later delivery commit changes no runtime code.
+- PR5 is stacked on economy PR4; PRs1–5 remain draft/open/unmerged. Remote main remains the older prototype. No reset, reimport, merge or publication occurred.
+- Fresh verification ran in detached exact-HEAD worktree /tmp/garage-assessment-20261026 to preserve original reports and primary sources. Evidence is in evidence/assessment-2026-10-26/summary.json.
+
+Implemented and freshly verified
+- Preserved six vehicles, twelve2DQuickDrive courses, private editor/settings and legacy saves.
+- GP-only purchases, unique non-spendable mastery, atomic ownership/debits and reward claims, free refits/recovery, pinned goals and permanent destination admission. Schema1/2 migration preserves old progress/access and compensates75GP plus one star per old course exactly once, replacing the introduction grant.
+- Genuine3DExplore with collision/slope driving, chase camera, input cancellation, surface-dependent tire response, checkpoints, six destinations, eighteenactivities and eighteen discoveries. Fresh initial earn/buy/equip/Marsh/quit/relaunch proof passes; full content reachability uses seeded inventory/admission and does not prove full fresh progression.
+- Real native networking: independent server and2/4clients, authoritative bounded-track races and separate TEST wallets; no offline GP import.
+- Fresh5363native assertions,63Node+6Python tests,14actualHTTP-origin browser scenarios and9real-process network scenarios pass. Imports/parsing/main boot and source-integrity guard pass.
+- Existing Linux/ZIP/APK bytes match final manifest; APK contents/signature/permissions and source-identity audit pass. Exported Linux30-frame headless boot passes. Existing artifacts were reaudited, not rebuilt.
+- Six fresh800x450Linux OpenGL viewport captures pass with source hashes matching committed Git blobs. AMD EPYC9V74/llvmpipe:180frames mean9.51ms,p9511.29ms,p9915.45ms; short software-renderer samples only. Capture performs actual source-driven input/travel and purchases, not manual exported-binary/device play.
+- An external --script progression harness against the release export produced no result and was stopped; it is inconclusive and is not counted as a passed full exported-binary progression loop or demonstrated game crash.
+
+Newly reproduced defects / next fixes
+ASSESS-01,P1: Explore.start_activity replaces active_run with0 on failed run reservation but keeps and resumes the previous activity. A real blocked backup produced run0, active controls and an old mission caption hiding the storage warning. The finish guard cannot settle that route. Evidence:explore-failed-start.txt and matching .gd.txt reproducer.
+ASSESS-02,P1: Explore's unsaved completed-result panel still permits Upgrade workshop navigation. Main destroys the mode, losing valid ordered observations and retry state without an unpaid-result discard confirmation. Evidence:explore-pending.txt and matching reproducer. This proof uses synthetic ordered observations plus real filesystem rejection, not a new physical-route proof. Already committed GP is not lost.
+ASSESS-03,P1verification blocker: Android Device.save_copy accepts only schema2 and rejects current schema3 before retaining bytes. Actual method with synthetic adb responses reproduced2copied/3blocked. No Android device was used. Evidence:android-collector.txt and matching .py.txt reproducer.
+
+What blocks production
+1. Close the two reproduced Explore recovery/navigation defects and fix the schema3-incompatible evidence collector. Its single existing safety test misses this path. Preserve raw copied bytes before validation; unknown/future/corrupt data must remain available as forensic evidence rather than disappearing with a validation exception.
+2. Prove an unseeded untimed progression path through all six current destinations, required upgrades/gates and quit/relaunch. Existing seeded reachability and first-region proof cover different questions. Measure activity duration/reward rates and human comprehension before changing balance.
+3. Complete actual mobile installation/update, touch/lifecycle/storage/safe-area/performance/thermal acceptance. Fresh Android probe exited2: adb could not initialize /home/agent/.android on the read-only home; no device acceptance occurred. iOS readiness exited2: Linux/noMac,Xcode,configuredIDs/signing/device acceptance. Do not interpret those blocks as runtime failures or device passes.
+4. Implement semantic accessible driving actions and prove actual TalkBack/VoiceOver behavior. Custom Panel targets and accessibility names alone do not provide screen-reader activation.
+5. Final production art/audio/short skippable installation/reward feedback, human handling/readability/content review, rights/publisher identity/IDs/support/privacy URLs, production signing and store acceptance remain open.
+6. Shared-world release additionally needs actual server collision/slope/surface parity across playable regions, durable pending-result journal/replay and production server-owned ledger/inventory/identity/security, parent/privacy/retention/deletion and operating-cost work. Current server clamps y0/pavement/boundedFestival geometry; pending finish records remain RAM-only until credit commit and TEST claims cap1024. These are prototypes, not a production service. Android remains offline/noINTERNET; ENet does not prove browser crossplay. Browser crossplay can remain outside the first native release.
+
+Protocols needing correction during hardening
+- ANDROID_QA still names schema2/older artifacts and mostly2Dperformance cases; DEVICE_ACCEPTANCE must include3D, GP/mastery and current progression.
+- IOS_BUILD's abbreviated filters omit data/*.json inclusion and server/* exclusion. Copy complete current filters when a real iOS preset can be configured; no actual iOS packaging failure is asserted here.
+- NATIVE_PRIVACY has a stale evidence/builds path; current artifacts are under native-builds-final.
+- The earlier PERFORMANCE diagnosis concerns2DRiverBridges. It cannot diagnose3Dbottlenecks or establish mobile targets.
+
+Priority and next milestone
+Next: VERIFIED CURRENT SOLO BUILD AND MOBILE ACCEPTANCE. First fix ASSESS-01/02/03 with failing-before/passing-after regressions, correct protocols, then prove unseeded progression and run named-device checks. Freeze content/architecture except reproduced fixes and accessible controls required by acceptance. Do not mark the milestone fully accepted while physical checks are blocked.
+
+Acceptance: same valid run survives failed reservation/reward/navigation until successful exactly-once commit or explicit discard; checkpoint-only retries never award again; schema3 forensic collector and fixtures pass; legacy/future/corrupt/stale-write protection and baseline suites remain green; unseeded untimed six-destination progression passes; same-source Linux/APK artifacts have recorded hashes and actual play evidence; physical Android/iOS checks are individually pass/failed/blocked/not-run with named hardware and no synthetic substitutions. If hardware is unavailable, complete the independent software fixes and leave a committed, resumable software-verified/mobile-blocked checkpoint.
+
+Postpone: more destinations, vehicles, activities/cosmetic catalogue, broad menu/art redesign, browser crossplay and wider shared-world expansion. After this gate, integrate real Valley/Marsh authority first with two native clients, then four, plus durable result recovery; expand only after that works. Public lobbies/chat/voice/trading/uploads/global ranking and monetization remain outside the agreed scope. No merge, website deployment, store submission, paid services, agreement acceptance or tester contact is authorized here.
+
+Precise continuation prompt: docs/CODEX_CURRENT_BUILD_ACCEPTANCE.txt.

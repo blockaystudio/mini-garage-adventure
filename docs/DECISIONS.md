@@ -68,3 +68,32 @@ implementation descriptions; they do not authorize a public service or release.
   establish physical Android/iOS installation, lifecycle or performance.
 - Keep PRs stacked and unmerged. The current request forbids website deployment,
   store submission, paid services, agreements, spending and tester contact.
+
+## Verification before expansion — 2026-10-26
+
+- The current owner request freezes content and shared-world expansion. Complete
+  bounded solo recovery/evidence corrections and acceptance before extending the
+  already implemented six destinations. Earlier expansion-first task order is
+  historical; `SOLO_HARDENING_NEXT_TASK.txt` is the current continuation source.
+- Publish a replacement Explore activity/run only after successful reservation.
+  Keep a valid unpaid completion's run ID and observations through ordinary
+  navigation attempts. Require explicit confirmation to discard that consequence;
+  retry the original settlement rather than allocate a replacement run. Distinguish
+  already-banked reward/checkpoint-only retry from unpaid settlement.
+- Preserve exact Android save bytes before validation. Classify current/legacy/
+  future/corrupt evidence independently, use the pinned engine's checksum
+  canonicalization, and never turn invalid/unsupported evidence into a smoke pass.
+- Prove untimed progression from a default unseeded profile using real game inputs,
+  legitimate rewards/purchases/admissions and actual process relaunch. Keep this
+  separate from inventory-seeded reachability tests and human/device acceptance.
+  Preserve starting reward/price values until measured human play supports change.
+- Rebuild from a committed source freeze, retain prior artifacts and report exact
+  source/binary hashes. Source-driven rendering, OS-input exported Linux play,
+  synthetic collector tests, actual local network processes and physical devices
+  are separate evidence categories. Never infer phone acceptance from a debug APK.
+- Keep Godot4.6.3, existing save/migration behavior and offline content. An adb
+  initialization failure blocks device collection without proving whether devices
+  are attached. Missing Mac/Xcode/signing blocks dependent iOS checks only.
+- Shared-world authority, durable pending online settlement and production
+  identity/privacy/operations remain later gates. No merge, deployment, spending,
+  agreement acceptance or tester contact is part of this checkpoint.

@@ -1,5 +1,11 @@
 # Mini Garage Adventure — current development queue
 
+The 2026-10-26 owner instruction changes the next phase to current-build
+verification and solo hardening. Use `SOLO_HARDENING_DELIVERY.md`,
+`SOLO_HARDENING_BUGS.md` and `SOLO_HARDENING_NEXT_TASK.txt`; preserve all newer
+work on `codex/current-build-acceptance`. Shared-world expansion below follows
+the current acceptance gate. Do not add content while device/software gaps remain.
+
 Use the latest `codex/garage-explore-native` commit, preserving all newer work and open PRs. Read `3D_DELIVERY.md`, `3D_BUGS.md`, `NETWORKING.md`, `3D_NEXT_TASK.txt`, the tracker/work log and supplied specification under `3d-handoff/`. Source `5fb2751` adds reward/checkpoint recovery and pending TEST race settlement after core `37d0cf1` and schema-3 reward checkpoint `74e9e9b`; inspect actual branch/commit references before editing.
 
 | Order | Task | Required evidence |

@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-26",
+  "browser": "Chromium 154.0.8037.57",
+  "environment": "Linux headless desktop browser; real HTTP origin; no physical devices",
+  "storage": "Real Chromium localStorage; isolated context, separate injected quota context",
+  "checks": [
+    {
+      "name": "first launch renders actual game",
+      "passed": true
+    },
+    {
+      "name": "build and edited track survive actual HTTP reload",
+      "passed": true
+    },
+    {
+      "name": "keyboard and pointer sources release independently",
+      "passed": true
+    },
+    {
+      "name": "two actual CDP touches release independently",
+      "passed": true
+    },
+    {
+      "name": "synthetic focus loss clears input and pressed state",
+      "passed": true
+    },
+    {
+      "name": "synthetic pointer cancellation clears throttle",
+      "passed": true
+    },
+    {
+      "name": "rapid restart clears active input",
+      "passed": true
+    },
+    {
+      "name": "actual keyboard driving finishes and persists progress",
+      "passed": true
+    },
+    {
+      "name": "corrupt primary recovers real-origin backup",
+      "passed": true
+    },
+    {
+      "name": "invalid persisted parts safely normalize",
+      "passed": true
+    },
+    {
+      "name": "phone and tablet portrait and landscape avoid overflow",
+      "passed": true
+    },
+    {
+      "name": "injected quota failure warns while game stays usable",
+      "passed": true
+    },
+    {
+      "name": "no browser script errors",
+      "passed": true
+    },
+    {
+      "name": "no unexpected outbound requests",
+      "passed": true
+    }
+  ],
+  "passed": 14,
+  "failed": 0,
+  "errors": [],
+  "outbound": []
+}

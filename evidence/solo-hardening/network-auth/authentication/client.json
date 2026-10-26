@@ -1,0 +1,8 @@
+{
+  "authenticated_rejoin": true,
+  "forged_rejoin_rejected": true,
+  "invalid_invite_rejected": true,
+  "pid": 9530,
+  "scope": "Actual native ENet handshake; runtime credentials intentionally omitted",
+  "valid_join_after_rejection": true
+}

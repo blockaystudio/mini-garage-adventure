@@ -2,7 +2,8 @@ extends RefCounted
 const Catalog = preload("res://scripts/progression/catalog.gd")
 
 static func render(game: Node) -> void:
-	game._clear("upgrades")
+	if not game._clear("upgrades",game.show_upgrades):
+		return
 	game._background()
 	game._header("Upgrade workshop",game.show_garage)
 	game._label("Earn it. Fit it. Go further.",44,143,1150,48,34)
