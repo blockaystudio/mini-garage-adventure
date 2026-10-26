@@ -1,0 +1,40 @@
+extends SceneTree
+const Scene=preload("res://scenes/main.tscn")
+const Store=preload("res://scripts/save_store.gd")
+const Data=preload("res://scripts/drive3d/world_content.gd")
+func _initialize():call_deferred("run")
+func run():
+ var game=Scene.instantiate()
+ var path="user://assessment-pending-workshop"
+ game.store=Store.new(path)
+ game.store.reset()
+ root.add_child(game)
+ game.set_physics_process(false)
+ game.show_explore("garage_valley")
+ await process_frame
+ var mode=game.explore
+ mode.start_activity(Data.activity_by_id("valley_first_drive"))
+ var run_id=mode.active_run
+ # Explicit settlement observation fixture; no claim of physical route driving.
+ for i in range(5):game.economy.observe_run(run_id,i*0.25,i*2.0)
+ mode.checkpoint_index=mode.activity.checkpoints.size()
+ mode.elapsed=8.0
+ var backup=ProjectSettings.globalize_path(path+".bak")
+ DirAccess.remove_absolute(backup)
+ DirAccess.make_dir_absolute(backup)
+ mode._finish_activity()
+ var pending={"gp":game.state.gp,"result_empty":mode.results.is_empty(),"run_id":run_id,"store_active":game.store.data.economy.active}
+ for node in game.ui.find_children("*","Button",true,false):
+  if node.text=="Upgrade workshop":node.pressed.emit();break
+ await process_frame
+ var after_leave={"gp":game.state.gp,"page":game.page,"mode_destroyed":game.explore==null,"store_active":game.store.data.economy.active}
+ DirAccess.remove_absolute(backup)
+ game.show_explore()
+ await process_frame
+ var after_return={"gp":game.state.gp,"new_active_run":game.explore.active_run,"new_activity_empty":game.explore.activity.is_empty(),"store_active":game.store.data.economy.active}
+ print("ASSESSMENT_PENDING_REPORT ",JSON.stringify({"pending_before":pending,"after_workshop":after_leave,"after_return":after_return}))
+ game.sound.stop_all()
+ game.queue_free()
+ await process_frame
+ OS.delay_msec(350)
+ quit()

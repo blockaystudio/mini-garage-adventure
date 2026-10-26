@@ -1,0 +1,31 @@
+extends SceneTree
+const Scene=preload("res://scenes/main.tscn")
+const Store=preload("res://scripts/save_store.gd")
+const Data=preload("res://scripts/drive3d/world_content.gd")
+func _initialize():call_deferred("run")
+func run():
+ var game=Scene.instantiate()
+ var path="user://assessment-active-start"
+ game.store=Store.new(path)
+ game.store.reset()
+ root.add_child(game)
+ game.set_physics_process(false)
+ game.show_explore("garage_valley")
+ await process_frame
+ var mode=game.explore
+ mode.start_activity(Data.activity_by_id("valley_first_drive"))
+ var first_run=mode.active_run
+ var backup=ProjectSettings.globalize_path(path+".bak")
+ DirAccess.remove_absolute(backup)
+ var blocked=DirAccess.make_dir_absolute(backup)
+ mode.start_activity(Data.activity_by_id("valley_parts_delivery"))
+ await physics_frame
+ await physics_frame
+ var report={"first_valid_run":first_run,"block_result":blocked,"active_run_after_failed_switch":mode.active_run,"store_active_run":game.store.data.economy.active,"activity_after_failed_switch":mode.activity.get("id",""),"paused":mode.paused,"input_active":mode.input.active,"warning":game.store.warning,"mode_message":mode.message,"visible_goal":mode.goal_label.text}
+ print("ASSESSMENT_REPORT ",JSON.stringify(report))
+ mode.set_physics_process(false)
+ game.sound.stop_all()
+ game.queue_free()
+ await process_frame
+ OS.delay_msec(350)
+ quit()

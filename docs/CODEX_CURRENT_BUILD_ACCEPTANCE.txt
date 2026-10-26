@@ -1,0 +1,48 @@
+Continue Mini Garage Adventure with a CURRENT-BUILD VERIFICATION AND SOLO HARDENING milestone. The owner wants the current build proved before expansion. This instruction supersedes the expansion-first order in docs/3D_NEXT_TASK.txt for this bounded phase. Implement and verify fixes; do not return another plan or redesign the menus.
+
+Repository: blockaystudio/mini-garage-adventure
+Last assessed branch: codex/garage-explore-native
+Last assessed delivery head: 7d5bb0594a9ecfe10dee634703ec59ea1d3225f6
+Verified runtime/artifact source: 5fb2751cc0ae5ed6524d72f7eb6a9ca232f75ce2
+Draft PR5 is stacked on economy PR4; PRs1–5 were open and unmerged on2026-10-26.
+
+Inspect the actual working tree, remote branches, PRs and subsequent commits before selecting a base. Preserve all newer code, uncommitted assessment artifacts, saves and review history. Never reset to these SHAs, reimport old source, force-push or merge. Create a bounded codex/current-build-acceptance branch from the latest native work.
+
+Read AGENTS.md, HANDOFF.md, README.md, native/README.md, current tracker/work log/decisions/bugs, docs/3D_DELIVERY.md,3D_TASK_STATUS.md,DEVICE_ACCEPTANCE.md,ANDROID_QA.md,IOS_BUILD.md,NETWORKING.md, the asset ledger and supplied docs/3d-handoff/ specifications. Read evidence/assessment-2026-10-26/summary.json and BUILD_ASSESSMENT_2026-10-26.txt when supplied. Assessment files/reproducers were saved locally and may be attached separately; if absent in a fresh checkout, reproduce the concrete behaviors described below directly rather than blocking or assuming they are fixed. Pin Godot4.6.3 standard. Keep all six vehicles, twelve2Dcourses/editor, six3Ddestinations, eighteenactivities/discoveries, accessibility settings, compatible saves and complete offline play. GP remains the only spendable currency; mastery is never spent. Preserve initial balance values until measured evidence supports a recorded change.
+
+REPRODUCE BEFORE EDITING
+
+Use disposable profiles and new evidence directories. Existing reports are historical. An isolated current-commit worktree is useful because some test scripts write evidence under their repository root. Run:
+  python scripts/verify.py
+  python scripts/verify_native.py
+  python tests/browser_smoke.py
+  python scripts/test_multiplayer.py --matrix --output <new-directory>/matrix
+  python scripts/test_multiplayer.py --repeat --output <new-directory>/repeat
+  python scripts/test_multiplayer.py --auth --output <new-directory>/auth
+  python scripts/test_multiplayer.py --storage-fault --output <new-directory>/storage
+
+Check actual build hashes against the artifact manifest, inspect APK signatures/permissions/payload and boot the exported Linux binary. Keep source-driven tests, exported-binary play, Linux rendering, browser checks, synthetic fixtures and physical-device evidence separate. The2026-10-26 baseline reproduced5363native assertions,63Node+6Python tests,14browser scenarios,9actual networking scenarios, matching existing artifacts/Linux boot and six800x450Linux viewport captures. These passes did not cover the defects below. An external --script attempt against the release export produced no test result and was stopped; do not count it as a passed exported-binary progression test.
+
+FIX THE THREE REPRODUCED GAPS FIRST
+
+1. Explore failed mission reservation: native/scripts/drive3d/explore_mode.gd:start_activity currently assigns active_run=begin_run(...) before checking success. A real blocked backup during a mission switch leaves the old activity visible/drivable with active_run0, hides the warning under its HUD and prevents settlement. Reproduce using explore-failed-start-repro.gd.txt and its log in the assessment folder. Commit the new run/activity state only after reservation succeeds; failure must preserve the previous valid run or visibly pause a coherent retryable state. Never show a reward-eligible mission with run0.
+
+2. Explore pending reward navigation: a completed activity whose reward write failed still exposes Upgrade workshop/top-level navigation. Main._clear destroys the mode; returning loses its valid observations and retry despite the stored reserved run. Reproduce explore-pending-repro.gd.txt: it is an explicitly synthetic ordered-observation fixture with a real filesystem write rejection, not physical-route proof. Protect Workshop,Garage,Map,mission switching, restart, back/Escape, pause/resume and ordinary quit. Keep the same pending run until settlement succeeds or the user explicitly confirms discarding the unpaid result. Keep reward-committed/checkpoint-failed retries separate; never settle or cue twice. Cover real blocked writes, stale writers, repair/retry, duplicate callbacks and ordinary navigation. Do not promise crash durability while storage is unwritable.
+
+3. Android evidence collector: scripts/android_smoke.py:Device.save_copy hardcodes schema2 and rejects current schema3. Reproduce android-collector-repro.py.txt; it uses mocked adb responses and is not a device result. Preserve exact raw save bytes before parsing. Report supported/legacy/future/corrupt validation separately; preserve forensic bytes even when invalid/unsupported. Verify valid real schema3 envelopes, checksum, envelope/payload-version agreement and appropriate wallet/inventory/equipment invariants. Recognize legacy fixtures without modifying device data; protect future versions and retain serial/timeout redaction. Add meaningful collector tests. Update ANDROID_QA/DEVICE_ACCEPTANCE/PERFORMANCE to current3D+GP+mastery builds, correct stale artifact references, and fix IOS_BUILD resource guidance to include data/*.json and exclude server/* as in the complete current presets. Do not invent iOS IDs or silently enable networking permissions.
+
+PROVE CURRENT SOLO PROGRESSION
+
+Keep the existing44-check fresh earn/buy/equip/Marsh/quit/relaunch proof and seeded18-route reachability sweep, clearly labelled separately. Add an unseeded, untimed progression run that legitimately earns GP/stars, buys/equips required items and admits all six existing destinations. No seeded funds, ownership or admissions, no in-route teleporting, no public/custom-track farming and no required timed bonus. Verify permanent admissions after refits, free recovery/refitting, affordability and exact-once claims. Record elapsed activity times, reward components and balances. Exercise schema1/2 migration, backup/tmp/corrupt/future data, interrupted/rejected saves, duplicate finish/purchase, concurrent writers and relaunch. Preserve legacy builds/settings/completions/bests/tracks/equipment/vehicles; compensation is75GP plus one completion star per old course once and replaces the introductory grant.
+
+DEVICE ACCEPTANCE
+
+Use only existing authorized devices/toolchains and isolated test profiles. First fix the evidence collector. On named Android phone/tablet hardware, exercise installation/update from a legacy test build, the actual3Dloop, multi-touch cancellation/slide-off, reverse/brake/recovery, focus/background/lock/resume, rapid restart, controlled storage failure, force-stop/relaunch, safe areas and touch-only navigation. Implement semantic accessible driving actions needed by the current build and test actual TalkBack. Names/ROLE_PANEL metadata alone do not pass accessibility. On an owner-provided Mac with configured Xcode/signing/IDs, build and test physical iPhone/iPad and VoiceOver; do not claim simulator or Linux results as iOS. Audit actual packed JSON/resources and notices.
+
+Measure loading, frame p50/p95/p99, memory and sustained thermal behavior on named target hardware. Use evidence to record a target60fps or justified30fps mode; Linux llvmpipe is not mobile performance. Record pass/failed/blocked/not-run per check/platform. If hardware or signing is unavailable, finish independent software/tooling fixes and leave mobile acceptance BLOCKED, with the exact dependency and executable protocol. Do not declare a release candidate accepted.
+
+SCOPE AND COMPLETION
+
+No new destinations, vehicles, activity expansion, cosmetic catalogue, browser crossplay, broad art/menu redesign or shared-world expansion in this phase. Keep private networking isolated to TEST profiles and desktop proof; no soloGP import or public service. Full shared-world collision/surface authority, durable pending-online-result journaling and production identity/parent/privacy/retention/deletion/security/operating-cost work follow this verification gate. A parent puzzle/private invite is not consent.
+
+Run meaningful new regressions, then the full required suites once source is frozen. Rebuild Linux/debugAndroid exports from the corrected commit; preserve earlier artifacts/evidence and record exact source/binary hashes. Update tracker, work log, decisions, bugs, device protocols, delivery notes and precise next prompt. Mark only evidenced criteria complete. Make bounded commits and a reviewable draft PR under existing authorization; do not merge, force-push, deploy websites, submit stores, spend money, accept agreements, change visibility or contact testers. Finish with branch/commit/PR references, playable artifacts/run commands, actual pass/fail/blocked results, migration behavior, remaining defects and the next gated milestone.
