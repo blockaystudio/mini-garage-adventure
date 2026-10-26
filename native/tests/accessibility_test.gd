@@ -148,6 +148,8 @@ func run() -> void:
 	check(drive != null and stop != null and close != null, "accessible driving exposes native button actions and stop")
 	drive.pressed.emit()
 	check(game.router.strength("throttle") == 1.0, "accessible activation starts a bounded drive command")
+	game._process(0.016)
+	check(game._accessible_status.text == "Active: Drive" and "progress" in game._accessible_progress.text, "accessible 2D status exposes active command and course progress")
 	var pointer := InputEventMouseButton.new()
 	pointer.button_index = MOUSE_BUTTON_LEFT
 	pointer.pressed = true
@@ -191,6 +193,8 @@ func run() -> void:
 		if child is Button and child.text == "Stop": explore_stop = child
 	explore_drive.pressed.emit()
 	check(game.explore.input.get_controls().throttle == 1.0, "Explore accessible button drives through the real input router")
+	game._process(0.016)
+	check(game._accessible_status.text == "Active: Drive" and not game._accessible_progress.text.is_empty(), "accessible 3D status exposes active command and terrain or mission")
 	explore_stop.pressed.emit()
 	check(game.explore.input.get_controls().throttle == 0.0, "Explore accessible stop clears throttle")
 	explore_drive.pressed.emit()

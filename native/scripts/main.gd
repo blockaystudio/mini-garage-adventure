@@ -55,6 +55,10 @@ var status_label: Label
 var gate_value := 0
 var drive_pads: Dictionary = {}
 var _accessible_drawer_open := false
+var _accessible_status: Label
+var _accessible_progress: Label
+var _accessible_router: Node
+var _accessible_3d := false
 var transition_time := 0.0
 
 func _ready() -> void:
@@ -142,6 +146,9 @@ func _clear(next_page: String, action: Callable = Callable()) -> bool:
 		explore = null
 		state = store.data.duplicate(true)
 	_accessible_drawer_open = false
+	_accessible_status = null
+	_accessible_progress = null
+	_accessible_router = null
 	router.clear()
 	router.accessible.enabled = false
 	router.active = false
@@ -420,23 +427,32 @@ func _accessible_controls(input_router: Node, is_3d: bool) -> void:
 		if child is Control:
 			visibility[child] = child.visible
 			child.visible = false
-	var shade := _panel(0,0,1280,720,Color("142c40"))
+	var shade := _panel(0,0,1280,720,Color(0.04,0.08,0.12,0.16))
 	shade.mouse_filter = Control.MOUSE_FILTER_STOP
-	_label("Accessible driving · commands stop after 3 seconds",290,188,700,42,21,CREAM)
+	_panel(20,20,850,125,Color("142c40e8"))
+	_label("Accessible driving · commands stop after 3 seconds",35,29,820,35,21,CREAM)
+	_accessible_status = _label("Commands stopped",35,67,820,29,18,TEAL)
+	_accessible_status.accessibility_live = 1
+	_accessible_progress = _label("",35,104,820,29,18,CREAM)
+	_accessible_router = input_router
+	_accessible_3d = is_3d
 	var actions := [["Drive", "throttle"], ["Brake", "brake"], ["Reverse", "reverse"], ["Left", "steer_left" if is_3d else "lean_left"], ["Right", "steer_right" if is_3d else "lean_right"], ["Stop", "stop"]]
 	if not is_3d:
 		actions.remove_at(2)
 	var first: Button
 	for index in range(actions.size()):
 		var action: String = actions[index][1]
-		var button := _button(actions[index][0], 290 + (index % 3)*230, 250 + int(index / 3)*95, 210, func(): input_router.accessible.command(action), false, 78)
+		var button := _button(actions[index][0], 916 + (index % 2)*170, 240 + int(index / 2)*95, 158, func(): input_router.accessible.command(action), false, 78)
 		if first == null:
 			first = button
 	var nodes: Array = []
-	_button("Close controls · stop", 460, 465, 360, func():
+	_button("Close controls · stop", 920, 555, 320, func():
 		input_router.clear()
 		input_router.accessible.enabled = false
 		_accessible_drawer_open = false
+		_accessible_status = null
+		_accessible_progress = null
+		_accessible_router = null
 		for node in nodes:
 			if is_instance_valid(node):
 				node.queue_free()
@@ -476,6 +492,19 @@ func _physics_process(delta: float) -> void:
 		_finish()
 
 func _process(delta: float) -> void:
+	if _accessible_drawer_open and is_instance_valid(_accessible_router) and is_instance_valid(_accessible_status):
+		var active_names: Array[String] = []
+		for pair in [["Drive", "throttle"], ["Brake", "brake"], ["Reverse", "reverse"], ["Left", "steer_left" if _accessible_3d else "lean_left"], ["Right", "steer_right" if _accessible_3d else "lean_right"]]:
+			if _accessible_router.strength(pair[1]) > 0:
+				active_names.append(pair[0])
+		var status := "Commands stopped" if active_names.is_empty() else "Active: " + ", ".join(active_names)
+		if _accessible_status.text != status:
+			_accessible_status.text = status
+		if is_instance_valid(_accessible_progress):
+			if _accessible_3d and is_instance_valid(explore):
+				_accessible_progress.text = "%s · %s" % [explore.goal_label.text, explore.surface_label.text]
+			elif is_instance_valid(progress_bar) and is_instance_valid(clock_label):
+				_accessible_progress.text = "%s · progress %d%%" % [clock_label.text, roundi(progress_bar.value * 100.0)]
 	if is_instance_valid(wallet_header):
 		wallet_header.text = "%d GP  /  %d stars  /  %s" % [int(state.get("gp",0)),Progression.stars_count(state),header_section]
 	if is_instance_valid(world) and world.visible:

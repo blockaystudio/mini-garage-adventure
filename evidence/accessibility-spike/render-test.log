@@ -1,0 +1,22 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+2D_MOVE 98.475783918591 STATUS Active: Drive PROGRESS 1.4 s  ·  Sunny Buggy  ·  Just for fun: under 14 s · progress 8%
+2D_STOP 0.0
+3D_MOVE 4.78948450088501 STATUS Active: Drive PROGRESS Choose a mission, or explore at your own pace. · Pavement · Trail tires · 0 GP · 0 mastery
+BUTTON Garage vis=false color=(1.0, 0.9608, 0.8627, 1.0) mod=(1.0, 1.0, 1.0, 1.0)
+BUTTON Pause vis=false color=(1.0, 0.9608, 0.8627, 1.0) mod=(1.0, 1.0, 1.0, 1.0)
+BUTTON Missions vis=false color=(1.0, 0.9608, 0.8627, 1.0) mod=(1.0, 1.0, 1.0, 1.0)
+BUTTON World map vis=false color=(1.0, 0.9608, 0.8627, 1.0) mod=(1.0, 1.0, 1.0, 1.0)
+BUTTON Recover · FREE vis=false color=(1.0, 0.9608, 0.8627, 1.0) mod=(1.0, 1.0, 1.0, 1.0)
+BUTTON Accessible controls vis=false color=(1.0, 0.9608, 0.8627, 1.0) mod=(1.0, 1.0, 1.0, 1.0)
+BUTTON Drive vis=true color=(1.0, 0.9608, 0.8627, 1.0) mod=(1.0, 1.0, 1.0, 1.0)
+BUTTON Brake vis=true color=(1.0, 0.9608, 0.8627, 1.0) mod=(1.0, 1.0, 1.0, 1.0)
+BUTTON Reverse vis=true color=(1.0, 0.9608, 0.8627, 1.0) mod=(1.0, 1.0, 1.0, 1.0)
+BUTTON Left vis=true color=(1.0, 0.9608, 0.8627, 1.0) mod=(1.0, 1.0, 1.0, 1.0)
+BUTTON Right vis=true color=(1.0, 0.9608, 0.8627, 1.0) mod=(1.0, 1.0, 1.0, 1.0)
+BUTTON Stop vis=true color=(1.0, 0.9608, 0.8627, 1.0) mod=(1.0, 1.0, 1.0, 1.0)
+BUTTON Close controls · stop vis=true color=(1.0, 0.9608, 0.8627, 1.0) mod=(1.0, 1.0, 1.0, 1.0)
+3D_STOP 0.0
